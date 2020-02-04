@@ -1,55 +1,51 @@
 ---
-title: Getting Started Home
-parent: Getting Started
-section: Getting Started
-description: This section provides guides to help you get started with Brightcove Beacon
+title: Getting Started
+description: Guides to help you get started.
+icon: '<i class="far fa-location-arrow"></i>'
+parent: Home
 ---
+<style>
+  h1 i.fal, h1 i.fab, h1 i.fas, h1 i.far {
+    font-size: 3rem;
+    color:{{site.product_color}};
+    margin-right: .5rem;
+  }
+  .card-icon i {
+    color: {{site.product_color}};
+  }
+  .card-wrapper {
+  justify-content: start;
+  }
+  .bcls-card ul li {
+    font-size: small;
+  }
+</style>
 
-<article class="landing-page-wrapper">
-  <h1>{{ page.title }}</h1>
-  <section class="landing-page-header" id="landing_page_header">
-    <p>{{ page.description }}</p>
+<article class="bcls-article">
+  <h1>{{ page.icon }} {{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="card-wrapper">
+    <section class="bcls-card">
+      <div class="card-content">
+        <h2 id="Topics_in_this_section">Topics in this section</h2>
+        <ul>
+        {% for item in site.data.navigation %}
+        {% if item.name == page.title %}
+              {% for entry in item.docs %}
+                <li><a href="{{ entry.url }}">{{ entry.name }}</a>
+                {% if entry.docs %}
+                  <ul>
+                    {% for subentry in entry.docs %}
+                      <li><a href="{{ subentry.url }}">{{ subentry.name }}</a></li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+                </li>
+              {% endfor %}
+        {% endif %}
+      {% endfor %}
+  
+      </div>
+    </section>
   </section>
-  <br>
-<section class="card-wrapper">
-  <section onclick="window.location.pathname = '/getting-started/learning-guide-bc-beacon.html';" class="bcls-card">
-    <div class="card-icon">
-      <i class="far fa-book-reader"></i>
-    </div>
-    <div class="card-content">
-      <h3 id="learning-guide">Learning Guide</h3>
-      <p>Explains Brightcove Beacon</p>
-    </div>
-  </section>
-
-  <section onclick="window.location.pathname = '/getting-started/implementation-phases.html';" class="bcls-card">
-    <div class="card-icon">
-      <i class="fal fa-project-diagram"></i>
-    </div>
-    <div class="card-content">
-      <h3 id="implementation-phases">Implementation Phases</h3>
-      <p>Details the implementation process</p>
-    </div>
-  </section>
-
-  <section onclick="window.location.pathname = '/getting-started/app-design-considerations.html';" class="bcls-card">
-    <div class="card-icon">
-      <i class="far fa-pencil-ruler"></i>
-    </div>
-    <div class="card-content">
-      <h3 id="app-design-considerations">Application Design Considerations</h3>
-      <p>Provides examples and tips for your application design</p>
-    </div>
-  </section>
-
-  <section onclick="window.location.pathname = '/getting-started/creating-your-app-design.html';" class="bcls-card">
-    <div class="card-icon">
-      <i class="far fa-edit"></i>
-    </div>
-    <div class="card-content">
-      <h3 id="create-app-design">Creating Your Application Design</h3>
-      <p>Walks you through alternatives for your application design</p>
-    </div>
-  </section>
-</section>
 </article>
