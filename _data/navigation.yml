@@ -13,19 +13,25 @@
   url: '/vod/'
   icon: '<i class="icon-video"></i>'
   docs:
-    - name: 'SSAI: Ad Block Detection and Auto-Failover'
-      url: '/vod/ssai-ad-block-detection-and-auto-failover.html'
-    - name: 'Video Cloud SSAI Ad Config API'
-      url: '/vod/video-cloud-ssai-ad-config-api.html'
-    - name: 'Ad Error Beacons with SSAI'
-      url: '/vod/ad-error-beacons-ssai.html'
+    - name: 'Guides'
+      url: '/vod/guides/'
+      docs:
+        - name: 'SSAI: Ad Block Detection and Auto-Failover'
+          url: '/vod/ssai-ad-block-detection-and-auto-failover.html'
+        - name: 'Video Cloud SSAI Ad Config API'
+          url: '/vod/video-cloud-ssai-ad-config-api.html'
+        - name: 'Ad Error Beacons with SSAI'
+          url: '/vod/ad-error-beacons-ssai.html'
+    - name: 'References'
+      url: '/vod/references/'
+      docs:
+       - name: 'SSAI API Error Reference'
+         url: '/references/ssai-api-error-reference.html'
 - section: 
   name: 'References'
   url: '/references/'
   icon: '<i class="fal fa-books"></i>'
   docs:
-    - name: 'SSAI API Error Reference'
-      url: '/references/ssai-api-error-reference.html'
     - name: 'Known Issues'
       url: '/references/known-issues.html'
 - section: 
