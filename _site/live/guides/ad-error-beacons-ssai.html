@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- remember to remove the following line when the site is ready to go live -->
   <!-- <meta name="robots" content="noindex" /> -->
-  <title>SSAI API Error Reference</title>
+  <title>Ad Error Beacons with SSAI</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -85,9 +85,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item"><a href="/references/">References</a></li>
+      <li class="breadcrumb-item"><a href="/live/guides/">Guides</a></li>
       
-      <li class="breadcrumb-item active" aria-current="page">SSAI API Error Reference</li>
+      <li class="breadcrumb-item active" aria-current="page">Ad Error Beacons with SSAI</li>
     </ol>
   </nav>
 </header>
@@ -120,11 +120,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                       <a href="/vod/guides/">Guides <strong>+</strong></a>
                       <ul class="sidenav-subsubmenu" style="display:none;">
                         
-                        <li><a href="/vod/ssai-ad-block-detection-and-auto-failover.html">SSAI: Ad Block Detection and Auto-Failover</a></li>
+                        <li><a href="/vod/guides/ssai-ad-block-detection-and-auto-failover.html">SSAI: Ad Block Detection and Auto-Failover</a></li>
                         
-                        <li><a href="/vod/video-cloud-ssai-ad-config-api.html">Video Cloud SSAI Ad Config API</a></li>
+                        <li><a href="/vod/guides/video-cloud-ssai-ad-config-api.html">Video Cloud SSAI Ad Config API</a></li>
                         
-                        <li><a href="/vod/ad-error-beacons-ssai.html">Ad Error Beacons with SSAI</a></li>
+                        <li><a href="/vod/guides/ad-error-beacons-ssai.html">Ad Error Beacons with SSAI</a></li>
                         
                       </ul>
                     </li>
@@ -135,7 +135,36 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                       <a href="/vod/references/">References <strong>+</strong></a>
                       <ul class="sidenav-subsubmenu" style="display:none;">
                         
-                        <li><a href="/references/ssai-api-error-reference.html">SSAI API Error Reference</a></li>
+                        <li><a href="/vod/references/ssai-api-error-reference.html">SSAI API Error Reference</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/live/">Live <strong>+</strong></a></h5>            
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/live/guides/">Guides <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/live/guides/ssai-ad-block-detection-and-auto-failover.html">SSAI: Ad Block Detection and Auto-Failover</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/live/references/">References <strong>+</strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/live/references/ssai-api-error-reference.html">SSAI API Error Reference</a></li>
                         
                       </ul>
                     </li>
@@ -183,81 +212,129 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </div>
 
 <article class="bcls-article">
-  <h1>SSAI API Error Reference</h1>
-  <summary>This topic provides an error reference for the SSAI API.</summary>
+  <h1>Ad Error Beacons with SSAI</h1>
+  <summary>In this topic, you will learn about the VAST ad error events that are beaconed when using Server-Side Ad Insertion (SSAI).</summary>
 
 <section class="bcls-section">
-<h2 id="errorMessages">General error messages</h2>
+<h2 id="Use_credentials">Overview</h2>
+
+<p>With SSAI, ads are stitched into your content stream on the server side. Beaconing of VAST ad error events is provided when using VOD + SSAI.</p>
+
+<p>Ad error events provide insight to your ad workflows, allowing you to proactively resolve issues. Ensuring that your ads are delivered will help to maximize ad revenue.</p>
+</section>
+
+<section class="bcls-section">
+<h2 id="Ad_Error_Beacons">Ad Error Beacons</h2>
+
+<p>The following table defines ad error events beaconed through SSAI, as defined in VAST 3.0/4.0 specifications.</p>
 
 <table class="bcls-table">
 	<thead class="bcls-table__head">
 		<tr>
-			<th>Status</th>
-			<th style="width: 20%;">Name</th>
-			<th>Message</th>
-			<th>Cause</th>
+			<th>Error code</th>
+			<th>Type</th>
+			<th>Description</th>
 		</tr>
 	</thead>
 	<tbody class="bcls-table__body">
 		<tr>
-			<td>400</td>
-			<td><code>BAD_REQUEST</code></td>
-			<td><code>Invalid JSON body on request</code></td>
-			<td>There's an error in JSON for the request body; could be a basic JSON issue, or an incorrect type for a field value</td>
+			<td><code>100</code></td>
+			<td><code>ErrorCodeXMLParse</code></td>
+			<td>
+			<p>XML parsing error</p>
+
+			<ul>
+				<li>Error on XSLT transform</li>
+				<li>Response was empty</li>
+			</ul>
+			</td>
 		</tr>
 		<tr>
-			<td>400</td>
-			<td><code>BAD_REQUEST</code></td>
-			<td><code>"error": "{<span class="bcls-highlight">fieldname</span>} field is required</code></td>
-			<td>Request body is missing the indicated required field</td>
+			<td><code>200</code></td>
+			<td><code>ErrorCodeTrafficking</code></td>
+			<td>
+			<p>Trafficking error. Video player received an ad type that it was not expecting and/or cannot display.</p>
+
+			<ul>
+				<li>Valid Ad response returned, but no linear ads were found</li>
+				<li>A non-progressive ad format was returned
+				<ul>
+					<li>VPAID swf (when not expected as a pass-through)</li>
+					<li>Invalid video Mime Type</li>
+				</ul>
+				</li>
+			</ul>
+			</td>
 		</tr>
 		<tr>
-			<td>400</td>
-			<td><code>AD_CONFIG_NOT_FOUND</code></td>
-			<td><code>Ad config not found</code></td>
-			<td>Ad configuration specified in an SSAI request was not found</td>
+			<td><code>301</code></td>
+			<td><code>ErrorCodeWrapperRequest</code></td>
+			<td>
+			<p>Timeout of VAST URI provided in Wrapper element, or of VAST URI provided in a subsequent Wrapper element. Includes request errors such as invalid URI, unreachable or request timeout for URI, and security or other exceptions related to requesting a VAST URI.</p>
+
+			<ul>
+				<li>Wrapper URI unavailable - 4xx, 5xx</li>
+				<li>Wrapper did not respond within the set timeout threshold</li>
+			</ul>
+			</td>
 		</tr>
 		<tr>
-			<td>400</td>
-			<td><code>AD_CONFIG_INACTIVE</code></td>
-			<td><code>Ad config is inactive</code></td>
-			<td>Ad configuration specified in an SSAI request is inactive</td>
+			<td><code>302</code></td>
+			<td><code>ErrorCodeWrapperLimit</code></td>
+			<td>
+			<p>Wrapper limit reached, as defined by the video player. Too many Wrapper responses have been received with no InLine response.</p>
+
+			<ul>
+				<li>Exceeded the wrapper follow-through limit</li>
+			</ul>
+			</td>
 		</tr>
 		<tr>
-			<td>401</td>
-			<td><code>UNAUTHORIZED</code></td>
-			<td><code>Permission denied.</code></td>
-			<td>Missing or invalid OAuth access token. If you did supply an access token, it may not have for the appropriate scope for this request</td>
+			<td><code>303</code></td>
+			<td><code>ErrorCodeWrapperNoAds</code></td>
+			<td>
+			<p>No ads VAST response after one or more Wrappers. Also includes number of empty VAST responses from fallback.</p>
+
+			<ul>
+				<li>No linear (progressive) ad response received through wrapper requests</li>
+				<li>Wrapper response was empty</li>
+			</ul>
+			</td>
 		</tr>
 		<tr>
-			<td>403</td>
-			<td><code>NOT_AVAILABLE</code></td>
-			<td><code>Resource is not available.</code></td>
-			<td>The resource you are requesting is temporarily unavailable - this may be a temporary condition while some kind of processing of the video is in progress, but if the message persists, contact Support.</td>
+			<td><code>406</code></td>
+			<td><code>ErrorCodeMissingMezz</code></td>
+			<td>
+			<p>Mezzanine was required but not provided. Ad not served.</p>
+
+			<ul>
+				<li>Strict implementations of VAST 4.0 and requiring Mezz ads to be returned. Could be viable for OTT devices to ensure quality.</li>
+				<li>VAST 4 specific</li>
+			</ul>
+			</td>
 		</tr>
 		<tr>
-			<td>404</td>
-			<td><code>NOT_FOUND</code></td>
-			<td><code>Resource does not exist.</code></td>
-			<td>You requested a resource that does not exist - you might be trying to update an ad configuration or get an ad trace on a session that no longer exists. This error will also be returned if you use and HTTP method not allowed on the endpoint.</td>
+			<td><code>407</code></td>
+			<td><code>ErrorCodeProcessingMezz</code></td>
+			<td>
+			<p>Mezzanine was downloaded for the first time. Ad not served.</p>
+
+			<ul>
+				<li>Anytime a valid creative was received, but removed due to processing this event should be fired.</li>
+				<li>VAST 4 specific</li>
+			</ul>
+			</td>
 		</tr>
 		<tr>
-			<td>500</td>
-			<td><code>UNKNOWN</code></td>
-			<td><code>an unknown internal error occurred</code></td>
-			<td>Issue in Brightcove system - try again later.</td>
-		</tr>
-		<tr>
-			<td>503</td>
-			<td><code>SERVICE_UNAVAILABLE</code></td>
-			<td><code>The API is temporarily unavailable</code></td>
-			<td>Backend issue - try again later.</td>
-		</tr>
-		<tr>
-			<td>504</td>
-			<td><code>TIMEOUT</code></td>
-			<td><code>something took too long</code></td>
-			<td>Server likely too busy - try again later.</td>
+			<td><code>900</code></td>
+			<td><code>ErrorCodeUndefined</code></td>
+			<td>
+			<p>Undefined error</p>
+
+			<ul>
+				<li>Generalized error occurred and not well defined by other errors</li>
+			</ul>
+			</td>
 		</tr>
 	</tbody>
 </table>

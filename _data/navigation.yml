@@ -17,16 +17,31 @@
       url: '/vod/guides/'
       docs:
         - name: 'SSAI: Ad Block Detection and Auto-Failover'
-          url: '/vod/ssai-ad-block-detection-and-auto-failover.html'
+          url: '/vod/guides/ssai-ad-block-detection-and-auto-failover.html'
         - name: 'Video Cloud SSAI Ad Config API'
-          url: '/vod/video-cloud-ssai-ad-config-api.html'
+          url: '/vod/guides/video-cloud-ssai-ad-config-api.html'
         - name: 'Ad Error Beacons with SSAI'
-          url: '/vod/ad-error-beacons-ssai.html'
+          url: '/vod/guides/ad-error-beacons-ssai.html'
     - name: 'References'
       url: '/vod/references/'
       docs:
        - name: 'SSAI API Error Reference'
-         url: '/references/ssai-api-error-reference.html'
+         url: '/vod/references/ssai-api-error-reference.html'
+- section: 
+  name: 'Live'
+  url: '/live/'
+  icon: '<i class="icon-stream"></i>'
+  docs:
+    - name: 'Guides'
+      url: '/live/guides/'
+      docs:
+        - name: 'SSAI: Ad Block Detection and Auto-Failover'
+          url: '/live/guides/ssai-ad-block-detection-and-auto-failover.html'
+    - name: 'References'
+      url: '/live/references/'
+      docs:
+       - name: 'SSAI API Error Reference'
+         url: '/live/references/ssai-api-error-reference.html'
 - section: 
   name: 'References'
   url: '/references/'

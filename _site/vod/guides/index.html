@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- remember to remove the following line when the site is ready to go live -->
   <!-- <meta name="robots" content="noindex" /> -->
-  <title>Brightcove Beacon Home</title>
+  <title>Guides</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -81,9 +81,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb arr-right">
       
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
       
       
-      <li class="breadcrumb-item active" aria-current="page">Brightcove Beacon Home</li>
+      
+      <li class="breadcrumb-item"><a href="/vod/guides/">Video-On-Demand</a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">Guides</li>
     </ol>
   </nav>
 </header>
@@ -207,77 +211,64 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <div id="search_box" class="gcse-search"></div>
 </div>
 
-<article class="landing-page-wrapper">
-  <h1>SSAI Home</h1>
-  <section class="landing-page-header" id="landing_page_header">
-    <p>Brightcove Server-Side Ad Insertion (SSAI), formerly known as Once, dynamically stitches targeted ads into your content on the server and delivers both as one continuous stream. You’ll prevent ad blockers from detecting your ads, deliver a better viewing experience to your audience by eliminating buffering, and preserve your revenue.</p>
-  </section>
-  <br>
-  <section class="landing-page-body-wrapper" id="landing_page_wrapper">
-    
-      
-    
-      
-      <section class="landing-page-section">
-        <h6 class="landing-page-item-header"></h6>
-        <ul class="landing-page-item list-none">
+<style>
+  h1 i.fal, h1 i.fab, h1 i.fas, h1 i.far {
+    font-size: 3rem;
+    color:rgb(186, 206, 19);
+    margin-right: .5rem;
+  }
+  .card-icon i {
+    color: rgb(186, 206, 19);
+  }
+  .card-wrapper {
+  justify-content: start;
+}
+.bcls-card h2 {
+  font-size: 1rem;
+}
+.bcls-card ul {
+  font-size: small;
+  margin-left: -3em;
+}
+</style>
+
+<article class="bcls-article">
+  <h1><i class="far fa-location-arrow"></i> Guides</h1>
+  <summary>Learn how to implement Server-Side Ad Insertion (SSAI).</summary>
+  <section class="card-wrapper">
+    <section class="bcls-card">
+      <div class="card-content">
+        <h2 id="Topics_in_this_section">Topics in Guides</h2>
+        <ul>
+        
           
-            <li><a href="/getting-started/video-cloud-ssai-overview.html">Overview</a></li>
+        
           
-            </ul>
-      </section>
-      
-    
-      
-      <section class="landing-page-section">
-        <h6 class="landing-page-item-header"></h6>
-        <ul class="landing-page-item list-none">
+        
           
-            <li><a href="/vod/guides/">Guides</a></li>
+            
+              
+                
+                  <li><a href="/vod/guides/ssai-ad-block-detection-and-auto-failover.html">SSAI: Ad Block Detection and Auto-Failover</a></li>
+                
+                  <li><a href="/vod/guides/video-cloud-ssai-ad-config-api.html">Video Cloud SSAI Ad Config API</a></li>
+                
+                  <li><a href="/vod/guides/ad-error-beacons-ssai.html">Ad Error Beacons with SSAI</a></li>
+                
+              
+            
+              
+            
           
-            <li><a href="/vod/references/">References</a></li>
+        
           
-            </ul>
-      </section>
-      
-    
-      
-      <section class="landing-page-section">
-        <h6 class="landing-page-item-header"></h6>
-        <ul class="landing-page-item list-none">
+        
           
-            <li><a href="/live/guides/">Guides</a></li>
+        
           
-            <li><a href="/live/references/">References</a></li>
-          
-            </ul>
-      </section>
-      
-    
-      
-      <section class="landing-page-section">
-        <h6 class="landing-page-item-header"></h6>
-        <ul class="landing-page-item list-none">
-          
-            <li><a href="/references/known-issues.html">Known Issues</a></li>
-          
-            </ul>
-      </section>
-      
-    
-      
-      <section class="landing-page-section">
-        <h6 class="landing-page-item-header"></h6>
-        <ul class="landing-page-item list-none">
-          
-            <li><a href="/support/opening-case-with-brightcove-support.html">Opening a Support Case</a></li>
-          
-            <li><a href="/support/viewing-brightcove-system-status-page.html">Viewing the Brightcove System Status Page</a></li>
-          
-            </ul>
-      </section>
-      
-    
+        
+      </div>
+    </section>
   </section>
 </article>
 
@@ -285,18 +276,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </div>
     <div class="col-sm-2 right-side-bar">
       
-      <nav class="right-side-nav">
-        <h6 class="toc">Page Contents</h6>
-        <ul id="in_page_nav" class="list-none"></ul>
-      </nav>
-      
     </div>
   </div>
 </div>
 
 <hr>
 <div class="last-updated">
-  Page last updated on 03 Feb 2020
+  Page last updated on 26 Feb 2020
 </div>
 
 <footer class="bcls-footer" role="contentinfo">
@@ -377,8 +363,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <script src="https://learning-services-media.brightcove.com/doc-assets/site-assets/js/site/prism.js"></script>
   <script src="https://learning-services-media.brightcove.com/doc-assets/site-assets/js/site/site.js"></script>
   <script src="https://learning-services-media.brightcove.com/doc-assets/site-assets/js/site/tabs.js"></script>
-  
-  <script src="https://learning-services-media.brightcove.com/doc-assets/site-assets/js/site/toc.js"></script>
   
   <script src="/assets/js/sites_nav.js"></script>
   <script src="https://learning-services-media.brightcove.com/doc-assets/site-assets/js/site/bcls-utils.js"></script>
