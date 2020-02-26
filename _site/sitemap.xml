@@ -13,6 +13,13 @@
     </url>
     
     <url>
+        <loc>https://ssai.support.brightcove.com/vod/ad-error-beacons-ssai.html</loc>
+        <lastmod>2020-02-26</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
         <loc>https://ssai.support.brightcove.com/assets/js/feedback.js</loc>
         <lastmod>2020-02-26</lastmod>
         <changefreq>daily</changefreq>
@@ -34,7 +41,7 @@
     </url>
     
     <url>
-        <loc>https://ssai.support.brightcove.com/support/</loc>
+        <loc>https://ssai.support.brightcove.com/references/</loc>
         <lastmod>2020-02-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
@@ -55,7 +62,7 @@
     </url>
     
     <url>
-        <loc>https://ssai.support.brightcove.com/references/</loc>
+        <loc>https://ssai.support.brightcove.com/support/</loc>
         <lastmod>2020-02-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
@@ -119,6 +126,13 @@
     
     <url>
         <loc>https://ssai.support.brightcove.com/vod/ssai-ad-block-detection-and-auto-failover.html</loc>
+        <lastmod>2020-02-26</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://ssai.support.brightcove.com/references/ssai-api-error-reference.html</loc>
         <lastmod>2020-02-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
