@@ -7,9 +7,16 @@
   icon: '<i class="far fa-location-arrow"></i>'
   docs:
     - name: 'Overview'
-      url: '/getting-started/overview-zencoder.html'
-    - name: 'Quick Start'
-      url: '/getting-started/quick-start-zencoder.html'
+      url: '/getting-started/video-cloud-ssai-overview.html'
+- section: 
+  name: 'Video-On-Demand'
+  url: '/vod/'
+  icon: '<i class="far fa-location-arrow"></i>'
+  docs:
+    - name: 'SSAI: Ad Block Detection and Auto-Failover'
+      url: '/vod/ssai-ad-block-detection-and-auto-failover.html'
+    - name: 'Video Cloud SSAI Ad Config API'
+      url: '/vod/video-cloud-ssai-ad-config-api.html'
 - section: 
   name: 'Support'
   url: '/support/'
@@ -19,3 +26,4 @@
       url: '/support/opening-case-with-brightcove-support.html'
     - name: 'Viewing the Brightcove System Status Page'
       url: '/support/viewing-brightcove-system-status-page.html'
+

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- remember to remove the following line when the site is ready to go live -->
   <!-- <meta name="robots" content="noindex" /> -->
-  <title>Glossary</title>
+  <title></title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -82,13 +82,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb arr-right">
       
-      <li class="breadcrumb-item"><a href="/">Home</a></li>
       
       
-      
-      <li class="breadcrumb-item"><a href="/references/">References</a></li>
-      
-      <li class="breadcrumb-item active" aria-current="page">Glossary</li>
+      <li class="breadcrumb-item active" aria-current="page"></li>
     </ol>
   </nav>
 </header>
@@ -155,81 +151,148 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </div>
 
 <article class="bcls-article">
+  <h1></h1>
+  <summary></summary>
 
-  <h1>SSAI Glossary</h1>
-  <summary>A guide to important terminology for Brightcove Beacon and OTT.</summary>
-  <p><a href="#A"><strong>A</strong></a> | <a href="#B"><strong>B</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#E"><strong>E</strong></a> | <a href="#F"><strong>F</strong></a> | <a href="#G"><strong>G</strong></a>
-    | <a href="#H"><strong>H</strong></a> | <a href="#I"><strong>I</strong></a> | <a href="#J"><strong>J</strong></a> | <a href="#K"><strong>K</strong></a> | <a href="#L"><strong>L</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#N"><strong>N</strong></a>
-    | <a href="#O"><strong>O</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#Q"><strong>Q</strong></a> | <a href="#R"><strong>R</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#T"><strong>T</strong></a> | <a href="#U"><strong>U</strong></a>
-    | <a href="#V"><strong>V</strong></a> | <a href="#W"><strong>W</strong></a> | <a href="#X"><strong>X</strong></a> | <a href="#Y"><strong>Y</strong></a> | <a href="#Z"><strong>Z</strong></a></p>
+<section class="bcls-section">
+<h2 id="overview">Overview</h2>
 
+<p>With ad failover turned on, when Brightcove Player detects an ad blocker present in the browser the player will automatically request an SSAI stream. Otherwise, it will use IMA ads.</p>
 
-  <!-- For new entry, not the first for a specific letter -->
-  <!-- <h4><a id="" name="" href=""></a></h4>
-        <p></p> -->
+<aside class="bcls-aside bcls-aside--information">
+<p>SSAI ad failover requires the following:</p>
 
-  <!-- For new entry, FIRST for specific letter -->
-  <!-- <p><a href="#Top">[top]</a></p>
-        <h4><a id="C" name="C" href=""></a><a id="" name="" href=""></a></h4> -->
+<ul>
+	<li>IMA3 plugin v3.2.0+</li>
+	<li>SSAI plugin v1.3.1+</li>
+	<li>Brightcove Player version 6.8.0+</li>
+</ul>
+</aside>
 
+<h3>Caveats</h3>
 
+<ul>
+	<li>Ad blocker detection is very reliable, but not 100%.</li>
+	<li>Customers using this feature must be using Dynamic Delivery.</li>
+	<li>Only IMA and SSAI plugins are supported (no FreeWheel).</li>
+</ul>
+</section>
 
-  <h4><a id="A" name="A" href=""></a><a id="Advanced_Experience" name="Advanced_Experience" href=""></a>Advanced_Experience</h4>
-  <p>An Experience template that a company may configure with up to 20
-    optional pages, branding graphics and colors, and content management.</p>
+<section class="bcls-section">
+<h2 id="Player_sample">Player sample</h2>
 
-  <h4><a id="App_Generator" name="App Generator" href=""></a>App Generator</h4>
-  <p>The Brightcove software and process that create the device apps.</p>
+<p>Here is a sample player configured with IMA3 ads which will auto-failover to server-side ads when an ad blocker is detected in the browser.</p>
 
-  <h4><a id="authVOD" name="authVOD" href=""></a>authVOD</h4>
-  <p>This model often requires users to log in using credentials from another platform, service, cable (TVE), or cellular subscription in order to access content. For this reason, AuthVOD is valuable when coordinating with partnerships or managing
-    multiple properties or branded services. However, AuthVOD can also refer to a free, ad-supported service that requires a viewer to create a login to view. The benefit to the end viewer is the ability to do things like make “watchlists” of
-    content and “pause and resume” across devices. The benefit to the service provider is the ability to know more about the end viewer for marketing and advertising purposes.</p>
+<ul>
+	<li>
+	<p><strong>Without ad blocker</strong></p>
 
-  <h4><a id="AVOD" name="AVOD" href=""></a>AVOD</h4>
-  <p>Advertising-based video on demand, generally free to consumers since advertisements are shown.</p>
+	<p>If you run the Codepen sample below in a browser without an ad blocker, you should see a DFP inline skippable ad by Google. This is the IMA3, client-side pre-roll ad:</p>
 
-  <p><a href="#Top">[top]</a></p>
-  <h4><a id="B" name="B" href=""></a><a id="Beacon" name="Beacon" href=""></a>Brightcove Beacon</h4>
-  <p>Brightcove Beacon is a platform that enables you to create and configure an OTT experience, which is then used to generate multiple device apps. See the <a href="//beacon.support.brightcove.com/get-started/learning-guide-bc-beacon.html">Learning
-      Guide - Brightcove Beacon</a> document for more details.</p>
+	<p><img alt="Client-side ad" src="//learning-services-media.brightcove.com/doc-assets/player-development/plugins/ssai/dfp-ad.png" /></p>
+	</li>
+	<li>
+	<p><strong>With ad blocker</strong></p>
 
-  <h4><a id="Brightcove_Live" name="Brightcove Live" href=""></a>Brightcove Live</h4>
-  <p>Provides live event streaming, with additional features like clipping, stream to social and DVR functionality.</p>
+	<p>If you run the Codepen sample below in a browser with an ad blocker, you should see a Brightcove guide to digital marketing ad. This is the Server-side ad (SSAI) as defined in our ad configuration:</p>
 
+	<p><img alt="Server-side ad" src="//learning-services-media.brightcove.com/doc-assets/player-development/plugins/ssai/bc-ad.png" /></p>
+	</li>
+</ul>
 
-  <p><a href="#Top">[top]</a></p>
-  <h4><a id="E" name="E" href=""></a><a id="Essential_Experience" name="Essential Experience" href=""></a>Essential Experience</h4>
-  <p>A Experience template configured with one predefined set of Pages, which Company may configure with branding graphics and colors, and
-    content management.</p>
+<p>Try running the Codepen sample below with and without an ad blocker.</p>
 
-  <h4><a id="Experience" name="Experience" href=""></a>Experience</h4>
-  <p>A specific collection of pages assembled in an app designed to offer
-    navigation, search and playback to the viewer in a consistent manner across browsers and devices. </p>
+<p data-height="488" data-theme-id="34967" data-slug-hash="LMZKqB" data-default-tab="result" data-user="rcrooks1969" data-pen-title="SSAI Auto-Failover" class="codepen">See the Pen <a href="https://codepen.io/team/rcrooks1969/pen/LMZKqB/">SSAI Auto-Failover</a> by Brightcove Learning Services (<a href="https://codepen.io/rcrooks1969">@rcrooks1969</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script></section>
 
-  <p><a href="#Top">[top]</a></p>
-  <h4><a id="O" name="O" href=""></a><a id="OTT" name="OTT" href=""></a>OTT</h4>
-  <p>Over-the-top media services are streaming media services offered directly to viewers over the Internet. OTT bypasses traditional cable, broadcast and satellite television platforms that traditionally act as a controller or distributor of
-    such content.</p>
+<section class="bcls-section">
+<h2 id="Getting_started">Getting started</h2>
 
-  <p><a href="#Top">[top]</a></p>
-  <h4><a id="S" name="S" href=""></a><a id="SVOD" name="SVOD" href=""></a>SVOD</h4>
-  <p>Subscription video on demand, similar to traditional TV packages, allowing users to consume as much content as they desire at a flat rate per month.</p>
+<p>To play server-side ads from Video Cloud, you must follow these steps:</p>
 
-  <h4><a id="SmartTV" name="SmartTV" href=""></a>Smart TV</h4>
-  <p>An internet-ready TV, able to download OTT video apps and stream without a set-top box.</p>
+<ol class="bcls-tasklist-restart">
+	<li><a href="#Create_an_ad_configuration">Create an ad configuration</a></li>
+	<li><a href="#Create_a_Brightcove_player">Create a Brightcove player</a></li>
+	<li><a href="#Implementing_autofailover_using_Studio">Implement auto-failover using Studio </a></li>
+</ol>
 
-  <h4><a id="SSAI" name="SSAI" href="">SSAI</a></h4>
-  <p>Video Cloud Server-Side Ad Insertion (SSAI) stitches ads into the video content stream. This means the ads will play on any device that can play streaming video and video ad blockers will not be an issue. See the <a href="//support.brightcove.com/video-cloud-ssai-overview">Video Cloud SSAI Overview</a> document for a complete discussion of SSAI in the Video Cloud environment.</p>
+<h3 id="Create_an_ad_configuration">Create an ad configuration</h3>
 
-  <p><a href="#Top">[top]</a></p>
-  <h4><a id="T" name="T" href=""></a><a id="TVOD" name="TVOD" href=""></a>TVOD</h4>
-  <p>Transactional video on demand, is the opposite of subscription video, where consumers purchase content on a pay-per-view basis.</p>
+<p>The ad configuration defines various aspects of SSAI playback, including ad calls, beacons, and other configuration options. Your ad response can be VAST, VMAP or DFP Ad Rules. To create an ad configuration, follow these steps:</p>
 
-  <p><a href="#Top">[top]</a></p>
-  <h4><a id="V" name="V" href=""></a><a id="VOD" name="VOD" href=""></a>VOD&nbsp;</h4>
-  <p>Video on demand generally refers to video on demand services through cable networks.</p>
+<ol class="bcls-tasklist-restart">
+	<li>
+	<p>In Video Cloud Studio, expand the <strong>ADMIN</strong> menu and select <strong>Server-Side Ad Settings</strong>.</p>
 
+	<figure class="bcls-figure"><img class="bcls-image--no-border" alt="Ad configuration admin" src="//learning-services-media.brightcove.com/doc-assets/player-development/plugins/ssai/ad-config-admin.png" />
+	<figcaption class="bcls-caption--image">Ad configuration admin</figcaption>
+	</figure>
+	</li>
+	<li>
+	<p>Add information for your ad configuration and select <strong>Save</strong>.</p>
+
+	<figure class="bcls-figure"><img class="bcls-image--no-border" alt="Ad settings" src="//learning-services-media.brightcove.com/doc-assets/player-development/plugins/ssai/ad-settings.png" />
+	<figcaption class="bcls-caption--image">Ad settings</figcaption>
+	</figure>
+	</li>
+</ol>
+
+<p>For details, see the <a href="/node/18748">Configuring Server-Side Ad Settings</a> document.</p>
+
+<p>To create an ad configuration using the SSAI API, see the <a href="/node/17942">Video Cloud SSAI Ad Config API</a> document.</p>
+
+<h3 id="Create_a_Brightcove_player">Create a Brightcove player</h3>
+
+<p>Create a new Brightcove player using Video Cloud Studio. For details, see the <a href="/quick-start-creating-and-styling-player">Quick Start: Creating and Styling a Player</a> document.</p>
+
+<aside class="bcls-aside bcls-aside--information">You must use a Brightcove Player version 6.8.0+.</aside>
+</section>
+
+<section class="bcls-section">
+<h2 id="Implementing_autofailover_using_Studio">Implementing auto-failover using Studio</h2>
+
+<p>The easiest way to configure your player for auto-failover ads is with Video Cloud Studio. Once you have created an ad configuration and player, then you are ready to configure the player for auto-failover as follows:</p>
+
+<ol class="bcls-tasklist-restart">
+	<li>Open the <strong>PLAYERS</strong> module and locate the player to which you want to add advertising functionality.</li>
+	<li>Select the link for the player to open the player's properties.</li>
+	<li>Select <strong>Advertising</strong> in the left navigation menu.</li>
+	<li>Check the <strong>Enable Client-Side (IMA)</strong> checkbox.</li>
+	<li>
+	<p>Include the URL for your IMA Ad Tag. For this example, we will use the sample Ad Tag URL.</p>
+
+	<figure class="bcls-figure"><img class="bcls-image--no-border" alt="Enable client-side ads" src="//learning-services-media.brightcove.com/doc-assets/player-development/plugins/ssai/enable-client-side.png" />
+	<figcaption class="bcls-caption--image">Enable client-side ads</figcaption>
+	</figure>
+
+	<p>For details about the player advertising properties, see the <a href="/node/15897">Configuring Player Advertising using the Players Module</a> document.</p>
+	</li>
+	<li>
+	<p>Check the <strong>Enable Server-Side (SSAI)</strong> checkbox.</p>
+
+	<aside class="bcls-aside bcls-aside--information">The server-side option will not appear unless your account has been enabled for SSAI.</aside>
+	</li>
+	<li>From the <strong>Select Configuration</strong> dropdown menu, select the ad configuration that you would like to associate with this player.</li>
+	<li>If you want overlays to display over your ads, check the <strong>Enable ad information overlays</strong> checkbox. This includes "Learn More" and ad count down overlays.</li>
+	<li>
+	<p>Ad block detection with server-side ad failover is enabled automatically when you enable both client-side and server-side ads.</p>
+
+	<figure class="bcls-figure"><img class="bcls-image--no-border" alt="SSAI advertising in Players module" src="//learning-services-media.brightcove.com/doc-assets/player-development/plugins/ssai/enable-ssai.png" />
+	<figcaption class="bcls-caption--image">SSAI advertising in Players module</figcaption>
+	</figure>
+	</li>
+	<li>Select <strong>Save</strong>.</li>
+	<li>
+	<p>To publish the player, select <strong>Publish &amp; Embed &gt; Publish Changes</strong>.</p>
+
+	<p>That's all you need to do to enable auto-failover for your player.</p>
+	</li>
+</ol>
+
+<h3 id="Play_a_video_with_ads">Play a video with ads</h3>
+
+<p>Any video that you retrieve from Video Cloud that has been ingested with Dynamic Delivery, will include the client-side IMA ads when no ad blocker is detected. When an ad blocker is detected, your video will include server-side ads specified in the VMAP file in your ad configuration. Note that the video needs to have an audio track associated with it for SSAI to work.</p>
+</section>
 </article>
 
 <!-- complete bootstrap layout -->
@@ -247,7 +310,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 03 Feb 2020
+  Page last updated on 25 Feb 2020
 </div>
 
 <footer class="bcls-footer" role="contentinfo">
