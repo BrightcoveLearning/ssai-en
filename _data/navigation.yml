@@ -6,7 +6,7 @@
   url: '/getting-started/'
   icon: '<i class="far fa-location-arrow"></i>'
   docs:
-    - name: 'Overview'
+    - name: 'SSAI Overview'
       url: '/getting-started/video-cloud-ssai-overview.html'
 - section: 
   name: 'Video-On-Demand'
