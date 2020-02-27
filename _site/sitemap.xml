@@ -125,7 +125,7 @@
     </url>
     
     <url>
-        <loc>https://ssai.support.brightcove.com/references/known-issues.html</loc>
+        <loc>https://ssai.support.brightcove.com/support/known-issues.html</loc>
         <lastmod>2020-02-27</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
@@ -133,6 +133,13 @@
     
     <url>
         <loc>https://ssai.support.brightcove.com/live/guides/live-api-cue-points-and-ad-beacons-ssai.html</loc>
+        <lastmod>2020-02-27</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://ssai.support.brightcove.com/live/references/live-api-error-messages.html</loc>
         <lastmod>2020-02-27</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
@@ -196,13 +203,6 @@
     
     <url>
         <loc>https://ssai.support.brightcove.com/vod/references/ssai-api-error-reference.html</loc>
-        <lastmod>2020-02-27</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    <url>
-        <loc>https://ssai.support.brightcove.com/live/references/ssai-api-error-reference.html</loc>
         <lastmod>2020-02-27</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>

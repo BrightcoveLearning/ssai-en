@@ -46,20 +46,15 @@
     - name: 'References'
       url: '/live/references/'
       docs:
-       - name: 'SSAI API Error Reference'
-         url: '/live/references/ssai-api-error-reference.html'
+       - name: 'Live API: Error Messages'
+         url: '/live/references/live-api-error-messages.html'
 - section: 
-  name: 'References'
-  url: '/references/'
-  icon: '<i class="fal fa-books"></i>'
-  docs:
-    - name: 'Known Issues'
-      url: '/references/known-issues.html'
-- section: 
-  name: 'Support'
+  name: 'Developer Support'
   url: '/support/'
   icon: '<i class="far fa-question-circle"></i>'
   docs:
+    - name: 'Known Issues'
+      url: '/support/known-issues.html'
     - name: 'Opening a Support Case'
       url: '/support/opening-case-with-brightcove-support.html'
     - name: 'Viewing the Brightcove System Status Page'

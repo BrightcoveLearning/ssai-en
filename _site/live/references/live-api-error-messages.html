@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- remember to remove the following line when the site is ready to go live -->
   <!-- <meta name="robots" content="noindex" /> -->
-  <title>SSAI API Error Reference</title>
+  <title>Live API: Error Messages</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -87,7 +87,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       <li class="breadcrumb-item"><a href="/live/references/">References</a></li>
       
-      <li class="breadcrumb-item active" aria-current="page">SSAI API Error Reference</li>
+      <li class="breadcrumb-item active" aria-current="page">Live API: Error Messages</li>
     </ol>
   </nav>
 </header>
@@ -170,7 +170,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                       <a href="/live/references/">References <strong>+</strong></a>
                       <ul class="sidenav-subsubmenu" style="display:none;">
                         
-                        <li><a href="/live/references/ssai-api-error-reference.html">SSAI API Error Reference</a></li>
+                        <li><a href="/live/references/live-api-error-messages.html">Live API: Error Messages</a></li>
                         
                       </ul>
                     </li>
@@ -180,19 +180,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             
           
             
-              <h5 class="submenu-header"><a href="/references/">References <strong>+</strong></a></h5>            
+              <h5 class="submenu-header"><a href="/support/">Developer Support <strong>+</strong></a></h5>            
               <ul class="sidenav-submenu" style="display:none;">
                 
                   
-                    <li><a href="/references/known-issues.html">Known Issues</a></li>
+                    <li><a href="/support/known-issues.html">Known Issues</a></li>
                   
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/support/">Support <strong>+</strong></a></h5>            
-              <ul class="sidenav-submenu" style="display:none;">
                 
                   
                     <li><a href="/support/opening-case-with-brightcove-support.html">Opening a Support Case</a></li>
@@ -218,81 +211,165 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </div>
 
 <article class="bcls-article">
-  <h1>SSAI API Error Reference</h1>
-  <summary>This topic provides an error reference for the SSAI API.</summary>
+  <h1>Live API: Error Messages</h1>
+  <summary>This topic lists error messages returned by the Live API. This is work in progress. If you see an error that is not listed here, let the Learning Services team know, and we will add it.</summary>
 
 <section class="bcls-section">
-<h2 id="errorMessages">General error messages</h2>
+<h2 id="error_message_reference">Error message reference</h2>
 
 <table class="bcls-table">
+	<caption class="bcls-caption--table">Live API Error Messages</caption>
 	<thead class="bcls-table__head">
 		<tr>
-			<th>Status</th>
-			<th style="width: 20%;">Name</th>
-			<th>Message</th>
-			<th>Cause</th>
+			<th>Error</th>
+			<th>Description</th>
+			<th>Applies to</th>
+			<th>Response Body</th>
 		</tr>
 	</thead>
 	<tbody class="bcls-table__body">
 		<tr>
-			<td>400</td>
-			<td><code>BAD_REQUEST</code></td>
-			<td><code>Invalid JSON body on request</code></td>
-			<td>There's an error in JSON for the request body; could be a basic JSON issue, or an incorrect type for a field value</td>
+			<td><code>400 BAD_REQUEST</code></td>
+			<td>The <code>region </code> specified in the request does not exist or is not supported</td>
+			<td>Create live job</td>
+			<td>
+			<pre class="line-numbers">
+<code class="language-json notranslate">{
+"error": "Invalid region"
+}
+</code>
+</pre>
+			</td>
 		</tr>
 		<tr>
-			<td>400</td>
-			<td><code>BAD_REQUEST</code></td>
-			<td><code>"error": "{<span class="bcls-highlight">fieldname</span>} field is required</code></td>
-			<td>Request body is missing the indicated required field</td>
+			<td><code>400 BAD_REQUEST</code></td>
+			<td>The duration of the cue point being inserted needs to be, at least, twice the length of the segments in the job</td>
+			<td>Insert cuepoint</td>
+			<td>
+			<pre class="line-numbers">
+<code class="language-json notranslate">{
+  "error": "The parameter duration should be greater than or equal to (2 * target duration) of the job"
+}
+</code>
+    </pre>
+			</td>
 		</tr>
 		<tr>
-			<td>400</td>
-			<td><code>AD_CONFIG_NOT_FOUND</code></td>
-			<td><code>Ad config not found</code></td>
-			<td>Ad configuration specified in an SSAI request was not found</td>
+			<td><code>400 BAD_REQUEST</code></td>
+			<td>The JSON included an invalid value for some field</td>
+			<td>Create live job, create VOD clip, create/update ad configuration, create/update beacon set, ingest slate, create beacon set</td>
+			<td>
+			<pre class="line-numbers">
+<code class="language-json notranslate">{
+"error": "Invalid input value"
+}
+</code>
+</pre>
+			</td>
 		</tr>
 		<tr>
-			<td>400</td>
-			<td><code>AD_CONFIG_INACTIVE</code></td>
-			<td><code>Ad config is inactive</code></td>
-			<td>Ad configuration specified in an SSAI request is inactive</td>
+			<td><code>400 BAD_REQUEST</code></td>
+			<td>The notification url was missing the protocol or the protocol is not a supported type</td>
+			<td>Create live job, create VOD clip, create/update ad configuration, create/update beacon set, ingest slate, create beacon set</td>
+			<td>
+			<pre class="line-numbers">
+<code class="language-json notranslate">{
+"error": "The notification target type is not supported currently"
+}
+</code>
+</pre>
+			</td>
 		</tr>
 		<tr>
-			<td>401</td>
-			<td><code>UNAUTHORIZED</code></td>
-			<td><code>Permission denied.</code></td>
-			<td>Missing or invalid OAuth access token. If you did supply an access token, it may not have for the appropriate scope for this request</td>
+			<td><code>400 BAD_REQUEST</code></td>
+			<td>The number of SEP jobs allowed is limited. You will also receive this error if you include <code>"channel_type": "24x7"</code> in the create job request, and have purchased only SEPs, not events.</td>
+			<td>Create live job</td>
+			<td>
+			<pre class="line-numbers">
+<code class="language-json notranslate">{
+    "error": "You've reached the number of static entry points jobs you can create in this region for your account"
+}
+</code>
+</pre>
+			</td>
 		</tr>
 		<tr>
-			<td>403</td>
-			<td><code>NOT_AVAILABLE</code></td>
-			<td><code>Resource is not available.</code></td>
-			<td>The resource you are requesting is temporarily unavailable - this may be a temporary condition while some kind of processing of the video is in progress, but if the message persists, contact Support.</td>
+			<td><code>400 BAD_REQUEST</code></td>
+			<td>Only 5 jobs in a waiting state (waiting for an encoder to be connected) are allowed. To create additional jobs, you will need to connect an encoder to one of the waiting jobs or cancel it</td>
+			<td>Create live job</td>
+			<td>
+			<pre class="line-numbers">
+<code class="language-json notranslate">{
+"error" : "You've reached the number of waiting jobs you can create for your account"
+}
+</code>
+</pre>
+			</td>
 		</tr>
 		<tr>
-			<td>404</td>
-			<td><code>NOT_FOUND</code></td>
-			<td><code>Resource does not exist.</code></td>
-			<td>You requested a resource that does not exist - you might be trying to update an ad configuration or get an ad trace on a session that no longer exists. This error will also be returned if you use and HTTP method not allowed on the endpoint.</td>
+			<td><code>400 BAD_REQUEST</code></td>
+			<td>To create VOD assets you need to use our own delivery</td>
+			<td>The most likely cause is that you are requesting a full VOD asset or a clip on an encrypted stream. VOD assets for encrypted streams are not supported</td>
+			<td>
+			<pre class="line-numbers">
+<code class="language-json notranslate">{
+"error": "The notification target type is not supported currently"
+}
+</code>
+</pre>
+			</td>
 		</tr>
 		<tr>
-			<td>500</td>
-			<td><code>UNKNOWN</code></td>
-			<td><code>an unknown internal error occurred</code></td>
-			<td>Issue in Brightcove system - try again later.</td>
+			<td><code>401 UNAUTHORIZED</code></td>
+			<td>The <code>X-API-KEY </code> header was not sent with the request, or the key value was not valid</td>
+			<td>All requests</td>
+			<td>
+			<pre class="line-numbers">
+<code class="language-json notranslate">{
+"message": "Unauthorized"
+}
+</code>
+</pre>
+			</td>
 		</tr>
 		<tr>
-			<td>503</td>
-			<td><code>SERVICE_UNAVAILABLE</code></td>
-			<td><code>The API is temporarily unavailable</code></td>
-			<td>Backend issue - try again later.</td>
+			<td><code>404 RESOURCE_NOT_FOUND</code></td>
+			<td>The request URL was faulty</td>
+			<td>All requests</td>
+			<td>
+			<pre class="line-numbers">
+<code class="language-json notranslate">{
+"message": "Unauthorized"
+}
+</code>
+</pre>
+			</td>
 		</tr>
 		<tr>
-			<td>504</td>
-			<td><code>TIMEOUT</code></td>
-			<td><code>something took too long</code></td>
-			<td>Server likely too busy - try again later.</td>
+			<td><code>500 INTERNAL_SERVER_ERROR</code></td>
+			<td>You attempted to stop a live job that has already been stopped</td>
+			<td>Cancel live job</td>
+			<td>
+			<pre class="line-numbers">
+<code class="language-json notranslate">{
+"error": "After filtering, there is no job to process"
+}
+</code>
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<td><code>500 INTERNAL_SERVER_ERROR</code></td>
+			<td>You specified a job or asset id that does not exist</td>
+			<td>Get job details, cancel live job, activate SEP job, insert cuepoint, insert ID3 timed metadata, create VOD clip</td>
+			<td>
+			<pre class="line-numbers">
+<code class="language-json notranslate">{
+"error": "DB getItem, no results found"
+}
+</code>
+</pre>
+			</td>
 		</tr>
 	</tbody>
 </table>
@@ -314,7 +391,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 26 Feb 2020
+  Page last updated on 27 Feb 2020
 </div>
 
 <footer class="bcls-footer" role="contentinfo">
