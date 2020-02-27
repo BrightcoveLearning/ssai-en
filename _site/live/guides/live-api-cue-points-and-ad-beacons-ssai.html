@@ -423,7 +423,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <h3>Beacon/Ad variables</h3>
 
-<p>The table below shows the variables you can use to provide data for the beacon URLs. To include a variable, surround with double curly braces, like this: <code><span class="bcls-highlight">{{</span>job.job_id<span class="bcls-highlight"></span>}} </code>. See the next section on managing beacon sets for full examples.</p>
+<p>The table below shows the variables you can use to provide data for the beacon URLs. To include a variable, surround with double curly braces, like this: <code>{{job.job_id}} </code>. See the next section on managing beacon sets for full examples.</p>
 
 <table class="bcls-table">
 	<caption class="bcls-caption--table">Ad Configuration Variables</caption>
@@ -661,11 +661,11 @@ These ad parameters are not available with input streams using the Real-Time Mes
   "account_id": "<span class="bcls-input">User's Account ID [Optional]</span>",
   "beacon_urls": [
     {
-      "beacon_url": "https://myserver.com/beaconRX//load?position=load&amp;sid=&amp;jid=&amp;app=&amp;rnd32=&amp;rnd64=&amp;bid=&amp;t=&amp;ua=&amp;ip=&amp;ref=&amp;ref=&amp;ab=&amp;abd=&amp;abdi=",
+      "beacon_url": "https://myserver.com/beaconRX/{{job.job_id}}/load?position=load&amp;sid={{session.session_id}}&amp;jid={{job.job_id}}&amp;app={{application_ad_configuration.description}}&amp;rnd32={{random.int32}}&amp;rnd64={{random.int64}}&amp;bid={{random.uuid}}&amp;t={{server.timestamputc}}&amp;ua={{client.useragent}}&amp;ip={{client.ipaddress}}&amp;ref={{client.referrer}}&amp;ref={{client.referer}}&amp;ab={{live.adbreak}}&amp;abd={{live.adbreakduration}}&amp;abdi={{live.adbreakdurationint}}",
       "beacon_type": "Load"
     },
     {
-      "beacon_url": "https://myserver.com/beaconRX//play?position=play&amp;sid=&amp;jid=&amp;app=&amp;rnd32=&amp;rnd64=&amp;bid=&amp;t=&amp;ua=&amp;ip=&amp;ref=&amp;ref=&amp;ab=&amp;abd=&amp;abdi=",
+      "beacon_url": "https://myserver.com/beaconRX/{{job.job_id}}/play?position=play&amp;sid={{session.session_id}}&amp;jid={{job.job_id}}&amp;app={{application_ad_configuration.description}}&amp;rnd32={{random.int32}}&amp;rnd64={{random.int64}}&amp;bid={{random.uuid}}&amp;t={{server.timestamputc}}&amp;ua={{client.useragent}}&amp;ip={{client.ipaddress}}&amp;ref={{client.referrer}}&amp;ref={{client.referer}}&amp;ab={{live.adbreak}}&amp;abd={{live.adbreakduration}}&amp;abdi={{live.adbreakdurationint}}",
       "beacon_type": "Play"
     }
   ]
@@ -679,11 +679,11 @@ These ad parameters are not available with input streams using the Real-Time Mes
 <code class="language-json notranslate">{
   "beacon_set": {
     "beacon_urls": [{
-    "beacon_url": "https://myserver.com/beaconRX//load?position=load&amp;sid=&amp;jid=&amp;app=&amp;rnd32=&amp;rnd64=&amp;bid=&amp;t=&amp;ua=&amp;ip=&amp;ref=&amp;ref=&amp;ab=&amp;abd=&amp;abdi=",
+    "beacon_url": "https://myserver.com/beaconRX/{{job.job_id}}/load?position=load&amp;sid={{session.session_id}}&amp;jid={{job.job_id}}&amp;app={{application_ad_configuration.description}}&amp;rnd32={{random.int32}}&amp;rnd64={{random.int64}}&amp;bid={{random.uuid}}&amp;t={{server.timestamputc}}&amp;ua={{client.useragent}}&amp;ip={{client.ipaddress}}&amp;ref={{client.referrer}}&amp;ref={{client.referer}}&amp;ab={{live.adbreak}}&amp;abd={{live.adbreakduration}}&amp;abdi={{live.adbreakdurationint}}",
     "beacon_type": "Load"
   },
   {
-    "beacon_url": "https://myserver.com/beaconRX//play?position=play&amp;sid=&amp;jid=&amp;app=&amp;rnd32=&amp;rnd64=&amp;bid=&amp;t=&amp;ua=&amp;ip=&amp;ref=&amp;ref=&amp;ab=&amp;abd=&amp;abdi=",
+    "beacon_url": "https://myserver.com/beaconRX/{{job.job_id}}/play?position=play&amp;sid={{session.session_id}}&amp;jid={{job.job_id}}&amp;app={{application_ad_configuration.description}}&amp;rnd32={{random.int32}}&amp;rnd64={{random.int64}}&amp;bid={{random.uuid}}&amp;t={{server.timestamputc}}&amp;ua={{client.useragent}}&amp;ip={{client.ipaddress}}&amp;ref={{client.referrer}}&amp;ref={{client.referer}}&amp;ab={{live.adbreak}}&amp;abd={{live.adbreakduration}}&amp;abdi={{live.adbreakdurationint}}",
     "beacon_type": "Play"
   }],
   "beacon_set_id": "Inserted Beacon Set ID",

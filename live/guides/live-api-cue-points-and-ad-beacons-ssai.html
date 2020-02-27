@@ -218,7 +218,7 @@ grandparent: Live
 
 <h3>Beacon/Ad variables</h3>
 
-<p>The table below shows the variables you can use to provide data for the beacon URLs. To include a variable, surround with double curly braces, like this: <code>{% raw %}<span class="bcls-highlight">{{</span>job.job_id<span class="bcls-highlight"></span>}} {% endraw %}</code>. See the next section on managing beacon sets for full examples.</p>
+<p>The table below shows the variables you can use to provide data for the beacon URLs. To include a variable, surround with double curly braces, like this: <code>{% raw %}{{job.job_id}} {% endraw %}</code>. See the next section on managing beacon sets for full examples.</p>
 
 <table class="bcls-table">
 	<caption class="bcls-caption--table">Ad Configuration Variables</caption>
@@ -452,7 +452,7 @@ These ad parameters are not available with input streams using the Real-Time Mes
 <h4>Sample request body</h4>
 
 <pre class="line-numbers">
-<code class="language-json notranslate">{
+<code class="language-json notranslate">{% raw %}{
   "account_id": "<span class="bcls-input">User's Account ID [Optional]</span>",
   "beacon_urls": [
     {
@@ -464,14 +464,14 @@ These ad parameters are not available with input streams using the Real-Time Mes
       "beacon_type": "Play"
     }
   ]
-}</code></pre>
+}{% endraw %}</code></pre>
 
 <aside class="bcls-aside bcls-aside--information">The <code>account_id </code> field is the Live Account ID. When omitted, the Account ID of the requesting user is used.</aside>
 
 <h4>Sample response</h4>
 
 <pre class="line-numbers">
-<code class="language-json notranslate">{
+<code class="language-json notranslate">{% raw %}{
   "beacon_set": {
     "beacon_urls": [{
     "beacon_url": "https://myserver.com/beaconRX/{{job.job_id}}/load?position=load&amp;sid={{session.session_id}}&amp;jid={{job.job_id}}&amp;app={{application_ad_configuration.description}}&amp;rnd32={{random.int32}}&amp;rnd64={{random.int64}}&amp;bid={{random.uuid}}&amp;t={{server.timestamputc}}&amp;ua={{client.useragent}}&amp;ip={{client.ipaddress}}&amp;ref={{client.referrer}}&amp;ref={{client.referer}}&amp;ab={{live.adbreak}}&amp;abd={{live.adbreakduration}}&amp;abdi={{live.adbreakdurationint}}",
@@ -485,7 +485,7 @@ These ad parameters are not available with input streams using the Real-Time Mes
   "account_id": "USER's ACCOUNT ID"
   }
   "inserted": true
-}</code></pre>
+}{% endraw %}</code></pre>
 
 <h3>Update a beacon set</h3>
 
