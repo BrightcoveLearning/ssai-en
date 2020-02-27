@@ -35,8 +35,14 @@
     - name: 'Guides'
       url: '/live/guides/'
       docs:
-        - name: 'SSAI: Ad Block Detection and Auto-Failover'
-          url: '/live/guides/ssai-ad-block-detection-and-auto-failover.html'
+        - name: 'Brightcoe Live API: Server-Side Ad Insertion (SSAI)'
+          url: '/live/guides/live-api-server-side-ad-insertion-ssai.html'
+        - name: 'Live API: Cue Points and Ad Beacons with SSAI'
+          url: '/live/guides/live-api-cue-points-and-ad-beacons-ssai.html'
+        - name: 'Overview: Player Enhancements for Live SSAI'
+          url: '/live/guides/overview-player-enhancements-live-ssai.html'
+        - name: 'Implementing Player Enhancements for Live SSAI'
+          url: '/live/guides/implementing-player-enhancements-live-ssai.html'
     - name: 'References'
       url: '/live/references/'
       docs:
