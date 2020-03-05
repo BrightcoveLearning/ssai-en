@@ -8,6 +8,7 @@ parent: Getting Started
   <h1>{{ page.title }}</h1>
   <summary>{{ page.description }}</summary>
 
+<article class="bcls-article">
 <section class="bcls-section">
 <h2 id="Overview">Overview</h2>
 
@@ -145,7 +146,6 @@ API interactions or web player functionality questions will be addressed if issu
 		</tr>
 	</tbody>
 </table>
-<br/>
 
 <aside class="bcls-aside bcls-aside--tip">
 <p>See the following documents for details on how to implement SSAI with each platform.</p>
@@ -170,7 +170,35 @@ API interactions or web player functionality questions will be addressed if issu
 
 <section class="bcls-section">
 <h2 id="Viewability">Viewability</h2>
+<h3>Transcoding</h3>
+<p>
+Before an ad becomes viewable, it first needs to be transcoded. Then, it can be stitched into the stream. This applies to session-based targeting as well.
+</p>
+<p>
+	For example, If you have two ads, A & B, for one ad config:
+</p>
+<ul>
+	<li>
+    User 1 gets Ad A: Transcoding starts; ad is not available for User 1
+	</li>
+	<li>
+    User 2 gets Ad A (a few minutes later): Since transcoding is finished for Ad A, they see the Ad
+	</li>
+	<li>
+    User 1 gets Ad B: Transcoding starts; ad is not available for User 1
+	</li>
+	<li>
+    User 3 gets Ad A: Since transcoding is finished for Ad A, they see the Ad
+	</li>
+	<li>
+    User 4 gets Ad B: Since transcoding is finished for Ad B, they see the Ad
+	</li>
+</ul>
+<p>
+	Ads are not content dependent. They are rendition dependent. So, in the above example, if User 2 is watching content that has the same rendition set as what User 1 watched, they will get Ad A. This means as new content is uploaded, there typically is not a need to retranscode any ads.
+</p>
 
+<h3>3rd-party metrics</h3>
 <p>3rd-party metrics and viewability systems work with Brightcove SSAI using either client-side or server-side beacons. The Brightcove Player for web and the SDK players emit client-side events that can be used by client-side plugins to report directly. Several vendors have updated viewability and metrics plugins to receive this data - contact your account manager for more information.</p>
 
 <p><a href="/node/18072">Read more about common client-side ad events.</a></p>
