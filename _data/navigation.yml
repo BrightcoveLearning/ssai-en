@@ -25,6 +25,8 @@
     - name: 'References'
       url: '/vod/references/'
       docs:
+       - name: 'SSAI API Reference for VOD'
+         url: '/vod/references/reference.html'
        - name: 'SSAI API Error Reference'
          url: '/vod/references/ssai-api-error-reference.html'
 - section: 
@@ -46,6 +48,8 @@
     - name: 'References'
       url: '/live/references/'
       docs:
+       - name: 'Live API Reference'
+         url: '/live/references/reference.html'
        - name: 'Live API: Error Messages'
          url: '/live/references/live-api-error-messages.html'
 - section: 
