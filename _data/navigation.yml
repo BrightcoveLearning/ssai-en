@@ -11,7 +11,7 @@
     - name: 'Configuring Server-Side Ad Settings'
       url: 'https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html'
 - section: 
-  name: 'Video-On-Demand'
+  name: 'Video-On-Demand Guides'
   url: '/vod/'
   icon: '<i class="fas fa-play"></i>'
   docs:
@@ -25,6 +25,11 @@
       url: '/vod/video-cloud-ssai-ad-config-api.html'
     - name: 'Ad Error Beacons with SSAI'
       url: '/vod/ad-error-beacons-ssai.html'
+- section: 
+  name: 'Video-On-Demand References'
+  url: '/vod/'
+  icon: '<i class="fas fa-play"></i>'
+  docs:
     - name: 'SSAI API Reference'
       url: '/vod/references/reference.html'
     - name: 'SSAI API Error Reference'
@@ -32,7 +37,7 @@
     - name: 'Server-Side Ads Plugin Changelog'
       url: 'https://player.support.brightcove.com/plugins/changelog/server-side-ads-plugin-changelog.html'
 - section: 
-  name: 'Live'
+  name: 'Live Guides'
   url: '/live/'
   icon: '<i class="fas fa-satellite-dish"></i>'
   docs:
@@ -46,6 +51,11 @@
       url: '/live/overview-player-enhancements-live-ssai.html'
     - name: 'Implementing Player Enhancements for Live SSAI'
       url: '/live/implementing-player-enhancements-live-ssai.html'
+- section: 
+  name: 'Live References'
+  url: '/live/'
+  icon: '<i class="fas fa-satellite-dish"></i>'
+  docs:
     - name: 'Live API Reference'
       url: '/live/references/reference.html'
     - name: 'Live API: Error Messages'
