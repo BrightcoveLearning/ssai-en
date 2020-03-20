@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- remember to remove the following line when the site is ready to go live -->
   <!-- <meta name="robots" content="noindex" /> -->
-  <title>Product Updates</title>
+  <title>Overview: Player Enhancements for Live SSAI</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -85,7 +85,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item active" aria-current="page">Product Updates</li>
+      <li class="breadcrumb-item"><a href="/live/guides/">Live</a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">Overview: Player Enhancements for Live SSAI</li>
     </ol>
   </nav>
 </header>
@@ -238,16 +240,74 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </div>
 
 <article class="bcls-article">
+  <h1>Overview: Player Enhancements for Live SSAI</h1>
+  <summary>In this topic, you will learn how to play live streams with server-side ads that utilizes Player Enhancements for Live SSAI for an improved user experience.</summary>
 
-  <h1>SSAI Product Updates</h1>
-  <summary>This topic outlines the updates that have been made to the Corp Comm application.</summary>
-  <section class="bcls-section">
-    <h2>Initial Release</h2>
-    <h4>31 Oct 2019</h4>
-    <p>The initial release of the Brightcove Beacon.</p>
-    <p><a href="/">Learn more</a></p>
-    <hr />
-  </section>
+<section class="bcls-section">
+<h2 id="Introduction">Introduction</h2>
+
+<p>Server-side ads let you maximize ad revenue by delivering high-quality ads stitched into your content as a seamless live stream. Because ads are stitched in on the server side, users cannot take advantage of ad blockers, and one implementation works across multiple platforms and devices. No need to create custom clients for each device.</p>
+
+<p>Brightcove's Player Enhancements for Live SSAI builds upon server-side ads by expanding the user's experience and capturing click-through revenue. This toolkit allows you to add client-side components to live streams, including ad counts, ad countdown timers, click through ads and companion ads.</p>
+
+<figure class="bcls-figure"><img class="bcls-image--no-border" alt="Client-side ad components" src="//learning-services-media.brightcove.com/doc-assets/node/18946-sls-overview/client-components-sls.png" />
+<figcaption class="bcls-caption--image">Client-side ad components</figcaption>
+</figure>
+
+<p>The toolkit also provides another way to fire tracking events. Tracking data is surfaced to the client, giving you the flexibility to fire tracking events from either the client or server. Be aware that ad blockers may prevent client-side tracking.</p>
+
+<aside class="bcls-aside bcls-aside--information">Currently, this feature does not support skippable ads.</aside>
+</section>
+
+<section class="bcls-section">
+<h2 id="Account_setup">Account setup</h2>
+
+<p>Contact your account manager to have your account enabled for Live streams, Server-Side Ad Insertion (SSAI) and Player Enhancements for Live SSAI.</p>
+</section>
+
+<section class="bcls-section">
+<h2 id="Specifications">Specifications</h2>
+
+<p>Brightcove's Player Enhancements for Live SSAI improves the end-user experience by providing the following functionality:</p>
+
+<h3>Surfaces tracking events to the client</h3>
+
+<p>Tracking data, including impressions, quartiles, CreativeView, pause, mute, is surfaced to the client. This gives you the flexibility to fire tracking events from either the client or server. Client-specific events like click, pause and mute should always be fired from the client.</p>
+
+<p>The <code>ExtendedMetadata</code> from your VAST responses is customizable and included for the client.</p>
+
+<p>Ad breaks delivered in a stream's DVR window will follow the same actions.</p>
+
+<h3>Provides ad break information</h3>
+
+<p>Ad break duration helps to keep viewers engaged with the stream.</p>
+
+<p>Ad break information is passed to the client. Each ad duration within a break is surfaced to the client. The client provides a configurable countdown of the break or number of ads in the break, and a countdown timer for each.</p>
+
+<h3>Enables click-through ads</h3>
+
+<p>Click-through ads let you maximize revenue and align ad sales.</p>
+
+<p>Click-through URLs from the ad server will be passed to the playback client. The video will be clickable, and will send tracking events on user click. When clicked, the client will pause the stream and open the destination in a new browser tab or a separate webview.</p>
+
+<aside class="bcls-aside bcls-aside--information">Since TVs do not support a web browser, click-through ads are not available on connected TVs.</aside>
+
+<h3>Enables companion ads</h3>
+
+<p>Companion ads provide another format for displaying ad content. They are usually text, display ads or rich media that appear outside of the player. The benefit of these ads is that they can remain visible throughout video playback.</p>
+
+<aside class="bcls-aside bcls-aside--information">Companion ads do not appear on connected TVs.</aside>
+</section>
+
+<section class="bcls-section">
+<h2 id="Limitations">Limitations</h2>
+
+<p>The following limitations apply to Player Enhancements for Live SSAI.</p>
+
+<ul>
+	<li>Currently, this feature is is only available for the ap-southeast-2 (Sydney) and us-west-2 (Oregon) regions.</li>
+</ul>
+</section>
 </article>
 
 <!-- complete bootstrap layout -->
@@ -265,7 +325,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 03 Feb 2020
+  Page last updated on 19 Mar 2020
 </div>
 
 <footer class="bcls-footer" role="contentinfo">
