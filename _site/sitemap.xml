@@ -48,7 +48,7 @@
     </url>
     
     <url>
-        <loc>https://ssai.support.brightcove.com/live/references/</loc>
+        <loc>https://ssai.support.brightcove.com/references/</loc>
         <lastmod>2020-03-20</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
@@ -90,7 +90,7 @@
     </url>
     
     <url>
-        <loc>https://ssai.support.brightcove.com/references/</loc>
+        <loc>https://ssai.support.brightcove.com/live/references/</loc>
         <lastmod>2020-03-20</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
@@ -126,27 +126,6 @@
     
     <url>
         <loc>https://ssai.support.brightcove.com/support/known-issues.html</loc>
-        <lastmod>2020-03-20</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    <url>
-        <loc>https://ssai.support.brightcove.com/live/guides/live-api-cue-points-and-ad-beacons-ssai2.html</loc>
-        <lastmod>2020-03-20</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    <url>
-        <loc>https://ssai.support.brightcove.com/live/guides/live-api-error-messages2.html</loc>
-        <lastmod>2020-03-20</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    <url>
-        <loc>https://ssai.support.brightcove.com/live/guides/live-api-server-side-ad-insertion-ssai2.html</loc>
         <lastmod>2020-03-20</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
