@@ -1,8 +1,8 @@
 ---
-title: References
-description: This section contains reference information.
+title: Video-On-Demand References
+description: References related to Video-On-Demand with Server-Side Ad Insertion (SSAI).
 icon: '<i class="far fa-location-arrow"></i>'
-parent: Video-On-Demand
+parent: Home
 ---
 <style>
   h1 i.fal, h1 i.fab, h1 i.fas, h1 i.far {
@@ -15,14 +15,10 @@ parent: Video-On-Demand
   }
   .card-wrapper {
   justify-content: start;
-}
-.bcls-card h2 {
-  font-size: 1rem;
-}
-.bcls-card ul {
-  font-size: small;
-  margin-left: -3em;
-}
+  }
+  .bcls-card ul li {
+    font-size: small;
+  }
 </style>
 
 <article class="bcls-article">
@@ -31,19 +27,24 @@ parent: Video-On-Demand
   <section class="card-wrapper">
     <section class="bcls-card">
       <div class="card-content">
-        <h2 id="Topics_in_this_section">Topics in {{ page.title }}</h2>
+        <h2 id="Topics_in_this_section">Topics in this section</h2>
         <ul>
         {% for item in site.data.navigation %}
-          {% if item.name == 'Video-On-Demand' %}
-            {% for entry in item.docs %}
-              {% if entry.name == page.title %}
-                {% for doc in entry.docs %}
-                  <li><a href="{{ doc.url }}">{{ doc.name }}</a></li>
-                {% endfor %}
-              {% endif %}
-            {% endfor %}
-          {% endif %}
-        {% endfor %}
+        {% if item.name == page.title %}
+              {% for entry in item.docs %}
+                <li><a href="{{ entry.url }}">{{ entry.name }}</a>
+                {% if entry.docs %}
+                  <ul>
+                    {% for subentry in entry.docs %}
+                      <li><a href="{{ subentry.url }}">{{ subentry.name }}</a></li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+                </li>
+              {% endfor %}
+        {% endif %}
+      {% endfor %}
+  
       </div>
     </section>
   </section>
