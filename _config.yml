@@ -37,6 +37,9 @@ product_color: rgb(186, 206, 19)
 product_icon: "logo-bc-ssai.svg"
 search_id: "017969773216783359937:3dokhftl9vz"
 feedbackify_id: "15077"
+talla_appID: "00c26be3-4421-41e6-bb00-1dee68740f67"
+talla_token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1ODI4MDQzNDF9.RYf2x65FXvdDURzM h00i76KfUrYlsDLsw6mVuEv6zmE'
+talla_knowledgegroup: '3eeafacb-34f1-42ca-8f6b-e4b8321a36b4'
 defaults:
   -
     scope:
