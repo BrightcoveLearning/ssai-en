@@ -25,7 +25,7 @@
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/references/",
+      "newURL": "https://ssai.support.brightcove.com/live/references/",
       "oldURL": "/index"
   },
 
@@ -55,7 +55,7 @@
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/live/references/",
+      "newURL": "https://ssai.support.brightcove.com/references/",
       "oldURL": "/index"
   },
 
@@ -100,13 +100,23 @@
   },
 
   {
+      "newURL": "https://ssai.support.brightcove.com/vod/references/reference.html",
+      "oldURL": "/reference"
+  },
+
+  {
       "newURL": "https://ssai.support.brightcove.com/live/references/reference.html",
       "oldURL": "/reference"
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/vod/references/reference.html",
-      "oldURL": "/reference"
+      "newURL": "https://ssai.support.brightcove.com/search-test.html",
+      "oldURL": "/search-test"
+  },
+
+  {
+      "newURL": "https://ssai.support.brightcove.com/search.html",
+      "oldURL": "/search"
   },
 
   {
