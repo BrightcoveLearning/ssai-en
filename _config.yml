@@ -24,6 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Brightcove Server-Side Ad Insertion (SSAI), formerly known as Once, dynamically stitches targeted ads into your content on the server and delivers both as one continuous stream. You’ll prevent ad blockers from detecting your ads, deliver a better viewing experience to your audience by eliminating buffering, and preserve your revenue.
 # baseurl: "" # the subpath of your site, e.g. /blog
 site_url: "https://ssai.support.brightcove.com"
+site_domain: "ssai.support.brightcove.com"
 
 # Build settings
 # theme: minima
