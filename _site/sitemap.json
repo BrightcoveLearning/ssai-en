@@ -25,7 +25,7 @@
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/references/",
+      "newURL": "https://ssai.support.brightcove.com/live/references/",
       "oldURL": "/index"
   },
 
@@ -55,7 +55,7 @@
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/live/references/",
+      "newURL": "https://ssai.support.brightcove.com/references/",
       "oldURL": "/index"
   },
 
@@ -85,6 +85,11 @@
   },
 
   {
+      "newURL": "https://ssai.support.brightcove.com/support/online-training-courses.html",
+      "oldURL": "/online-training-courses"
+  },
+
+  {
       "newURL": "https://ssai.support.brightcove.com/support/opening-case-with-brightcove-support.html",
       "oldURL": "/opening-case-with-brightcove-support"
   },
@@ -100,13 +105,18 @@
   },
 
   {
+      "newURL": "https://ssai.support.brightcove.com/live/references/reference.html",
+      "oldURL": "/reference"
+  },
+
+  {
       "newURL": "https://ssai.support.brightcove.com/vod/references/reference.html",
       "oldURL": "/reference"
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/live/references/reference.html",
-      "oldURL": "/reference"
+      "newURL": "https://ssai.support.brightcove.com/support/register-training.html",
+      "oldURL": "/register-training"
   },
 
   {
