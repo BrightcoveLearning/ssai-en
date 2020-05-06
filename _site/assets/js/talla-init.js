@@ -12,7 +12,7 @@ var token =
     Talla.OptionDisplayName('Search SSAI Docs'),
     Talla.OptionKnowledgeGroups(['069b0074-5861-47fd-a63a-c60c7926de70']),
     Talla.OptionWideBeacon(true),
-    Talla.OptionBeaconCTA("Search SSAI Docs"),
+    Talla.OptionBeaconCTA("Have a question?"),
     Talla.OptionOpenIcon('https://learning-services-media.brightcove.com/doc-assets/site-assets/images/site/search.png'),
     Talla.OptionBotIcon('https://learning-services-media.brightcove.com/doc-assets/site-assets/images/site/search.png'),
     Talla.OptionAutodetectSession,
