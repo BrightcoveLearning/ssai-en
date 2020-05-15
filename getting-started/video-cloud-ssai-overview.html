@@ -228,6 +228,9 @@ Before an ad becomes viewable, it first needs to be transcoded. Then, it can be 
 	<li>The SSAI plugin is compatible only with Brightcove Player v6.8.0 and newer. No support will be offered for v5.</li>
 	<li>SSAI requires that your content video has audio, but it does not support <a href="https://player.support.brightcove.com/general/multiple-audio-tracks.html">Multiple Audio Tracks</a>.</li>
 	<li>The first time the ad is seen by our system, it will not play until it is transcoded and ready to deliver.</li>
+  <li>
+    When playing a shared video with SSAI, SSAI Macro replacement will use the metadata from the parent video instead of the child Video.  SSAI will also skip the ad lookup if the parent video is marked as <code>Advertising='Free'</code>, even if the child video is labeled as <code>Ad Supported</code>.
+  </li>
 </ul>
 </section>
 
