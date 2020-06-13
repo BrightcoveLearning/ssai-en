@@ -73,3 +73,5 @@
       url: '/support/opening-case-with-brightcove-support.html'
     - name: 'Viewing the Brightcove System Status Page'
       url: '/support/viewing-brightcove-system-status-page.html'
+    - name: 'Brightcove Answers'
+      url: '/support/brightcove-answer.html'

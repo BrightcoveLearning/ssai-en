@@ -10,6 +10,11 @@
   },
 
   {
+      "newURL": "https://ssai.support.brightcove.com/support/brightcove-answer.html",
+      "oldURL": "/brightcove-answer"
+  },
+
+  {
       "newURL": "https://ssai.support.brightcove.com/references/glossary.html",
       "oldURL": "/glossary"
   },
