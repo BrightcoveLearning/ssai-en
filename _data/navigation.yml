@@ -48,7 +48,7 @@
     - name: 'Live API: Cue Points and Ad Beacons with SSAI'
       url: 'https://live.support.brightcove.com/live-api/ssai/live-api-cue-points-and-ad-beacons-ssai.html'
     - name: 'Overview: Player Enhancements for Live SSAI'
-      url: 'https://live.support.brightcove.com/live-api/ssai/overview-player-enhancements-live-ssai.html'
+      url: '/live/guides/overview-player-enhancements-live-ssai.html'
     - name: 'Implementing Player Enhancements for Live SSAI'
       url: '/live/guides/implementing-player-enhancements-live-ssai.html'
 - section: 
