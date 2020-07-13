@@ -12,7 +12,7 @@ layout: staging
 <section class="bcls-section">
 <h2 id="overview">Overview</h2>
 
-<p>When delivering live streams with server-side ad insertion (SSAI) using Brightcove Player, you can insert a client-side preroll ad. For client-side ads, we use IMA ads.</p>
+<p>When delivering live streams with server-side ad insertion (SSAI) using Brightcove Player, you can insert a client-side preroll ad. For client-side ads, this feature supports IMA ads.</p>
 
 <aside class="bcls-aside bcls-aside--information">
 <p>SSAI ad failover requires the following:</p>
@@ -33,7 +33,7 @@ layout: staging
 </ul>
 </section>
 
-<section class="bcls-section">
+<!-- <section class="bcls-section">
 <h2 id="Player_sample">Player sample</h2>
 
 <p>Here is a sample player configured with IMA3 ads which will auto-failover to server-side ads when an ad blocker is detected in the browser.</p>
@@ -58,43 +58,28 @@ layout: staging
 <p>Try running the Codepen sample below with and without an ad blocker.</p>
 
 <p data-height="488" data-theme-id="34967" data-slug-hash="LMZKqB" data-default-tab="result" data-user="rcrooks1969" data-pen-title="SSAI Auto-Failover" class="codepen">See the Pen <a href="https://codepen.io/team/rcrooks1969/pen/LMZKqB/">SSAI Auto-Failover</a> by Brightcove Learning Services (<a href="https://codepen.io/rcrooks1969">@rcrooks1969</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script></section>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</section> -->
 
 <section class="bcls-section">
 <h2 id="Getting_started">Getting started</h2>
 
-<p>To play server-side ads from Video Cloud, you must follow these steps:</p>
+<p>To play a client-side IMA preroll ad with a live SSAI stream, follow these steps:</p>
 
 <ol class="bcls-tasklist-restart">
-	<li><a href="#Create_an_ad_configuration">Create an ad configuration</a></li>
+	<li><a href="#Create_an_SSAI_enabled_live_stream">Create an SSAI-enabled live stream</a></li>
 	<li><a href="#Create_a_Brightcove_player">Create a Brightcove player</a></li>
 	<li><a href="#Implementing_autofailover_using_Studio">Implement auto-failover using Studio </a></li>
 </ol>
 
-<h3 id="Create_an_ad_configuration">Create an ad configuration</h3>
+<h3 id="Create_an_SSAI_enabled_live_stream">Create an SSAI-enabled live stream</h3>
 
-<p>The ad configuration defines various aspects of SSAI playback, including ad calls, beacons, and other configuration options. Your ad response can be VAST, VMAP or DFP Ad Rules. To create an ad configuration, follow these steps:</p>
-
-<ol class="bcls-tasklist-restart">
-	<li>
-	<p>In Video Cloud Studio, expand the <strong>ADMIN</strong> menu and select <strong>Server-Side Ad Settings</strong>.</p>
-
-	<figure class="bcls-figure"><img class="bcls-image--no-border" alt="Ad configuration admin" src="//learning-services-media.brightcove.com/doc-assets/player-development/plugins/ssai/ad-config-admin.png" />
-	<figcaption class="bcls-caption--image">Ad configuration admin</figcaption>
-	</figure>
-	</li>
-	<li>
-	<p>Add information for your ad configuration and select <strong>Save</strong>.</p>
-
-	<figure class="bcls-figure"><img class="bcls-image--no-border" alt="Ad settings" src="//learning-services-media.brightcove.com/doc-assets/player-development/plugins/ssai/ad-settings.png" />
-	<figcaption class="bcls-caption--image">Ad settings</figcaption>
-	</figure>
-	</li>
+<p>The Live module supports Server-Side Ad Insertion (SSAI) enabling server-side ads can be requested and displayed during a live stream. To create your live stream, see the following:</p>
+<ol>
+  <li>
+    <a href="https://live.support.brightcove.com/live-module/implementing-server-side-ads-live-module.html">Implementing Server-Side Ads in the Live Module</a>
+  </li>
 </ol>
-
-<p>For details, see the <a href="https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html">Configuring Server-Side Ad Settings</a> document.</p>
-
-<p>To create an ad configuration using the SSAI API, see the <a href="https://ssai.support.brightcove.com/vod/guides/video-cloud-ssai-ad-config-api.html">Video Cloud SSAI Ad Config API</a> document.</p>
 
 <h3 id="Create_a_Brightcove_player">Create a Brightcove player</h3>
 
