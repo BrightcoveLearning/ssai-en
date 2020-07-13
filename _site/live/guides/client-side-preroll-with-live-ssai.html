@@ -276,6 +276,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
+<!-- 
+  This content appears on:
+  
+  https://live.support.brightcove.com/policy/getting-started/policy-keys.html ????
+
+  If you update in one place, you MUST update it in all!
+ -->
+
 <h1>Client-Side Preroll Ads with Live SSAI</h1>
 <article class="bcls-article">
   <summary>In this topic, you will learn how to play a client-side preroll ad with live SSAI streams using Brightcove Player.</summary>
@@ -289,7 +297,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <p>SSAI ad failover requires the following:</p>
 
 <ul>
-	<li>IMA3 plugin v3.2.0+</li>
+	<li>IMA3 plugin v3.5.0+</li>
 	<li>SSAI plugin v1.3.1+</li>
 	<li>Brightcove Player version 6.8.0+</li>
 </ul>
@@ -340,17 +348,17 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <ol class="bcls-tasklist-restart">
 	<li><a href="#Create_an_SSAI_enabled_live_stream">Create an SSAI-enabled live stream</a></li>
 	<li><a href="#Create_a_Brightcove_player">Create a Brightcove player</a></li>
-	<li><a href="#Implementing_autofailover_using_Studio">Implement auto-failover using Studio </a></li>
+	<li><a href="#Implementing_client_side_preroll_using_Studio">Implement client-side preroll using Studio </a></li>
 </ol>
 
 <h3 id="Create_an_SSAI_enabled_live_stream">Create an SSAI-enabled live stream</h3>
 
 <p>The Live module supports Server-Side Ad Insertion (SSAI) enabling server-side ads can be requested and displayed during a live stream. To create your live stream, see the following:</p>
-<ol>
+<ul>
   <li>
     <a href="https://live.support.brightcove.com/live-module/implementing-server-side-ads-live-module.html">Implementing Server-Side Ads in the Live Module</a>
   </li>
-</ol>
+</ul>
 
 <h3 id="Create_a_Brightcove_player">Create a Brightcove player</h3>
 
@@ -360,14 +368,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </section>
 
 <section class="bcls-section">
-<h2 id="Implementing_autofailover_using_Studio">Implementing auto-failover using Studio</h2>
+<h2 id="Implementing_client_side_preroll_using_Studio">Implementing client-side preroll using Studio</h2>
 
 <p>The easiest way to configure your player for auto-failover ads is with Video Cloud Studio. Once you have created an ad configuration and player, then you are ready to configure the player for auto-failover as follows:</p>
 
 <ol class="bcls-tasklist-restart">
 	<li>Open the <strong>PLAYERS</strong> module and locate the player to which you want to add advertising functionality.</li>
 	<li>Select the link for the player to open the player's properties.</li>
-	<li>Select <strong>Advertising</strong> in the left navigation menu.</li>
+	<li>In the left navigation menu, select <strong>Advertising</strong>.</li>
 	<li>Check the <strong>Enable Client-Side (IMA)</strong> checkbox.</li>
 	<li>
 	<p>Include the URL for your IMA Ad Tag. For this example, we will use the sample Ad Tag URL.</p>
@@ -384,7 +392,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 	<aside class="bcls-aside bcls-aside--information">The server-side option will not appear unless your account has been enabled for SSAI.</aside>
 	</li>
 	<li>From the <strong>Select Configuration</strong> dropdown menu, select the ad configuration that you would like to associate with this player.</li>
-	<li>If you want overlays to display over your ads, check the <strong>Enable ad information overlays</strong> checkbox. This includes "Learn More" and ad count down overlays.</li>
+	<li>
+    <p>
+      If you want overlays to display over your ads, check the <strong>Enable ad information overlays</strong> checkbox. This includes "Learn More" and ad count down overlays.
+    </p>
+    <aside class="bcls-aside bcls-aside--information">Overlays will not display until you enable them here and configure them in your VAST ad tag.</aside>
+  </li>
 	<li>
 	<p>Ad block detection with server-side ad failover is enabled automatically when you enable both client-side and server-side ads.</p>
 
@@ -392,17 +405,44 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 	<figcaption class="bcls-caption--image">SSAI advertising in Players module</figcaption>
 	</figure>
 	</li>
-	<li>Select <strong>Save</strong>.</li>
+	<li>Select the <strong>Save</strong> button.</li>
+  <li>
+    <p>
+      In the left navigation menu, select <strong>JSON Editor</strong>.
+    </p>
+  </li>
+  <li>
+    <p>
+      In the JSON editor, scroll down until you see the <code>ad_failover: true</code> property.
+    </p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Ad failover property" src="/assets/images/client-side-preroll/ad_failover.png" />
+      <figcaption class="bcls-caption--image">Ad failover property</figcaption>
+    </figure>
+  </li>
+  <li>
+    <p>
+      Replace the <code>ad_failover: true</code> property with the following:
+    </p>
+    <pre class="line-numbers"><code class="language-json">"ima_preroll_with_ssai": true
+</code></pre>
+  </li>
+  <li>
+    <p>
+      Your JSON editor should look similar to this:
+    </p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="IMA preroll property" src="/assets/images/client-side-preroll/ima-preroll.png" />
+      <figcaption class="bcls-caption--image">IMA preroll property</figcaption>
+    </figure>
+  </li>
+  <li>Select the <strong>Save</strong> button.</li>
 	<li>
 	<p>To publish the player, select <strong>Publish &amp; Embed &gt; Publish Changes</strong>.</p>
-
-	<p>That's all you need to do to enable auto-failover for your player.</p>
 	</li>
 </ol>
 
-<h3 id="Play_a_video_with_ads">Play a video with ads</h3>
+<!-- <h3 id="Play_a_video_with_ads">Play a video with ads</h3>
 
-<p>Any video that you retrieve from Video Cloud that has been ingested with Dynamic Delivery, will include the client-side IMA ads when no ad blocker is detected. When an ad blocker is detected, your video will include server-side ads specified in the VMAP file in your ad configuration. Note that the video needs to have an audio track associated with it for SSAI to work.</p>
+<p>Any video that you retrieve from Video Cloud that has been ingested with Dynamic Delivery, will include the client-side IMA ads when no ad blocker is detected. When an ad blocker is detected, your video will include server-side ads specified in the VMAP file in your ad configuration. Note that the video needs to have an audio track associated with it for SSAI to work.</p> -->
 </section>
 </article>
 
