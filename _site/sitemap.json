@@ -20,6 +20,11 @@
   },
 
   {
+      "newURL": "https://ssai.support.brightcove.com/support/contact-sales.html",
+      "oldURL": "/contact-sales"
+  },
+
+  {
       "newURL": "https://ssai.support.brightcove.com/references/glossary.html",
       "oldURL": "/glossary"
   },
