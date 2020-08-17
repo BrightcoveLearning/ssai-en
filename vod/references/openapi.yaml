@@ -8,7 +8,7 @@ info:
 
     This API is used for managing operations related to Server-Side Ad Insertion (SSAI).
 
-    See [Video Cloud SSAI Ad Config API](/vod/guides/video-cloud-ssai-ad-config-api.html/) for more details on using the API.
+    See [Video Cloud SSAI Ad Config API](/vod/guides/video-cloud-ssai-ad-config-api.html) for more details on using the API.
 
     You can easily create, list and delete ad configurations in Video Cloud Studio as well. For details, see [Configuring Server-Side Ad Settings](https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html).
 
