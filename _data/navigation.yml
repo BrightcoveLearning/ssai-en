@@ -1,9 +1,9 @@
 - section: 
   name: 'Home'
-  url: '/'
+  url: '/index.html'
 - section: 
   name: 'Getting Started'
-  url: '/getting-started/'
+  url: '/getting-started/index.html'
   icon: '<i class="far fa-location-arrow"></i>'
   docs:
     - name: 'SSAI Overview'
@@ -12,7 +12,7 @@
       url: 'https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html'
 - section: 
   name: 'Video-On-Demand Guides'
-  url: '/vod/guides/'
+  url: '/vod/guides/index.html'
   icon: '<i class="fas fa-play"></i>'
   docs:
     - name: 'Implementing SSAI with the Brightcove Player'
@@ -27,7 +27,7 @@
       url: '/vod/guides/ad-error-beacons-ssai.html'
 - section: 
   name: 'Video-On-Demand References'
-  url: '/vod/references/'
+  url: '/vod/references/index.html'
   icon: '<i class="fas fa-play"></i>'
   docs:
     - name: 'SSAI API Reference'
@@ -38,7 +38,7 @@
       url: 'https://player.support.brightcove.com/plugins/changelog/server-side-ads-plugin-changelog.html'
 - section: 
   name: 'Live Guides'
-  url: '/live/guides/'
+  url: '/live/guides/index.html'
   icon: '<i class="fas fa-satellite-dish"></i>'
   docs:
     - name: 'Implementing SSAI in the Live Module'
@@ -55,7 +55,7 @@
       url: '/live/guides/implementing-player-enhancements-live-ssai.html'
 - section: 
   name: 'Live References'
-  url: '/live/references/'
+  url: '/live/references/index.html'
   icon: '<i class="fas fa-satellite-dish"></i>'
   docs:
     - name: 'Live API Reference'
@@ -66,7 +66,7 @@
       url: 'https://live.support.brightcove.com/release-notes/live-api-release-notes.html'
 - section: 
   name: 'Developer Support'
-  url: '/support/'
+  url: '/support/index.html'
   icon: '<i class="far fa-question-circle"></i>'
   docs:
     - name: 'Brightcove Answers'
