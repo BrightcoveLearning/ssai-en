@@ -323,9 +323,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <p>An ad configuration defines the information needed to include server-side ads with a live stream. This includes ad provider URL, expected ad response type and whether beacons should be sent.</p>
 
-<aside class="bcls-aside bcls-aside--information">For SLS, Ad configurations MUST have an <code>ad_configuration_expected_response_type</code> value of <code>Vast</code>.</aside>
+<aside class="bcls-aside bcls-aside--information">For SLS, Ad configurations MUST have an <code translate="No">ad_configuration_expected_response_type</code> value of <code translate="No">Vast</code>.</aside>
 
-<p>To create a new ad configuration, send a <code>POST</code> request as follows:</p>
+<p>To create a new ad configuration, send a <code translate="No">POST</code> request as follows:</p>
 
 <table class="bcls-table">
 	<tbody class="bcls-table__body">
@@ -347,11 +347,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 	</tbody>
 </table>
 
-<p>All requests are authenticated using an API key that is provided to you when your account is set up. The key is passed in the <code>X-API-KEY</code> header.</p>
+<p>All requests are authenticated using an API key that is provided to you when your account is set up. The key is passed in the <code translate="No">X-API-KEY</code> header.</p>
 
 <p>For details about the request body fields, see the <a href="https://docs.brightcove.com/live-api/v1/doc/index.html#operation/CreateAdConfiguration">Live API Reference</a> document.</p>
 
-<p>With Player Enhancements for Live SSAI, the highlighted fields can be set inside of the <code>application_ad_configuration</code> object.</p>
+<p>With Player Enhancements for Live SSAI, the highlighted fields can be set inside of the <code translate="No">application_ad_configuration</code> object.</p>
 
 <p>Sample request body:</p>
 
@@ -375,7 +375,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   "application_description": "<span class="bcls-input">your aaplication description</span>"
 }</code></pre>
 
-<p>All of the <code>client_options</code> are optional. Only <code>client_only_tracking</code> has a default value of <code>false</code>.</p>
+<p>All of the <code translate="No">client_options</code> are optional. Only <code translate="No">client_only_tracking</code> has a default value of <code translate="No">false</code>.</p>
 
 <p>Sample response:</p>
 
@@ -405,7 +405,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
  "action": "inserted"
 }</code></pre>
 
-<p>After you successfully create an ad configuration, copy the <code>application_id</code> (ad configuration id) that was generated. You will need this later to find the SSAI playback URL.</p>
+<p>After you successfully create an ad configuration, copy the <code translate="No">application_id</code> (ad configuration id) that was generated. You will need this later to find the SSAI playback URL.</p>
 
 <p>To list, update and delete ad configurations, see the <a href="https://live.support.brightcove.com/live-api/ssai/live-api-server-side-ad-insertion-ssai.html#Create_an_ad_configuration">Manage ad configurations</a> document</p>
 </section>
@@ -413,7 +413,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <section class="bcls-section">
 <h2 id="Create_a_live_job">Create a live job</h2>
 
-<p>To create a live job, send a <code>POST</code> request as follows:</p>
+<p>To create a live job, send a <code translate="No">POST</code> request as follows:</p>
 
 <table class="bcls-table">
 	<tbody class="bcls-table__body">
@@ -437,9 +437,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <p>For details about the request body fields, see the <a href="https://docs.brightcove.com/live-api/v1/doc/index.html#operation/CreateALiveJob">Live API Reference</a> document.</p>
 
-<p>For a live job with SSAI enabled, set <code>ad_insertion: true</code> in your HTTP request body.</p>
+<p>For a live job with SSAI enabled, set <code translate="No">ad_insertion: true</code> in your HTTP request body.</p>
 
-<p>If you wish to create a VOD clip from the live stream, include the <code>videocloud</code> parameter in the request body. For details, see the <a href="https://live.support.brightcove.com/live-api/guides/live-api-creating-vod-clips.html">Live API: Creating VOD Clips</a> document.</p>
+<p>If you wish to create a VOD clip from the live stream, include the <code translate="No">videocloud</code> parameter in the request body. For details, see the <a href="https://live.support.brightcove.com/live-api/guides/live-api-creating-vod-clips.html">Live API: Creating VOD Clips</a> document.</p>
 
 <p>The highlighted field in the request body below is needed for server-side ad insertion (SSAI).</p>
 
@@ -568,17 +568,17 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
  }
 }</code></pre>
 
-<p>From the API response, make note of the job <code>id</code> and the <code>stream_url</code> properties. You will need these later.</p>
+<p>From the API response, make note of the job <code translate="No">id</code> and the <code translate="No">stream_url</code> properties. You will need these later.</p>
 
 <p>In the response body, there will be an object containing SSAI information for each ad configuration in your account. The sample above shows the object for one ad configuration. This should be the ad configuration id you created in the previous step.</p>
 
-<p>The <code>playback_url</code> or <code>playback_url_dvr</code> field associated with your ad configuration id is used in the next step to create a remote video asset.</p>
+<p>The <code translate="No">playback_url</code> or <code translate="No">playback_url_dvr</code> field associated with your ad configuration id is used in the next step to create a remote video asset.</p>
 </section>
 
 <section class="bcls-section">
 <h2 id="Create_a_remote_video">Create a remote video</h2>
 
-<p>In Video Cloud, you will create a remote video which points to your live stream. For this step, you will need the <code>playback_url</code> or <code>playback_url_dvr</code> from the previous step.</p>
+<p>In Video Cloud, you will create a remote video which points to your live stream. For this step, you will need the <code translate="No">playback_url</code> or <code translate="No">playback_url_dvr</code> from the previous step.</p>
 
 <p>There are two ways to create a remote video:</p>
 
@@ -595,7 +595,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <h3>Create the playback token</h3>
 
-<p>To create the playback token, send a <code>POST</code> request as follows:</p>
+<p>To create the playback token, send a <code translate="No">POST</code> request as follows:</p>
 
 <table class="bcls-table">
 	<tbody class="bcls-table__body">
@@ -650,7 +650,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <section class="bcls-section">
 <h2 id="Begin_streaming">Begin streaming</h2>
 
-<p>There are many tools to create a live streaming event. Here are some encoders you can use to produce a live stream delivered by a CDN: (Use the <code>playback_url</code> from a previous step)</p>
+<p>There are many tools to create a live streaming event. Here are some encoders you can use to produce a live stream delivered by a CDN: (Use the <code translate="No">playback_url</code> from a previous step)</p>
 
 <ul>
 	<li><a href="https://support.brightcove.com/quick-start-create-live-stream-using-brightcove-live-api#wirecast">Telestream Wirecast encoder</a></li>
@@ -672,7 +672,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 	<p>&nbsp;</p>
 
-	<p>To cancel a live job, send a <code>PUT</code> request as follows:</p>
+	<p>To cancel a live job, send a <code translate="No">PUT</code> request as follows:</p>
 
 	<table class="bcls-table">
 		<tbody class="bcls-table__body">
@@ -699,7 +699,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 	<li>
 	<p>Delete your ad configuration</p>
 
-	<p>To delete an ad configuration, send a <code>DELETE</code> request as follows:</p>
+	<p>To delete an ad configuration, send a <code translate="No">DELETE</code> request as follows:</p>
 
 	<table class="bcls-table">
 		<tbody class="bcls-table__body">
