@@ -36,7 +36,7 @@ parent: Video-On-Demand
 
 <h4>Account path</h4>
 
-<p>In all cases, requests will be made for a specific Video Cloud Account. So, you will always add the term <code class="notranslate">accounts</code> followed by your account id to the base URL:</p>
+<p>In all cases, requests will be made for a specific Video Cloud Account. So, you will always add the term <code translate="No">accounts</code> followed by your account id to the base URL:</p>
 
 <pre>
 <code class="notranslate language-http">https://ssai.api.brightcove.com/v1<strong>/accounts/</strong><span class="bcls-input">your account id</span></code></pre>
@@ -48,7 +48,7 @@ parent: Video-On-Demand
 <pre>
 <code class="notranslate language-http">Authorization: Bearer <span class="bcls-input">your access token</span></code></pre>
 
-<p>The <code class="notranslate">access_token</code> is a temporary OAuth2 access token that must be obtained from the Brightcove OAuth service. For details on how to obtain client credentials and use them to retrieve access tokens, see the <a href="https://apis.support.brightcove.com/oauth/getting-started/overview-oauth-api-v4.html">Brightcove OAuth Overview</a>.</p>
+<p>The <code translate="No">access_token</code> is a temporary OAuth2 access token that must be obtained from the Brightcove OAuth service. For details on how to obtain client credentials and use them to retrieve access tokens, see the <a href="https://apis.support.brightcove.com/oauth/getting-started/overview-oauth-api-v4.html">Brightcove OAuth Overview</a>.</p>
 
 <h3>Operations</h3>
 
@@ -56,8 +56,8 @@ parent: Video-On-Demand
 
 <ul>
 	<li>SSAI data:
-	<p><code class="notranslate">video-cloud/ssai/read</code><br />
-	<code class="notranslate">video-cloud/ssai/all</code></p>
+	<p><code translate="No">video-cloud/ssai/read</code><br />
+	<code translate="No">video-cloud/ssai/all</code></p>
 	</li>
 </ul>
 </section>
@@ -101,7 +101,7 @@ parent: Video-On-Demand
 <p>Sample response:</p>
 
 <pre class="line-numbers">
-<code class="notranslate language-json">{% raw %}[
+<code class="language-json" translate="No">{% raw %}[
   {
     "name": "VMAP Ad Server",
     "vmap_response_namespace": "bc",
@@ -146,7 +146,7 @@ parent: Video-On-Demand
 <p>Sample Body:</p>
 
 <pre class="line-numbers">
-<code class="notranslate language-json">{% raw %}{
+<code class="language-json" translate="No">{% raw %}{
   "name": "VMAP Ad Server",
   "vmap_response_namespace": "bc",
   "ad_config": {
@@ -189,7 +189,7 @@ parent: Video-On-Demand
 <p>Sample response:</p>
 
 <pre class="line-numbers">
-<code class="notranslate language-json">{% raw %}{
+<code class="language-json" translate="No">{% raw %}{
   "name": "VMAP Ad Server",
   "vmap_response_namespace": "bc",
   "config_id": "2ecc6beb-d6a4-4deb-a78e-37ac27e0f883",
@@ -266,7 +266,7 @@ parent: Video-On-Demand
 			<th>Sample Body</th>
 			<td>
 			<pre>
-<code class="notranslate language-json">{
+<code class="language-json" translate="No">{
     "name": "VMAP Ad Server - updated"
 }</code></pre>
 			</td>
@@ -277,7 +277,7 @@ parent: Video-On-Demand
 <p>Sample response:</p>
 
 <pre class="line-numbers">
-<code class="notranslate language-json">{% raw %}{
+<code class="language-json" translate="No">{% raw %}{
   "name": "VMAP Ad Server - updated",
   "vmap_response_namespace": "bc",
   "config_id": "2ecc6beb-d6a4-4deb-a78e-37ac27e0f883",
@@ -309,128 +309,128 @@ parent: Video-On-Demand
 	</thead>
 	<tbody class="bcls-table__body">
 		<tr>
-			<td><code class="notranslate">name</code></td>
+			<td><code translate="No">name</code></td>
 			<td>String</td>
 			<td>Human readable name</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">vmap_response_namespace</code></td>
+			<td><code translate="No">vmap_response_namespace</code></td>
 			<td>String</td>
 			<td>Adjusts the VMAP output to use the legacy Unicorn Once namespace format or to use the new Brightcove namespace format.<br />
 			<br />
-			Values: <code class="notranslate">uo</code>, <code class="notranslate">bc</code> Default: <code class="notranslate">bc</code></td>
+			Values: <code translate="No">uo</code>, <code translate="No">bc</code> Default: <code translate="No">bc</code></td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">description</code></td>
+			<td><code translate="No">description</code></td>
 			<td>String</td>
 			<td>Human readable description</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">ad_config.expected_ad_response</code></td>
+			<td><code translate="No">ad_config.expected_ad_response</code></td>
 			<td>String</td>
 			<td>Which tech to use to parse the response. <sup><a href="#n1"> [1]</a></sup><br />
 			<br />
 			Values:
 			<ul>
-				<li><code class="notranslate">dfp_ad_rules</code></li>
-				<li><code class="notranslate">dfp_vmap</code></li>
-				<li><code class="notranslate">smart_xml</code></li>
-				<li><code class="notranslate">vast_3_0</code></li>
+				<li><code translate="No">dfp_ad_rules</code></li>
+				<li><code translate="No">dfp_vmap</code></li>
+				<li><code translate="No">smart_xml</code></li>
+				<li><code translate="No">vast_3_0</code></li>
 			</ul>
 			</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">ad_config.disable_server_beacons</code></td>
+			<td><code translate="No">ad_config.disable_server_beacons</code></td>
 			<td>Boolean</td>
 			<td>Flags whether to disable the server side firing of ad impressions/beacons<br />
 			<br />
-			When set to <code class="notranslate">true</code>, SSAI will not fire any beacons server-side and will include all beacons in the VMAP output<br />
+			When set to <code translate="No">true</code>, SSAI will not fire any beacons server-side and will include all beacons in the VMAP output<br />
 			<br />
-			When set to <code class="notranslate">false</code>, SSAI will fire the beacons it is able to server-side and include any it is not able to in the VMAP output</td>
+			When set to <code translate="No">false</code>, SSAI will fire the beacons it is able to server-side and include any it is not able to in the VMAP output</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">ad_config.round_up_cue_points</code></td>
+			<td><code translate="No">ad_config.round_up_cue_points</code></td>
 			<td>Boolean</td>
 			<td>Flags whether to round up to the next keyframe when choosing a nearby position for inserting ads.<br />
 			<br />
 			Default: <code translate="No">false</code>, which chooses the closest keyframe to the desired ad position.</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">ad_config.template_url.template</code></td>
+			<td><code translate="No">ad_config.template_url.template</code></td>
 			<td>String</td>
 			<td>Ad tag template. Available variables described in a later section.</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">ad_config.template_url.defaults</code></td>
+			<td><code translate="No">ad_config.template_url.defaults</code></td>
 			<td>Object</td>
 			<td>Map of String to String defining the default to use in the case where a url param is not provided.<br />
 			<br />
-			Can be a literal <code class="notranslate">{ "url.foo": "SomeString" }</code><br />
+			Can be a literal <code translate="No">{ "url.foo": "SomeString" }</code><br />
 			<br />
-			Or reference another variable <code class="notranslate">{% raw %}{ "url.foo": "{{ metadata.title_id }}" }{% endraw %}</code></td>
+			Or reference another variable <code translate="No">{% raw %}{ "url.foo": "{{ metadata.title_id }}" }{% endraw %}</code></td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">discontinuities.dash</code> <sup><a href="#n2"> [2]</a></sup></td>
+			<td><code translate="No">discontinuities.dash</code> <sup><a href="#n2"> [2]</a></sup></td>
 			<td>[]String</td>
 			<td>Controls which versions of dash to deliver Multi Period Dash manifests.<br />
 			<br />
-			Set to <code class="notranslate">["*"]</code> to deliver multi-period dash for all versions<br />
+			Set to <code translate="No">["*"]</code> to deliver multi-period dash for all versions<br />
 			<br />
 			Empty list for never<br />
 			<br />
-			Example: <code class="notranslate">["live-timeline"]</code> to deliver for live-timeline but not for hbbtv</td>
+			Example: <code translate="No">["live-timeline"]</code> to deliver for live-timeline but not for hbbtv</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">discontinuities.hls</code> <sup><a href="#n2"> [2]</a></sup></td>
+			<td><code translate="No">discontinuities.hls</code> <sup><a href="#n2"> [2]</a></sup></td>
 			<td>[]String</td>
 			<td>Controls which versions of hls to deliver with discontinuities.<br />
 			<br />
-			Set to <code class="notranslate">["*"]</code> to delivery with discontinuities in all versions of HLS<br />
+			Set to <code translate="No">["*"]</code> to delivery with discontinuities in all versions of HLS<br />
 			<br />
 			Empty list for never<br />
 			<br />
-			Example: <code class="notranslate">["v4","v5"]</code> to deliver for v4 &amp; v5 but not for v3</td>
+			Example: <code translate="No">["v4","v5"]</code> to deliver for v4 &amp; v5 but not for v3</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">beacon_templates</code></td>
+			<td><code translate="No">beacon_templates</code></td>
 			<td>Array</td>
 			<td>An array of beacons to fire (example: 3rd-party beacons)</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">beacon_templates[].type</code></td>
+			<td><code translate="No">beacon_templates[].type</code></td>
 			<td>String</td>
 			<td>
 			<p>Type of beacon to fire. Values:</p>
 
 			<ul>
-				<li><code class="notranslate">content_start</code></li>
-				<li><code class="notranslate">content_first_quartile</code></li>
-				<li><code class="notranslate">content_midpoint</code></li>
-				<li><code class="notranslate">content_third_quartile</code></li>
-				<li><code class="notranslate">content_complete</code></li>
-				<li><code class="notranslate">content_quartiles</code></li>
-				<li><code class="notranslate">content_interval</code></li>
-				<li><code class="notranslate">ad_start</code></li>
-				<li><code class="notranslate">ad_first_quartile</code></li>
-				<li><code class="notranslate">ad_midpoint</code></li>
-				<li><code class="notranslate">ad_third_quartile</code></li>
-				<li><code class="notranslate">ad_complete</code></li>
-				<li><code class="notranslate">ad_quartiles</code></li>
-				<li><code class="notranslate">ad_break_start</code></li>
-				<li><code class="notranslate">ad_break_end</code></li>
-				<li><code class="notranslate">segment_start</code></li>
-				<li><code class="notranslate">segment_end</code></li>
-				<li><code class="notranslate">on_load</code></li>
+				<li><code translate="No">content_start</code></li>
+				<li><code translate="No">content_first_quartile</code></li>
+				<li><code translate="No">content_midpoint</code></li>
+				<li><code translate="No">content_third_quartile</code></li>
+				<li><code translate="No">content_complete</code></li>
+				<li><code translate="No">content_quartiles</code></li>
+				<li><code translate="No">content_interval</code></li>
+				<li><code translate="No">ad_start</code></li>
+				<li><code translate="No">ad_first_quartile</code></li>
+				<li><code translate="No">ad_midpoint</code></li>
+				<li><code translate="No">ad_third_quartile</code></li>
+				<li><code translate="No">ad_complete</code></li>
+				<li><code translate="No">ad_quartiles</code></li>
+				<li><code translate="No">ad_break_start</code></li>
+				<li><code translate="No">ad_break_end</code></li>
+				<li><code translate="No">segment_start</code></li>
+				<li><code translate="No">segment_end</code></li>
+				<li><code translate="No">on_load</code></li>
 			</ul>
 			</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">beacon_templates[].template_url.template</code></td>
+			<td><code translate="No">beacon_templates[].template_url.template</code></td>
 			<td>String</td>
 			<td>Beacon URL template</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">extend_beacon_guard_ttl</code></td>
+			<td><code translate="No">extend_beacon_guard_ttl</code></td>
 			<td>Boolean</td>
 			<td>Sets the length of the Beacon Guard TTL (Time to live) to the length of the Content’s Session TTL. Otherwise, the default is 1 minute.</td>
 		</tr>
@@ -440,7 +440,7 @@ parent: Video-On-Demand
 <aside class="bcls-aside bcls-aside--information">
 <p>The following notes refer to the fields in the table above.</p>
 
-<p id="n1"><sup>[1]</sup> When the <code class="notranslate">expected_ad_response</code> is set to <code class="notranslate">vast_3_0</code>, SSAI makes one VAST call for each ad cue point defined in Video Cloud. For VMAP and ad rules, SSAI makes requests based on the defined ad breaks in the initial ad response.</p>
+<p id="n1"><sup>[1]</sup> When the <code translate="No">expected_ad_response</code> is set to <code translate="No">vast_3_0</code>, SSAI makes one VAST call for each ad cue point defined in Video Cloud. For VMAP and ad rules, SSAI makes requests based on the defined ad breaks in the initial ad response.</p>
 
 <p id="n2"><sup>[2]</sup> Discontinuity tags indicate a change in frame rate encoding between content video and ad segments. They tell the system to reconstruct the rendering chain. For scalable SSAI, the video player needs to be able to play HLS with Discontinuity tags and MPEG DASH containing multiple periods.</p>
 </aside>
@@ -449,7 +449,7 @@ parent: Video-On-Demand
 <section class="bcls-section">
 <h2 id="Ad_variables">Ad variables</h2>
 
-<p>Variables in the <strong>template url</strong> are identified by double curly braces (<code class="notranslate">{% raw %}{{ … }}{% endraw %}</code>) with optional whitespace before and after the variable path. All variables are prefixed by one of three namespaces:</p>
+<p>Variables in the <strong>template url</strong> are identified by double curly braces (<code translate="No">{% raw %}{{ … }}{% endraw %}</code>) with optional whitespace before and after the variable path. All variables are prefixed by one of three namespaces:</p>
 
 <ul>
 	<li><a href="#System_variables">system</a></li>
@@ -461,7 +461,7 @@ parent: Video-On-Demand
 
 <p>System variables are provided by the SSAI system and can be information about the end user or helper variables to generate random values. The values must be URI-encoded before being inserted into the URL templates.</p>
 
-<p>System variables are identified as: <code class="notranslate">{% raw %}{{system.*}}{% endraw %}</code></p>
+<p>System variables are identified as: <code translate="No">{% raw %}{{system.*}}{% endraw %}</code></p>
 
 <table class="bcls-table">
 	<thead class="bcls-table__head">
@@ -472,59 +472,59 @@ parent: Video-On-Demand
 	</thead>
 	<tbody class="bcls-table__body">
 		<tr>
-			<td><code class="notranslate">ip_address</code></td>
+			<td><code translate="No">ip_address</code></td>
 			<td>End User's IP Address</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">random_number_32</code></td>
+			<td><code translate="No">random_number_32</code></td>
 			<td>Random 32-bit integer</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">random_guid</code></td>
+			<td><code translate="No">random_guid</code></td>
 			<td>Random UUID</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">referer</code></td>
+			<td><code translate="No">referer</code></td>
 			<td>End User's Referer header value</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">timestamp_utc</code></td>
+			<td><code translate="No">timestamp_utc</code></td>
 			<td>Current time as a unix timestamp</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">unique_user_id</code></td>
+			<td><code translate="No">unique_user_id</code></td>
 			<td>MD5(ip_address + user_agent)</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">unix_timestamp</code></td>
+			<td><code translate="No">unix_timestamp</code></td>
 			<td>Current time as a unix timestamp (seconds)</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">user_agent</code></td>
+			<td><code translate="No">user_agent</code></td>
 			<td>End User's User-Agent header value</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">uuid</code></td>
+			<td><code translate="No">uuid</code></td>
 			<td>Random uuid</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">x_forwarded_for</code></td>
+			<td><code translate="No">x_forwarded_for</code></td>
 			<td>End User's X-Forwarded-For header value</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">xfp.correlator</code></td>
+			<td><code translate="No">xfp.correlator</code></td>
 			<td>Random 64-bit Integer</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">xfp.ip_address</code></td>
+			<td><code translate="No">xfp.ip_address</code></td>
 			<td>End User's IP Address</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">xfp.unique_user_id</code></td>
+			<td><code translate="No">xfp.unique_user_id</code></td>
 			<td>MD5(ip_address + user_agent)</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">xfp.scor</code></td>
+			<td><code translate="No">xfp.scor</code></td>
 			<td>Random 64-bit Integer</td>
 		</tr>
 	</tbody>
@@ -532,15 +532,15 @@ parent: Video-On-Demand
 
 <h3 id="URL_variables">URL variables</h3>
 
-<p>Query Params provided on the entry point VMAP/Manifest are available under the <code class="notranslate">url</code> namespace. Unlike variables under other namespaces, these params are not url encoded when inserting into the template. If variable values need to be url encoded going to the ad provider, they will need to be double url encoded on the entry point url.</p>
+<p>Query Params provided on the entry point VMAP/Manifest are available under the <code translate="No">url</code> namespace. Unlike variables under other namespaces, these params are not url encoded when inserting into the template. If variable values need to be url encoded going to the ad provider, they will need to be double url encoded on the entry point url.</p>
 
-<p>URL variables are identified as: <code class="notranslate">{% raw %}{{url.*}}{% endraw %}</code></p>
+<p>URL variables are identified as: <code translate="No">{% raw %}{{url.*}}{% endraw %}</code></p>
 
 <h3 id="Metadata_variables">Metadata variables</h3>
 
 <p>Metadata variables are those that describe the content video, derived from both Video Cloud and Dynamic Delivery data sources. The values are URL encoded before being inserted into the URL templates.</p>
 
-<p>Metadata variables are identified as: <code class="notranslate">{% raw %}{{metadata.*}}{% endraw %}</code></p>
+<p>Metadata variables are identified as: <code translate="No">{% raw %}{{metadata.*}}{% endraw %}</code></p>
 
 <table class="bcls-table">
 	<thead class="bcls-table__head">
@@ -551,43 +551,43 @@ parent: Video-On-Demand
 	</thead>
 	<tbody class="bcls-table__body">
 		<tr>
-			<td><code class="notranslate">ad_keys</code></td>
+			<td><code translate="No">ad_keys</code></td>
 			<td>Free form text string that can be added and edited in the Video Cloud Studio Media module</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">{% raw %}custom_fields.{field_name}{% endraw %}</code></td>
+			<td><code translate="No">{% raw %}custom_fields.{field_name}{% endraw %}</code></td>
 			<td>Video Cloud custom fields</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">long_description</code></td>
+			<td><code translate="No">long_description</code></td>
 			<td>Video Cloud long description</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">name</code></td>
+			<td><code translate="No">name</code></td>
 			<td>Video Cloud video name</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">reference_id</code></td>
+			<td><code translate="No">reference_id</code></td>
 			<td>Video Cloud reference id</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">tags</code></td>
+			<td><code translate="No">tags</code></td>
 			<td>Comma separated list of the Video Cloud tags for the video</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">title.duration</code></td>
+			<td><code translate="No">title.duration</code></td>
 			<td>Duration of the content in seconds</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">title.id</code></td>
+			<td><code translate="No">title.id</code></td>
 			<td>Dynamic Delivery title id</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">title.name</code></td>
+			<td><code translate="No">title.name</code></td>
 			<td>Dynamic Delivery title name</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">video_id</code></td>
+			<td><code translate="No">video_id</code></td>
 			<td>Video Cloud video id</td>
 		</tr>
 		<tr>
@@ -611,15 +611,15 @@ parent: Video-On-Demand
 	</thead>
 	<tbody class="bcls-table__body">
 		<tr>
-			<td><code class="notranslate">?rule=sd-only</code></td>
+			<td><code translate="No">?rule=sd-only</code></td>
 			<td>Filters out any video rendition that has a height less than the threshold set in the Account Configuration</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">?rule=discos-enabled</code></td>
+			<td><code translate="No">?rule=discos-enabled</code></td>
 			<td>Enable Playback with Discontinuities in HLS &amp; MultiPeriods in Dash. Takes precedence over discontinuities setting in Playback Config</td>
 		</tr>
 		<tr>
-			<td><code class="notranslate">?rule=discos-disabled</code></td>
+			<td><code translate="No">?rule=discos-disabled</code></td>
 			<td>Disable Playback with Discontinuities in HLS &amp; MultiPeriods in Dash. Takes precedence over discontinuities setting in Playback Config</td>
 		</tr>
 	</tbody>
@@ -638,19 +638,19 @@ parent: Video-On-Demand
 <section class="bcls-section">
 <h2 id="Client_side_macros">Client-side macros</h2>
 
-<p>Use the <code class="notranslate">page</code> prefix when you want to use client-side ad macros. These macros enable you to use variables in the VMAP and server URLs. For ad macro details, see the <a href="https://player.support.brightcove.com/plugins/advertising-ima3-plugin.html#Ad_macros_and_the_serverUrl">Ad macros and the serverURL</a> section of the Advertising with the IMA3 Plugin document.</p>
+<p>Use the <code translate="No">page</code> prefix when you want to use client-side ad macros. These macros enable you to use variables in the VMAP and server URLs. For ad macro details, see the <a href="https://player.support.brightcove.com/plugins/advertising-ima3-plugin.html#Ad_macros_and_the_serverUrl">Ad macros and the serverURL</a> section of the Advertising with the IMA3 Plugin document.</p>
 <!-- <p>
               When you prefix an Ad variable with , then a client-side macro will be appended to the end of the VMAP and SRC fields in the catalog response, when SSAI is being used. Then, the Brightcove player will run those strings through the client-side macro replacement logic.
             </p> -->
 
-<p>Client-side macros are prefixed with: <code class="notranslate">{% raw %}{{page.*}}{% endraw %}</code></p>
+<p>Client-side macros are prefixed with: <code translate="No">{% raw %}{{page.*}}{% endraw %}</code></p>
 
-<p>For example, to add the <code class="notranslate">document.referrer</code> and a <code class="notranslate">pageVariable</code> DOM window variable, you would prefix them with <code class="notranslate">page</code> in the ad template as follows:</p>
+<p>For example, to add the <code translate="No">document.referrer</code> and a <code translate="No">pageVariable</code> DOM window variable, you would prefix them with <code translate="No">page</code> in the ad template as follows:</p>
 
 <pre>
 <code class="notranslate language-html">{% raw %}https://adserver.com/{{page.document.referrer}}/{{page.pageVariable.whateverIwant}}{% endraw %}</code></pre>
 
-<p>The Playback API returns <code class="notranslate">document.referrer</code> and <code class="notranslate">pageVariable.whateverIwant</code> appended to the VMAP and SRC URLs. The Brightcove player then runs through its client-side macro replacement logic to replace the appropriate values, before sending the request:</p>
+<p>The Playback API returns <code translate="No">document.referrer</code> and <code translate="No">pageVariable.whateverIwant</code> appended to the VMAP and SRC URLs. The Brightcove player then runs through its client-side macro replacement logic to replace the appropriate values, before sending the request:</p>
 
 <pre>
 <code class="notranslate language-html">{% raw %}https://bolt-prefix/blah.vmap?document.referrer={document.referrer}&amp;pageVariable.whateverIwant={pageVariable.whateverIwant}{% endraw %}</code></pre>

@@ -531,9 +531,9 @@ Before an ad becomes viewable, it first needs to be transcoded. Then, it can be 
 
 	<ul>
 		<li>If you get an error response, first review the ad tag and make sure it is correct. You may have to try fake values for macros/variables.</li>
-		<li>Look at the response type. Make sure it is a DFP Ad Rules response, showing all the ad breaks, that links to VAST documents for ads within each pod. The response should say <code class="notranslate">VAST</code> or <code class="notranslate">VMAP</code> in the first few lines of the XML. Other XML from DFP is probably what they call <strong>Ad Rules XML</strong>.</li>
-		<li>If you’re not using FreeWheel, you can follow the redirects manually by copying and pasting the values into your browser’s address bar. Look for <code class="notranslate">MediaFiles</code> elements that point to compatible video sources. You are looking for MP4 or HLS (.m3u8) video source files.</li>
-		<li>If the ad response points to a file that ends in <code class="notranslate">.js</code>, then it is a VPAID ad unit, and it will not work with Brightcove SSAI.</li>
+		<li>Look at the response type. Make sure it is a DFP Ad Rules response, showing all the ad breaks, that links to VAST documents for ads within each pod. The response should say <code translate="No">VAST</code> or <code translate="No">VMAP</code> in the first few lines of the XML. Other XML from DFP is probably what they call <strong>Ad Rules XML</strong>.</li>
+		<li>If you’re not using FreeWheel, you can follow the redirects manually by copying and pasting the values into your browser’s address bar. Look for <code translate="No">MediaFiles</code> elements that point to compatible video sources. You are looking for MP4 or HLS (.m3u8) video source files.</li>
+		<li>If the ad response points to a file that ends in <code translate="No">.js</code>, then it is a VPAID ad unit, and it will not work with Brightcove SSAI.</li>
 	</ul>
 	</li>
 	<li>Determine which parameters in your ad tag can be substituted by the SSAI server, and which ones need to be passed from the player or device. Compose your ad tag appropriately. For details about ad tag macros and the appropriate syntax, see the <a href="https://ssai.support.brightcove.com/vod/guides/video-cloud-ssai-ad-config-api.html#Ad_variables">SSAI Ad Configuration</a> document.</li>
