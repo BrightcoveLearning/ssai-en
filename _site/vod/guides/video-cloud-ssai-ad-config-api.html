@@ -314,21 +314,21 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <p>The base URL for the SSAI API is:</p>
 
 <pre>
-<code class="notranslate language-http">https://ssai.api.brightcove.com/v1</code></pre>
+<code class="language-http" translate="No">https://ssai.api.brightcove.com/v1</code></pre>
 
 <h4>Account path</h4>
 
 <p>In all cases, requests will be made for a specific Video Cloud Account. So, you will always add the term <code translate="No">accounts</code> followed by your account id to the base URL:</p>
 
 <pre>
-<code class="notranslate language-http">https://ssai.api.brightcove.com/v1<strong>/accounts/</strong><span class="bcls-input">your account id</span></code></pre>
+<code class="language-http" translate="No">https://ssai.api.brightcove.com/v1<strong>/accounts/</strong><span class="bcls-input">your account id</span></code></pre>
 
 <h3>Authentication</h3>
 
 <p>Authentication for requests requires an Authorization header:</p>
 
 <pre>
-<code class="notranslate language-http">Authorization: Bearer <span class="bcls-input">your access token</span></code></pre>
+<code class="language-http" translate="No">Authorization: Bearer <span class="bcls-input">your access token</span></code></pre>
 
 <p>The <code translate="No">access_token</code> is a temporary OAuth2 access token that must be obtained from the Brightcove OAuth service. For details on how to obtain client credentials and use them to retrieve access tokens, see the <a href="https://apis.support.brightcove.com/oauth/getting-started/overview-oauth-api-v4.html">Brightcove OAuth Overview</a>.</p>
 
@@ -930,12 +930,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <p>For example, to add the <code translate="No">document.referrer</code> and a <code translate="No">pageVariable</code> DOM window variable, you would prefix them with <code translate="No">page</code> in the ad template as follows:</p>
 
 <pre>
-<code class="notranslate language-html">https://adserver.com/{{page.document.referrer}}/{{page.pageVariable.whateverIwant}}</code></pre>
+<code class="language-html" translate="No">https://adserver.com/{{page.document.referrer}}/{{page.pageVariable.whateverIwant}}</code></pre>
 
 <p>The Playback API returns <code translate="No">document.referrer</code> and <code translate="No">pageVariable.whateverIwant</code> appended to the VMAP and SRC URLs. The Brightcove player then runs through its client-side macro replacement logic to replace the appropriate values, before sending the request:</p>
 
 <pre>
-<code class="notranslate language-html">https://bolt-prefix/blah.vmap?document.referrer={document.referrer}&amp;pageVariable.whateverIwant={pageVariable.whateverIwant}</code></pre>
+<code class="language-html" translate="No">https://bolt-prefix/blah.vmap?document.referrer={document.referrer}&amp;pageVariable.whateverIwant={pageVariable.whateverIwant}</code></pre>
 </section>
 
 <section class="bcls-section">
