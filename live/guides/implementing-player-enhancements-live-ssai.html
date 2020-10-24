@@ -84,10 +84,10 @@ parent: Live
 	"ad_configuration_url_format": "<span class="bcls-input">your ad server</span>",
 <span class="bcls-highlight">    "ad_configuration_client_sdk_enabled": true,
     "client_options": {
-       "show_ad_break_remaining_time": <span class="bcls-input">true / false</span>,
-       "show_ad_remaining_time": <span class="bcls-input">true / false</span>,
-       "show_number_of_remaining_ads": <span class="bcls-input">true / false</span>,
-       "client_only_tracking": <span class="bcls-input">true / false</span>
+      "show_ad_break_remaining_time": <span class="bcls-input">true / false</span>,
+      "show_ad_remaining_time": <span class="bcls-input">true / false</span>,
+      "show_number_of_remaining_ads": <span class="bcls-input">true / false</span>,
+      "client_only_tracking": <span class="bcls-input">true / false</span>
     }</span>
   },
   "application_description": "<span class="bcls-input">your aaplication description</span>"
@@ -99,28 +99,28 @@ parent: Live
 
 <pre class="line-numbers">
 <code class="language-json" translate="No">{
- "application": {
-  "application_description": "Test ad configuration for SLS",
-  "application_ad_configuration": {
-   "ad_configuration_description": "SLS Ad Config : BC Learning PAS/SLS",
-   "ad_configuration_expected_response_type": "Vast",
-   "ad_configuration_strategy": "SingleAdResponse",
-   "ad_configuration_transforms": [],
-   "ad_configuration_url_format": "https://solutions.brightcove.com/bcls/ads/simple-vast.xml",
-   "ad_configuration_headers_for_impressions": false,
-   "ad_configuration_client_sdk_enabled": true,
-   "client_options": {
-    "show_ad_break_remaining_time": true,
-    "show_ad_remaining_time": true,
-    "show_number_of_remaining_ads": true,
-    "client_only_tracking": true
-   }
+  "application": {
+    "application_description": "Test ad configuration for SLS",
+    "application_ad_configuration": {
+    "ad_configuration_description": "SLS Ad Config : BC Learning PAS/SLS",
+    "ad_configuration_expected_response_type": "Vast",
+    "ad_configuration_strategy": "SingleAdResponse",
+    "ad_configuration_transforms": [],
+    "ad_configuration_url_format": "https://solutions.brightcove.com/bcls/ads/simple-vast.xml",
+    "ad_configuration_headers_for_impressions": false,
+    "ad_configuration_client_sdk_enabled": true,
+    "client_options": {
+      "show_ad_break_remaining_time": true,
+      "show_ad_remaining_time": true,
+      "show_number_of_remaining_ads": true,
+      "client_only_tracking": true
+    }
+    },
+    "application_id": "1234567890abcdefghijkl",
+    "application_type": "ads",
+    "account_id": "001122334455aabbccddee"
   },
-  "application_id": "1234567890abcdefghijkl",
-  "application_type": "ads",
-  "account_id": "001122334455aabbccddee"
- },
- "action": "inserted"
+  "action": "inserted"
 }</code></pre>
 
 <p>After you successfully create an ad configuration, copy the <code translate="No">application_id</code> (ad configuration id) that was generated. You will need this later to find the SSAI playback URL.</p>
@@ -159,9 +159,70 @@ parent: Live
 
 <p>If you wish to create a VOD clip from the live stream, include the <code translate="No">videocloud</code> parameter in the request body. For details, see the <a href="https://live.support.brightcove.com/live-api/guides/live-api-creating-vod-clips.html">Live API: Creating VOD Clips</a> document.</p>
 
-<p>The highlighted field in the request body below is needed for server-side ad insertion (SSAI).</p>
+<p>The highlighted field in the request bodies below (for jobs using a Video Cloud video and using a remote video) is needed for server-side ad insertion (SSAI).</p>
 
-<p>Sample request body:</p>
+<h3>Sample request body (using a Video Cloud video):</h3>
+
+<pre class="line-numbers">
+<code class="language-json" translate="No">{
+  "live_stream": true,
+  <span class="bcls-highlight">"ad_insertion": true,</span>
+  "region": "us-west-2",
+  "reconnect_time": 1800,
+  "outputs": [{
+      "label": "hls720p",
+      "live_stream": true,
+      "width": 1280,
+      "height": 720,
+      "video_codec": "h264",
+      "h264_profile": "high",
+      "video_bitrate": 2100,
+      "segment_seconds": 4,
+      "keyframe_interval": 60
+    },
+    {
+      "label": "hls540p",
+      "live_stream": true,
+      "width": 960,
+      "height": 540,
+      "video_codec": "h264",
+      "h264_profile": "main",
+      "video_bitrate": 1500,
+      "segment_seconds": 4,
+      "keyframe_interval": 60
+    },
+    {
+      "label": "hls360p",
+      "live_stream": true,
+      "width": 640,
+      "height": 360,
+      "video_codec": "h264",
+      "h264_profile": "main",
+      "video_bitrate": 800,
+      "segment_seconds": 4,
+      "keyframe_interval": 60
+    }
+  ],
+  "videocloud": {
+    "video": {
+      "name": "Live SSAI VideoCloud Asset",
+      "description": "",
+      "long_description": "",
+      "tags": [],
+      "reference_id": "live_ssai_vc_asset",
+      "link": {
+      "url": "",
+      "text": ""
+    },
+    "schedule": {
+      "starts_at": null,
+      "ends_at": null
+    },
+    "custom_fields": {}
+    }
+  }
+}</code></pre>
+<h3>Sample request body (using remote video):</h3>
 
 <pre class="line-numbers">
 <code class="language-json" translate="No">{
