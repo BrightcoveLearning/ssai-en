@@ -1,0 +1,1129 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  
+  <title>UX Implementation Guide</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+  <script src="/assets/js/sajari-head.js"></script>
+</head>
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><span class="product-logo"style="font-family:'Balto Web','Public Sans';font-size:2em;font-weight:bold;">BRIGHTCOVE SSAI<sup>&trade;</sup></span></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">Select Language</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+    <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+      <option value="">Other Brightcove Docs</option>
+      
+        
+          <option value="https://support.brightcove.com">Documentation Home</option>
+        
+      
+        
+          <option value="https://audience.support.brightcove.com">Brightcove Audience</option>
+        
+      
+        
+          <option value="https://beacon.support.brightcove.com">Brightcove Beacon</option>
+        
+      
+        
+          <option value="https://campaign.support.brightcove.com">Brightcove Campaign</option>
+        
+      
+        
+          <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
+        
+      
+        
+          <option value="https://live.support.brightcove.com">Brightcove Live</option>
+        
+      
+        
+          <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+        
+      
+        
+          <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+        
+      
+        
+          <option value="https://social.support.brightcove.com">Brightcove Social</option>
+        
+      
+        
+          <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
+        
+      
+        
+          <option value="https://player.support.brightcove.com">Brightcove Player Development</option>
+        
+      
+        
+          <option value="https://apis.support.brightcove.com">Video Cloud Platform APIs</option>
+        
+      
+        
+          <option value="https://sdks.support.brightcove.com">Video Cloud Device SDKs</option>
+        
+      
+        
+          <option value="https://integrations.support.brightcove.com">Integrations and CMS Connectors</option>
+        
+      
+        
+          <option value="https://general.support.brightcove.com">Video Cloud General Information</option>
+        
+      
+        
+          <option value="https://zencoder.support.brightcove.com">Zencoder</option>
+        
+      
+    </select>
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="support"> Contact Support</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="system status"> System Status</a></span>
+    <br>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      
+      
+      <li class="breadcrumb-item active" aria-current="page">UX Implementation Guide</li>
+    </ol>
+  </nav>
+</header>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-3 left-side-bar">
+        <nav class="sidenav" id="side_nav">
+          
+            
+            <h5><a href="/index.html">Home</a></h5>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/getting-started/index.html">Getting Started <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/getting-started/video-cloud-ssai-overview.html">SSAI Overview</a></li>
+                  
+                
+                  
+                    <li><a href="https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html">Configuring Server-Side Ad Settings</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/vod/guides/index.html">Video-On-Demand Guides <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="https://player.support.brightcove.com/plugins/implementing-server-side-ads-brightcove-player.html">Implementing SSAI with the Brightcove Player</a></li>
+                  
+                
+                  
+                    <li><a href="https://sdks.support.brightcove.com/features/implementing-server-side-ads-native-player-sdks.html">Implementing SSAI with the Native SDKs</a></li>
+                  
+                
+                  
+                    <li><a href="/vod/guides/ssai-ad-block-detection-and-auto-failover.html">SSAI: Ad Block Detection and Auto-Failover</a></li>
+                  
+                
+                  
+                    <li><a href="/vod/guides/video-cloud-ssai-ad-config-api.html">Video Cloud SSAI Ad Config API</a></li>
+                  
+                
+                  
+                    <li><a href="/vod/guides/ad-error-beacons-ssai.html">Ad Error Beacons with SSAI</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/vod/references/index.html">Video-On-Demand References <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/vod/references/reference.html">SSAI API Reference</a></li>
+                  
+                
+                  
+                    <li><a href="/vod/references/ssai-api-error-reference.html">SSAI API Error Reference</a></li>
+                  
+                
+                  
+                    <li><a href="https://player.support.brightcove.com/plugins/changelog/server-side-ads-plugin-changelog.html">Server-Side Ads Plugin Changelog</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/live/guides/index.html">Live Guides <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="https://live.support.brightcove.com/live-module/implementing-server-side-ads-live-module.html">Implementing SSAI in the Live Module</a></li>
+                  
+                
+                  
+                    <li><a href="https://live.support.brightcove.com/live-api/ssai/live-api-server-side-ad-insertion-ssai.html">Brightcove Live API: Server-Side Ad Insertion (SSAI)</a></li>
+                  
+                
+                  
+                    <li><a href="https://live.support.brightcove.com/live-api/ssai/live-api-cue-points-and-ad-beacons-ssai.html">Live API: Cue Points and Ad Beacons with SSAI</a></li>
+                  
+                
+                  
+                    <li><a href="https://player.support.brightcove.com/advertising/client-side-preroll-with-live-ssai.html">Client-Side Preroll Ads with Live SSAI</a></li>
+                  
+                
+                  
+                    <li><a href="/live/guides/overview-player-enhancements-live-ssai.html">Overview: Player Enhancements for Live SSAI</a></li>
+                  
+                
+                  
+                    <li><a href="/live/guides/implementing-player-enhancements-live-ssai.html">Implementing Player Enhancements for Live SSAI</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/live/references/index.html">Live References <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/live/references/reference.html">Live API Reference</a></li>
+                  
+                
+                  
+                    <li><a href="https://live.support.brightcove.com/live-api/references/live-api-error-messages.html">Live API: Error Messages</a></li>
+                  
+                
+                  
+                    <li><a href="https://live.support.brightcove.com/release-notes/live-api-release-notes.html">Live API Release Notes</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/support/index.html">Developer Support <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/support/brightcove-answer.html">Brightcove Answers</a></li>
+                  
+                
+                  
+                    <li><a href="/support/viewing-brightcove-system-status-page.html">Viewing the Brightcove System Status Page</a></li>
+                  
+                
+                  
+                    <li><a href="/support/contact-sales.html">Contact Sales</a></li>
+                  
+                
+                  
+                    <li><a href="/support/opening-case-with-brightcove-support.html">Opening a Support Case</a></li>
+                  
+                
+              </ul>
+            
+          
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+  <!-- bootstrap layout -->
+
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Navigation Menu"></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">Page Contents</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="open in new tab" style="margin-top:4em;width: 1.5em;"></a>
+
+
+
+  
+    
+
+
+<h1>UX Implementation Guide</h1>
+<article class="bcls-article">
+
+
+<section class="bcls-section" id="syntax">
+<h2>URL Creation</h2>
+
+<h3>URL Templates</h3>
+
+<p>Brightcove Once UX utilizes a proprietary URL syntax based on Once VOD technology, allowing for URL creation to be very similar in function to standard Once URLs. The only differences in URL creation for Once UX are an updated host name and the inclusion of two additional variables before the typical Once DeliveryType and RequestedFileType variables, covered below. For additional explanation URL creation, please see <a href="/node/17772#onceURLcreation">Getting Started with Once: Once URL Creation</a>.</p>
+
+<h3 id="servingContentVariables">Serving Content Variables</h3>
+
+<table class="bcls-table">
+	<thead class="bcls-table__head">
+		<tr>
+			<th>Host</th>
+			<th>AdServiceFlag</th>
+			<th>AdServiceType</th>
+		</tr>
+	</thead>
+	<tbody class="bcls-table__body">
+		<tr>
+			<td>onceux.unicornmedia.com</td>
+			<td>ads</td>
+			<td>vmap</td>
+		</tr>
+	</tbody>
+</table>
+
+<h3>URL Map</h3>
+
+<p><code><strong>Host</strong>/Service/<strong>AdServiceFlag</strong>/<strong>AdServiceType</strong>/DeliveryType/RequestedFileType/DomainGUID/ApplicationGUID/MediaItemGUID/VirtualFileName.Extension</code></p>
+
+<h3>Example</h3>
+
+<p><code>http://<strong>onceux.unicornmedia.com</strong>/now/<strong>ads</strong>/<strong>vmap</strong>/od/auto/4989f8db-9187-49ca-86ff-e2cd5342cd4/35217a08-d9db-469f-aec0-7c88406a0c60/63598604-cb88-44f8-bc47-d207af3b7b4a/content.once</code></p>
+</section>
+
+<section class="bcls-section" id="vmapAdAggregation">
+<h2>VMAP Ad Aggregation</h2>
+
+<p>The <a href="#servingContentVariables">serving content variables above</a> for Once UX utilize the service's Ad Aggregation method. This method retrieves an ad playlist from values that are derived by summarizing or <em>aggregating</em> the ad viewing data based on your applicationguid and ad server(s) configured. When receiving the Once UX response, this method provides metadata and a VMAP object containing the ad load for the entire asset's viewing session that has been normalized into VAST 3.0 and then embedded into a VMAP 1.0 XML object. This VMAP response gives you the ability to handle client-side ad features relating to user experience (ad creative or ad pod countdowns, hiding player controls), beaconing, and additional creative types (banners, click-throughs, and VPAID advertisements). This VMAP object also contains a Brightcove Once XML object, which includes Brightcove Once data and an ad inserted Once URL to be used for playback. See the <a href="#fullVMAPexample">VMAP sample response example</a> for more information.</p>
+</section>
+
+<section class="bcls-section" id="DAP">
+<h2>Dynamic Ad Parameters</h2>
+
+<p>Once UX allows for the use of all allowable dynamic ad parameters (DAP) for populating ad and beacon calls the same as the Once platform. For explanation of these values, please see <a href="/node/17772#DAP">Getting Started with Once: Dynamic Ad Parameters</a>.</p>
+</section>
+
+<section class="bcls-section" id="queryParams">
+<h2>Query String Parameters</h2>
+
+<p>Once UX utilizes the same query string parameters as the Once platform and there are three covered in this section that may be used to assist in additional fine-tuning of the Once UX response and behavior. Please see <a href="/node/17772#parameters">Getting Started with Once: Query String Parameters</a> for more information on the other available query string parameters.</p>
+
+<h4>Disable Tracking Events</h4>
+
+<p><code>UMTP={integer}</code></p>
+
+<p><code>UMTP</code> is used to override or disable the default Brightcove server side ad video impression and event tracking behavior.</p>
+
+<ul>
+	<li>UMTP=0</li>
+</ul>
+
+<p>By default, Brightcove fires linear ad video impression and tracking events to the ad server on behalf of the client/application. If the parameter is explicitly set, Once will not fire the impressions or tracking events.</p>
+
+<h4>Output</h4>
+
+<p><code>output={integer}</code></p>
+
+<p>This Key-Value pair controls the object format of the response Brightcove returns. By default, Once UX will respond with XML, so output=1 should be used if a JSON response is desired.</p>
+
+<ul>
+	<li>XML=0</li>
+	<li>JSON=1</li>
+</ul>
+
+<h4>Timedtextextension</h4>
+
+<p><code>timedtextextension={extension}</code></p>
+
+<p>Used to modify the output caption type for timedtext adaptive/M3U8 and Once UX &lt;uo:timedTextURL&gt;responses. Once UX provides a default sidecar in a DFXP formatted xml file in the VMAP response for players/apps/environments that may not be able to use the Apple method of webvtt by default. Please see the Once UX XML object example for the location of this file in VMAP responses.</p>
+
+<p>The available extensions are:</p>
+
+<ul>
+	<li>srt</li>
+	<li>vtt (WebVTT)</li>
+	<li>xml (DFXP using an .xml extension)</li>
+	<li>dfxp</li>
+</ul>
+</section>
+
+<section class="bcls-section" id="examples">
+<h2>VMAP Examples &amp; Fields</h2>
+
+<p>This section covers the notable fields in VMAP responses in regard to Once UX. These examples are broken out into:</p>
+
+<ul>
+	<li><a href="#onceXMLobjectExample">The Brightcove Once XML object</a></li>
+	<li><a href="#adbreakObjectSample">An AdBreak Object</a></li>
+	<li><a href="#fullVMAPexample">A full example VMAP response</a> including a VPAID ad, a video ad, and a wrapper delivered ad with the PreRoll, MidRoll, and PostRoll break types</li>
+</ul>
+
+<h3 id="onceXMLobjectExample">Sample Brightcove Once XML Object</h3>
+
+<pre class="line-numbers">
+<code class="language-xml">&lt;vmap:VMAP xmlns:uo="uo" xmlns:vmap="http://www.iab.net/vmap-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0"&gt;
+    &lt;vmap:Extensions&gt;
+        &lt;uo:unicornOnce ttl="600" contenturi="http://api04-phx.unicornmedia.com/now/adaptive/m3u8/ab1dbc9b-9d90-4edb-b4ab-769e0049209b/2455340c-8dcd-412e-a917-c6fadfe268bd/0e627852-6eaa-4151-ab97-15e9a76835a7/content.m3u8?oasid=ae9fc045-da10-4801-9f23-f78115f6a11a&amp;&amp;umbeparambeaconkey1=co-ca-2113&amp;umbeparambeaconkey2=dragonfly" contentlength="378" payloadlength="468" contextid="ae9fc045-da10-4801-9f23-f78115f6a11a"/&gt;
+        &lt;uo:contentImpressions&gt;
+            &lt;uo:Impression url="http://tracking.adprovider.brightcoveapp.com/beacon/content/start" time="0"/&gt;
+      &lt;/uo:contentImpressions&gt;
+        &lt;uo:requestParameters&gt;
+            &lt;uo:parameter key="value1" value="owl"/&gt;
+            &lt;uo:parameter key="value2" value="city"/&gt;
+        &lt;/uo:requestParameters&gt;
+        &lt;uo:timedTextURL languageCode="en"&gt;
+            &lt;![CDATA[
+http://api206-phx.unicornmedia.com/tt/ab1dbc9b-9d90-4edb-b4ab-769e0049209b/0e627852-6eaa-4151-ab97-15e9a76835a7/0ffb96cc-3c92-4599-a818-82c1c1db7e46/en/content.xml
+            ]]&gt;
+        &lt;/uo:timedTextURL&gt;
+    &lt;/vmap:Extensions&gt;</code></pre>
+
+<h4>Extensions Node Explanation</h4>
+
+<table class="bcls-table">
+	<thead class="bcls-table__head">
+		<tr>
+			<th>Node</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody class="bcls-table__body">
+		<tr>
+			<td><code>uo:unicornOnce</code></td>
+			<td>Contains information on the video content.</td>
+		</tr>
+		<tr>
+			<td><code>uo:contentImpressions</code></td>
+			<td>Populated for ad requests that require a content start beacon.</td>
+		</tr>
+		<tr>
+			<td><code>uo:requestParameters</code></td>
+			<td>Break out of ad targeting key values sent in the ad request by Once.</td>
+		</tr>
+		<tr>
+			<td><code>uo:timeTextURL</code></td>
+			<td>Information around the timedtext caption file.</td>
+		</tr>
+	</tbody>
+</table>
+
+<h4>uo:unicornOnce Node Explanation</h4>
+
+<table class="bcls-table">
+	<thead class="bcls-table__head">
+		<tr>
+			<th>Node</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody class="bcls-table__body">
+		<tr>
+			<td><code>ttl</code></td>
+			<td>Time to live value in seconds for the ads inserted into this particular request. If the request is made outside of this time, no ads will be inserted. Best practices recommendation is to request the top level Once UX URL if a user waits past the ttl to begin playback.</td>
+		</tr>
+		<tr>
+			<td><code>contenturi</code></td>
+			<td>Once URL video response to be played back to the end user. Contains dynamically inserted advertisements in the requested/determined format following standard Once behavior.</td>
+		</tr>
+		<tr>
+			<td><code>contentlength</code></td>
+			<td>The duration in seconds of the non-monetized base asset.</td>
+		</tr>
+		<tr>
+			<td><code>payloadlength</code></td>
+			<td>The duration in seconds of the monetized base asset. <strong>NOTE:</strong> VPAID Duration is not included in this value.</td>
+		</tr>
+		<tr>
+			<td><code>contextid</code></td>
+			<td>Unique value for the particular returned content and ad payload.</td>
+		</tr>
+		<tr>
+			<td><code>oasid</code> (contenturi query string)</td>
+			<td>Query string appended to the contenturi URL containing the contextid value to indicate particular content and ad payload for that request.</td>
+		</tr>
+	</tbody>
+</table>
+
+<h4>uo:contentImpressions Node Explanation</h4>
+
+<table class="bcls-table">
+	<thead class="bcls-table__head">
+		<tr>
+			<th>Node</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody class="bcls-table__body">
+		<tr>
+			<td><code>url</code></td>
+			<td>URL to be fired by player at content start if server side tracking has been disabled via umtp=0. <strong>NOTE:</strong> SmartXML is currently the only ad response where this is supported.</td>
+		</tr>
+		<tr>
+			<td><code>time</code></td>
+			<td>Time in seconds when the contentImpression URL is to be fired. (Will always be <code>0</code> since this is to be fired when the media starts playing).</td>
+		</tr>
+	</tbody>
+</table>
+
+<h4>uo:requestParameters Node Explanation</h4>
+
+<table class="bcls-table">
+	<thead class="bcls-table__head">
+		<tr>
+			<th>Node</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody class="bcls-table__body">
+		<tr>
+			<td><code>key</code></td>
+			<td>Key of key value pair in call to ad provider</td>
+		</tr>
+		<tr>
+			<td><code>value</code></td>
+			<td>Value of key value pair in call to ad provider</td>
+		</tr>
+	</tbody>
+</table>
+
+<h4>uo:timedTextURL Node Explanation</h4>
+
+<table class="bcls-table">
+	<thead class="bcls-table__head">
+		<tr>
+			<th>Node</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody class="bcls-table__body">
+		<tr>
+			<td><code>URL</code></td>
+			<td>Location of caption file dynamically manipulated for ad insertion and returned in requested format if <code>timetextentension</code></td>
+		</tr>
+		<tr>
+			<td><code>languageCode</code></td>
+			<td>If provided at asset creation, the ISO 639-1 language code</td>
+		</tr>
+	</tbody>
+</table>
+
+<h3 id="adbreakObjectSample">Sample AdBreak Object</h3>
+
+<pre class="line-numbers">
+<code class="language-xml">&lt;vmap:AdBreak breakType="linear" breakId="MidRoll_45_1" timeOffset="00:00:45.000"&gt;
+    &lt;vmap:AdSource allowMultipleAds="true" followRedirects="true" id="2"&gt;
+        &lt;vmap:VASTData&gt;
+            &lt;VAST xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+                &lt;Ad id="001"&gt;
+                &lt;InLine&gt;
+                    &lt;AdSystem&gt;Unknown&lt;/AdSystem&gt;
+                    &lt;AdTitle&gt;Unknown&lt;/AdTitle&gt;
+                    &lt;Description /&gt;
+                    &lt;Impression id="unknown"&gt;http://tracking.adprovider.qa.unicornapp.com/beacon/Impression?id=adtracking&lt;/Impression&gt;
+                    &lt;Creatives&gt;
+                        &lt;Creative&gt;
+                            &lt;Linear&gt;
+                                &lt;Duration&gt;00:00:30.0000000+00:00&lt;/Duration&gt;
+                                &lt;TrackingEvents&gt;
+                                    &lt;Tracking event="firstQuartile"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/firstQuartile&lt;/Tracking&gt;
+                                    &lt;Tracking event="midpoint"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/midpoint&lt;/Tracking&gt;
+                                    &lt;Tracking event="thirdQuartile"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/thirdQuartile&lt;/Tracking&gt;
+                                    &lt;Tracking event="complete"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/complete&lt;/Tracking&gt;
+                                    &lt;Tracking event="mute"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/mute&lt;/Tracking&gt;
+                                    &lt;Tracking event="unmute"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/unmute&lt;/Tracking&gt;
+                                    &lt;Tracking event="collapse"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/collapse&lt;/Tracking&gt;
+                                    &lt;Tracking event="expand"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/expand&lt;/Tracking&gt;
+                                    &lt;Tracking event="pause"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/pause&lt;/Tracking&gt;
+                                    &lt;Tracking event="resume"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/resume&lt;/Tracking&gt;
+                                    &lt;Tracking event="rewind"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/rewind&lt;/Tracking&gt;
+                                    &lt;Tracking event="acceptInvitation"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/acceptinvitation&lt;/Tracking&gt;
+                                    &lt;Tracking event="close"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/close&lt;/Tracking&gt;
+                                &lt;/TrackingEvents&gt;
+                                &lt;VideoClicks&gt;
+                                    &lt;ClickTracking id="unknown"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/clicktracking&lt;/ClickTracking&gt;
+                                &lt;/VideoClicks&gt;
+                                &lt;MediaFiles/&gt;
+                            &lt;/Linear&gt;
+                            &lt;/Creative&gt;
+                        &lt;/Creatives&gt;
+                    &lt;/InLine&gt;
+                &lt;/Ad&gt;
+            &lt;/VAST&gt;
+        &lt;/vmap:VASTData&gt;
+    &lt;/vmap:AdSource&gt;
+&lt;/vmap:AdBreak&gt;</code></pre>
+
+<h4>vmap:AdBreak Explanation: Field Explanation</h4>
+
+<table class="bcls-table">
+	<thead class="bcls-table__head">
+		<tr>
+			<th>Node</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody class="bcls-table__body">
+		<tr>
+			<td><code>vmap:AdSource</code></td>
+			<td>Identifies ad break attributes and acts as a container for <code>VASTData</code></td>
+		</tr>
+		<tr>
+			<td><code>vmap:VASTData</code></td>
+			<td>Indicates that a VAST 3.0 ad response will follow in the VMAP response</td>
+		</tr>
+	</tbody>
+</table>
+
+<h5>vmap:AdBreak Attributes Explanation</h5>
+
+<p><code>vmap:AdBreak</code> is a repeating VMAP element containing information received by your ad provider particular to each advertisement. AdBreaks will always be ordered in chronological order for both ad break position by time within content(pre0, mid0, mid1, post0) and ad sequence within a break/pod(ad0, ad1, ad2).</p>
+
+<table class="bcls-table">
+	<thead class="bcls-table__head">
+		<tr>
+			<th>Node</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody class="bcls-table__body">
+		<tr>
+			<td><code>breakId</code></td>
+			<td>The VMAP designation of the advertisement. This value indicates the break type, break group title based on time offset, and zero-based time position value of break</td>
+		</tr>
+		<tr>
+			<td><code>timeOffset</code></td>
+			<td>Time offset from the start of the base video content to the placement of the ad break within the base video content. Pre and Postroll breaks will display time offsets of start or end, respectively. For midroll ad breaks, the <code>timeoffset</code> value must be combined with a cumulative duration of all advertisements displayed before that particular break for accurate break calculation. For postroll ad breaks, break start is <code>contentlength</code> combined with a cumulative duration of all previously displayed ad creative.</td>
+		</tr>
+	</tbody>
+</table>
+
+<h4>vmap:AdSource Attribute Explanation</h4>
+
+<table class="bcls-table">
+	<thead class="bcls-table__head">
+		<tr>
+			<th>Node</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody class="bcls-table__body">
+		<tr>
+			<td>id</td>
+			<td>Zero-based enumeration value of ad count throughout VMAP document</td>
+		</tr>
+	</tbody>
+</table>
+
+<h4>vmap:VASTData Field Explanation</h4>
+
+<table class="bcls-table">
+	<thead class="bcls-table__head">
+		<tr>
+			<th>Node</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody class="bcls-table__body">
+		<tr>
+			<td><code>Impression</code></td>
+			<td>Tracking URLs to be fired at ad start if server side tracking has been disabled via <code>umtp=0</code></td>
+		</tr>
+		<tr>
+			<td><code>Duration</code></td>
+			<td>Duration of particular ad creative. <strong>NOTE:</strong> VPAID durations are passed through from ad response.</td>
+		</tr>
+		<tr>
+			<td><code>Tracking</code></td>
+			<td>Event tracking URLs to be fired at appropriate times if server side tracking has been disabled via <code>umtp=0</code>. <strong>NOTE:</strong> Any events outside of Start, First Quartile, Midpoint, Third Quartile, and Complete must <strong>always</strong> be fired by the <code>player/app/environment</code>.</td>
+		</tr>
+		<tr>
+			<td><code>MediaFiles</code></td>
+			<td>Passthrough location for VPAID asset resources. <strong>NOTE:</strong> Video creative media files will not be present in the VMAP object as the Once URL provided in the Once XML object will have these assets inserted in the correct locations.</td>
+		</tr>
+	</tbody>
+</table>
+
+<h3 id="fullVMAPexample">Sample Full VMAP Response</h3>
+
+<pre class="line-numbers">
+<code class="language-xml">&lt;vmap:VMAP xmlns:uo="uo" xmlns:vmap="http://www.iab.net/vmap-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0"&gt;
+    &lt;vmap:Extensions&gt;
+        &lt;uo:unicornOnce ttl="600" contenturi="http://api04-phx.unicornmedia.com/now/adaptive/m3u8/ab1dbc9b-9d90-4edb-b4ab-769e0049209b/2455340c-8dcd-412e-a917-c6fadfe268bd/0e627852-6eaa-4151-ab97-15e9a76835a7/content.m3u8?oasid=ae9fc045-da10-4801-9f23-f78115f6a11a&amp;&amp;umbeparambeaconkey1=co-ca-2113&amp;umbeparambeaconkey2=dragonfly" contentlength="378" payloadlength="468" contextid="ae9fc045-da10-4801-9f23-f78115f6a11a"/&gt;
+        &lt;uo:requestParameters&gt;
+            &lt;uo:parameter key="value1" value="owl"/&gt;
+            &lt;uo:parameter key="value2" value="city"/&gt;
+        &lt;/uo:requestParameters&gt;
+        &lt;uo:timedTextURL languageCode="en"&gt;
+            &lt;![CDATA[            http://api206-phx.unicornmedia.com/tt/ab1dbc9b-9d90-4edb-b4ab-769e0049209b/0e627852-6eaa-4151-ab97-15e9a76835a7/0ffb96cc-3c92-4599-a818-82c1c1db7e46/en/content.xml
+            ]]&gt;
+        &lt;/uo:timedTextURL&gt;
+    &lt;/vmap:Extensions&gt;
+    &lt;vmap:AdBreak breakType="linear" breakId="PreRoll_0_0" timeOffset="start"&gt;
+        &lt;vmap:AdSource allowMultipleAds="true" followRedirects="true" id="0"&gt;
+            &lt;vmap:VASTData&gt;
+                &lt;VAST xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+                      &lt;Ad id="001"&gt;
+                        &lt;InLine&gt;
+                            &lt;AdSystem&gt;Unknown&lt;/AdSystem&gt;
+                            &lt;AdTitle&gt;Unknown&lt;/AdTitle&gt;
+                            &lt;Description /&gt;
+                            &lt;Impression id="impr001"&gt;http://tracking.adprovider.qa.unicornapp.com/beacon/Impression?id=adtracking&lt;/Impression&gt;
+                            &lt;Creatives&gt;
+                                &lt;Creative&gt;
+                                    &lt;Linear&gt;
+                                        &lt;Duration&gt;00:00:30.0000000+00:00&lt;/Duration&gt;
+                                        &lt;TrackingEvents&gt;
+                                            &lt;Tracking event="firstQuartile"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/firstQuartile&lt;/Tracking&gt;
+                                            &lt;Tracking event="midpoint"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/midpoint&lt;/Tracking&gt;
+                                            &lt;Tracking event="thirdQuartile"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/thirdQuartile&lt;/Tracking&gt;
+                                            &lt;Tracking event="complete"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/complete&lt;/Tracking&gt;
+                                            &lt;Tracking event="mute"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/mute&lt;/Tracking&gt;
+                                            &lt;Tracking event="unmute"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/unmute&lt;/Tracking&gt;
+                                            &lt;Tracking event="collapse"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/collapse&lt;/Tracking&gt;
+                                            &lt;Tracking event="expand"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/expand&lt;/Tracking&gt;
+                                            &lt;Tracking event="pause"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/pause&lt;/Tracking&gt;
+                                            &lt;Tracking event="resume"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/resume&lt;/Tracking&gt;
+                                            &lt;Tracking event="rewind"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/rewind&lt;/Tracking&gt;
+                                            &lt;Tracking event="acceptInvitation"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/acceptinvitation&lt;/Tracking&gt;
+                                            &lt;Tracking event="close"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/close&lt;/Tracking&gt;
+                                        &lt;/TrackingEvents&gt;
+                                        &lt;VideoClicks&gt;
+                                            &lt;ClickTracking id="unknown"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/clicktracking&lt;/ClickTracking&gt;
+                                        &lt;/VideoClicks&gt;
+                                        &lt;MediaFiles/&gt;
+                                    &lt;/Linear&gt;
+                                    &lt;/Creative&gt;
+                                &lt;/Creatives&gt;
+                            &lt;/InLine&gt;
+                        &lt;/Ad&gt;
+                    &lt;/VAST&gt;
+            &lt;/vmap:VASTData&gt;
+        &lt;/vmap:AdSource&gt;
+    &lt;/vmap:AdBreak&gt;
+    &lt;vmap:AdBreak breakType="linear" breakId="MidRoll_45_0" timeOffset="00:00:45.000"&gt;
+        &lt;vmap:AdSource allowMultipleAds="true" followRedirects="true" id="1"&gt;
+            &lt;vmap:VASTData&gt;
+                &lt;VAST xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+                    &lt;Ad id="vpaid"&gt;
+                        &lt;InLine&gt;
+                            &lt;AdSystem&gt;Unknown&lt;/AdSystem&gt;
+                            &lt;AdTitle&gt;Unknown&lt;/AdTitle&gt;
+                            &lt;Impression id="Unknown"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/vpaid/impression&lt;/Impression&gt;
+                            &lt;Impression&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/vpaid/impression1&lt;/Impression&gt;
+                            &lt;Creatives&gt;
+                                &lt;Creative id="vpaid00A" sequence="1"&gt;
+                                    &lt;Linear&gt;
+                                        &lt;Duration&gt;
+                                            00:01:30.0000000+00:00
+                                        &lt;/Duration&gt;
+                                        &lt;TrackingEvents&gt;
+                                            &lt;Tracking event="firstQuartile"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/firstQuartile&lt;/Tracking&gt;
+                                            &lt;Tracking event="midpoint"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/midpoint&lt;/Tracking&gt;
+                                            &lt;Tracking event="thirdQuartile"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/thirdQuartile&lt;/Tracking&gt;
+                                            &lt;Tracking event="complete"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/complete&lt;/Tracking&gt;
+                                            &lt;Tracking event="mute"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/mute&lt;/Tracking&gt;
+                                            &lt;Tracking event="unmute"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/unmute&lt;/Tracking&gt;
+                                            &lt;Tracking event="collapse"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/collapse&lt;/Tracking&gt;
+                                            &lt;Tracking event="expand"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/expand&lt;/Tracking&gt;
+                                            &lt;Tracking event="pause"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/pause&lt;/Tracking&gt;
+                                            &lt;Tracking event="resume"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/resume&lt;/Tracking&gt;
+                                            &lt;Tracking event="rewind"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/rewind&lt;/Tracking&gt;
+                                            &lt;Tracking event="acceptInvitation"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/acceptinvitation&lt;/Tracking&gt;
+                                            &lt;Tracking event="close"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/close&lt;/Tracking&gt;
+                                        &lt;/TrackingEvents&gt;
+                                        &lt;AdParameters&gt;
+                                            timestamp=1411773597&amp;adid=vpaid
+                                        &lt;/AdParameters&gt;
+                                        &lt;VideoClicks&gt;
+                                            &lt;ClickThrough /&gt;
+                                            &lt;ClickTracking id="unknown"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/clicktracking&lt;/ClickTracking&gt;
+                                        &lt;/VideoClicks&gt;
+                                        &lt;MediaFiles&gt;
+                                            &lt;MediaFile delivery="progressive" type="application/x-shockwave-flash" bitrate="" width="0" height="0"&gt;
+                                                http://vpaid.adprovider.qa.brightcoveapp.com?advpaid_player.swf
+                                            &lt;/MediaFile&gt;
+                                        &lt;/MediaFiles&gt;
+                                    &lt;/Linear&gt;
+                                &lt;/Creative&gt;
+                                &lt;Creative id="001" sequence="1"&gt;
+                                    &lt;CompanionAds&gt;
+                                        &lt;Companion width="728" height="90"&gt;
+                                            &lt;HTMLResource&gt;
+                                                http://iframe.adprovider.qa.brightcoveapp.com?value=1
+                                            &lt;/HTMLResource&gt;
+                                        &lt;/Companion&gt;
+                                        &lt;Companion width="300" height="60"&gt;
+                                            &lt;HTMLResource&gt;
+                                                http://iframe.adprovider.qa.brightcoveapp.com?value=2
+                                            &lt;/HTMLResource&gt;
+                                        &lt;/Companion&gt;
+                                    &lt;/CompanionAds&gt;
+                                &lt;/Creative&gt;
+                                &lt;Creative id="002" sequence="1"&gt;
+                                    &lt;NonLinearAds&gt;
+                                        &lt;TrackingEvents&gt;
+                                            &lt;Tracking event="firstQuartile"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/firstQuartile&lt;/Tracking&gt;
+                                            &lt;Tracking event="midpoint"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/midpoint&lt;/Tracking&gt;
+                                            &lt;Tracking event="thirdQuartile"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/thirdQuartile&lt;/Tracking&gt;
+                                            &lt;Tracking event="complete"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/complete&lt;/Tracking&gt;
+                                            &lt;Tracking event="mute"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/mute&lt;/Tracking&gt;
+                                            &lt;Tracking event="unmute"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/unmute&lt;/Tracking&gt;
+                                            &lt;Tracking event="collapse"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/collapse&lt;/Tracking&gt;
+                                            &lt;Tracking event="expand"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/expand&lt;/Tracking&gt;
+                                            &lt;Tracking event="pause"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/pause&lt;/Tracking&gt;
+                                            &lt;Tracking event="resume"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/resume&lt;/Tracking&gt;
+                                            &lt;Tracking event="rewind"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/rewind&lt;/Tracking&gt;
+                                            &lt;Tracking event="acceptInvitation"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/acceptinvitation&lt;/Tracking&gt;
+                                            &lt;Tracking event="close"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/close&lt;/Tracking&gt;
+                                        &lt;/TrackingEvents&gt;
+                                        &lt;NonLinear id="" width="480" height="360" scalable="false" maintainAspectRatio="false" minSuggestedDuration="00:00:30.0000000+00:00" /&gt;
+                                    &lt;/NonLinearAds&gt;
+                                &lt;/Creative&gt;
+                            &lt;/Creatives&gt;
+                        &lt;/InLine&gt;
+                    &lt;/Ad&gt;
+                &lt;/VAST&gt;
+            &lt;/vmap:VASTData&gt;
+        &lt;/vmap:AdSource&gt;
+    &lt;/vmap:AdBreak&gt;
+    &lt;vmap:AdBreak breakType="linear" breakId="MidRoll_45_1" timeOffset="00:00:45.000"&gt;
+        &lt;vmap:AdSource allowMultipleAds="true" followRedirects="true" id="2"&gt;
+            &lt;vmap:VASTData&gt;
+                &lt;VAST xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+                      &lt;Ad id="001"&gt;
+                        &lt;InLine&gt;
+                            &lt;AdSystem&gt;Unknown&lt;/AdSystem&gt;
+                            &lt;AdTitle&gt;Unknown&lt;/AdTitle&gt;
+                            &lt;Description /&gt;
+                            &lt;Impression id="unknown"&gt;http://tracking.adprovider.qa.unicornapp.com/beacon/Impression?id=adtracking&lt;/Impression&gt;
+                            &lt;Creatives&gt;
+                                &lt;Creative&gt;
+                                    &lt;Linear&gt;
+                                        &lt;Duration&gt;00:00:30.0000000+00:00&lt;/Duration&gt;
+                                        &lt;TrackingEvents&gt;
+                                            &lt;Tracking event="firstQuartile"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/firstQuartile&lt;/Tracking&gt;
+                                            &lt;Tracking event="midpoint"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/midpoint&lt;/Tracking&gt;
+                                            &lt;Tracking event="thirdQuartile"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/thirdQuartile&lt;/Tracking&gt;
+                                            &lt;Tracking event="complete"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/complete&lt;/Tracking&gt;
+                                            &lt;Tracking event="mute"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/mute&lt;/Tracking&gt;
+                                            &lt;Tracking event="unmute"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/unmute&lt;/Tracking&gt;
+                                            &lt;Tracking event="collapse"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/collapse&lt;/Tracking&gt;
+                                            &lt;Tracking event="expand"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/expand&lt;/Tracking&gt;
+                                            &lt;Tracking event="pause"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/pause&lt;/Tracking&gt;
+                                            &lt;Tracking event="resume"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/resume&lt;/Tracking&gt;
+                                            &lt;Tracking event="rewind"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/rewind&lt;/Tracking&gt;
+                                            &lt;Tracking event="acceptInvitation"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/acceptinvitation&lt;/Tracking&gt;
+                                            &lt;Tracking event="close"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/close&lt;/Tracking&gt;
+                                        &lt;/TrackingEvents&gt;
+                                        &lt;VideoClicks&gt;
+                                            &lt;ClickTracking id="unknown"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/clicktracking&lt;/ClickTracking&gt;
+                                        &lt;/VideoClicks&gt;
+                                        &lt;MediaFiles/&gt;
+                                    &lt;/Linear&gt;
+                                    &lt;/Creative&gt;
+                                &lt;/Creatives&gt;
+                            &lt;/InLine&gt;
+                        &lt;/Ad&gt;
+                    &lt;/VAST&gt;
+            &lt;/vmap:VASTData&gt;
+        &lt;/vmap:AdSource&gt;
+    &lt;/vmap:AdBreak&gt;
+    &lt;vmap:AdBreak breakType="linear" breakId="PostRoll_378_0" timeOffset="end"&gt;
+        &lt;vmap:AdSource allowMultipleAds="true" followRedirects="true" id="3"&gt;
+            &lt;vmap:VASTData&gt;
+                &lt;VAST xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+                    &lt;Ad id="bird"&gt;
+                        &lt;InLine&gt;
+                            &lt;AdSystem&gt;Unknown&lt;/AdSystem&gt;
+                            &lt;AdTitle&gt;Unknown&lt;/AdTitle&gt;
+                            &lt;Impression id="Unknown"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/impression&lt;/Impression&gt;
+                            &lt;Impression&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/wrapper/impression1&lt;/Impression&gt;
+                            &lt;Impression&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/wrapper/impression2&lt;/Impression&gt;
+                            &lt;Impression&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/wrapper/impression3&lt;/Impression&gt;
+                            &lt;Creatives&gt;
+                                &lt;Creative AdID="bird"&gt;
+                                    &lt;Linear&gt;
+                                        &lt;Duration&gt;00:00:30.0000000+00:00&lt;/Duration&gt;
+                                        &lt;TrackingEvents&gt;
+                                            &lt;Tracking event="firstQuartile"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/firstQuartile&lt;/Tracking&gt;
+                                            &lt;Tracking event="midpoint"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/midpoint&lt;/Tracking&gt;
+                                            &lt;Tracking event="thirdQuartile"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/thirdQuartile&lt;/Tracking&gt;
+                                            &lt;Tracking event="complete"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/complete&lt;/Tracking&gt;
+                                            &lt;Tracking event="mute"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/mute&lt;/Tracking&gt;
+                                            &lt;Tracking event="unmute"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/unmute&lt;/Tracking&gt;
+                                            &lt;Tracking event="collapse"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/collapse&lt;/Tracking&gt;
+                                            &lt;Tracking event="expand"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/expand&lt;/Tracking&gt;
+                                            &lt;Tracking event="pause"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/pause&lt;/Tracking&gt;
+                                            &lt;Tracking event="resume"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/resume&lt;/Tracking&gt;
+                                            &lt;Tracking event="rewind"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/rewind&lt;/Tracking&gt;
+                                            &lt;Tracking event="acceptInvitation"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/acceptinvitation&lt;/Tracking&gt;
+                                            &lt;Tracking event="close"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/close&lt;/Tracking&gt;
+                                        &lt;/TrackingEvents&gt;
+                                        &lt;VideoClicks&gt;
+                                            &lt;ClickTracking id="unknown"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/bird/clicktracking&lt;/ClickTracking&gt;
+                                        &lt;/VideoClicks&gt;
+                                        &lt;MediaFiles/&gt;
+                                    &lt;/Linear&gt;
+                                &lt;/Creative&gt;
+                                &lt;Creative id="001" sequence="1"&gt;
+                                    &lt;Linear&gt;
+                                        &lt;Duration&gt;00:00:00.0000000+00:00&lt;/Duration&gt;
+                                        &lt;TrackingEvents&gt;
+                                            &lt;Tracking event="firstQuartile"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/wrapper/firstQuartile&lt;/Tracking&gt;
+                                            &lt;Tracking event="midpoint"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/wrapper/midpoint&lt;/Tracking&gt;
+                                            &lt;Tracking event="thirdQuartile"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/wrapper/thirdQuartile&lt;/Tracking&gt;
+                                            &lt;Tracking event="complete"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/wrapper/complete&lt;/Tracking&gt;
+                                            &lt;Tracking event="mute"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/wrapper/mute&lt;/Tracking&gt;
+                                            &lt;Tracking event="unmute"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/wrapper/unmute&lt;/Tracking&gt;
+                                            &lt;Tracking event="pause"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/wrapper/pause&lt;/Tracking&gt;
+                                            &lt;Tracking event="resume"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/wrapper/resume&lt;/Tracking&gt;
+                                            &lt;Tracking event="fullscreen"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/wrapper/fullscreen&lt;/Tracking&gt;
+                                            &lt;Tracking event="close"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/wrapper/close&lt;/Tracking&gt;
+                                            &lt;Tracking event="acceptInvitation"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/wrapper/acceptInvitation&lt;/Tracking&gt;
+                                        &lt;/TrackingEvents&gt;
+                                        &lt;VideoClicks&gt;
+                                            &lt;ClickTracking&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/wrapper/clicktracking&lt;/ClickTracking&gt;
+                                        &lt;/VideoClicks&gt;
+                                    &lt;/Linear&gt;
+                                &lt;/Creative&gt;
+                                &lt;Creative id="002" sequence="2"&gt;
+                                    &lt;CompanionAds&gt;
+                                        &lt;Companion&gt;
+                                            &lt;TrackingEvents&gt;
+                                                &lt;Tracking event="creativeView"&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/wrapper/creativeView&lt;/Tracking&gt;
+                                            &lt;/TrackingEvents&gt;
+                                            &lt;CompanionClickThrough&gt;http://tracking.adprovider.qa.brightcoveapp.com/beacon/wrapper/companionclickthrough&lt;/CompanionClickThrough&gt;
+                                        &lt;/Companion&gt;
+                                    &lt;/CompanionAds&gt;
+                                &lt;/Creative&gt;
+                            &lt;/Creatives&gt;
+                            &lt;Extensions&gt;
+                                &lt;Extension type="bird"&gt;
+                                    &lt;AdServingData&gt;
+                                        &lt;DeliveryData&gt;
+                                            &lt;GeoData&gt;ct=US&amp;st=AZ&amp;ac=480&amp;zp=85282&amp;bw=4&amp;dma=173&amp;city=13305&lt;/GeoData&gt;
+                                        &lt;/DeliveryData&gt;
+                                    &lt;/AdServingData&gt;
+                                &lt;/Extension&gt;
+                                &lt;Extension type="wrapper"&gt;
+                                    &lt;AdServingData&gt;
+                                        &lt;DeliveryData&gt;
+                                            &lt;GeoData&gt;ct=US&amp;st=AZ&amp;ac=480&amp;zp=85282&amp;bw=4&amp;dma=173&amp;city=13305&lt;/GeoData&gt;
+                                        &lt;/DeliveryData&gt;
+                                    &lt;/AdServingData&gt;
+                                &lt;/Extension&gt;
+                            &lt;/Extensions&gt;
+                        &lt;/InLine&gt;
+                    &lt;/Ad&gt;
+                &lt;/VAST&gt;
+            &lt;/vmap:VASTData&gt;
+        &lt;/vmap:AdSource&gt;
+    &lt;/vmap:AdBreak&gt;
+&lt;/vmap:VMAP&gt;</code></pre>
+</section>
+</article>
+
+<!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Page Contents</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<div class="last-updated">
+  Page last updated on 19 Nov 2020
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>Brightcove Support</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://status.brightcove.com">System Status</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contact Support</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">Documentation</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>Training</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">Online Courses</a>
+          </li>
+          <li>
+            <a href="https://studio.support.brightcove.com/training/register-training.html">Register for a course</a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Brightcove University</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">Brightcove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
+            </td>
+            <td><a href="https://www.brightcove.com/en/legal/privacy">Privacy</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Terms &amp; Conditions</a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+<div id="talla_wrapper">
+  <p style="text-align: right;position: relative;"><button style="background:rgb(2, 28, 146);color:Snow;padding:.3rem;position:fixed;right:0;bottom:1em;z-index:9999999" onclick="javascript:displayChat()">Have a question? </button> </p>
+  <div id="talla_chat">
+</div>
+</div>
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <script src="https://assets.talla.com/latest/embeddedjs/talla.js"></script>
+  <script src="/assets/js/talla-init.js"></script>
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+</body>
+
+</html>
