@@ -45,7 +45,12 @@
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/vod/references/",
+      "newURL": "https://ssai.support.brightcove.com/references/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://ssai.support.brightcove.com/",
       "oldURL": "/index"
   },
 
@@ -60,11 +65,6 @@
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/references/",
-      "oldURL": "/index"
-  },
-
-  {
       "newURL": "https://ssai.support.brightcove.com/live/guides/",
       "oldURL": "/index"
   },
@@ -75,12 +75,12 @@
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/live/references/",
+      "newURL": "https://ssai.support.brightcove.com/vod/references/",
       "oldURL": "/index"
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/",
+      "newURL": "https://ssai.support.brightcove.com/vod/guides/",
       "oldURL": "/index"
   },
 
@@ -90,7 +90,7 @@
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/vod/guides/",
+      "newURL": "https://ssai.support.brightcove.com/live/references/",
       "oldURL": "/index"
   },
 
@@ -125,12 +125,12 @@
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/vod/references/reference.html",
+      "newURL": "https://ssai.support.brightcove.com/live/references/reference.html",
       "oldURL": "/reference"
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/live/references/reference.html",
+      "newURL": "https://ssai.support.brightcove.com/vod/references/reference.html",
       "oldURL": "/reference"
   },
 
@@ -157,6 +157,11 @@
   {
       "newURL": "https://ssai.support.brightcove.com/vod/references/ssai-api-error-reference.html",
       "oldURL": "/ssai-api-error-reference"
+  },
+
+  {
+      "newURL": "https://ssai.support.brightcove.com/vod/guides/ssai-non-bc-players.html",
+      "oldURL": "/ssai-non-bc-players"
   },
 
   {
