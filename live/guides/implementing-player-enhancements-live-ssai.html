@@ -9,13 +9,13 @@ parent: Live
   <summary>{{ page.description }}</summary>
 
 <section class="bcls-section">
-<h2 id="Introduction">Introduction</h2>
+<h2 id="Introduction">Introduction</h2> 
 
 <p>Brightcove's Player Enhancements for Live SSAI allows you to improve the ad breaks in live streams with ad counts, ad countdown timers, click through ads and companion ads.</p>
 
 <p>Your ad information is specified using an ad configuration which retrieves VAST responses to identify what ads to display. The VAST file also contains information about companion ads and beacon URLs.</p>
 
-<p>If you are not familiar with SLS, see the <a href="https://live.support.brightcove.com/live-api/ssai/overview-player-enhancements-live-ssai.html">Overview: Player Enhancements for Live SSAI</a> document.</p>
+<p>For a high-level overview, see the <a href="https://live.support.brightcove.com/live-api/ssai/overview-player-enhancements-live-ssai.html">Overview: Player Enhancements for Live SSAI</a> document.</p>
 </section>
 
 <section class="bcls-section">
@@ -41,7 +41,7 @@ parent: Live
 
 <p>An ad configuration defines the information needed to include server-side ads with a live stream. This includes ad provider URL, expected ad response type and whether beacons should be sent.</p>
 
-<aside class="bcls-aside bcls-aside--information">For SLS, Ad configurations MUST have an <code translate="No">ad_configuration_expected_response_type</code> value of <code translate="No">Vast</code>.</aside>
+<aside class="bcls-aside bcls-aside--information">For this feature, ad configurations MUST have an <code translate="No">ad_configuration_expected_response_type</code> value of <code translate="No">Vast</code>.</aside>
 
 <p>To create a new ad configuration, send a <code translate="No">POST</code> request as follows:</p>
 
@@ -100,9 +100,9 @@ parent: Live
 <pre class="line-numbers">
 <code class="language-json" translate="No">{
   "application": {
-    "application_description": "Test ad configuration for SLS",
+    "application_description": "Test ad configuration",
     "application_ad_configuration": {
-    "ad_configuration_description": "SLS Ad Config : BC Learning PAS/SLS",
+    "ad_configuration_description": "Ad config description",
     "ad_configuration_expected_response_type": "Vast",
     "ad_configuration_strategy": "SingleAdResponse",
     "ad_configuration_transforms": [],
@@ -317,7 +317,7 @@ parent: Live
      "playback_url": "https://bcovlive-a.akamaihd.net/bbccddeeffgghhiijjkk0011223344/us-west-2/NA/91bc2d5ff4a4441db34c2457c751c3ca/playlist_ssaiM.m3u8",
      "playback_url_dvr": "https://bcovlive-a.akamaihd.net/bbccddeeffgghhiijjkk0011223344/us-west-2/NA/91bc2d5ff4a4441db34c2457c751c3ca/playlist_dvr_ssaiM.m3u8",
      "playback_added_cdns": [],
-     "description": "Test ad configuration for SLS",
+     "description": "Test ad configuration",
      "type": "ads"
     },
     "e7f6e9a3022a45e1b0b322ba57399150": {
@@ -341,7 +341,7 @@ parent: Live
    <span class="bcls-highlight">"playback_url": "https://bcovlive-a.akamaihd.net/bbccddeeffgghhiijjkk0011223344/us-west-2/NA/91bc2d5ff4a4441db34c2457c751c3ca/playlist_ssaiM.m3u8",</span>
    <span class="bcls-highlight">"playback_url_dvr": "https://bcovlive-a.akamaihd.net/bbccddeeffgghhiijjkk0011223344/us-west-2/NA/91bc2d5ff4a4441db34c2457c751c3ca/playlist_dvr_ssaiM.m3u8",</span>
    "playback_added_cdns": [],
-   "description": "Test ad configuration for SLS",
+   "description": "Test ad configuration",
    "type": "ads"
   }
  }
