@@ -33,6 +33,7 @@ grandparent: Home
   <li><a href="#Test_your_ad_tag">Test your ad tag</a></li>
 	<li><a href="#Create_an_ad_configuration">Create an ad configuration</a></li>
   <li><a href="#Request_a_Video">Request a Video</a></li>
+  <li><a href="#Configure_your_player">Configure your player</a></li>
 	<!-- <li>
 	<p>Build your app:</p>
 
@@ -219,6 +220,275 @@ grandparent: Home
 <ul>
   <li>For details, see the <a href="https://apis.support.brightcove.com/playback/getting-started/overview-playback-api.html#Video_request_with_SSAI">Video request with SSAI</a> section of the Overview: Playback API document.</li>
 </ul>
+<details>
+    <summary><p id="Using_the_CodePen">Sample Playback API response</p></summary>
+    <p>Here is an example of a Playback API response:</p>
+    <pre class="line-numbers"><code class="language-xml-doc" translate="No">{
+  &quot;poster&quot;: &quot;https://cf-images.eu-west-1.prod.boltdns.net/v1/jit/1752604059001/dca41ae8-d8f5-48a6-9853-564764d60b84/main/1280x720/12s64ms/match/image.jpg&quot;,
+  &quot;thumbnail&quot;: &quot;https://cf-images.eu-west-1.prod.boltdns.net/v1/jit/1752604059001/dca41ae8-d8f5-48a6-9853-564764d60b84/main/160x90/12s64ms/match/image.jpg&quot;,
+  &quot;poster_sources&quot;: [{
+    &quot;src&quot;: &quot;https://cf-images.eu-west-1.prod.boltdns.net/v1/jit/1752604059001/dca41ae8-d8f5-48a6-9853-564764d60b84/main/1280x720/12s64ms/match/image.jpg&quot;
+  }],
+  &quot;thumbnail_sources&quot;: [{
+    &quot;src&quot;: &quot;https://cf-images.eu-west-1.prod.boltdns.net/v1/jit/1752604059001/dca41ae8-d8f5-48a6-9853-564764d60b84/main/160x90/12s64ms/match/image.jpg&quot;
+  }],
+  &quot;description&quot;: null,
+  &quot;tags&quot;: [],
+  &quot;cue_points&quot;: [],
+  &quot;custom_fields&quot;: {},
+  &quot;account_id&quot;: &quot;1752604059001&quot;,
+  &quot;sources&quot;: [{
+    &quot;ext_x_version&quot;: &quot;4&quot;,
+    &quot;src&quot;: &quot;http://ssaimanifest.prod.boltdns.net/playback/once/v1/hls/v4/clear/1752604059001/d6190656-2095-4ff3-8afe-1a0b60d67ed2/dca41ae8-d8f5-48a6-9853-564764d60b84/master.m3u8?bc_token=NWZmNGQ4ZDlfZjJkMjdkY2ZlZjNhODljNzVmNzlhZTkxZTM0YTBhMmQ5NzI3ZDVmMmZmODIwYjcyMjM0NzMyZDIyZDQ3NTUwZQ%3D%3D&quot;,
+    &quot;type&quot;: &quot;application/x-mpegURL&quot;,
+    &quot;vmap&quot;: &quot;http://ssaimanifest.prod.boltdns.net/playback/once/v1/vmap/hls/v4/clear/1752604059001/d6190656-2095-4ff3-8afe-1a0b60d67ed2/dca41ae8-d8f5-48a6-9853-564764d60b84/content.vmap?bc_token=NWZmNGQ4ZDlfOTY5ZjIzMzAzOTAxNzZhZjVlYjllOGJmMzA1YjI4MDE3OTM4NmEyZmRkYTc1OGNkZjM5NTAxMWUxYTE5ZGU5Yg%3D%3D&quot;
+  }, {
+    &quot;ext_x_version&quot;: &quot;4&quot;,
+    &quot;src&quot;: &quot;https://ssaimanifest.prod.boltdns.net/playback/once/v1/hls/v4/clear/1752604059001/d6190656-2095-4ff3-8afe-1a0b60d67ed2/dca41ae8-d8f5-48a6-9853-564764d60b84/master.m3u8?bc_token=NWZmNGQ4ZDlfZjJkMjdkY2ZlZjNhODljNzVmNzlhZTkxZTM0YTBhMmQ5NzI3ZDVmMmZmODIwYjcyMjM0NzMyZDIyZDQ3NTUwZQ%3D%3D&quot;,
+    &quot;type&quot;: &quot;application/x-mpegURL&quot;,
+    &quot;vmap&quot;: &quot;https://ssaimanifest.prod.boltdns.net/playback/once/v1/vmap/hls/v4/clear/1752604059001/d6190656-2095-4ff3-8afe-1a0b60d67ed2/dca41ae8-d8f5-48a6-9853-564764d60b84/content.vmap?bc_token=NWZmNGQ4ZDlfOTY5ZjIzMzAzOTAxNzZhZjVlYjllOGJmMzA1YjI4MDE3OTM4NmEyZmRkYTc1OGNkZjM5NTAxMWUxYTE5ZGU5Yg%3D%3D&quot;
+  }, {
+    &quot;codecs&quot;: &quot;avc1,mp4a&quot;,
+    &quot;ext_x_version&quot;: &quot;7&quot;,
+    &quot;src&quot;: &quot;http://ssaimanifest.prod.boltdns.net/playback/once/v1/hls/v7/clear/codec_avc1_mp4a/1752604059001/d6190656-2095-4ff3-8afe-1a0b60d67ed2/dca41ae8-d8f5-48a6-9853-564764d60b84/master.m3u8?bc_token=NWZmNGQ4ZDlfNjVhYTczMDhmZWY5OWE5Zjk3OGJmNTczYjYyYWFmMGI3OWQxZTYyODc5YTk3NzJiOWY3MDk0NmZjOTVmZjVhMA%3D%3D&quot;,
+    &quot;type&quot;: &quot;application/x-mpegURL&quot;,
+    &quot;vmap&quot;: &quot;http://ssaimanifest.prod.boltdns.net/playback/once/v1/vmap/hls/v7/clear/codec_avc1_mp4a/1752604059001/d6190656-2095-4ff3-8afe-1a0b60d67ed2/dca41ae8-d8f5-48a6-9853-564764d60b84/content.vmap?bc_token=NWZmNGQ4ZDlfNzk5NzY0NThhOTlhZWY0OWI3NDc0MDQxMTQxNWMwZjVkYTFlYzdiZTRkMWE2ZmJjODRjODRkY2JlYjZjZWI1Mg%3D%3D&quot;
+  }, {
+    &quot;codecs&quot;: &quot;avc1,mp4a&quot;,
+    &quot;ext_x_version&quot;: &quot;7&quot;,
+    &quot;src&quot;: &quot;https://ssaimanifest.prod.boltdns.net/playback/once/v1/hls/v7/clear/codec_avc1_mp4a/1752604059001/d6190656-2095-4ff3-8afe-1a0b60d67ed2/dca41ae8-d8f5-48a6-9853-564764d60b84/master.m3u8?bc_token=NWZmNGQ4ZDlfNjVhYTczMDhmZWY5OWE5Zjk3OGJmNTczYjYyYWFmMGI3OWQxZTYyODc5YTk3NzJiOWY3MDk0NmZjOTVmZjVhMA%3D%3D&quot;,
+    &quot;type&quot;: &quot;application/x-mpegURL&quot;,
+    &quot;vmap&quot;: &quot;https://ssaimanifest.prod.boltdns.net/playback/once/v1/vmap/hls/v7/clear/codec_avc1_mp4a/1752604059001/d6190656-2095-4ff3-8afe-1a0b60d67ed2/dca41ae8-d8f5-48a6-9853-564764d60b84/content.vmap?bc_token=NWZmNGQ4ZDlfNzk5NzY0NThhOTlhZWY0OWI3NDc0MDQxMTQxNWMwZjVkYTFlYzdiZTRkMWE2ZmJjODRjODRkY2JlYjZjZWI1Mg%3D%3D&quot;
+  }, {
+    &quot;profiles&quot;: &quot;urn:mpeg:dash:profile:isoff-live:2011&quot;,
+    &quot;src&quot;: &quot;http://ssaimanifest.prod.boltdns.net/playback/once/v1/dash/live-timeline/clear/1752604059001/d6190656-2095-4ff3-8afe-1a0b60d67ed2/dca41ae8-d8f5-48a6-9853-564764d60b84/manifest.mpd?bc_token=NWZmNGQ4ZDlfN2Y5MzJhZmYxYjM5ZTRiZTIwNmFlNzg1NWIyOTY3NjlhMTMwZTllMGI2YzEwZmFlMTk2ZmEzODAwMDVlMWMxYw%3D%3D&quot;,
+    &quot;type&quot;: &quot;application/dash+xml&quot;,
+    &quot;vmap&quot;: &quot;http://ssaimanifest.prod.boltdns.net/playback/once/v1/vmap/dash/live-timeline/clear/1752604059001/d6190656-2095-4ff3-8afe-1a0b60d67ed2/dca41ae8-d8f5-48a6-9853-564764d60b84/content.vmap?bc_token=NWZmNGQ4ZDlfY2JkMWY4NmY1ZDI2NDQ0NGY1YzAzYzMxNGY5NTJjY2MzYjljMTVjOGM3N2ZhZWRkNTU3YjgxYzkyMDQwOGIzYQ%3D%3D&quot;
+  }, {
+    &quot;profiles&quot;: &quot;urn:mpeg:dash:profile:isoff-live:2011&quot;,
+    &quot;src&quot;: &quot;https://ssaimanifest.prod.boltdns.net/playback/once/v1/dash/live-timeline/clear/1752604059001/d6190656-2095-4ff3-8afe-1a0b60d67ed2/dca41ae8-d8f5-48a6-9853-564764d60b84/manifest.mpd?bc_token=NWZmNGQ4ZDlfN2Y5MzJhZmYxYjM5ZTRiZTIwNmFlNzg1NWIyOTY3NjlhMTMwZTllMGI2YzEwZmFlMTk2ZmEzODAwMDVlMWMxYw%3D%3D&quot;,
+    &quot;type&quot;: &quot;application/dash+xml&quot;,
+    &quot;vmap&quot;: &quot;https://ssaimanifest.prod.boltdns.net/playback/once/v1/vmap/dash/live-timeline/clear/1752604059001/d6190656-2095-4ff3-8afe-1a0b60d67ed2/dca41ae8-d8f5-48a6-9853-564764d60b84/content.vmap?bc_token=NWZmNGQ4ZDlfY2JkMWY4NmY1ZDI2NDQ0NGY1YzAzYzMxNGY5NTJjY2MzYjljMTVjOGM3N2ZhZWRkNTU3YjgxYzkyMDQwOGIzYQ%3D%3D&quot;
+  }, {
+    &quot;codecs&quot;: &quot;avc1,mp4a&quot;,
+    &quot;profiles&quot;: &quot;urn:mpeg:dash:profile:isoff-live:2011&quot;,
+    &quot;src&quot;: &quot;http://ssaimanifest.prod.boltdns.net/playback/once/v1/dash/live-timeline/clear/codec_avc1_mp4a/1752604059001/d6190656-2095-4ff3-8afe-1a0b60d67ed2/dca41ae8-d8f5-48a6-9853-564764d60b84/manifest.mpd?bc_token=NWZmNGQ4ZDlfNGY5Y2NlNjUyMjNiN2RjYTUyOTYyN2EwZjMzNmNiNjA3NzY4OTFjM2MxMDVhYzkzYzY0NzE5NDc4ZTI4MDc2ZQ%3D%3D&quot;,
+    &quot;type&quot;: &quot;application/dash+xml&quot;,
+    &quot;vmap&quot;: &quot;http://ssaimanifest.prod.boltdns.net/playback/once/v1/vmap/dash/live-timeline/clear/codec_avc1_mp4a/1752604059001/d6190656-2095-4ff3-8afe-1a0b60d67ed2/dca41ae8-d8f5-48a6-9853-564764d60b84/content.vmap?bc_token=NWZmNGQ4ZDlfZWUxN2FkNjUxZTZmMTZkMzJmM2VhOTY0MTY1NTU1ZmJkNzhiMjgxMTg1ZmI1ZGY1ODcwYmVjOWUzM2E2NGVjMw%3D%3D&quot;
+  }, {
+    &quot;codecs&quot;: &quot;avc1,mp4a&quot;,
+    &quot;profiles&quot;: &quot;urn:mpeg:dash:profile:isoff-live:2011&quot;,
+    &quot;src&quot;: &quot;https://ssaimanifest.prod.boltdns.net/playback/once/v1/dash/live-timeline/clear/codec_avc1_mp4a/1752604059001/d6190656-2095-4ff3-8afe-1a0b60d67ed2/dca41ae8-d8f5-48a6-9853-564764d60b84/manifest.mpd?bc_token=NWZmNGQ4ZDlfNGY5Y2NlNjUyMjNiN2RjYTUyOTYyN2EwZjMzNmNiNjA3NzY4OTFjM2MxMDVhYzkzYzY0NzE5NDc4ZTI4MDc2ZQ%3D%3D&quot;,
+    &quot;type&quot;: &quot;application/dash+xml&quot;,
+    &quot;vmap&quot;: &quot;https://ssaimanifest.prod.boltdns.net/playback/once/v1/vmap/dash/live-timeline/clear/codec_avc1_mp4a/1752604059001/d6190656-2095-4ff3-8afe-1a0b60d67ed2/dca41ae8-d8f5-48a6-9853-564764d60b84/content.vmap?bc_token=NWZmNGQ4ZDlfZWUxN2FkNjUxZTZmMTZkMzJmM2VhOTY0MTY1NTU1ZmJkNzhiMjgxMTg1ZmI1ZGY1ODcwYmVjOWUzM2E2NGVjMw%3D%3D&quot;
+  }],
+  &quot;name&quot;: &quot;Mt Audubon&quot;,
+  &quot;reference_id&quot;: null,
+  &quot;long_description&quot;: null,
+  &quot;duration&quot;: 24128,
+  &quot;economics&quot;: &quot;AD_SUPPORTED&quot;,
+  &quot;text_tracks&quot;: [],
+  &quot;published_at&quot;: &quot;2020-05-14T18:51:30.532Z&quot;,
+  &quot;created_at&quot;: &quot;2020-05-14T18:51:30.502Z&quot;,
+  &quot;updated_at&quot;: &quot;2020-05-14T19:46:00.320Z&quot;,
+  &quot;offline_enabled&quot;: false,
+  &quot;link&quot;: null,
+  &quot;id&quot;: &quot;6156696074001&quot;,
+  &quot;ad_keys&quot;: null
+}</code></pre>
+</details>
+</section>
+
+<section class="bcls-section">
+<h2 id="Configure_your_player">Configure your player</h2>
+<p>From the Playback API response (section above), locate the <code translate="No">Sources</code> object, copy one of the <code translate="No">vmap</code> URL's and paste it in a browser searchbar to see the VMAP response.</p>
+<details>
+    <summary><p id="Using_the_CodePen">Sample VMAP response</p></summary>
+    <p>Here is an example of a vmap response:</p>
+    <pre class="line-numbers"><code class="language-xml-doc" translate="No">&lt;vmap:VMAP xmlns:bc=&quot;bc&quot; xmlns:vmap=&quot;http://www.iab.net/vmap-1.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;1.0&quot;&gt;
+  &lt;vmap:Extensions&gt;
+    &lt;bc:Brightcove ttl=&quot;3600&quot; contenturi=&quot;https://ssaimanifest.prod.boltdns.net/us-east-1/playback/once/v1/hls/v4/clear/1752604059001/d6190656-2095-4ff3-8afe-1a0b60d67ed2/dca41ae8-d8f5-48a6-9853-564764d60b84/6830b2e4-3298-439d-beef-e04abef9f23c/content.m3u8?bc_token=NWZkMTE5NTlfZWQxNDAzNDRkNTAxNDRlMWEwODU3MTI1MzY2YjAyZWQ5YzlmZTkzY2UwMjM5NTM1MmI2NGRjZDNhNjE2ZDhlOA%3D%3D&quot;
+    contentlength=&quot;24.0574&quot; payloadlength=&quot;50.1835&quot; contenttype=&quot;application/x-mpegURL&quot; /&gt;
+    &lt;bc:thumbnailURL type=&quot;thumbnail&quot; width=&quot;480&quot; height=&quot;270&quot; bandwidth=&quot;0&quot;&gt;https://ssai.playback.us-east-1.prod.deploys.brightcove.com/v1/thumbnail/1752604059001/dca41ae8-d8f5-48a6-9853-564764d60b84/low-res/6830b2e4-3298-439d-beef-e04abef9f23c/thumbnail.vtt?bc_token=NWZkMTE5NTlfMmVmODIzZDJjMGZkMDBjZjY1YWIxNDQ4Y2YyZmUxYTExNzg5YmIxZDI5ZTdkMjgyODBmMDBmYTViMTE2Yzc0MQ%3D%3D&lt;/bc:thumbnailURL&gt;
+  &lt;/vmap:Extensions&gt;
+  &lt;vmap:AdBreak breakType=&quot;linear&quot; breakId=&quot;PreRoll_0_0&quot; timeOffset=&quot;start&quot;&gt;
+    &lt;vmap:AdSource allowMultipleAds=&quot;true&quot; followRedirects=&quot;true&quot; id=&quot;0&quot;&gt;
+      &lt;vmap:VASTData&gt;
+        &lt;VAST xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
+          &lt;Ad id=&quot;1&quot;&gt;
+            &lt;InLine&gt;
+              &lt;AdSystem&gt;Test Ad Server&lt;/AdSystem&gt;
+              &lt;AdTitle&gt;Portals&lt;/AdTitle&gt;
+              &lt;Description&gt;Demo ad number 6&lt;/Description&gt;
+              &lt;Error&gt;&lt;/Error&gt;
+              &lt;Creatives&gt;
+                &lt;Creative&gt;
+                  &lt;Linear&gt;
+                    &lt;CreativeExtensions&gt;
+                      &lt;CreativeExtension&gt;
+                        &lt;BrightcoveForeignKey&gt;1&lt;/BrightcoveForeignKey&gt;
+                      &lt;/CreativeExtension&gt;
+                    &lt;/CreativeExtensions&gt;
+                    &lt;Duration&gt;00:00:05.9392&lt;/Duration&gt;
+                    &lt;AdParameters&gt;
+                      &lt;xml&gt;&lt;/xml&gt;
+                    &lt;/AdParameters&gt;
+                    &lt;VideoClicks/&gt;
+                  &lt;/Linear&gt;
+                &lt;/Creative&gt;
+              &lt;/Creatives&gt;
+              &lt;Extensions&gt;
+                &lt;Extension&gt;
+                  &lt;xml&gt;data&lt;/xml&gt;
+                &lt;/Extension&gt;
+              &lt;/Extensions&gt;
+            &lt;/InLine&gt;
+          &lt;/Ad&gt;
+        &lt;/VAST&gt;
+      &lt;/vmap:VASTData&gt;
+    &lt;/vmap:AdSource&gt;
+  &lt;/vmap:AdBreak&gt;
+  &lt;vmap:AdBreak breakType=&quot;linear&quot; breakId=&quot;MidRoll_5_0&quot; timeOffset=&quot;00:00:04.8381&quot;&gt;
+    &lt;vmap:AdSource allowMultipleAds=&quot;true&quot; followRedirects=&quot;true&quot; id=&quot;1&quot;&gt;
+      &lt;vmap:VASTData&gt;
+        &lt;VAST xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
+          &lt;Ad id=&quot;2&quot;&gt;
+            &lt;InLine&gt;
+              &lt;AdSystem&gt;Test Ad Server&lt;/AdSystem&gt;
+              &lt;AdTitle&gt;Marketing&lt;/AdTitle&gt;
+              &lt;Description&gt;Demo ad number 4&lt;/Description&gt;
+              &lt;Error&gt;&lt;/Error&gt;
+              &lt;Creatives&gt;
+                &lt;Creative&gt;
+                  &lt;Linear skipoffset=&quot;00:00:05&quot;&gt;
+                    &lt;CreativeExtensions&gt;
+                      &lt;CreativeExtension&gt;
+                        &lt;BrightcoveForeignKey&gt;2&lt;/BrightcoveForeignKey&gt;
+                      &lt;/CreativeExtension&gt;
+                    &lt;/CreativeExtensions&gt;
+                    &lt;Duration&gt;00:00:12.1788&lt;/Duration&gt;
+                    &lt;AdParameters&gt;
+                      &lt;xml&gt;&lt;/xml&gt;
+                    &lt;/AdParameters&gt;
+                    &lt;VideoClicks/&gt;
+                  &lt;/Linear&gt;
+                &lt;/Creative&gt;
+              &lt;/Creatives&gt;
+              &lt;Extensions&gt;
+                &lt;Extension&gt;
+                  &lt;xml&gt;data&lt;/xml&gt;
+                &lt;/Extension&gt;
+              &lt;/Extensions&gt;
+            &lt;/InLine&gt;
+          &lt;/Ad&gt;
+        &lt;/VAST&gt;
+      &lt;/vmap:VASTData&gt;
+    &lt;/vmap:AdSource&gt;
+  &lt;/vmap:AdBreak&gt;
+  &lt;vmap:AdBreak breakType=&quot;linear&quot; breakId=&quot;PostRoll_24_0&quot; timeOffset=&quot;end&quot;&gt;
+    &lt;vmap:AdSource allowMultipleAds=&quot;true&quot; followRedirects=&quot;true&quot; id=&quot;2&quot;&gt;
+      &lt;vmap:VASTData&gt;
+        &lt;VAST xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
+          &lt;Ad id=&quot;3&quot;&gt;
+            &lt;InLine&gt;
+              &lt;AdSystem&gt;Test Ad Server&lt;/AdSystem&gt;
+              &lt;AdTitle&gt;Brand&lt;/AdTitle&gt;
+              &lt;Description&gt;Demo ad number 1&lt;/Description&gt;
+              &lt;Error&gt;&lt;/Error&gt;
+              &lt;Creatives&gt;
+                &lt;Creative&gt;
+                  &lt;Linear&gt;
+                    &lt;CreativeExtensions&gt;
+                      &lt;CreativeExtension&gt;
+                        &lt;BrightcoveForeignKey&gt;3&lt;/BrightcoveForeignKey&gt;
+                      &lt;/CreativeExtension&gt;
+                    &lt;/CreativeExtensions&gt;
+                    &lt;Duration&gt;00:00:08.0080&lt;/Duration&gt;
+                    &lt;AdParameters&gt;
+                      &lt;xml&gt;&lt;/xml&gt;
+                    &lt;/AdParameters&gt;
+                    &lt;VideoClicks/&gt;
+                  &lt;/Linear&gt;
+                &lt;/Creative&gt;
+              &lt;/Creatives&gt;
+              &lt;Extensions&gt;
+                &lt;Extension&gt;
+                  &lt;xml&gt;data&lt;/xml&gt;
+                &lt;/Extension&gt;
+              &lt;/Extensions&gt;
+            &lt;/InLine&gt;
+          &lt;/Ad&gt;
+        &lt;/VAST&gt;
+      &lt;/vmap:VASTData&gt;
+    &lt;/vmap:AdSource&gt;
+  &lt;/vmap:AdBreak&gt;
+&lt;/vmap:VMAP&gt;</code></pre>
+</details>
+
+<h3>VMAP extensions</h3>
+<p>In the VMAP response, Brightcove adds a <code translate="No">&lt;vmap:Extensions&gt;</code> section.</p>
+<p>The following attributes are associated with the <code translate="No">&lt;bc:Brightcove&gt;</code> tag in the extensions section:</p>
+<table class="bcls-table">
+    <caption class="bcls-caption--table">VMAP response field attributes</caption>
+    <thead class="bcls-table__head">
+        <tr>
+            <th>Attribute</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody class="bcls-table__body">
+        <tr>
+            <td><code translate="No">contenturi</code></td>
+            <td>A reference to the session-specific manifest - This is what you should load into your player</td>
+        </tr>
+        <tr>
+            <td><code translate="No">contentlength</code></td>
+            <td>The duration of the content video</td>
+        </tr>
+        <tr>
+            <td><code translate="No">payloadlength</code></td>
+            <td>The duration of the total stitched stream</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Ad break</h3>
+<p>The following attributes are associated with each ad block:</p>
+<table class="bcls-table">
+    <caption class="bcls-caption--table">VMAP response fields</caption>
+    <thead class="bcls-table__head">
+        <tr>
+            <th>Attribute</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody class="bcls-table__body">
+        <tr>
+            <td><code translate="No">timeoffset</code></td>
+            <td>This can be <code translate="No">start</code> or a specific time, which needs to be calculated. If a pod has multiple ads, they can have the same offset because they're inserted at the same "content time".</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>The following tags are associated with each ad block:</p>
+<table class="bcls-table">
+    <caption class="bcls-caption--table">VMAP response fields</caption>
+    <thead class="bcls-table__head">
+        <tr>
+            <th>Tag</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody class="bcls-table__body">
+        <tr>
+            <td><code translate="No">Duration</code></td>
+            <td>This identifies the duration of the ad to be inserted.</td>
+        </tr>
+    </tbody>
+</table>
+<h4>Notes</h4>
+
+
 </section>
 
 
