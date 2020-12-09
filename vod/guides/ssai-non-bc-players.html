@@ -30,27 +30,17 @@ layout: staging
 <p>To play server-side ads with your video content stored in Video Cloud, follow these steps:</p>
 
 <ol class="bcls-tasklist">
-  <li><a href="#Define_an_ad_tag">Define an ad tag</a></li>
-  <li><a href="#Test_your_ad_tag">Test your ad tag</a></li>
-	<li><a href="#Create_an_ad_configuration">Create an ad configuration</a></li>
-  <li><a href="#Request_a_Video">Request a Video</a></li>
-  <li><a href="#Configure_your_player">Configure your player</a></li>
-	<!-- <li>
-	<p>Build your app:</p>
-
-	<ul>
-		<li><a href="#Android_implementation">Android implementation</a></li>
-		<li><a href="#iOS_implementation">iOS implementation</a></li>
-		<li><a href="#tvOS_implementation">tvOS implementation</a></li>
-	</ul>
-	</li> -->
-	<li><a href="#Play_a_video_with_ads">Play a video with ads</a></li>
-	<!-- <li><a href="#Append_query_parameters">Append query parameters</a></li> -->
+  <li><a href="#Defining_an_ad_tag">Defining an ad tag</a></li>
+  <li><a href="#Testing_your_ad_tag">Testing your ad tag</a></li>
+	<li><a href="#Creating_an_ad_configuration">Creating an ad configuration</a></li>
+  <li><a href="#Requesting_a_Video">Requesting a Video</a></li>
+  <li><a href="#Configuring_your_player">Configuring your player</a></li>
 </ol>
+<p>If you choose, you can also <a href="#Configuring_server_side_beaconing">Configuring server-side beaconing</a>.</p>
 </section>
 
 <section class="bcls-section">
-<h2 id="Define_an_ad_tag">Define an ad tag</h2>
+<h2 id="Defining_an_ad_tag">Defining an ad tag</h2>
 <p>The ad tag defines the ad that will be retrieved and played. You can use one of the following formats:</p>
 <ul>
   <li><a href="https://www.iab.com/guidelines/vast/">Digital Video Ad Serving Template (VAST)</a> - Defines one ad.</li>
@@ -197,7 +187,7 @@ layout: staging
 </section>
 
 <section class="bcls-section">
-<h2 id="Test_your_ad_tag">Test your ad tag</h2>
+<h2 id="Testing_your_ad_tag">Testing your ad tag</h2>
 <p>It is good practice to verify that your ad tags are valid and work as expected. This will help with debugging other issues during the implementation process.</p>
 <ul>
   <li><a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/client-side/vastinspector">Google's Video Suite Inspector</a></li>
@@ -205,7 +195,7 @@ layout: staging
 </section>
 
 <section class="bcls-section">
-<h2 id="Create_an_ad_configuration">Create an ad configuration</h2>
+<h2 id="Creating_an_ad_configuration">Creating an ad configuration</h2>
 <p>The ad configuration defines various aspects of SSAI playback, including a URL to your Video Multiple Ad Playlist (VMAP) file, beacons, and other configurations.</p>
 
 <h3>Using Video Cloud Studio</h3>
@@ -216,7 +206,7 @@ layout: staging
 </section>
 
 <section class="bcls-section">
-<h2 id="Request_a_Video">Request a Video</h2>
+<h2 id="Requesting_a_Video">Requesting a Video</h2>
 <p>Next, get your video data with server-side ads. To do this, append your ad configuration id as a URL parameter to your Playback API video request.</p>
 <ul>
   <li>For details, see the <a href="https://apis.support.brightcove.com/playback/getting-started/overview-playback-api.html#Video_request_with_SSAI">Video request with SSAI</a> section of the Overview: Playback API document.</li>
@@ -301,7 +291,7 @@ layout: staging
 </section>
 
 <section class="bcls-section">
-<h2 id="Configure_your_player">Configure your player</h2>
+<h2 id="Configuring_your_player">Configuring your player</h2>
 <p>From the Playback API response (section above), locate the <code translate="No">Sources</code> object, copy one of the <code translate="No">vmap</code> URL's and paste it in a browser searchbar to see the VMAP response.</p>
 <details>
     <summary><p id="Using_the_CodePen">Sample VMAP response</p></summary>
@@ -488,25 +478,20 @@ layout: staging
     </tbody>
 </table>
 <h4>Notes</h4>
-
-
-</section>
-
-
-
-
-
-
-
-<section class="bcls-section">
-<h2 id="Additional_notes">Additional notes</h2>
-
-<p>There are a few technical notes to be aware of when using SSAI with the Native SDKs.</p>
-
-<h3>Brightcove Native SDK for iOS/tvOS</h3>
-
+<p>Here are some things to keep in mind when creating your ad strategy:</p>
 <ul>
-	<li><strong>Post-rolls:</strong> The OnceUX plugin translates the <code translate="No">timeOffset</code> value of <code translate="No">end</code> on the final ad break (post-roll) to a <code translate="No">CMTime</code> value of <code translate="No">+INFINITY</code>, for speed and efficiency. This translation is done AFTER the VMAP document is received (which occurs after the Playback API response is received) and BEFORE playback begins.</li>
+  <li>At the <code translate="No">start</code> offset, you might have 3 ads of duration <code translate="No">00:00:16.0000</code>, resulting in a total pre-roll pod length of 48 seconds. This means that the actual content start time will be the 48 second mark of the actual stitched manifest.</li>
+  <li>Of the various ad elements, the most relevant is probably the <code translate="No">ClickThrough</code> as it identifies the URL link to enable. Note that any associated <code translate="No">ClickTracking</code> elements should be beaconed when a user clicks on a link.</li>
 </ul>
 </section>
+
+<section class="bcls-section">
+<h2 id="Configuring_server_side_beaconing">Configuring server-side beaconing</h2>
+<p>You can configure beaconing to fire server-side impressions and quartile/complete beacons.</p>
+<ul>
+  <li>VAST ad error beacons when using SSAI can be helpful for proactively finding and fixing problems with your ad workflow. For details, see the <a href="https://ssai.support.brightcove.com/vod/guides/ad-error-beacons-ssai.html">Ad Error Beacons with SSAI</a> document.</li>
+  <li>VAST standard beacons can also be used. For details, see the <a href="https://www.iab.com/guidelines/vast/">Digital Video Ad Serving Template (VAST)</a> document.</li>
+</ul>
+</section>
+
 </article>
