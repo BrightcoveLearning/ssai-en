@@ -69,6 +69,16 @@
       
         <url>
           
+            <loc>https://ssai.support.brightcove.com/vod/guides/ssai-non-bc-players.html</loc>
+          
+            <lastmod>2020-12-10</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
+        </url>
+        
+      
+        <url>
+          
             <loc>https://ssai.support.brightcove.com/vod/guides/ssai-ad-block-detection-and-auto-failover.html</loc>
           
             <lastmod>2020-12-10</lastmod>
