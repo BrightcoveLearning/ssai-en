@@ -38,8 +38,8 @@ layout: staging
 </ol>
 <p>Here are some additional topics:</p>
 <ul>
-  <li><a href="#Server_side_beaconing">Server-side beaconing</a></li>
-  <li><a href="#Ad_macros">Ad macros</a></li>
+  <li><a href="#Ad_tag_variables">Ad tag variables</a></li>
+  <li><a href="#Server_side_beaconing">Server-side beaconing</a></li> 
 </ul>
 </section>
 
@@ -490,6 +490,17 @@ layout: staging
 </section>
 
 <section class="bcls-section">
+<h2 id="Ad_tag_variables">Ad tag variables</h2>
+<p>Ad tag variables allow you to target your ads.</p>
+<p>If your ad configuration has any <code translate="No">{% raw %}{{url.*}}{% endraw %}</code> macros, they should be appended as query parameters when requesting the VMAP.</p>
+<p>For example, a macro like</p>
+<pre><code class="language-html" translate="No">{% raw %}{{url.deviceId}}{% endraw %}</code></pre>
+<p> should be appended as a query parameter like</p>
+<pre><code class="language-html" translate="No">?deviceId=xyz</code></pre>
+<p>For details, see the <a href="https://ssai.support.brightcove.com/vod/guides/video-cloud-ssai-ad-config-api.html#Ad_variables">Video Cloud SSAI Ad Config API</a> document.</p>
+</section>
+
+<section class="bcls-section">
 <h2 id="Server_side_beaconing">Server-side beaconing</h2>
 <p>You can configure beaconing to fire server-side impressions and quartile/complete beacons.</p>
 <ul>
@@ -497,14 +508,5 @@ layout: staging
   <li>VAST standard beacons can also be used. For details, see the <a href="https://www.iab.com/guidelines/vast/">Digital Video Ad Serving Template (VAST)</a> document.</li>
 </ul>
 </section>
-
-<!-- <section class="bcls-section">
-<h2 id="Ad_macros">Ad macros</h2>
-<p>f the ad configuration has any  macros, they should be appended as query parameters when requesting the VMAP (eg, a macro {{url.deviceId}} would mean appending ?deviceId=xyz)</p>
-<ul>
-  <li>VAST ad error beacons when using SSAI can be helpful for proactively finding and fixing problems with your ad workflow. For details, see the <a href="https://ssai.support.brightcove.com/vod/guides/ad-error-beacons-ssai.html">Ad Error Beacons with SSAI</a> document.</li>
-  <li>VAST standard beacons can also be used. For details, see the <a href="https://www.iab.com/guidelines/vast/">Digital Video Ad Serving Template (VAST)</a> document.</li>
-</ul>
-</section> -->
 
 </article>
