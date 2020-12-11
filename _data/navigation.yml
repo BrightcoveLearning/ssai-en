@@ -25,6 +25,8 @@
       url: '/vod/guides/ssai-ad-block-detection-and-auto-failover.html'
     - name: 'Video Cloud SSAI Ad Config API'
       url: '/vod/guides/video-cloud-ssai-ad-config-api.html'
+    - name: 'Video Cloud SSAI Ad Tag Validation'
+      url: '/vod/guides/video-cloud-ssai-ad-tag-validation.html'
     - name: 'Ad Error Beacons with SSAI'
       url: '/vod/guides/ad-error-beacons-ssai.html'
 - section: 

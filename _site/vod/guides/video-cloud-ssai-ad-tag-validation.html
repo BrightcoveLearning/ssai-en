@@ -1,0 +1,933 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="In this topic, you will learn how to trace ad calls specified with Server-Side Ad Insertion (SSAI).">
+  
+  <title>Video Cloud SSAI Ad Tag Validation</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-ultra.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-ultra.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-super.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-super.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-black.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-black.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-bold.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-bold.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-medium.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-medium.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+  <script src="/assets/js/sajari-head.js"></script>
+</head>
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><span class="product-logo"style="font-family:'Balto Web','Public Sans';font-size:2em;font-weight:bold;">BRIGHTCOVE SSAI<sup>&trade;</sup></span></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">Select Language</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+    <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+      <option value="">Other Brightcove Docs</option>
+      
+        
+          <option value="https://support.brightcove.com">Documentation Home</option>
+        
+      
+        
+          <option value="https://audience.support.brightcove.com">Brightcove Audience</option>
+        
+      
+        
+          <option value="https://beacon.support.brightcove.com">Brightcove Beacon</option>
+        
+      
+        
+          <option value="https://campaign.support.brightcove.com">Brightcove Campaign</option>
+        
+      
+        
+          <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
+        
+      
+        
+          <option value="https://live.support.brightcove.com">Brightcove Live</option>
+        
+      
+        
+          <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+        
+      
+        
+          <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+        
+      
+        
+          <option value="https://social.support.brightcove.com">Brightcove Social</option>
+        
+      
+        
+          <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
+        
+      
+        
+          <option value="https://player.support.brightcove.com">Brightcove Player Development</option>
+        
+      
+        
+          <option value="https://apis.support.brightcove.com">Video Cloud Platform APIs</option>
+        
+      
+        
+          <option value="https://sdks.support.brightcove.com">Video Cloud Device SDKs</option>
+        
+      
+        
+          <option value="https://integrations.support.brightcove.com">Integrations and CMS Connectors</option>
+        
+      
+        
+          <option value="https://general.support.brightcove.com">Video Cloud General Information</option>
+        
+      
+        
+          <option value="https://zencoder.support.brightcove.com">Zencoder</option>
+        
+      
+    </select>
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="support"> Contact Support</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="system status"> System Status</a></span>
+    <br>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      
+      
+      
+      <li class="breadcrumb-item"><a href="/vod/guides/">Video-On-Demand Guides</a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">Video Cloud SSAI Ad Tag Validation</li>
+    </ol>
+  </nav>
+</header>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-3 left-side-bar">
+        <nav class="sidenav" id="side_nav">
+          
+            
+            <h5><a href="/index.html">Home</a></h5>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/getting-started/index.html">Getting Started <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/getting-started/video-cloud-ssai-overview.html">SSAI Overview</a></li>
+                  
+                
+                  
+                    <li><a href="https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html">Configuring Server-Side Ad Settings</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/vod/guides/index.html">Video-On-Demand Guides <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="https://player.support.brightcove.com/plugins/implementing-server-side-ads-brightcove-player.html">Implementing SSAI with Brightcove Player</a></li>
+                  
+                
+                  
+                    <li><a href="https://sdks.support.brightcove.com/features/implementing-server-side-ads-native-player-sdks.html">Implementing SSAI with the Native SDKs</a></li>
+                  
+                
+                  
+                    <li><a href="/vod/guides/ssai-non-bc-players.html">Implementing SSAI with Non-Brightcove Players</a></li>
+                  
+                
+                  
+                    <li><a href="/vod/guides/ssai-ad-block-detection-and-auto-failover.html">SSAI: Ad Block Detection and Auto-Failover</a></li>
+                  
+                
+                  
+                    <li><a href="/vod/guides/video-cloud-ssai-ad-config-api.html">Video Cloud SSAI Ad Config API</a></li>
+                  
+                
+                  
+                    <li><a href="/vod/guides/video-cloud-ssai-ad-tag-validation.html">Video Cloud SSAI Ad Tag Validation</a></li>
+                  
+                
+                  
+                    <li><a href="/vod/guides/ad-error-beacons-ssai.html">Ad Error Beacons with SSAI</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/vod/references/index.html">Video-On-Demand References <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/vod/references/reference.html">SSAI API Reference</a></li>
+                  
+                
+                  
+                    <li><a href="/vod/references/ssai-api-error-reference.html">SSAI API Error Reference</a></li>
+                  
+                
+                  
+                    <li><a href="https://player.support.brightcove.com/plugins/changelog/server-side-ads-plugin-changelog.html">Server-Side Ads Plugin Changelog</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/live/guides/index.html">Live Guides <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="https://live.support.brightcove.com/live-module/implementing-server-side-ads-live-module.html">Implementing SSAI in the Live Module</a></li>
+                  
+                
+                  
+                    <li><a href="https://live.support.brightcove.com/live-api/ssai/live-api-server-side-ad-insertion-ssai.html">Brightcove Live API: Server-Side Ad Insertion (SSAI)</a></li>
+                  
+                
+                  
+                    <li><a href="https://live.support.brightcove.com/live-api/ssai/live-api-cue-points-and-ad-beacons-ssai.html">Live API: Cue Points and Ad Beacons with SSAI</a></li>
+                  
+                
+                  
+                    <li><a href="https://player.support.brightcove.com/advertising/client-side-preroll-with-live-ssai.html">Client-Side Preroll Ads with Live SSAI</a></li>
+                  
+                
+                  
+                    <li><a href="/live/guides/overview-player-enhancements-live-ssai.html">Overview: Player Enhancements for Live SSAI</a></li>
+                  
+                
+                  
+                    <li><a href="/live/guides/implementing-player-enhancements-live-ssai.html">Implementing Player Enhancements for Live SSAI</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/live/references/index.html">Live References <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/live/references/reference.html">Live API Reference</a></li>
+                  
+                
+                  
+                    <li><a href="https://live.support.brightcove.com/live-api/references/live-api-error-messages.html">Live API: Error Messages</a></li>
+                  
+                
+                  
+                    <li><a href="https://live.support.brightcove.com/release-notes/live-api-release-notes.html">Live API Release Notes</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/support/index.html">Developer Support <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/support/brightcove-answer.html">Brightcove Answers</a></li>
+                  
+                
+                  
+                    <li><a href="/support/viewing-brightcove-system-status-page.html">Viewing the Brightcove System Status Page</a></li>
+                  
+                
+                  
+                    <li><a href="/support/contact-sales.html">Contact Sales</a></li>
+                  
+                
+                  
+                    <li><a href="/support/opening-case-with-brightcove-support.html">Opening a Support Case</a></li>
+                  
+                
+              </ul>
+            
+          
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+  <!-- bootstrap layout -->
+
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Navigation Menu"></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">Page Contents</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="open in new tab" style="margin-top:4em;width: 1.5em;"></a>
+
+
+
+  
+    
+
+
+<!-- 
+  This content appears on:
+
+  https://player.support.brightcove.com/advertising/video-cloud-ssai-ad-tag-validation.html
+
+  If you update in one place, you MUST update it in all!
+ -->
+<h1>Video Cloud SSAI Ad Tag Validation</h1>
+<article class="bcls-article">
+  <summary>In this topic, you will learn how to trace ad calls specified with Server-Side Ad Insertion (SSAI).</summary>
+
+  <section class="bcls-section">
+    <h2 id="Overview">Overview</h2>
+    <p>To help with debugging of server-side ads, Dynamic Delivery with SSAI provides API endpoints to track ad calls.</p>
+    <aside class="bcls-aside bcls-aside--information">Notes:
+      <ul>
+        <li>To use SSAI, your Video Cloud account needs to be configured for <a href="https://studio.support.brightcove.com/general/overview-dynamic-delivery.html">Dynamic Delivery</a> and enabled for SSAI. Contact your account manager to start using this feature.</li>
+        <li>This debugging interface is for VOD SSAI only.</li>
+        <li>For a list of limitations, see the <a href="https://ssai.support.brightcove.com/getting-started/video-cloud-ssai-overview.html#Limitations">SSAI Overview</a> document.</li>
+      </ul>
+    </aside>
+    <!-- <aside class="bcls-aside bcls-aside--information">SSAI logging is session based and uses parameters for a particular session. It’s critical to test in an environment that best represents your needs to debug including, geography, page variables, playback device, etc.</aside> -->
+    
+    <p>To debug server-side ads with your video content stored in Video Cloud, follow these steps:</p>
+    <ol class="bcls-tasklist__restart">
+      <li><a href="#General_information">Review general information for API path and authorization</a></li>
+      <li><a href="#Run_a_trace_for_an_ad_configuration">Run a trace for an ad configuration</a></li>
+      <li><a href="#Retrieve_trace_details">Retrieve trace details</a></li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="General_information">General information</h2>
+    <p>The following information pertains to all SSAI API requests.</p>
+    <h3>Base URL</h3>
+    <p>The base URL for the SSAI API is:</p>
+    <pre class="line-numbers">
+  <code class="language-http" translate="No">https://ssai.api.brightcove.com/v1</code></pre>
+    <h4>Account path</h4>
+    <p>In all cases, requests will be made for a specific Video Cloud Account. So, you will always add the term <code translate="No">accounts</code> followed by your account id to the base URL:</p>
+    <pre class="line-numbers">
+  <code class="language-http" translate="No">https://ssai.api.brightcove.com/v1<strong>/accounts/</strong><span class="bcls-input">your account id</span></code></pre>
+    <h3>Authorization</h3>
+    <p>API requests require an Authorization header:</p>
+    <pre class="line-numbers">
+  <code class="language-http" translate="No">Authorization: Bearer <span class="bcls-input">your access token</span></code></pre>
+    <p>The <code translate="No">access_token</code> is a temporary OAuth2 access token that must be obtained from the Brightcove OAuth service. For details on how to obtain client credentials and use them to retrieve access tokens, see the <a href="https://apis.support.brightcove.com/oauth/getting-started/overview-oauth-api-v4.html">Brightcove OAuth Overview</a>.</p>
+    <h3>Operations</h3>
+    <p>When you request client credentials, you will need to specify the type of account access or operations that you want. The following is a list of the currently supported operations for the SSAI API:</p>
+    <ul>
+      <li>SSAI data:
+        <p><code translate="No">video-cloud/ssai/read</code><br />
+          <code translate="No">video-cloud/ssai/all</code></p>
+      </li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Run_a_trace_for_an_ad_configuration">Run a trace for an ad configuration</h2>
+    <p>To run a trace for an ad configuration, follow these steps:</p>
+    <h3>Gather information</h3>
+    <p>Gather the following information for the <strong>body</strong> of your API request:</p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Parameter</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td><code translate="No">account_id</code></td>
+          <td>String</td>
+          <td>User account id</td>
+        </tr>
+        <tr>
+          <td><code translate="No">playback_config</code></td>
+          <td>Object</td>
+          <td>Fields are defined in the <a href="https://ssai.support.brightcove.com/vod/guides/video-cloud-ssai-ad-config-api.html#Configuration_field_details">Configuration field details</a> section of the SSAI API document.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">title_metadata</code></td>
+          <td>Object</td>
+          <td>Tells the system how long your content is in order to generate the correct ad response.<br />
+            <br />
+            For example, the following tells the system that the content is 1 minute long. This is used to insert ads accordingly.
+            <pre>
+  <code class="language-json" translate="No">"title_metadata": {  "duration": "1m" }</code></pre></td>
+        </tr>
+        <tr>
+          <td><code translate="No">videocloud_metadata</code></td>
+          <td>Object</td>
+          <td>Optional.<br />
+            Needed only if you are using template variables that reference metadata fields. These are defined in the <a href="https://ssai.support.brightcove.com/vod/guides/video-cloud-ssai-ad-config-api.html#Ad_variables">Ad variables</a> section of the SSAI API document.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Request</h3>
+    <p>Create a trace for an SSAI ad configuration.</p>
+    <table class="bcls-table">
+      <tbody class="bcls-table__body">
+        <tr>
+          <th>Method</th>
+          <td>POST</td>
+        </tr>
+        <tr>
+          <th>URL</th>
+          <td>https://ssai.api.brightcove.com/v1/accounts/<span class="bcls-input">{account_id}</span>/ssai_debug_vmap/debug.xml</td>
+        </tr>
+        <tr>
+          <th rowspan="2">Headers</th>
+          <td>Authorization: Bearer <span class="bcls-input">access_token</span> (see <a href="https://apis.support.brightcove.com/oauth/guides/getting-access-tokens.html">Getting Access Tokens</a>)</td>
+        </tr>
+        <tr>
+          <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+          <th>Sample Body</th>
+          <td><pre>
+  <code translate="No">{
+    "playback_config":{
+      "name": "<span class="bcls-input">config_name</span>",
+      "vmap_response_namespace": "<span class="bcls-input">config_namespace</span>",
+      "account_id": "<span class="bcls-input">account_id</span>",
+      "ad_config": {
+        "enable_ads": true,
+        "expected_ad_response": "dfp_ad_rules",
+        "disable_server_beacons": false,
+        "round_up_cue_points": false,
+        "template_url": {
+        "template": "<span class="bcls-input">template_url</span>"
+        }
+      },
+      "extend_beacon_guard_ttl": false
+    },
+    "title_metadata":{
+      "duration": "39s"
+    }
+  }</code></pre></td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Response</h3>
+    <p>The response <code translate="No">body</code> consists of the ad server response that would include the VAST or ad server equivalent response.</p>
+    <p>Sample response:</p>
+    <pre class="line-numbers">
+  <code class="language-xml" translate="No">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+  &lt;vmap:VMAP xmlns:bc="bc" xmlns:vmap="http://www.iab.net/vmap-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0"&gt;
+    &lt;vmap:Extensions&gt;
+      &lt;bc:Brightcove ttl="1800" contenturi="https://ssaiplayback.us-east-1.prod.boltdns.net/playback/once/v1/hls/v5/clear/1752604059001/debug/debug/195b46a6-f71b-432d-af0a-60c7f2131a7e/debug.m3u8?bc_token=NWIxNmQ4YWFfMzMwMzllMzIwMmZlYjRkNmJhY2ZkMWZiN2Y2NGQwOWVkZTYxYTBiOThhZmEwMTdkZjc5NjEzNGFkZDdiYTFjYw%3D%3D"
+      contentlength="39.0000" payloadlength="67.0000" contenttype="application/x-mpegURL"&gt;&lt;/bc:Brightcove&gt;
+      &lt;bc:BrightcoveDebug sessionID="195b46a6-f71b-432d-af0a-60c7f2131a7e"&gt;&lt;/bc:BrightcoveDebug&gt;
+    &lt;/vmap:Extensions&gt;
+    &lt;vmap:AdBreak breakType="linear" breakId="MidRoll_5_0" timeOffset="00:00:05.0000"&gt;
+      &lt;vmap:AdSource allowMultipleAds="true" followRedirects="true" id="0"&gt;
+        &lt;vmap:VASTData&gt;
+          &lt;VAST xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+            &lt;Ad id="2"&gt;
+              &lt;InLine&gt;
+                &lt;AdSystem&gt;Test Ad Server&lt;/AdSystem&gt;
+                &lt;AdTitle&gt;&amp;#xA; Marketing&amp;#xA;&lt;/AdTitle&gt;
+                &lt;Description&gt;&amp;#xA; Demo ad number 4&amp;#xA;&lt;/Description&gt;
+                &lt;Error&gt;&amp;#xA; &amp;#xA;&lt;/Error&gt;
+                &lt;Creatives&gt;
+                  &lt;Creative&gt;
+                    &lt;Linear skipoffset="00:00:05"&gt;
+                      &lt;CreativeExtensions&gt;
+                        &lt;CreativeExtension&gt;
+                          &lt;BrightcoveForeignKey&gt;2&lt;/BrightcoveForeignKey&gt;
+                        &lt;/CreativeExtension&gt;
+                      &lt;/CreativeExtensions&gt;
+                      &lt;Duration&gt;00:00:12.0000&lt;/Duration&gt;
+                      &lt;AdParameters&gt;&amp;#xA; &amp;lt;xml&amp;gt;&amp;lt;/xml&amp;gt;&amp;#xA;&lt;/AdParameters&gt;
+                      &lt;VideoClicks&gt;&lt;/VideoClicks&gt;
+                    &lt;/Linear&gt;
+                  &lt;/Creative&gt;
+                &lt;/Creatives&gt;
+                &lt;Extensions&gt;
+                  &lt;Extension&gt;
+                    &lt;xml&gt;data&lt;/xml&gt;
+                  &lt;/Extension&gt;
+                &lt;/Extensions&gt;
+              &lt;/InLine&gt;
+            &lt;/Ad&gt;
+          &lt;/VAST&gt;
+        &lt;/vmap:VASTData&gt;
+      &lt;/vmap:AdSource&gt;
+    &lt;/vmap:AdBreak&gt;
+    ...// additional ad breaks
+  &lt;/vmap:VMAP&gt;
+  </code></pre>
+    <h3>Request2 - using template variables</h3>
+    <p>Create an SSAI ad trace, where you are using template variables that reference metadata fields.</p>
+    <table class="bcls-table">
+      <tbody class="bcls-table__body">
+        <tr>
+          <th>Method</th>
+          <td>POST</td>
+        </tr>
+        <tr>
+          <th>URL</th>
+          <td>https://ssai.api.brightcove.com/v1/accounts/<span class="bcls-input">{account_id}</span>/ssai_debug_vmap/debug.xml</td>
+        </tr>
+        <tr>
+          <th rowspan="2">Headers</th>
+          <td>Authorization: Bearer <span class="bcls-input">access_token</span> (see <a href="https://apis.support.brightcove.com/oauth/guides/getting-access-tokens.html">Getting Access Tokens</a>)</td>
+        </tr>
+        <tr>
+          <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+          <th>Sample Body</th>
+          <td><pre>
+  <code translate="No">{
+    "playback_config":{
+      "name": "<span class="bcls-input">config_name</span>",
+      "vmap_response_namespace": "<span class="bcls-input">config_namespace</span>",
+      "account_id": "<span class="bcls-input">account_id</span>",
+      "ad_config": {
+        "enable_ads": true,
+        "expected_ad_response": "dfp_ad_rules",
+        "disable_server_beacons": false,
+        "round_up_cue_points": false,
+        "template_url": {
+        "template": "<span class="bcls-input">template_url</span>"
+        }
+      },
+      "extend_beacon_guard_ttl": false
+    },
+    "title_metadata":{
+    "duration": "10s"
+    },
+    "videocloud_metadata": {
+      "name": "<span class="bcls-input">ad_name</span>",
+      "tags": [ "<span class="bcls-input">tag1:tag1_value</span>", "<span class="bcls-input">tag2:tag2_value</span>" ],
+      "ad_keys":"a=1&amp;b=2",
+      "cue_points": [{
+        "name":"Pre-roll",
+        "type":"AD",
+        "time":0,
+        "metadata":"type:pre-roll,a=b",
+        },
+        {
+        "name":"Mid-roll",
+        "type":"AD",
+        "time":10,
+        "metadata":"type=mid-roll,x=y",
+      }]
+    }
+  }</code></pre></td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- <aside class="bcls-aside bcls-aside--information">For data definitions within the <code translate="No">videocloud_metadata</code> object, see the <a href="http://docs.brightcove.com/en/staging/ssai-api.html#Metadata_variables">Metadata variables</a> section of the Video Cloud SSAI Ad Config API document.</aside> --><!-- <aside class="bcls-aside bcls-aside--information">Be sure to validate any server-side macros that they are correctly inserting values to that URL.</aside> -->
+    
+    <h3>Response2</h3>
+    <p>Sample response:</p>
+    <pre class="line-numbers">
+  <code class="language-xml" translate="No">&lt;vmap:VMAP xmlns:bc="bc" xmlns:vmap="http://www.iab.net/vmap-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0"&gt;
+  &lt;vmap:Extensions&gt;
+  &lt;bc:Brightcove ttl="1800" contenturi="https://ssaiplayback.us-east-1.qa.boltdns.net/playback/once/v1/hls/v5/clear/accoutn_debug/debug/debug/7592e9c3-214f-4c68-a576-1e2494b7be06/debug.m3u8" contentlength="10.0000" payloadlength="70.0000" contenttype="application/x-mpegURL"&gt;&lt;/bc:Brightcove&gt;
+  &lt;bc:BrightcoveDebug sessionID="7592e9c3-214f-4c68-a576-1e2494b7be06"&gt;&lt;/bc:BrightcoveDebug&gt;
+  &lt;/vmap:Extensions&gt;
+  &lt;vmap:AdBreak breakType="linear" breakId="PreRoll_0_0" timeOffset="start"&gt;
+  &lt;vmap:AdSource allowMultipleAds="true" followRedirects="true" id="0"&gt;
+  &lt;vmap:VASTData&gt;
+    &lt;VAST xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+      &lt;Ad id="test-01-30s"&gt;
+        &lt;InLine&gt;
+          &lt;AdSystem&gt;BIAS&lt;/AdSystem&gt;
+          &lt;AdTitle&gt;test-01-30s&lt;/AdTitle&gt;
+          &lt;Creatives&gt;
+            &lt;Creative&gt;
+              &lt;Linear&gt;
+                &lt;CreativeExtensions&gt;
+                  &lt;CreativeExtension&gt;
+                    &lt;BrightcoveForeignKey&gt;test-01-30s&lt;/BrightcoveForeignKey&gt;
+                  &lt;/CreativeExtension&gt;
+                &lt;/CreativeExtensions&gt;
+                &lt;Duration&gt;00:00:30.0000&lt;/Duration&gt;
+                &lt;TrackingEvents&gt;
+                  &lt;Tracking event="mute"&gt;https://solutions.brightcove.com/beacon?event=mute&amp;amp;type=vast&amp;amp;request_id=43a0e4a5-4420-11e8-b306-99b1b6ae5164&amp;amp;parent_request_id=436ae081-4420-11e8-bd7f-41361f814644&amp;amp;ad_id=test-01-30s&lt;/Tracking&gt;
+                  &lt;Tracking event="unmute"&gt;https://solutions.brightcove.com/beacon?event=unmute&amp;amp;type=vast&amp;amp;request_id=43a0e4a5-4420-11e8-b306-99b1b6ae5164&amp;amp;parent_request_id=436ae081-4420-11e8-bd7f-41361f814644&amp;amp;ad_id=test-01-30s&lt;/Tracking&gt;
+                  &lt;Tracking event="rewind"&gt;https://solutions.brightcove.com/beacon?event=rewind&amp;amp;type=vast&amp;amp;request_id=43a0e4a5-4420-11e8-b306-99b1b6ae5164&amp;amp;parent_request_id=436ae081-4420-11e8-bd7f-41361f814644&amp;amp;ad_id=test-01-30s&lt;/Tracking&gt;
+                  &lt;Tracking event="pause"&gt;https://solutions.brightcove.com/beacon?event=pause&amp;amp;type=vast&amp;amp;request_id=43a0e4a5-4420-11e8-b306-99b1b6ae5164&amp;amp;parent_request_id=436ae081-4420-11e8-bd7f-41361f814644&amp;amp;ad_id=test-01-30s&lt;/Tracking&gt;
+                  &lt;Tracking event="resume"&gt;https://solutions.brightcove.com/beacon?event=resume&amp;amp;type=vast&amp;amp;request_id=43a0e4a5-4420-11e8-b306-99b1b6ae5164&amp;amp;parent_request_id=436ae081-4420-11e8-bd7f-41361f814644&amp;amp;ad_id=test-01-30s&lt;/Tracking&gt;
+                  &lt;Tracking event="fullscreen"&gt;https://solutions.brightcove.com/beacon?event=fullscreen&amp;amp;type=vast&amp;amp;request_id=43a0e4a5-4420-11e8-b306-99b1b6ae5164&amp;amp;parent_request_id=436ae081-4420-11e8-bd7f-41361f814644&amp;amp;ad_id=test-01-30s&lt;/Tracking&gt;
+                  &lt;Tracking event="acceptInvitation"&gt;https://solutions.brightcove.com/beacon?event=acceptInvitation&amp;amp;type=vast&amp;amp;request_id=43a0e4a5-4420-11e8-b306-99b1b6ae5164&amp;amp;parent_request_id=436ae081-4420-11e8-bd7f-41361f814644&amp;amp;ad_id=test-01-30s&lt;/Tracking&gt;
+                &lt;/TrackingEvents&gt;
+                &lt;VideoClicks&gt;
+                  &lt;ClickThrough id="clickthrough"&gt;https://www.brightcove.com/en/&lt;/ClickThrough&gt;
+                  &lt;ClickTracking id="43a0e4a5-4420-11e8-b306-99b1b6ae5164"&gt;&lt;/ClickTracking&gt;
+                &lt;/VideoClicks&gt;
+              &lt;/Linear&gt;
+            &lt;/Creative&gt;
+          &lt;/Creatives&gt;
+        &lt;/InLine&gt;
+      &lt;/Ad&gt;
+    &lt;/VAST&gt;
+  &lt;/vmap:VASTData&gt;
+  &lt;/vmap:AdSource&gt;
+  &lt;/vmap:AdBreak&gt;
+  ...// additional ad breaks
+  &lt;/vmap:VMAP&gt;
+  </code></pre>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Retrieve_trace_details">Retrieve trace details</h2>
+    <p>Once you have run an ad trace as shown in the previous section, you can retrieve detailed information about the trace using the session Id.</p>
+    <p>The <code translate="No">session_id</code> specifies the caching session. Each session has its own length based on the video content length. You can get the id from the response for the API call in the previous step.</p>
+    <p>The Session id can be found in the VMAP responses from the previous section. Here is an example:</p>
+    <pre>
+  <code class="language-xml" translate="No">&lt;bc:BrightcoveDebug sessionID="<span class="bcls-input">your session id</span>"&gt;&lt;/bc:BrightcoveDebug&gt;</code></pre>
+    <h3>Request</h3>
+    <p>To retrieve ad-call trace information by supplying a session id, use a GET request similar to the following:</p>
+    <table class="bcls-table">
+      <tbody class="bcls-table__body">
+        <tr>
+          <th>Method</th>
+          <td>GET</td>
+        </tr>
+        <tr>
+          <th>URL</th>
+          <td>https://ssai.api.brightcove.com/v1/accounts/<span class="bcls-input">{account_id}</span>/ssai_traces/<span class="bcls-input">{session_id}</span>/ad_calls</td>
+        </tr>
+        <tr>
+          <th rowspan="2">Headers</th>
+          <td>Authorization: Bearer <span class="bcls-input">access_token</span> (see <a href="https://apis.support.brightcove.com/oauth/guides/getting-access-tokens.html">Getting Access Tokens</a>)</td>
+        </tr>
+        <tr>
+          <td>Content-Type: application/json</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- <aside class="bcls-aside bcls-aside--information">Be sure to validate any server-side macros that they are correctly inserting values to that URL.</aside> -->
+    
+    <h3>Response</h3>
+    <p>Sample response:</p>
+    <pre class="line-numbers">
+  <code class="language-json" translate="No">{
+    "ad_calls": [
+      {
+        "timestamp": "2019-01-29T16:25:57.775607279Z",
+        "duration_ms": 2772.666305,
+        "request": {
+          "content_length": 0,
+          "event": "request",
+          "headers": {
+            "Referer": [
+              ""
+            ],
+            "User-Agent": [
+              "insomnia/6.3.2"
+            ],
+            "X-Device-User-Agent": [
+              "insomnia/6.3.2"
+            ],
+            "X-Forwarded-For": [
+              "108.26.214.36, 3.89.139.168"
+            ]
+          },
+          "method": "GET",
+          "url": "https://solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vmap.xml"
+        },
+        "response": {
+          "content_length": -1,
+          "event": "response",
+          "headers": {
+            "Accept-Ranges": [
+              "bytes"
+            ],
+            "Access-Control-Allow-Credentials": [
+              "true"
+            ],
+            "Access-Control-Allow-Headers": [
+              "X-Requested-With"
+            ],
+            "Access-Control-Allow-Origin": [
+              "*"
+            ],
+            "Content-Type": [
+              "application/xml"
+            ],
+            "Date": [
+              "Tue, 29 Jan 2019 16:25:57 GMT"
+            ],
+            "Etag": [
+              "\"13d6-57baaddddeea0-gzip\""
+            ],
+            "Last-Modified": [
+              "Tue, 27 Nov 2018 19:58:00 GMT"
+            ],
+            "Server": [
+              "Apache/2.4.7 (Ubuntu)"
+            ],
+            "Vary": [
+              "Accept-Encoding"
+            ]
+          },
+          "status_code": 200
+        },
+        "body": "PHZtYXA6Vk1BUCB4bWxuczp2bWFwPSJodHRwOi8vd3d3LmlhYi5uZXQvdmlkZW9zdWl0ZS92bWFwIiB2ZXJzaW9uPSIxLjAiPgoKICA8dm1hcDpBZEJyZWFrIHRpbWVPZmZzZXQ9InN0YXJ0IiBicmVha1R5cGU9ImxpbmVhciIgYnJlYWtJZD0icHJlcm9sbCI+CiAgICA8dm1hcDpBZFNvdXJjZSBpZD0icHJlcm9sbC1hZCIgYWxsb3dNdWx0aXBsZUFkcz0iZmFsc2UiIGZvbGxvd1JlZGlyZWN0cz0idHJ1ZSI+CiAgICAgIDx2bWFwOlZBU1RBZERhdGE+CiAgICAgICAgPFZBU1QgdmVyc2lvbj0iMy4wIj4KICAgICAgICAgIDxBZCBpZD0iMSI+CiAgICAgICAgICAgIDxJbkxpbmU+CiAgICAgICAgICAgICAgPEFkU3lzdGVtIHZlcnNpb249IjEuMCI+VGVzdCBBZCBTZXJ2ZXI8L0FkU3lzdGVtPgogICAgICAgICAgICAgIDxBZFRpdGxlPgogICAgICAgICAgICAgICAgPCFbQ0RBVEFbUG9ydGFsc11dPgogICAgICAgICAgICAgIDwvQWRUaXRsZT4KICAgICAgICAgICAgICA8RGVzY3JpcHRpb24+CiAgICAgICAgICAgICAgICA8IVtDREFUQVtEZW1vIGFkIG51bWJlciA2XV0+CiAgICAgICAgICAgICAgPC9EZXNjcmlwdGlvbj4KICAgICAgICAgICAgICA8RXJyb3I+CiAgICAgICAgICAgICAgICA8IVtDREFUQVtdXT4KICAgICAgICAgICAgICA8L0Vycm9yPgogICAgICAgICAgICAgIDxDcmVhdGl2ZXM+CiAgICAgICAgICAgICAgICA8Q3JlYXRpdmU+CiAgICAgICAgICAgICAgICAgIDxMaW5lYXI+CiAgICAgICAgICAgICAgICAgICAgPER1cmF0aW9uPjAwOjAwOjg8L0R1cmF0aW9uPgogICAgICAgICAgICAgICAgICAgIDxUcmFja2luZ0V2ZW50cy8+CiAgICAgICAgICAgICAgICAgICAgPEFkUGFyYW1ldGVycz4KICAgICAgICAgICAgICAgICAgICAgIDwhW0NEQVRBWzx4bWw+PC94bWw+XV0+CiAgICAgICAgICAgICAgICAgICAgPC9BZFBhcmFtZXRlcnM+CiAgICAgICAgICAgICAgICAgICAgPFZpZGVvQ2xpY2tzLz4KICAgICAgICAgICAgICAgICAgICA8TWVkaWFGaWxlcz4KICAgICAgICAgICAgICAgICAgICAgIDxNZWRpYUZpbGUgdHlwZT0idmlkZW8vbXA0IiB3aWR0aD0iMTI4MCIgaGVpZ2h0PSI3MjAiIGRlbGl2ZXJ5PSJwcm9ncmVzc2l2ZSIgaWQ9IjIiIGJpdHJhdGU9IjQzMTYiIG1pbkJpdHJhdGU9IjMyMCIgbWF4Qml0cmF0ZT0iMzIwIiBzY2FsYWJsZT0idHJ1ZSIgbWFpbnRhaW5Bc3BlY3RSYXRpbz0idHJ1ZSI+CiAgICAgICAgICAgICAgICAgICAgICAgIDwhW0NEQVRBW2h0dHBzOi8vc29sdXRpb25zLmJyaWdodGNvdmUuY29tL2JjbHMvYWRzL2JjLWFkcy9iY2xzLWFkLTYtNXNlY29uZHMubXA0XV0+CiAgICAgICAgICAgICAgICAgICAgICA8L01lZGlhRmlsZT4KICAgICAgICAgICAgICAgICAgICA8L01lZGlhRmlsZXM+CiAgICAgICAgICAgICAgICAgIDwvTGluZWFyPgogICAgICAgICAgICAgICAgPC9DcmVhdGl2ZT4KICAgICAgICAgICAgICA8L0NyZWF0aXZlcz4KICAgICAgICAgICAgICA8RXh0ZW5zaW9ucz4KICAgICAgICAgICAgICAgIDxFeHRlbnNpb24+CiAgICAgICAgICAgICAgICAgIDx4bWw+ZGF0YTwveG1sPgogICAgICAgICAgICAgICAgPC9FeHRlbnNpb24+CiAgICAgICAgICAgICAgPC9FeHRlbnNpb25zPgogICAgICAgICAgICA8L0luTGluZT4KICAgICAgICAgIDwvQWQ+CiAgICAgICAgPC9WQVNUPgogICAgICA8L3ZtYXA6VkFTVEFkRGF0YT4KICAgIDwvdm1hcDpBZFNvdXJjZT4KICA8L3ZtYXA6QWRCcmVhaz4KCiAgPHZtYXA6QWRCcmVhayB0aW1lT2Zmc2V0PSIwMDowMDowNSIgYnJlYWtUeXBlPSJsaW5lYXIiIGJyZWFrSWQ9Im1pZHJvbGwiPgogICAgPHZtYXA6QWRTb3VyY2UgaWQ9Im1pZHJvbGwtYWQiIGFsbG93TXVsdGlwbGVBZHM9ImZhbHNlIiBmb2xsb3dSZWRpcmVjdHM9InRydWUiPgogICAgICA8dm1hcDpWQVNUQWREYXRhPgogICAgICAgIDxWQVNUIHZlcnNpb249IjMuMCI+CiAgICAgICAgICA8QWQgaWQ9IjIiPgogICAgICAgICAgICA8SW5MaW5lPgogICAgICAgICAgICAgIDxBZFN5c3RlbSB2ZXJzaW9uPSIxLjAiPlRlc3QgQWQgU2VydmVyPC9BZFN5c3RlbT4KICAgICAgICAgICAgICA8QWRUaXRsZT4KICAgICAgICAgICAgICAgIDwhW0NEQVRBW01hcmtldGluZ11dPgogICAgICAgICAgICAgIDwvQWRUaXRsZT4KICAgICAgICAgICAgICA8RGVzY3JpcHRpb24+CiAgICAgICAgICAgICAgICA8IVtDREFUQVtEZW1vIGFkIG51bWJlciA0XV0+CiAgICAgICAgICAgICAgPC9EZXNjcmlwdGlvbj4KICAgICAgICAgICAgICA8RXJyb3I+CiAgICAgICAgICAgICAgICA8IVtDREFUQVtdXT4KICAgICAgICAgICAgICA8L0Vycm9yPgogICAgICAgICAgICAgIDxDcmVhdGl2ZXM+CiAgICAgICAgICAgICAgICA8Q3JlYXRpdmU+CiAgICAgICAgICAgICAgICAgIDxMaW5lYXIgc2tpcG9mZnNldD0iMDA6MDA6MDUiPgogICAgICAgICAgICAgICAgICAgIDxEdXJhdGlvbj4wMDowMDoxMjwvRHVyYXRpb24+CiAgICAgICAgICAgICAgICAgICAgPFRyYWNraW5nRXZlbnRzLz4KICAgICAgICAgICAgICAgICAgICA8QWRQYXJhbWV0ZXJzPgogICAgICAgICAgICAgICAgICAgICAgPCFbQ0RBVEFbPHhtbD48L3htbD5dXT4KICAgICAgICAgICAgICAgICAgICA8L0FkUGFyYW1ldGVycz4KICAgICAgICAgICAgICAgICAgICA8VmlkZW9DbGlja3MvPgogICAgICAgICAgICAgICAgICAgIDxNZWRpYUZpbGVzPgogICAgICAgICAgICAgICAgICAgICAgPE1lZGlhRmlsZSB0eXBlPSJ2aWRlby9tcDQiIHdpZHRoPSIxMjgwIiBoZWlnaHQ9IjcyMCIgZGVsaXZlcnk9InByb2dyZXNzaXZlIiBpZD0iMyIgYml0cmF0ZT0iMzAyNiIgbWluQml0cmF0ZT0iMzIwIiBtYXhCaXRyYXRlPSIzMjAiIHNjYWxhYmxlPSJ0cnVlIiBtYWludGFpbkFzcGVjdFJhdGlvPSJ0cnVlIj4KICAgICAgICAgICAgICAgICAgICAgICAgPCFbQ0RBVEFbaHR0cHM6Ly9zb2x1dGlvbnMuYnJpZ2h0Y292ZS5jb20vYmNscy9hZHMvYmMtYWRzL2JjbHMtYWQtNC0xMnNlY29uZHMubXA0XV0+CiAgICAgICAgICAgICAgICAgICAgICA8L01lZGlhRmlsZT4KICAgICAgICAgICAgICAgICAgICA8L01lZGlhRmlsZXM+CiAgICAgICAgICAgICAgICAgIDwvTGluZWFyPgogICAgICAgICAgICAgICAgPC9DcmVhdGl2ZT4KICAgICAgICAgICAgICA8L0NyZWF0aXZlcz4KICAgICAgICAgICAgICA8RXh0ZW5zaW9ucz4KICAgICAgICAgICAgICAgIDxFeHRlbnNpb24+CiAgICAgICAgICAgICAgICAgIDx4bWw+ZGF0YTwveG1sPgogICAgICAgICAgICAgICAgPC9FeHRlbnNpb24+CiAgICAgICAgICAgICAgPC9FeHRlbnNpb25zPgogICAgICAgICAgICA8L0luTGluZT4KICAgICAgICAgIDwvQWQ+CiAgICAgICAgPC9WQVNUPgogICAgICA8L3ZtYXA6VkFTVEFkRGF0YT4KICAgIDwvdm1hcDpBZFNvdXJjZT4KICA8L3ZtYXA6QWRCcmVhaz4KCiAgPHZtYXA6QWRCcmVhayB0aW1lT2Zmc2V0PSJlbmQiIGJyZWFrVHlwZT0ibGluZWFyIiBicmVha0lkPSJwb3N0cm9sbCI+CiAgICA8dm1hcDpBZFNvdXJjZSBpZD0icG9zdHJvbGwtYWQiIGFsbG93TXVsdGlwbGVBZHM9ImZhbHNlIiBmb2xsb3dSZWRpcmVjdHM9InRydWUiPgogICAgICA8dm1hcDpWQVNUQWREYXRhPgogICAgICAgIDxWQVNUIHZlcnNpb249IjMuMCI+CiAgICAgICAgICA8QWQgaWQ9IjMiPgogICAgICAgICAgICA8SW5MaW5lPgogICAgICAgICAgICAgIDxBZFN5c3RlbSB2ZXJzaW9uPSIxLjAiPlRlc3QgQWQgU2VydmVyPC9BZFN5c3RlbT4KICAgICAgICAgICAgICA8QWRUaXRsZT4KICAgICAgICAgICAgICAgIDwhW0NEQVRBW0JyYW5kXV0+CiAgICAgICAgICAgICAgPC9BZFRpdGxlPgogICAgICAgICAgICAgIDxEZXNjcmlwdGlvbj4KICAgICAgICAgICAgICAgIDwhW0NEQVRBW0RlbW8gYWQgbnVtYmVyIDFdXT4KICAgICAgICAgICAgICA8L0Rlc2NyaXB0aW9uPgogICAgICAgICAgICAgIDxFcnJvcj4KICAgICAgICAgICAgICAgIDwhW0NEQVRBW11dPgogICAgICAgICAgICAgIDwvRXJyb3I+CiAgICAgICAgICAgICAgPENyZWF0aXZlcz4KICAgICAgICAgICAgICAgIDxDcmVhdGl2ZT4KICAgICAgICAgICAgICAgICAgPExpbmVhcj4KICAgICAgICAgICAgICAgICAgICA8RHVyYXRpb24+MDA6MDA6MDg8L0R1cmF0aW9uPgogICAgICAgICAgICAgICAgICAgIDxUcmFja2luZ0V2ZW50cy8+CiAgICAgICAgICAgICAgICAgICAgPEFkUGFyYW1ldGVycz4KICAgICAgICAgICAgICAgICAgICAgIDwhW0NEQVRBWzx4bWw+PC94bWw+XV0+CiAgICAgICAgICAgICAgICAgICAgPC9BZFBhcmFtZXRlcnM+CiAgICAgICAgICAgICAgICAgICAgPFZpZGVvQ2xpY2tzLz4KICAgICAgICAgICAgICAgICAgICA8TWVkaWFGaWxlcz4KICAgICAgICAgICAgICAgICAgICAgIDxNZWRpYUZpbGUgdHlwZT0idmlkZW8vbXA0IiB3aWR0aD0iMTI4MCIgaGVpZ2h0PSI3MjAiIGRlbGl2ZXJ5PSJwcm9ncmVzc2l2ZSIgaWQ9IjQiIGJpdHJhdGU9IjIxMTUiIG1pbkJpdHJhdGU9IjMyMCIgbWF4Qml0cmF0ZT0iMzIwIiBzY2FsYWJsZT0idHJ1ZSIgbWFpbnRhaW5Bc3BlY3RSYXRpbz0idHJ1ZSI+CiAgICAgICAgICAgICAgICAgICAgICAgIDwhW0NEQVRBW2h0dHBzOi8vc29sdXRpb25zLmJyaWdodGNvdmUuY29tL2JjbHMvYWRzL2JjLWFkcy9iY2xzLWFkLTEtOHNlY29uZHMubXA0XV0+CiAgICAgICAgICAgICAgICAgICAgICA8L01lZGlhRmlsZT4KICAgICAgICAgICAgICAgICAgICA8L01lZGlhRmlsZXM+CiAgICAgICAgICAgICAgICAgIDwvTGluZWFyPgogICAgICAgICAgICAgICAgPC9DcmVhdGl2ZT4KICAgICAgICAgICAgICA8L0NyZWF0aXZlcz4KICAgICAgICAgICAgICA8RXh0ZW5zaW9ucz4KICAgICAgICAgICAgICAgIDxFeHRlbnNpb24+CiAgICAgICAgICAgICAgICAgIDx4bWw+ZGF0YTwveG1sPgogICAgICAgICAgICAgICAgPC9FeHRlbnNpb24+CiAgICAgICAgICAgICAgPC9FeHRlbnNpb25zPgogICAgICAgICAgICA8L0luTGluZT4KICAgICAgICAgIDwvQWQ+CiAgICAgICAgPC9WQVNUPgogICAgICA8L3ZtYXA6VkFTVEFkRGF0YT4KICAgIDwvdm1hcDpBZFNvdXJjZT4KICA8L3ZtYXA6QWRCcmVhaz4KCjwvdm1hcDpWTUFQPgo=",
+        "creatives": null,
+        "errors": null
+      }
+    ]
+  }</code></pre>
+    <p>You can use a tool like <a href="https://www.base64decode.org/">BASE64</a> to make the response body readable.</p>
+    <p>Sample decoded response body:</p>
+    <pre class="line-numbers">
+  <code class="language-xml" translate="No">&lt;vmap:VMAP xmlns:vmap="http://www.iab.net/videosuite/vmap" version="1.0"&gt;
+
+    &lt;vmap:AdBreak timeOffset="start" breakType="linear" breakId="preroll"&gt;
+      &lt;vmap:AdSource id="preroll-ad" allowMultipleAds="false" followRedirects="true"&gt;
+        &lt;vmap:VASTAdData&gt;
+          &lt;VAST version="3.0"&gt;
+            &lt;Ad id="1"&gt;
+              &lt;InLine&gt;
+                &lt;AdSystem version="1.0"&gt;Test Ad Server&lt;/AdSystem&gt;
+                &lt;AdTitle&gt;
+                  &lt;![CDATA[Portals]]&gt;
+                &lt;/AdTitle&gt;
+                &lt;Description&gt;
+                  &lt;![CDATA[Demo ad number 6]]&gt;
+                &lt;/Description&gt;
+                &lt;Error&gt;
+                  &lt;![CDATA[]]&gt;
+                &lt;/Error&gt;
+                &lt;Creatives&gt;
+                  &lt;Creative&gt;
+                    &lt;Linear&gt;
+                      &lt;Duration&gt;00:00:8&lt;/Duration&gt;
+                      &lt;TrackingEvents/&gt;
+                      &lt;AdParameters&gt;
+                        &lt;![CDATA[&lt;xml&gt;&lt;/xml&gt;]]&gt;
+                      &lt;/AdParameters&gt;
+                      &lt;VideoClicks/&gt;
+                      &lt;MediaFiles&gt;
+                        &lt;MediaFile type="video/mp4" width="1280" height="720" delivery="progressive" id="2" bitrate="4316" minBitrate="320" maxBitrate="320" scalable="true" maintainAspectRatio="true"&gt;
+                          &lt;![CDATA[http://solutions.brightcove.com/bcls/ads/bc-ads/bcls-ad-6-5seconds.mp4]]&gt;
+                        &lt;/MediaFile&gt;
+                      &lt;/MediaFiles&gt;
+                    &lt;/Linear&gt;
+                  &lt;/Creative&gt;
+                &lt;/Creatives&gt;
+                &lt;Extensions&gt;
+                  &lt;Extension&gt;
+                    &lt;xml&gt;data&lt;/xml&gt;
+                  &lt;/Extension&gt;
+                &lt;/Extensions&gt;
+              &lt;/InLine&gt;
+            &lt;/Ad&gt;
+          &lt;/VAST&gt;
+        &lt;/vmap:VASTAdData&gt;
+      &lt;/vmap:AdSource&gt;
+    &lt;/vmap:AdBreak&gt;
+  ...</code></pre>
+  </section>
+</article>
+
+<!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Page Contents</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<div class="last-updated">
+  Page last updated on 11 Dec 2020
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>Brightcove Support</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://status.brightcove.com">System Status</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contact Support</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">Documentation</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>Training</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">Online Courses</a>
+          </li>
+          <li>
+            <a href="https://studio.support.brightcove.com/training/register-training.html">Register for a course</a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Brightcove University</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">Brightcove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
+            </td>
+            <td><a href="https://www.brightcove.com/en/legal/privacy">Privacy</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Terms &amp; Conditions</a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+</body>
+
+</html>
