@@ -607,11 +607,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>Here is an example of a vmap response:</p>
     <pre class="line-numbers"><code class="language-xml-doc" translate="No">&lt;vmap:VMAP xmlns:bc=&quot;bc&quot; xmlns:vmap=&quot;http://www.iab.net/vmap-1.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;1.0&quot;&gt;
   &lt;vmap:Extensions&gt;
-    &lt;bc:Brightcove ttl=&quot;3600&quot; contenturi=&quot;https://ssaimanifest.prod.boltdns.net/us-east-1/playback/once/v1/hls/v4/clear/1752604059001/d6190656-2095-4ff3-8afe-1a0b60d67ed2/dca41ae8-d8f5-48a6-9853-564764d60b84/6830b2e4-3298-439d-beef-e04abef9f23c/content.m3u8?bc_token=NWZkMTE5NTlfZWQxNDAzNDRkNTAxNDRlMWEwODU3MTI1MzY2YjAyZWQ5YzlmZTkzY2UwMjM5NTM1MmI2NGRjZDNhNjE2ZDhlOA%3D%3D&quot;
-    contentlength=&quot;24.0574&quot; payloadlength=&quot;50.1835&quot; contenttype=&quot;application/x-mpegURL&quot; /&gt;
+    &lt;bc:Brightcove ttl=&quot;3600&quot; <span class="bcls-highlight">contenturi=&quot;https://ssaimanifest.prod.boltdns.net/us-east-1/playback/once/v1/hls/v4/clear/1752604059001/d6190656-2095-4ff3-8afe-1a0b60d67ed2/dca41ae8-d8f5-48a6-9853-564764d60b84/6830b2e4-3298-439d-beef-e04abef9f23c/content.m3u8?bc_token=NWZkMTE5NTlfZWQxNDAzNDRkNTAxNDRlMWEwODU3MTI1MzY2YjAyZWQ5YzlmZTkzY2UwMjM5NTM1MmI2NGRjZDNhNjE2ZDhlOA%3D%3D&quot;</span>
+    <span class="bcls-highlight">contentlength=&quot;24.0574&quot;</span> <span class="bcls-highlight">payloadlength=&quot;50.1835&quot;</span> contenttype=&quot;application/x-mpegURL&quot; /&gt;
     &lt;bc:thumbnailURL type=&quot;thumbnail&quot; width=&quot;480&quot; height=&quot;270&quot; bandwidth=&quot;0&quot;&gt;https://ssai.playback.us-east-1.prod.deploys.brightcove.com/v1/thumbnail/1752604059001/dca41ae8-d8f5-48a6-9853-564764d60b84/low-res/6830b2e4-3298-439d-beef-e04abef9f23c/thumbnail.vtt?bc_token=NWZkMTE5NTlfMmVmODIzZDJjMGZkMDBjZjY1YWIxNDQ4Y2YyZmUxYTExNzg5YmIxZDI5ZTdkMjgyODBmMDBmYTViMTE2Yzc0MQ%3D%3D&lt;/bc:thumbnailURL&gt;
   &lt;/vmap:Extensions&gt;
-  &lt;vmap:AdBreak breakType=&quot;linear&quot; breakId=&quot;PreRoll_0_0&quot; timeOffset=&quot;start&quot;&gt;
+  &lt;vmap:AdBreak breakType=&quot;linear&quot; breakId=&quot;PreRoll_0_0&quot; <span class="bcls-highlight">timeOffset=&quot;start&quot;</span>&gt;
     &lt;vmap:AdSource allowMultipleAds=&quot;true&quot; followRedirects=&quot;true&quot; id=&quot;0&quot;&gt;
       &lt;vmap:VASTData&gt;
         &lt;VAST xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
@@ -629,7 +629,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                         &lt;BrightcoveForeignKey&gt;1&lt;/BrightcoveForeignKey&gt;
                       &lt;/CreativeExtension&gt;
                     &lt;/CreativeExtensions&gt;
-                    &lt;Duration&gt;00:00:05.9392&lt;/Duration&gt;
+                    <span class="bcls-highlight">&lt;Duration&gt;00:00:05.9392&lt;/Duration&gt;</span>
                     &lt;AdParameters&gt;
                       &lt;xml&gt;&lt;/xml&gt;
                     &lt;/AdParameters&gt;
@@ -648,7 +648,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       &lt;/vmap:VASTData&gt;
     &lt;/vmap:AdSource&gt;
   &lt;/vmap:AdBreak&gt;
-  &lt;vmap:AdBreak breakType=&quot;linear&quot; breakId=&quot;MidRoll_5_0&quot; timeOffset=&quot;00:00:04.8381&quot;&gt;
+  &lt;vmap:AdBreak breakType=&quot;linear&quot; breakId=&quot;MidRoll_5_0&quot; <span class="bcls-highlight">timeOffset=&quot;00:00:04.8381&quot;</span>&gt;
     &lt;vmap:AdSource allowMultipleAds=&quot;true&quot; followRedirects=&quot;true&quot; id=&quot;1&quot;&gt;
       &lt;vmap:VASTData&gt;
         &lt;VAST xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
@@ -666,7 +666,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                         &lt;BrightcoveForeignKey&gt;2&lt;/BrightcoveForeignKey&gt;
                       &lt;/CreativeExtension&gt;
                     &lt;/CreativeExtensions&gt;
-                    &lt;Duration&gt;00:00:12.1788&lt;/Duration&gt;
+                    <span class="bcls-highlight">&lt;Duration&gt;00:00:12.1788&lt;/Duration&gt;</span>
                     &lt;AdParameters&gt;
                       &lt;xml&gt;&lt;/xml&gt;
                     &lt;/AdParameters&gt;
@@ -685,7 +685,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       &lt;/vmap:VASTData&gt;
     &lt;/vmap:AdSource&gt;
   &lt;/vmap:AdBreak&gt;
-  &lt;vmap:AdBreak breakType=&quot;linear&quot; breakId=&quot;PostRoll_24_0&quot; timeOffset=&quot;end&quot;&gt;
+  &lt;vmap:AdBreak breakType=&quot;linear&quot; breakId=&quot;PostRoll_24_0&quot; <span class="bcls-highlight">timeOffset=&quot;end&quot;</span>&gt;
     &lt;vmap:AdSource allowMultipleAds=&quot;true&quot; followRedirects=&quot;true&quot; id=&quot;2&quot;&gt;
       &lt;vmap:VASTData&gt;
         &lt;VAST xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
@@ -703,7 +703,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                         &lt;BrightcoveForeignKey&gt;3&lt;/BrightcoveForeignKey&gt;
                       &lt;/CreativeExtension&gt;
                     &lt;/CreativeExtensions&gt;
-                    &lt;Duration&gt;00:00:08.0080&lt;/Duration&gt;
+                    <span class="bcls-highlight">&lt;Duration&gt;00:00:08.0080&lt;/Duration&gt;</span>
                     &lt;AdParameters&gt;
                       &lt;xml&gt;&lt;/xml&gt;
                     &lt;/AdParameters&gt;
@@ -765,7 +765,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <tbody class="bcls-table__body">
         <tr>
             <td><code translate="No">timeoffset</code></td>
-            <td>This can be <code translate="No">start</code> or a specific time, which needs to be calculated. If a pod has multiple ads, they can have the same offset because they're inserted at the same "content time".</td>
+            <td>This can be <code translate="No">start</code>, <code translate="No">end</code>, or a specific time, which needs to be calculated. If a pod has multiple ads, they can have the same offset because they're inserted at the same "content time".</td>
         </tr>
     </tbody>
 </table>
