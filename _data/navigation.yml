@@ -13,7 +13,7 @@
 - section: 
   name: 'Video-On-Demand Guides'
   url: '/vod/guides/index.html'
-  icon: '<i class="fas fa-play"></i>'
+  icon: '<img class="bcls-icon" src="/assets/images/feather/play-circle.svg">'
   docs:
     - name: 'Implementing SSAI with Brightcove Player'
       url: 'https://player.support.brightcove.com/plugins/implementing-server-side-ads-brightcove-player.html'
@@ -32,7 +32,7 @@
 - section: 
   name: 'Video-On-Demand References'
   url: '/vod/references/index.html'
-  icon: '<i class="fas fa-play"></i>'
+  icon: '<img class="bcls-icon" src="/assets/images/feather/play-circle.svg">'
   docs:
     - name: 'SSAI API Reference'
       url: '/vod/references/reference.html'
@@ -43,7 +43,7 @@
 - section: 
   name: 'Live Guides'
   url: '/live/guides/index.html'
-  icon: '<i class="fas fa-satellite-dish"></i>'
+  icon: '<img class="bcls-icon" src="/assets/images/feather/zap.svg">'
   docs:
     - name: 'Implementing SSAI in the Live Module'
       url: 'https://live.support.brightcove.com/live-module/implementing-server-side-ads-live-module.html'
@@ -60,7 +60,7 @@
 - section: 
   name: 'Live References'
   url: '/live/references/index.html'
-  icon: '<i class="fas fa-satellite-dish"></i>'
+  icon: '<img class="bcls-icon" src="/assets/images/feather/zap.svg">'
   docs:
     - name: 'Live API Reference'
       url: '/live/references/reference.html'
