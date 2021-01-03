@@ -4,7 +4,7 @@
 - section: 
   name: 'Getting Started'
   url: '/getting-started/index.html'
-  icon: '<i class="far fa-location-arrow"></i>'
+  icon: '<img class="bcls-icon" src="/assets/images/feather/play.svg">'
   docs:
     - name: 'SSAI Overview'
       url: '/getting-started/video-cloud-ssai-overview.html'
@@ -71,7 +71,7 @@
 - section: 
   name: 'Developer Support'
   url: '/support/index.html'
-  icon: '<i class="far fa-question-circle"></i>'
+  icon: '<img class="bcls-icon" src="/assets/images/feather/help-circle.svg">'
   docs:
     - name: 'Brightcove Answers'
       url: '/support/brightcove-answer.html'
