@@ -356,7 +356,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <p>An ad configuration defines the information needed to include server-side ads with a live stream. This includes ad provider URL, expected ad response type and whether beacons should be sent.</p>
 
-<aside class="bcls-aside bcls-aside--information">For this feature, ad configurations MUST have an <code translate="No">ad_configuration_expected_response_type</code> value of <code translate="No">Vast</code>.</aside>
+<aside class="bcls-aside bcls-aside--information">
+  Notes:
+  <ul>
+    <li>For this feature, ad configurations MUST have an <code translate="No">ad_configuration_expected_response_type</code> value of <code translate="No">Vast</code></li>
+    <li>Ad configuration id's from Video Cloud cannot be used directly for Live SSAI</li>
+    <li>Any changes that you make to the ad configuration using Video Cloud Studio will delete the <code translate="No">client_options</code> flags. This is a known issue.</li>
+  </ul>
+</aside>
 
 <p>To create a new ad configuration, send a <code translate="No">POST</code> request as follows:</p>
 
@@ -667,6 +674,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <p>In the response body, there will be an object containing SSAI information for each ad configuration in your account. The sample above shows the object for one ad configuration. This should be the ad configuration id you created in the previous step.</p>
 
 <p>The <code translate="No">playback_url</code> or <code translate="No">playback_url_dvr</code> field associated with your ad configuration id is used in the next step to create a remote video asset.</p>
+<p>Playback URLs:</p>
+<ul>
+  <li>URLs with either <code translate="No">playlist.m3u8</code> or <code translate="No">playlist_dvr.m3u8</code> provide non-SSAI playback</li>
+  <li>URLs with either <code translate="No">playlist_ssaiM.m3u8</code> or <code translate="No">playlist_dvr_ssaiM.m3u8</code> provide SSAI playback</li>
+</ul>
 </section>
 
 <section class="bcls-section">
@@ -677,8 +689,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <p>There are two ways to create a remote video:</p>
 
 <ul>
-	<li><a href="https://support.brightcove.com/quick-start-create-live-stream-using-brightcove-live-api#useStudio">Use Video Cloud Studio</a></li>
-	<li><a href="https://support.brightcove.com/quick-start-create-live-stream-using-brightcove-live-api#Set_up_Video_Cloud_video">Use the CMS API</a></li>
+	<li><a href="https://studio.support.brightcove.com/media/working-remote-asset-videos.html">Working with Remote Asset Videos</a></li>
+	<li><a href="https://apis.support.brightcove.com/cms/managing-videos/using-cms-api-remote-assets.html">Remote Assets using the CMS API</a></li>
 </ul>
 </section>
 
