@@ -28,7 +28,7 @@ parent: Live
 	<li><a href="#Create_an_ad_configuration">Create an ad configuration</a></li>
 	<li>Optional: <a href="https://live.support.brightcove.com/live-api/ssai/live-api-server-side-ad-insertion-ssai.html#Managing_slates">Create slate assets to fill unused ad time</a></li>
 	<li><a href="#Create_a_live_job">Create a live job</a></li>
-	<li><a href="#Create_a_remote_video">Create a remote video</a></li>
+	<!-- <li><a href="#Create_a_remote_video">Create a remote video</a></li> -->
 	<li><a href="#Configure_the_player">Configure the player</a></li>
 	<li><a href="#Begin_streaming">Begin streaming</a></li>
 	<li><a href="https://live.support.brightcove.com/live-api/ssai/live-api-cue-points-and-ad-beacons-ssai.html">Trigger ads using cue points</a> (this can be done before or during the live event)</li>
@@ -337,7 +337,7 @@ parent: Live
    }
   }
  ],
- <span class="bcls-highlight">"stream_url": "rtmp://ep4-usw2.bcovlive.io:1935/bbccddeeffgghhiijjkk0011223344",</span>
+ "stream_url": "rtmp://ep4-usw2.bcovlive.io:1935/bbccddeeffgghhiijjkk0011223344",
  "stream_name": "alive",
  "static": false,
  "encryption": {},
@@ -345,8 +345,8 @@ parent: Live
  "playback_url_dvr": "https://bcovlive-a.akamaihd.net/bbccddeeffgghhiijjkk0011223344/us-west-2/NA/playlist_dvr.m3u8",
  "ssai_playback_urls": {
   "91bc2d5ff4a4441db34c2457c751c3ca": {
-   <span class="bcls-highlight">"playback_url": "https://bcovlive-a.akamaihd.net/bbccddeeffgghhiijjkk0011223344/us-west-2/NA/91bc2d5ff4a4441db34c2457c751c3ca/playlist_ssaiM.m3u8",</span>
-   <span class="bcls-highlight">"playback_url_dvr": "https://bcovlive-a.akamaihd.net/bbccddeeffgghhiijjkk0011223344/us-west-2/NA/91bc2d5ff4a4441db34c2457c751c3ca/playlist_dvr_ssaiM.m3u8",</span>
+   "playback_url": "https://bcovlive-a.akamaihd.net/bbccddeeffgghhiijjkk0011223344/us-west-2/NA/91bc2d5ff4a4441db34c2457c751c3ca/playlist_ssaiM.m3u8",
+   "playback_url_dvr": "https://bcovlive-a.akamaihd.net/bbccddeeffgghhiijjkk0011223344/us-west-2/NA/91bc2d5ff4a4441db34c2457c751c3ca/playlist_dvr_ssaiM.m3u8",
    "playback_added_cdns": [],
    "description": "Test ad configuration",
    "type": "ads"
@@ -354,7 +354,9 @@ parent: Live
  }
 }</code></pre>
 
-<p>From the API response, make note of the job <code translate="No">id</code> and the <code translate="No">stream_url</code> properties. You will need these later.</p>
+<p>From the API response, make note of the live job <code translate="No">id</code> property. You will need this in the next step.</p>
+
+<!-- <p>From the API response, make note of the job <code translate="No">id</code> and the <code translate="No">stream_url</code> properties. You will need these later.</p>
 
 <p>In the response body, there will be an object containing SSAI information for each ad configuration in your account. The sample above shows the object for one ad configuration. This should be the ad configuration id you created in the previous step.</p>
 
@@ -363,10 +365,10 @@ parent: Live
 <ul>
   <li>URLs with either <code translate="No">playlist.m3u8</code> or <code translate="No">playlist_dvr.m3u8</code> provide non-SSAI playback</li>
   <li>URLs with either <code translate="No">playlist_ssaiM.m3u8</code> or <code translate="No">playlist_dvr_ssaiM.m3u8</code> provide SSAI playback</li>
-</ul>
+</ul> -->
 </section>
 
-<section class="bcls-section">
+<!-- <section class="bcls-section">
 <h2 id="Create_a_remote_video">Create a remote video</h2>
 
 <p>In Video Cloud, you will create a remote video which points to your live stream. For this step, you will need the <code translate="No">playback_url</code> or <code translate="No">playback_url_dvr</code> from the previous step.</p>
@@ -377,7 +379,7 @@ parent: Live
 	<li><a href="https://studio.support.brightcove.com/media/working-remote-asset-videos.html">Working with Remote Asset Videos</a></li>
 	<li><a href="https://apis.support.brightcove.com/cms/managing-videos/using-cms-api-remote-assets.html">Remote Assets using the CMS API</a></li>
 </ul>
-</section>
+</section> -->
 
 <section class="bcls-section">
 <h2 id="Configure_the_player">Configure the player</h2>
