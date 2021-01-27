@@ -97,10 +97,73 @@ parent: Live
       "client_only_tracking": <span class="bcls-input">true / false</span>
     }</span>
   },
-  "application_description": "<span class="bcls-input">your aaplication description</span>"
+  "application_description": "<span class="bcls-input">your application description</span>"
 }</code></pre>
 
-<p>All of the <code translate="No">client_options</code> are optional. Only <code translate="No">client_only_tracking</code> has a default value of <code translate="No">false</code>.</p>
+<p>Here are the ad configuration fields related to Player Enhancements with Live SSAI:</p>
+<table class="bcls-table">
+  <thead class="bcls-table__head">
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody class="bcls-table__body">
+    <tr>
+      <td><code translate="No">ad_configuration_client_sdk_enabled</code></td>
+      <td>Boolean</td>
+      <td>Yes</td>
+      <td>This field must have a value of <code translate="No">true</code> to enable the <code translate="No">client_options</code> fields</td>
+    </tr>
+    <tr>
+      <td><code translate="No">client_options</code></td>
+      <td>Object</td>
+      <td></td>
+      <td>An object of fields related to Player Enhancements</td>
+    </tr>
+    <tr>
+      <td><code translate="No">client_options.<br> show_ad_break_remaining_time</code></td>
+      <td>Boolean</td>
+      <td></td>
+      <td>Display time remaining for an ad break
+        <br>
+        Values: <code translate="No">true</code>/<code translate="No">false</code>
+      </td>
+    </tr>
+    <tr>
+      <td><code translate="No">client_options.<br> show_ad_remaining_time</code></td>
+      <td>Boolean</td>
+      <td></td>
+      <td>Display time remaining for an ad
+        <br>
+        Values: <code translate="No">true</code>/<code translate="No">false</code>
+      </td>
+    </tr>
+    <tr>
+      <td><code translate="No">client_options.<br> show_number_of_remaining_ads</code></td>
+      <td>Boolean</td>
+      <td></td>
+      <td>Display the number of ads remaining in the ad break
+        <br>
+        Values: <code translate="No">true</code>/<code translate="No">false</code>
+      </td>
+    </tr>
+    <tr>
+      <td><code translate="No">client_options.<br> client_only_tracking</code></td>
+      <td>Boolean</td>
+      <td></td>
+      <td>Display the number of ads remaining in the ad break
+        <br>
+        Values: <code translate="No">true</code>/<code translate="No">false</code> 
+        <br>Default: <code translate="No">false</code>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<aside class="bcls-aside bcls-aside--information language-editable">All of the <code translate="No">client_options</code> fields are optional. Only <code translate="No">client_only_tracking</code> has a default value of <code translate="No">false</code>.</aside>
 
 <p>Sample response:</p>
 
