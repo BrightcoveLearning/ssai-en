@@ -44,9 +44,8 @@ parent: Live
 <aside class="bcls-aside bcls-aside--information">
   Notes:
   <ul>
-    <li>For this feature, ad configurations MUST have an <code translate="No">ad_configuration_expected_response_type</code> value of <code translate="No">Vast</code></li>
     <li>Ad configuration id's from Video Cloud cannot be used directly for Live SSAI</li>
-    <li>Any changes that you make to the ad configuration using Video Cloud Studio will delete the <code translate="No">client_options</code> flags. This is a known issue.</li>
+    <li>Any changes that you make to the ad configuration using Video Cloud Studio will delete the <code translate="No">client_options</code> flags; this is a known issue</li>
   </ul>
 </aside>
 
@@ -84,7 +83,7 @@ parent: Live
 <code class="language-json" translate="No">{
   "application_ad_configuration": {
 	"ad_configuration_description": "<span class="bcls-input">your ad config description</span>",
-	"ad_configuration_expected_response_type": "Vast",
+<span class="bcls-highlight">    "ad_configuration_expected_response_type": "Vast",</span>
 	"ad_configuration_headers_for_impressions": false,
 	"ad_configuration_strategy": "SingleAdResponse",
 	"ad_configuration_transforms": [],
@@ -112,10 +111,16 @@ parent: Live
   </thead>
   <tbody class="bcls-table__body">
     <tr>
+      <td><code translate="No">ad_configuration_expected_response_type</code></td>
+      <td>String</td>
+      <td>Yes</td>
+      <td>For this feature, ad configurations MUST have a value of <code translate="No">Vast</code></td>
+    </tr>
+    <tr>
       <td><code translate="No">ad_configuration_client_sdk_enabled</code></td>
       <td>Boolean</td>
       <td>Yes</td>
-      <td>This field must have a value of <code translate="No">true</code> to enable the <code translate="No">client_options</code> fields</td>
+      <td>To enable this feature, this field must have a value of <code translate="No">true</code></td>
     </tr>
     <tr>
       <td><code translate="No">client_options</code></td>
@@ -163,7 +168,7 @@ parent: Live
   </tbody>
 </table>
 <br>
-<aside class="bcls-aside bcls-aside--information language-editable">All of the <code translate="No">client_options</code> fields are optional. Only <code translate="No">client_only_tracking</code> has a default value of <code translate="No">false</code>.</aside>
+<aside class="bcls-aside bcls-aside--tip language-editable">All of the <code translate="No">client_options</code> fields are optional. Only <code translate="No">client_only_tracking</code> has a default value of <code translate="No">false</code>.</aside>
 
 <p>Sample response:</p>
 
