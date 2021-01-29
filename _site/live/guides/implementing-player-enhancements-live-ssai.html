@@ -344,7 +344,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 	<li>Optional: <a href="https://live.support.brightcove.com/live-api/ssai/live-api-server-side-ad-insertion-ssai.html#Managing_slates">Create slate assets to fill unused ad time</a></li>
 	<li><a href="#Create_a_live_job">Create a live job</a></li>
 	<!-- <li><a href="#Create_a_remote_video">Create a remote video</a></li> -->
-	<li><a href="#Configure_the_player">Configure the player</a></li>
+	<li><a href="#Create_the_playback_token">Create the playback token</a></li>
+  <li><a href="#Configure_the_player">Configure the player</a></li>
 	<li><a href="#Begin_streaming">Begin streaming</a></li>
 	<li><a href="https://live.support.brightcove.com/live-api/ssai/live-api-cue-points-and-ad-beacons-ssai.html">Trigger ads using cue points</a> (this can be done before or during the live event)</li>
 	<li><a href="#Cleanup">Cleanup</a></li>
@@ -389,6 +390,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <p>All requests are authenticated using an API key that is provided to you when your account is set up. The key is passed in the <code translate="No">X-API-KEY</code> header.</p>
 
+<h3>Request body</h3>
 <p>For details about the request body fields, see the <a href="https://live.support.brightcove.com/live-api/references/reference.html#operation/CreateAdConfiguration">Live API Reference</a> document.</p>
 
 <p>With Player Enhancements for Live SSAI, the highlighted fields can be set inside of the <code translate="No">application_ad_configuration</code> object.</p>
@@ -488,6 +490,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <br>
 <aside class="bcls-aside bcls-aside--tip language-editable">All of the <code translate="No">client_options</code> fields are optional. Only <code translate="No">client_only_tracking</code> has a default value of <code translate="No">false</code>.</aside>
 
+<h3>Response</h3>
 <p>Sample response:</p>
 
 <pre class="line-numbers">
@@ -872,12 +875,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </section> -->
 
 <section class="bcls-section">
-<h2 id="Configure_the_player">Configure the player</h2>
-
-<p>The process of playing your live stream from the Playback API is slightly different from the way you play a normal Video Cloud video. In addition to supplying the video id (reference id), you need to include a playback token which identifies the ad configuration you want to use. You will also need to specify if you want DVR playback.</p>
-
-<h3>Create the playback token</h3>
-
+<h2 id="Create_the_playback_token">Create the playback token</h2>
+<p>You will need the playback token with your player.</p>
 <p>To create the playback token, send a <code translate="No">POST</code> request as follows:</p>
 
 <table class="bcls-table">
@@ -899,8 +898,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 			</tr>
 	</tbody>
 </table>
-<br>
 
+<h4>Request body</h4>
 <p>Sample request body:</p>
 
 <pre class="line-numbers">
@@ -909,6 +908,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
    "application_id":"<span class="bcls-input">your ad config id</span>"
 }</code></pre>
 
+<h4>Response</h4>
 <p>Sample response:</p>
 
 <pre class="line-numbers">
@@ -916,7 +916,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
  "playback_token": "live.JhQabcdefghijkl000000000abcdefghi"
 }</code></pre>
 
-<p>The response body will include a generated playback token. Use this when making a Playback API call with the following players:</p>
+<p>The response body will include a generated playback token. Use this when making a Playback API call with your player.</p>
+</section>
+
+<section class="bcls-section">
+<h2 id="Configure_the_player">Configure the player</h2>
+
+<p>The process of playing your live stream from the Playback API is slightly different from the way you play a normal Video Cloud video. In addition to supplying the video id (reference id), you need to include a playback token which identifies the ad configuration you want to use. You will also need to specify if you want DVR playback.</p>
 
 <h3>Web player</h3>
 
@@ -934,7 +940,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <section class="bcls-section">
 <h2 id="Begin_streaming">Begin streaming</h2>
 
-<p>There are many tools to create a live streaming event. Here are some encoders you can use to produce a live stream delivered by a CDN: (Use the <code translate="No">playback_url</code> from a previous step)</p>
+<p>There are many tools to create a live streaming event. Here are some encoders you can use to produce a live stream delivered by a CDN:</p>
 
 <ul>
 	<li><a href="https://support.brightcove.com/quick-start-create-live-stream-using-brightcove-live-api#wirecast">Telestream Wirecast encoder</a></li>
@@ -1026,7 +1032,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 28 Jan 2021
+  Page last updated on 29 Jan 2021
 </div>
 
 
