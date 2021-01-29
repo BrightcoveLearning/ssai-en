@@ -230,19 +230,19 @@ parent: Live
 			</tr>
 	</tbody>
 </table>
-<br>
+
+<h3>Request body</h3>
 
 <p>For details about the request body fields, see the <a href="https://live.support.brightcove.com/live-api/references/reference.html#operation/CreateALiveJob">Live API Reference</a> document.</p>
 
 <p>For a live job with SSAI enabled, set <code translate="No">ad_insertion: true</code> in your HTTP request body.</p>
 
-<p>If you wish to create a VOD clip from the live stream, include the <code translate="No">videocloud</code> parameter in the request body. For details, see the <a href="https://live.support.brightcove.com/live-api/guides/live-api-creating-vod-clips.html">Live API: Creating VOD Clips</a> document.</p>
+<details>
+  <summary>Sample request (Video Cloud video)</summary>
+  <p>To create a Video Cloud video to use for your live stream, and to create VOD clips from the live stream, include the <code translate="No">videocloud</code> object in the request body. For details, see the <a href="https://live.support.brightcove.com/live-api/guides/live-api-creating-vod-clips.html">Live API: Creating VOD Clips</a> document.</p>
+  <p>The highlighted field below is needed for server-side ad insertion (SSAI).</p>
 
-<p>The highlighted field in the request bodies below (for jobs using a Video Cloud video and using a remote video) is needed for server-side ad insertion (SSAI).</p>
-
-<h3>Sample request body (using a Video Cloud video):</h3>
-
-<pre class="line-numbers">
+    <pre class="line-numbers">
 <code class="language-json" translate="No">{
   "live_stream": true,
   <span class="bcls-highlight">"ad_insertion": true,</span>
@@ -301,9 +301,15 @@ parent: Live
     }
   }
 }</code></pre>
-<h3>Sample request body (using remote video):</h3>
+</details>
+<br>
 
-<pre class="line-numbers">
+<details>
+  <summary>Sample request (remote video)</summary>
+  <p>To use a remote video for your live stream, your request body should look similar this.</p>
+  <p>The highlighted field below is needed for server-side ad insertion (SSAI).</p>
+
+  <pre class="line-numbers">
 <code class="language-json" translate="No">{
   "live_stream":true,
   <span class="bcls-highlight">"ad_insertion":true,</span>
@@ -345,6 +351,9 @@ parent: Live
     }
   ]
 }</code></pre>
+</details>
+<br>
+
 
 <p>Other helpful resources:</p>
 
@@ -353,9 +362,96 @@ parent: Live
 	<li><a href="https://live.support.brightcove.com/live-api/getting-started/quick-start-create-live-stream-using-brightcove-live-api.html">Quick Start: Create a Live Stream Using the Brightcove Live API</a></li>
 </ul>
 
-<p>Sample response:</p>
+<h3>Response</h3>
 
-<pre class="line-numbers">
+<details>
+  <summary>Sample response (Video Cloud video)</summary>
+  <pre class="line-numbers">
+<code class="language-json" translate="No">{
+ <span class="bcls-highlight">&quot;id&quot;: &quot;227356abcdefghijklmno12345&quot;,</span>
+ &quot;outputs&quot;: [
+  {
+   &quot;id&quot;: &quot;0-2273561a201ec18&quot;,
+   &quot;playback_url&quot;: &quot;https://bcovlive-a.akamaihd.net/2273561a201ec18/us-west-2/NA/profile_0/chunklist.m3u8&quot;,
+   &quot;playback_url_dvr&quot;: &quot;https://bcovlive-a.akamaihd.net/2273561a201ec18/us-west-2/NA/profile_0/chunklist_dvr.m3u8&quot;,
+   &quot;playback_url_vod&quot;: &quot;https://bcovlive-a.akamaihd.net/2273561a201ec18/us-west-2/NA/profile_0/chunklist_vod.m3u8&quot;,
+   &quot;playback_added_cdns&quot;: [],
+   &quot;label&quot;: &quot;hls720p&quot;
+  },
+  {
+   &quot;id&quot;: &quot;1-2273561a201e8c18&quot;,
+   &quot;playback_url&quot;: &quot;https://bcovlive-a.akamaihd.net/2273561a201ec18/us-west-2/NA/profile_1/chunklist.m3u8&quot;,
+   &quot;playback_url_dvr&quot;: &quot;https://bcovlive-a.akamaihd.net/2273561a201ec18/us-west-2/NA/profile_1/chunklist_dvr.m3u8&quot;,
+   &quot;playback_url_vod&quot;: &quot;https://bcovlive-a.akamaihd.net/2273561a201ec18/us-west-2/NA/profile_1/chunklist_vod.m3u8&quot;,
+   &quot;playback_added_cdns&quot;: [],
+   &quot;label&quot;: &quot;hls540p&quot;
+  },
+  {
+   &quot;id&quot;: &quot;2-2273561a201ec18&quot;,
+   &quot;playback_url&quot;: &quot;https://bcovlive-a.akamaihd.net/2273561a201ec18/us-west-2/NA/profile_2/chunklist.m3u8&quot;,
+   &quot;playback_url_dvr&quot;: &quot;https://bcovlive-a.akamaihd.net/2273561a201ec18/us-west-2/NA/profile_2/chunklist_dvr.m3u8&quot;,
+   &quot;playback_url_vod&quot;: &quot;https://bcovlive-a.akamaihd.net/2273561a201ec18/us-west-2/NA/profile_2/chunklist_vod.m3u8&quot;,
+   &quot;playback_added_cdns&quot;: [],
+   &quot;label&quot;: &quot;hls360p&quot;
+  },
+  {
+   &quot;id&quot;: &quot;3-2273561a201ec18&quot;,
+   &quot;playlist_type&quot;: &quot;defaultS3&quot;,
+   &quot;type&quot;: &quot;playlist&quot;,
+   &quot;filename&quot;: &quot;playlist.m3u8&quot;,
+   &quot;dvr_filename&quot;: &quot;playlist_dvr.m3u8&quot;,
+   &quot;playback_url&quot;: &quot;https://bcovlive-a.akamaihd.net/2273561a201ec18/us-west-2/NA/playlist.m3u8&quot;,
+   &quot;playback_url_dvr&quot;: &quot;https://bcovlive-a.akamaihd.net/2273561a201ec18/us-west-2/NA/playlist_dvr.m3u8&quot;,
+   &quot;ssai_playback_urls&quot;: {
+    &quot;b907ac7935e2&quot;: {
+     &quot;playback_url&quot;: &quot;https://bcovlive-a.akamaihd.net/2273561a201ec18/us-west-2/NA/b907ac7935e2/playlist_ssaiM.m3u8&quot;,
+     &quot;playback_url_dvr&quot;: &quot;https://bcovlive-a.akamaihd.net/2273561a201ec18/us-west-2/NA/b907ac7935e2/playlist_dvr_ssaiM.m3u8&quot;,
+     &quot;playback_added_cdns&quot;: [],
+     &quot;description&quot;: &quot;Test ad configuration for SLS&quot;,
+     &quot;type&quot;: &quot;ads&quot;
+    },
+    &quot;dc9aa8ee3520f2&quot;: {
+     &quot;playback_url&quot;: &quot;https://bcovlive-a.akamaihd.net/2273561a201ec18/us-west-2/NA/dc9aa8ee3520f2/playlist_ssaiM.m3u8&quot;,
+     &quot;playback_url_dvr&quot;: &quot;https://bcovlive-a.akamaihd.net/2273561a201ec18/us-west-2/NA/dc9aa8ee3520f2/playlist_dvr_ssaiM.m3u8&quot;,
+     &quot;playback_added_cdns&quot;: [],
+     &quot;description&quot;: &quot;Test live ad config for SLS&quot;,
+     &quot;type&quot;: &quot;ads&quot;
+    }
+   },
+   &quot;playback_added_cdns&quot;: []
+  }
+ ],
+ <span class="bcls-highlight">&quot;stream_url&quot;: &quot;rtmp://ec2-54-184-149-60.us-west-2.compute.amazonaws.com:1935/2273561a201ec18&quot;,
+ &quot;stream_name&quot;: &quot;alive&quot;,</span>
+ &quot;static&quot;: false,
+ <span class="bcls-highlight">&quot;job_videocloud_asset_id&quot;: &quot;6227380655001&quot;,</span>
+ &quot;encryption&quot;: {},
+ &quot;playback_url&quot;: &quot;https://bcovlive-a.akamaihd.net/2273561a201ec18/us-west-2/NA/playlist.m3u8&quot;,
+ &quot;playback_url_dvr&quot;: &quot;https://bcovlive-a.akamaihd.net/2273561a201ec18/us-west-2/NA/playlist_dvr.m3u8&quot;,
+ &quot;ssai_playback_urls&quot;: {
+  &quot;b907ac7935e2&quot;: {
+   &quot;playback_url&quot;: &quot;https://bcovlive-a.akamaihd.net/2273561a201ec18/us-west-2/NA/b907ac7935e2/playlist_ssaiM.m3u8&quot;,
+   &quot;playback_url_dvr&quot;: &quot;https://bcovlive-a.akamaihd.net/2273561a201ec18/us-west-2/NA/b907ac7935e2/playlist_dvr_ssaiM.m3u8&quot;,
+   &quot;playback_added_cdns&quot;: [],
+   &quot;description&quot;: &quot;Test ad configuration for SLS&quot;,
+   &quot;type&quot;: &quot;ads&quot;
+  },
+  &quot;dc9aa8ee3520f2&quot;: {
+   &quot;playback_url&quot;: &quot;https://bcovlive-a.akamaihd.net/2273561a201ec18/us-west-2/NA/dc9aa8ee3520f2/playlist_ssaiM.m3u8&quot;,
+   &quot;playback_url_dvr&quot;: &quot;https://bcovlive-a.akamaihd.net/2273561a201ec18/us-west-2/NA/dc9aa8ee3520f2/playlist_dvr_ssaiM.m3u8&quot;,
+   &quot;playback_added_cdns&quot;: [],
+   &quot;description&quot;: &quot;Test live ad config for SLS&quot;,
+   &quot;type&quot;: &quot;ads&quot;
+  }
+ },
+ &quot;playback_added_cdns&quot;: []
+}</code></pre>
+</details>
+<br>
+
+<details>
+  <summary>Sample response (remote video)</summary>
+  <pre class="line-numbers">
 <code class="language-json" translate="No">{
  <span class="bcls-highlight">"id": "bbccddeeffgghhiijjkk0011223344",</span>
  "outputs": [
@@ -425,8 +521,15 @@ parent: Live
   }
  }
 }</code></pre>
+</details>
+<br>
 
-<p>From the API response, make note of the live job <code translate="No">id</code> property. You will need this in the next step.</p>
+<p>From the API response, make note of the following field values for the next step:</p>
+<ul>
+  <li><code translate="No">id</code> - Your live job id</li>
+  <li><code translate="No">stream_url</code>, <code translate="No">stream_name</code> - Inputs for your live stream encoder</li>
+  <li><code translate="No">job_videocloud_asset_id</code> - Video Cloud video id</li>
+</ul>
 
 <!-- <p>From the API response, make note of the job <code translate="No">id</code> and the <code translate="No">stream_url</code> properties. You will need these later.</p>
 
