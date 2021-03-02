@@ -71,7 +71,7 @@
 - section: 
   name: 'Developer Support'
   url: '/support/index.html'
-  icon: '<img class="bcls-icon" src="/assets/images/feather/help-circle.svg">'
+  icon: '<i data-feather="help-circle"></i>'
   docs:
     - name: 'Brightcove Answers'
       url: '/support/brightcove-answer.html'
