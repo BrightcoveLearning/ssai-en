@@ -36,9 +36,6 @@ parent: null
     {% for section in site.data.navigation offset:1 %}
     <section class="bcls-card-small" onclick="window.location.href='{{ section.url }}'">
 
-      <div class="card-icon">
-        {{ section.icon }}
-      </div>
 
       <div class="card-content">
         <h2>{{ section.name }}</h2>
