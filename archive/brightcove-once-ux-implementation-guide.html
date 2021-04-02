@@ -35,11 +35,11 @@ layout: staging
 
 <h3>URL Map</h3>
 
-<p><code><strong>Host</strong>/Service/<strong>AdServiceFlag</strong>/<strong>AdServiceType</strong>/DeliveryType/RequestedFileType/DomainGUID/ApplicationGUID/MediaItemGUID/VirtualFileName.Extension</code></p>
+<p><code translate="no"><strong>Host</strong>/Service/<strong>AdServiceFlag</strong>/<strong>AdServiceType</strong>/DeliveryType/RequestedFileType/DomainGUID/ApplicationGUID/MediaItemGUID/VirtualFileName.Extension</code></p>
 
 <h3>Example</h3>
 
-<p><code>http://<strong>onceux.unicornmedia.com</strong>/now/<strong>ads</strong>/<strong>vmap</strong>/od/auto/4989f8db-9187-49ca-86ff-e2cd5342cd4/35217a08-d9db-469f-aec0-7c88406a0c60/63598604-cb88-44f8-bc47-d207af3b7b4a/content.once</code></p>
+<p><code translate="no">http://<strong>onceux.unicornmedia.com</strong>/now/<strong>ads</strong>/<strong>vmap</strong>/od/auto/4989f8db-9187-49ca-86ff-e2cd5342cd4/35217a08-d9db-469f-aec0-7c88406a0c60/63598604-cb88-44f8-bc47-d207af3b7b4a/content.once</code></p>
 </section>
 
 <section class="bcls-section" id="vmapAdAggregation">
@@ -61,9 +61,9 @@ layout: staging
 
 <h4>Disable Tracking Events</h4>
 
-<p><code>UMTP={integer}</code></p>
+<p><code translate="no">UMTP={integer}</code></p>
 
-<p><code>UMTP</code> is used to override or disable the default Brightcove server side ad video impression and event tracking behavior.</p>
+<p><code translate="no">UMTP</code> is used to override or disable the default Brightcove server side ad video impression and event tracking behavior.</p>
 
 <ul>
 	<li>UMTP=0</li>
@@ -73,7 +73,7 @@ layout: staging
 
 <h4>Output</h4>
 
-<p><code>output={integer}</code></p>
+<p><code translate="no">output={integer}</code></p>
 
 <p>This Key-Value pair controls the object format of the response Brightcove returns. By default, Once UX will respond with XML, so output=1 should be used if a JSON response is desired.</p>
 
@@ -84,7 +84,7 @@ layout: staging
 
 <h4>Timedtextextension</h4>
 
-<p><code>timedtextextension={extension}</code></p>
+<p><code translate="no">timedtextextension={extension}</code></p>
 
 <p>Used to modify the output caption type for timedtext adaptive/M3U8 and Once UX &lt;uo:timedTextURL&gt;responses. Once UX provides a default sidecar in a DFXP formatted xml file in the VMAP response for players/apps/environments that may not be able to use the Apple method of webvtt by default. Please see the Once UX XML object example for the location of this file in VMAP responses.</p>
 
@@ -140,19 +140,19 @@ http://api206-phx.unicornmedia.com/tt/ab1dbc9b-9d90-4edb-b4ab-769e0049209b/0e627
 	</thead>
 	<tbody class="bcls-table__body">
 		<tr>
-			<td><code>uo:unicornOnce</code></td>
+			<td><code translate="no">uo:unicornOnce</code></td>
 			<td>Contains information on the video content.</td>
 		</tr>
 		<tr>
-			<td><code>uo:contentImpressions</code></td>
+			<td><code translate="no">uo:contentImpressions</code></td>
 			<td>Populated for ad requests that require a content start beacon.</td>
 		</tr>
 		<tr>
-			<td><code>uo:requestParameters</code></td>
+			<td><code translate="no">uo:requestParameters</code></td>
 			<td>Break out of ad targeting key values sent in the ad request by Once.</td>
 		</tr>
 		<tr>
-			<td><code>uo:timeTextURL</code></td>
+			<td><code translate="no">uo:timeTextURL</code></td>
 			<td>Information around the timedtext caption file.</td>
 		</tr>
 	</tbody>
@@ -169,27 +169,27 @@ http://api206-phx.unicornmedia.com/tt/ab1dbc9b-9d90-4edb-b4ab-769e0049209b/0e627
 	</thead>
 	<tbody class="bcls-table__body">
 		<tr>
-			<td><code>ttl</code></td>
+			<td><code translate="no">ttl</code></td>
 			<td>Time to live value in seconds for the ads inserted into this particular request. If the request is made outside of this time, no ads will be inserted. Best practices recommendation is to request the top level Once UX URL if a user waits past the ttl to begin playback.</td>
 		</tr>
 		<tr>
-			<td><code>contenturi</code></td>
+			<td><code translate="no">contenturi</code></td>
 			<td>Once URL video response to be played back to the end user. Contains dynamically inserted advertisements in the requested/determined format following standard Once behavior.</td>
 		</tr>
 		<tr>
-			<td><code>contentlength</code></td>
+			<td><code translate="no">contentlength</code></td>
 			<td>The duration in seconds of the non-monetized base asset.</td>
 		</tr>
 		<tr>
-			<td><code>payloadlength</code></td>
+			<td><code translate="no">payloadlength</code></td>
 			<td>The duration in seconds of the monetized base asset. <strong>NOTE:</strong> VPAID Duration is not included in this value.</td>
 		</tr>
 		<tr>
-			<td><code>contextid</code></td>
+			<td><code translate="no">contextid</code></td>
 			<td>Unique value for the particular returned content and ad payload.</td>
 		</tr>
 		<tr>
-			<td><code>oasid</code> (contenturi query string)</td>
+			<td><code translate="no">oasid</code> (contenturi query string)</td>
 			<td>Query string appended to the contenturi URL containing the contextid value to indicate particular content and ad payload for that request.</td>
 		</tr>
 	</tbody>
@@ -206,12 +206,12 @@ http://api206-phx.unicornmedia.com/tt/ab1dbc9b-9d90-4edb-b4ab-769e0049209b/0e627
 	</thead>
 	<tbody class="bcls-table__body">
 		<tr>
-			<td><code>url</code></td>
+			<td><code translate="no">url</code></td>
 			<td>URL to be fired by player at content start if server side tracking has been disabled via umtp=0. <strong>NOTE:</strong> SmartXML is currently the only ad response where this is supported.</td>
 		</tr>
 		<tr>
-			<td><code>time</code></td>
-			<td>Time in seconds when the contentImpression URL is to be fired. (Will always be <code>0</code> since this is to be fired when the media starts playing).</td>
+			<td><code translate="no">time</code></td>
+			<td>Time in seconds when the contentImpression URL is to be fired. (Will always be <code translate="no">0</code> since this is to be fired when the media starts playing).</td>
 		</tr>
 	</tbody>
 </table>
@@ -227,11 +227,11 @@ http://api206-phx.unicornmedia.com/tt/ab1dbc9b-9d90-4edb-b4ab-769e0049209b/0e627
 	</thead>
 	<tbody class="bcls-table__body">
 		<tr>
-			<td><code>key</code></td>
+			<td><code translate="no">key</code></td>
 			<td>Key of key value pair in call to ad provider</td>
 		</tr>
 		<tr>
-			<td><code>value</code></td>
+			<td><code translate="no">value</code></td>
 			<td>Value of key value pair in call to ad provider</td>
 		</tr>
 	</tbody>
@@ -248,11 +248,11 @@ http://api206-phx.unicornmedia.com/tt/ab1dbc9b-9d90-4edb-b4ab-769e0049209b/0e627
 	</thead>
 	<tbody class="bcls-table__body">
 		<tr>
-			<td><code>URL</code></td>
-			<td>Location of caption file dynamically manipulated for ad insertion and returned in requested format if <code>timetextentension</code></td>
+			<td><code translate="no">URL</code></td>
+			<td>Location of caption file dynamically manipulated for ad insertion and returned in requested format if <code translate="no">timetextentension</code></td>
 		</tr>
 		<tr>
-			<td><code>languageCode</code></td>
+			<td><code translate="no">languageCode</code></td>
 			<td>If provided at asset creation, the ISO 639-1 language code</td>
 		</tr>
 	</tbody>
@@ -315,11 +315,11 @@ http://api206-phx.unicornmedia.com/tt/ab1dbc9b-9d90-4edb-b4ab-769e0049209b/0e627
 	</thead>
 	<tbody class="bcls-table__body">
 		<tr>
-			<td><code>vmap:AdSource</code></td>
-			<td>Identifies ad break attributes and acts as a container for <code>VASTData</code></td>
+			<td><code translate="no">vmap:AdSource</code></td>
+			<td>Identifies ad break attributes and acts as a container for <code translate="no">VASTData</code></td>
 		</tr>
 		<tr>
-			<td><code>vmap:VASTData</code></td>
+			<td><code translate="no">vmap:VASTData</code></td>
 			<td>Indicates that a VAST 3.0 ad response will follow in the VMAP response</td>
 		</tr>
 	</tbody>
@@ -327,7 +327,7 @@ http://api206-phx.unicornmedia.com/tt/ab1dbc9b-9d90-4edb-b4ab-769e0049209b/0e627
 
 <h5>vmap:AdBreak Attributes Explanation</h5>
 
-<p><code>vmap:AdBreak</code> is a repeating VMAP element containing information received by your ad provider particular to each advertisement. AdBreaks will always be ordered in chronological order for both ad break position by time within content(pre0, mid0, mid1, post0) and ad sequence within a break/pod(ad0, ad1, ad2).</p>
+<p><code translate="no">vmap:AdBreak</code> is a repeating VMAP element containing information received by your ad provider particular to each advertisement. AdBreaks will always be ordered in chronological order for both ad break position by time within content(pre0, mid0, mid1, post0) and ad sequence within a break/pod(ad0, ad1, ad2).</p>
 
 <table class="bcls-table">
 	<thead class="bcls-table__head">
@@ -338,12 +338,12 @@ http://api206-phx.unicornmedia.com/tt/ab1dbc9b-9d90-4edb-b4ab-769e0049209b/0e627
 	</thead>
 	<tbody class="bcls-table__body">
 		<tr>
-			<td><code>breakId</code></td>
+			<td><code translate="no">breakId</code></td>
 			<td>The VMAP designation of the advertisement. This value indicates the break type, break group title based on time offset, and zero-based time position value of break</td>
 		</tr>
 		<tr>
-			<td><code>timeOffset</code></td>
-			<td>Time offset from the start of the base video content to the placement of the ad break within the base video content. Pre and Postroll breaks will display time offsets of start or end, respectively. For midroll ad breaks, the <code>timeoffset</code> value must be combined with a cumulative duration of all advertisements displayed before that particular break for accurate break calculation. For postroll ad breaks, break start is <code>contentlength</code> combined with a cumulative duration of all previously displayed ad creative.</td>
+			<td><code translate="no">timeOffset</code></td>
+			<td>Time offset from the start of the base video content to the placement of the ad break within the base video content. Pre and Postroll breaks will display time offsets of start or end, respectively. For midroll ad breaks, the <code translate="no">timeoffset</code> value must be combined with a cumulative duration of all advertisements displayed before that particular break for accurate break calculation. For postroll ad breaks, break start is <code translate="no">contentlength</code> combined with a cumulative duration of all previously displayed ad creative.</td>
 		</tr>
 	</tbody>
 </table>
@@ -376,19 +376,19 @@ http://api206-phx.unicornmedia.com/tt/ab1dbc9b-9d90-4edb-b4ab-769e0049209b/0e627
 	</thead>
 	<tbody class="bcls-table__body">
 		<tr>
-			<td><code>Impression</code></td>
-			<td>Tracking URLs to be fired at ad start if server side tracking has been disabled via <code>umtp=0</code></td>
+			<td><code translate="no">Impression</code></td>
+			<td>Tracking URLs to be fired at ad start if server side tracking has been disabled via <code translate="no">umtp=0</code></td>
 		</tr>
 		<tr>
-			<td><code>Duration</code></td>
+			<td><code translate="no">Duration</code></td>
 			<td>Duration of particular ad creative. <strong>NOTE:</strong> VPAID durations are passed through from ad response.</td>
 		</tr>
 		<tr>
-			<td><code>Tracking</code></td>
-			<td>Event tracking URLs to be fired at appropriate times if server side tracking has been disabled via <code>umtp=0</code>. <strong>NOTE:</strong> Any events outside of Start, First Quartile, Midpoint, Third Quartile, and Complete must <strong>always</strong> be fired by the <code>player/app/environment</code>.</td>
+			<td><code translate="no">Tracking</code></td>
+			<td>Event tracking URLs to be fired at appropriate times if server side tracking has been disabled via <code translate="no">umtp=0</code>. <strong>NOTE:</strong> Any events outside of Start, First Quartile, Midpoint, Third Quartile, and Complete must <strong>always</strong> be fired by the <code translate="no">player/app/environment</code>.</td>
 		</tr>
 		<tr>
-			<td><code>MediaFiles</code></td>
+			<td><code translate="no">MediaFiles</code></td>
 			<td>Passthrough location for VPAID asset resources. <strong>NOTE:</strong> Video creative media files will not be present in the VMAP object as the Once URL provided in the Once XML object will have these assets inserted in the correct locations.</td>
 		</tr>
 	</tbody>
