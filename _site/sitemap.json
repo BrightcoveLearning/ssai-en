@@ -10,11 +10,6 @@
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/support/brightcove-answer.html",
-      "oldURL": "/brightcove-answer"
-  },
-
-  {
       "newURL": "https://ssai.support.brightcove.com/archive/brightcove-once-ux-implementation-guide.html",
       "oldURL": "/brightcove-once-ux-implementation-guide"
   },
@@ -45,6 +40,11 @@
   },
 
   {
+      "newURL": "https://ssai.support.brightcove.com/vod/guides/",
+      "oldURL": "/index"
+  },
+
+  {
       "newURL": "https://ssai.support.brightcove.com/references/",
       "oldURL": "/index"
   },
@@ -61,11 +61,6 @@
 
   {
       "newURL": "https://ssai.support.brightcove.com/support/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://ssai.support.brightcove.com/vod/guides/",
       "oldURL": "/index"
   },
 

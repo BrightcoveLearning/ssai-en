@@ -67,8 +67,6 @@
   name: 'Developer Support'
   url: '/support/index.html'
   docs:
-    - name: 'Brightcove Answers'
-      url: '/support/brightcove-answer.html'
     - name: 'Viewing the Brightcove System Status Page'
       url: '/support/viewing-brightcove-system-status-page.html'
     - name: 'Contact Sales'
