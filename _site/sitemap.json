@@ -120,23 +120,18 @@
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/live/references/reference.html",
+      "newURL": "https://ssai.support.brightcove.com/vod/references/reference.html",
       "oldURL": "/reference"
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/vod/references/reference.html",
+      "newURL": "https://ssai.support.brightcove.com/live/references/reference.html",
       "oldURL": "/reference"
   },
 
   {
       "newURL": "https://ssai.support.brightcove.com/support/register-training.html",
       "oldURL": "/register-training"
-  },
-
-  {
-      "newURL": "https://ssai.support.brightcove.com/search-test.html",
-      "oldURL": "/search-test"
   },
 
   {
