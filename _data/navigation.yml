@@ -73,3 +73,5 @@
       url: '/support/contact-sales.html'
     - name: 'Opening a Support Case'
       url: '/support/opening-case-with-brightcove-support.html'
+    - name: 'Reset Your Support Portal Password'
+      url: '/support/reset-support-portal-password.html'

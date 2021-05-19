@@ -40,12 +40,17 @@
   },
 
   {
+      "newURL": "https://ssai.support.brightcove.com/references/",
+      "oldURL": "/index"
+  },
+
+  {
       "newURL": "https://ssai.support.brightcove.com/vod/guides/",
       "oldURL": "/index"
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/references/",
+      "newURL": "https://ssai.support.brightcove.com/",
       "oldURL": "/index"
   },
 
@@ -60,22 +65,12 @@
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/support/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://ssai.support.brightcove.com/live/references/",
-      "oldURL": "/index"
-  },
-
-  {
       "newURL": "https://ssai.support.brightcove.com/live/guides/",
       "oldURL": "/index"
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/live/",
+      "newURL": "https://ssai.support.brightcove.com/support/",
       "oldURL": "/index"
   },
 
@@ -85,7 +80,12 @@
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/",
+      "newURL": "https://ssai.support.brightcove.com/live/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://ssai.support.brightcove.com/live/references/",
       "oldURL": "/index"
   },
 
@@ -120,18 +120,23 @@
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/vod/references/reference.html",
+      "newURL": "https://ssai.support.brightcove.com/live/references/reference.html",
       "oldURL": "/reference"
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/live/references/reference.html",
+      "newURL": "https://ssai.support.brightcove.com/vod/references/reference.html",
       "oldURL": "/reference"
   },
 
   {
       "newURL": "https://ssai.support.brightcove.com/support/register-training.html",
       "oldURL": "/register-training"
+  },
+
+  {
+      "newURL": "https://ssai.support.brightcove.com/support/reset-support-portal-password.html",
+      "oldURL": "/reset-support-portal-password"
   },
 
   {
