@@ -10,7 +10,14 @@ layout: staging
   <summary>{{ page.description }}</summary>
   <section class="bcls-section">
     <h2 id="Introduction">Introduction</h2>
-    <p>Brightcove provides ad tracking logs to help you understand how your SSAI-enabled live streams and videos are performing from a monetization perspective.</p>
+    <p>Brightcove provides ad tracking logs to help you understand how your SSAI-enabled live streams and videos are performing from a monetization perspective and also to troubleshoot any problems. These logs include the requests to the ad servers: ad requests, errors, and tracking events.</p>
+    <p>The logs also allow you to calculate performance metrics:</p>
+    <ul>
+      <li>Ad Requests: Number of times that an ad server was asked for an ad.</li>
+      <li>Ad Impressions (requires Ad Start Tracking event): Number of times that an ad is played back. The event will be triggered when the first segment is requested.</li>
+      <li>Ad Completion (requires Ad Complete Tracking event): Number of ads watched until the end.</li>
+      <li>Ad Delivery Rate: The ratio of Ad Impressions / Ads Requested expressed in percentage.</li>
+    </ul>
   </section>
   <section class="bcls-section">
     <h2 id="Setup">Setup</h2>
@@ -25,7 +32,7 @@ layout: staging
     <h2 id="Sample_log_entries">Sample log entries</h2>
     <p>Below are a few sample log entries.</p>
     <details>
-      <summary>Sample Log Entry 1</summary>
+      <summary>Sample Log Entry: Creative</summary>
 <pre class="line-numbers"><code class="language-json" translate="No">{
   "session_id": "9b393cbf9a4d4528a850c79a283b8b25",
   "summary_id": "adBreak-c2ffdf12535b468fa4c88338824571f9-0e96c29df5214a4195e7e94f9cf90c8b-9b393cbf9a4d4528a850c79a283b8b25",
@@ -43,7 +50,7 @@ layout: staging
 }</code></pre>
     </details>
     <details>
-      <summary>Sample Log Entry 2</summary>
+      <summary>Sample Log Entry: Ad Request</summary>
 <pre class="line-numbers"><code class="language-json" translate="No">{
   "session_id": "9b393cbf9a4d4528a850c79a283b8b25",
   "summary_id": "adBreak-c2ffdf12535b468fa4c88338824571f9-0e96c29df5214a4195e7e94f9cf90c8b-9b393cbf9a4d4528a850c79a283b8b25",
@@ -112,6 +119,58 @@ layout: staging
   "response_body": "PFZBU1QgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeHNpOm5vTmFtZXNwYWNlU2NoZW1hTG9jYXRpb249InZhc3QueHNkIj4KICA8QWQgaWQ9InFhYWRzLXN1YmFydS1kb2d0ZXN0ZWQiPgogICAgPEluTGluZT4KICAgICAgPEFkU3lzdGVtPmpzcWE8L0FkU3lzdGVtPgogICAgICA8QWRUaXRsZT5TdWJhcnUgRG9nIFRlc3RlZDwvQWRUaXRsZT4KICAgICAgPEltcHJlc3Npb24gaWQ9IlVua25vd24iPjwhW0NEQVRBW2h0dHBzOi8vcHJpdmF0ZS1mN2M0OWItYmNvdnFhLmFwaWFyeS1tb2NrLmNvbS9hcGkvdHJhY2tpbmc/ZXZlbnQ9aW1wcmVzc2lvbl1dPjwvSW1wcmVzc2lvbj4KICAgICAgPENyZWF0aXZlcz4KICAgICAgICA8Q3JlYXRpdmUgQWRJRD0icWFhZHMtc3ViYXJ1LWRvZ3Rlc3RlZCI+CiAgICAgICAgICA8TGluZWFyPgogICAgICAgICAgICA8RHVyYXRpb24+MDA6MDA6MzAuMzcyPC9EdXJhdGlvbj4KICAgICAgICAgICAgPFRyYWNraW5nRXZlbnRzPgogICAgICAgICAgICAgIDxUcmFja2luZyBldmVudD0iZmlyc3RRdWFydGlsZSI+PCFbQ0RBVEFbaHR0cHM6Ly9wcml2YXRlLWY3YzQ5Yi1iY292cWEuYXBpYXJ5LW1vY2suY29tL2FwaS90cmFja2luZz9ldmVudD1maXJzdFF1YXJ0aWxlXV0+PC9UcmFja2luZz4KICAgICAgICAgICAgICA8VHJhY2tpbmcgZXZlbnQ9Im1pZHBvaW50Ij48IVtDREFUQVtodHRwczovL3ByaXZhdGUtZjdjNDliLWJjb3ZxYS5hcGlhcnktbW9jay5jb20vYXBpL3RyYWNraW5nP2V2ZW50PW1pZHBvaW50XV0+PC9UcmFja2luZz4KICAgICAgICAgICAgICA8VHJhY2tpbmcgZXZlbnQ9InRoaXJkUXVhcnRpbGUiPjwhW0NEQVRBW2h0dHBzOi8vcHJpdmF0ZS1mN2M0OWItYmNvdnFhLmFwaWFyeS1tb2NrLmNvbS9hcGkvdHJhY2tpbmc/ZXZlbnQ9dGhpcmRRdWFydGlsZV1dPjwvVHJhY2tpbmc+CiAgICAgICAgICAgICAgPFRyYWNraW5nIGV2ZW50PSJjb21wbGV0ZSI+PCFbQ0RBVEFbaHR0cHM6Ly9wcml2YXRlLWY3YzQ5Yi1iY292cWEuYXBpYXJ5LW1vY2suY29tL2FwaS90cmFja2luZz9ldmVudD1jb21wbGV0ZV1dPjwvVHJhY2tpbmc+CiAgICAgICAgICAgICAgPFRyYWNraW5nIGV2ZW50PSJtdXRlIj48IVtDREFUQVtodHRwczovL3ByaXZhdGUtZjdjNDliLWJjb3ZxYS5hcGlhcnktbW9jay5jb20vYXBpL3RyYWNraW5nP2V2ZW50PW11dGVdXT48L1RyYWNraW5nPgogICAgICAgICAgICAgIDxUcmFja2luZyBldmVudD0idW5tdXRlIj48IVtDREFUQVtodHRwczovL3ByaXZhdGUtZjdjNDliLWJjb3ZxYS5hcGlhcnktbW9jay5jb20vYXBpL3RyYWNraW5nP2V2ZW50PXVubXV0ZV1dPjwvVHJhY2tpbmc+CiAgICAgICAgICAgICAgPFRyYWNraW5nIGV2ZW50PSJjb2xsYXBzZSI+PCFbQ0RBVEFbaHR0cHM6Ly9wcml2YXRlLWY3YzQ5Yi1iY292cWEuYXBpYXJ5LW1vY2suY29tL2FwaS90cmFja2luZz9ldmVudD1jb2xsYXBzZV1dPjwvVHJhY2tpbmc+CiAgICAgICAgICAgICAgPFRyYWNraW5nIGV2ZW50PSJleHBhbmQiPjwhW0NEQVRBW2h0dHBzOi8vcHJpdmF0ZS1mN2M0OWItYmNvdnFhLmFwaWFyeS1tb2NrLmNvbS9hcGkvdHJhY2tpbmc/ZXZlbnQ9ZXhwYW5kXV0+PC9UcmFja2luZz4KICAgICAgICAgICAgICA8VHJhY2tpbmcgZXZlbnQ9InBhdXNlIj48IVtDREFUQVtodHRwczovL3ByaXZhdGUtZjdjNDliLWJjb3ZxYS5hcGlhcnktbW9jay5jb20vYXBpL3RyYWNraW5nP2V2ZW50PXBhdXNlXV0+PC9UcmFja2luZz4KICAgICAgICAgICAgICA8VHJhY2tpbmcgZXZlbnQ9InJlc3VtZSI+PCFbQ0RBVEFbaHR0cHM6Ly9wcml2YXRlLWY3YzQ5Yi1iY292cWEuYXBpYXJ5LW1vY2suY29tL2FwaS90cmFja2luZz9ldmVudD1yZXN1bWVdXT48L1RyYWNraW5nPgogICAgICAgICAgICAgIDxUcmFja2luZyBldmVudD0icmV3aW5kIj48IVtDREFUQVtodHRwczovL3ByaXZhdGUtZjdjNDliLWJjb3ZxYS5hcGlhcnktbW9jay5jb20vYXBpL3RyYWNraW5nP2V2ZW50PXJld2luZF1dPjwvVHJhY2tpbmc+CiAgICAgICAgICAgICAgPFRyYWNraW5nIGV2ZW50PSJhY2NlcHRJbnZpdGF0aW9uIj48IVtDREFUQVtodHRwczovL3ByaXZhdGUtZjdjNDliLWJjb3ZxYS5hcGlhcnktbW9jay5jb20vYXBpL3RyYWNraW5nP2V2ZW50PWFjY2VwdGludml0YXRpb25dXT48L1RyYWNraW5nPgogICAgICAgICAgICAgIDxUcmFja2luZyBldmVudD0iY2xvc2UiPjwhW0NEQVRBW2h0dHBzOi8vcHJpdmF0ZS1mN2M0OWItYmNvdnFhLmFwaWFyeS1tb2NrLmNvbS9hcGkvdHJhY2tpbmc/ZXZlbnQ9Y2xvc2VdXT48L1RyYWNraW5nPgogICAgICAgICAgICA8L1RyYWNraW5nRXZlbnRzPgogICAgICAgICAgICA8VmlkZW9DbGlja3M+CiAgICAgICAgICAgICAgPENsaWNrVHJhY2tpbmcgaWQ9InVua25vd24iPjwhW0NEQVRBW2h0dHBzOi8vcHJpdmF0ZS1mN2M0OWItYmNvdnFhLmFwaWFyeS1tb2NrLmNvbS9hcGkvdHJhY2tpbmc/ZXZlbnQ9Y2xpY2t0cmFja2luZ11dPjwvQ2xpY2tUcmFja2luZz4KICAgICAgICAgICAgPC9WaWRlb0NsaWNrcz4KICAgICAgICAgICAgPE1lZGlhRmlsZXM+CiAgICAgICAgICAgICAgPE1lZGlhRmlsZSBkZWxpdmVyeT0icHJvZ3Jlc3NpdmUiIGhlaWdodD0iMCIgdHlwZT0idmlkZW8vbXA0IiB3aWR0aD0iMCI+PCFbQ0RBVEFbaHR0cDovL3Rlc3QtYWRzLmJjb3ZsaXZlLmlvL2Fkcy9zdWJhcnUvZG9nX3Rlc3RlZF9zdWJhcnUubXA0XV0+PC9NZWRpYUZpbGU+CiAgICAgICAgICAgIDwvTWVkaWFGaWxlcz4KICAgICAgICAgIDwvTGluZWFyPgogICAgICAgIDwvQ3JlYXRpdmU+CiAgICAgICAgPENyZWF0aXZlIEFkSUQ9InFhYWRzLXN1YmFydS1kb2d0ZXN0ZWQtYmFubmVyIiA+CiAgICAgICAgICA8Q29tcGFuaW9uQWRzPgogICAgICAgICAgICA8Q29tcGFuaW9uIHdpZHRoPSIxMTMwIiBoZWlnaHQ9IjE1MCIgaWQ9ImRvZyI+CiAgICAgICAgICAgICAgPFN0YXRpY1Jlc291cmNlIGNyZWF0aXZlVHlwZT0iaW1hZ2UvanBlZyI+PCFbQ0RBVEFbaHR0cDovL3Rlc3QtYWRzLmJjb3ZsaXZlLmlvL2Fkcy9zdWJhcnUvc3ViYXJ1LWJhbm5lci5qcGddXT48L1N0YXRpY1Jlc291cmNlPgogICAgICAgICAgICAgIDxUcmFja2luZ0V2ZW50cz4KICAgICAgICAgICAgICAgIDxUcmFja2luZyBldmVudD0iY3JlYXRpdmVWaWV3Ij48IVtDREFUQVtodHRwczovL3ByaXZhdGUtZjdjNDliLWJjb3ZxYS5hcGlhcnktbW9jay5jb20vYXBpL3RyYWNraW5nP2V2ZW50PWNyZWF0aXZlVmlld11dPjwvVHJhY2tpbmc+CiAgICAgICAgICAgICAgPC9UcmFja2luZ0V2ZW50cz4KICAgICAgICAgICAgICA8Q29tcGFuaW9uQ2xpY2tUaHJvdWdoPjwhW0NEQVRBW2h0dHA6Ly93d3cuc3ViYXJ1LmNvbS9dXT48L0NvbXBhbmlvbkNsaWNrVGhyb3VnaD4KICAgICAgICAgICAgPC9Db21wYW5pb24+CiAgICAgICAgICA8L0NvbXBhbmlvbkFkcz4KICAgICAgICA8L0NyZWF0aXZlPgogICAgICA8L0NyZWF0aXZlcz4KICAgICAgPEV4dGVuc2lvbnM+CiAgICAgICAgPEV4dGVuc2lvbiB0eXBlPSJuYW1lIj4KICAgICAgICAgIDxBZFNlcnZpbmdEYXRhPgogICAgICAgICAgICA8RGVsaXZlcnlEYXRhPgogICAgICAgICAgICAgIDxHZW9EYXRhPjwhW0NEQVRBW2N0PVVTJnN0PUFaJmFjPTQ4MCZ6cD04NTI4MiZidz00JmRtYT0xNzMmY2l0eT0xMzMwNV1dPjwvR2VvRGF0YT4KICAgICAgICAgICAgPC9EZWxpdmVyeURhdGE+CiAgICAgICAgICA8L0FkU2VydmluZ0RhdGE+CiAgICAgICAgPC9FeHRlbnNpb24+CiAgICAgIDwvRXh0ZW5zaW9ucz4KICAgIDwvSW5MaW5lPgogIDwvQWQ+CjwvVkFTVD4K",
   "duration": 1910203645,
   "provider": "vast_3"
+}</code></pre>
+    </details>
+    <details>
+      <summary>Sample Log Entry: Session Summary</summary>
+<pre class="line-numbers"><code class="language-json" translate="No">{
+  "account_id": "5132998201001",
+  "session_id": "9b393cbf9a4d4528a850c79a283b8b25",
+  "live_account_id": "ee891cf3ebd340ff8ebe560cf292c40b",
+  "live_job_id": "c2ffdf12535b468fa4c88338824571f9",
+  "live_app_id": "a51db89789e0413a87ee356bed6965b0",
+  "region": "us-west-2",
+  "kind": "SessionSummary",
+  "duration": 1923000000,
+  "status_code": 200,
+  "timestamp": "2021-06-28T23:12:11.499Z",
+  "adbreak_id": "adBreak-c2ffdf12535b468fa4c88338824571f9-0e96c29df5214a4195e7e94f9cf90c8b",
+  "summary_id": "adBreak-c2ffdf12535b468fa4c88338824571f9-0e96c29df5214a4195e7e94f9cf90c8b-9b393cbf9a4d4528a850c79a283b8b25",
+  "odur": 32000000000,
+  "rdur": 32000000000,
+  "sdur": 34000000000,
+  "ad_count": 1,
+  "client_only_tracking": false,
+  "sls": false,
+  "ads": [
+    {
+      "type": "midroll",
+      "fk": "qaads-subaru-dogtested",
+      "imps": [
+        {
+          "type": "AdStart",
+          "url": "https://private-f7c49b-bcovqa.apiary-mock.com/api/tracking?event=impression"
+        },
+        {
+          "type": "AdFirstQuartile",
+          "url": "https://private-f7c49b-bcovqa.apiary-mock.com/api/tracking?event=firstQuartile"
+        },
+        {
+          "type": "AdMidpoint",
+          "url": "https://private-f7c49b-bcovqa.apiary-mock.com/api/tracking?event=midpoint"
+        },
+        {
+          "type": "AdThirdQuartile",
+          "url": "https://private-f7c49b-bcovqa.apiary-mock.com/api/tracking?event=thirdQuartile"
+        },
+        {
+          "type": "AdComplete",
+          "url": "https://private-f7c49b-bcovqa.apiary-mock.com/api/tracking?event=complete"
+        }
+      ],
+      "cdur": 30322000000
+    }
+  ]
 }</code></pre>
     </details>
     <h3>Full batch</h3>
