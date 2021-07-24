@@ -330,9 +330,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>The logs also allow you to calculate performance metrics:</p>
     <ul>
       <li>Ad Requests: Number of times that an ad server was asked for an ad.</li>
-      <li>Ad Impressions (requires Ad Start Tracking event): Number of times that an ad is played back. The event will be triggered when the first segment is requested.</li>
-      <li>Ad Completion (requires Ad Complete Tracking event): Number of ads watched until the end.</li>
-      <li>Ad Delivery Rate: The ratio of Ad Impressions / Ads Requested expressed in percentage.</li>
+      <li>Ad Tracking Events fired: number of beacons events fired from BC SSAI server. It can be a breakdown per type: <code translate="no">AdStart</code>, <code translate="no">AdComplete</code>, <code translate="no">AdfirstQuartile</code>, <code translate="no">Admidpoint</code>, <code translate="no">AdthirdQuartile</code>, <code translate="no">AdcreativeView</code></li>
+      <li>Ad Delivery Rate: the ratio of the total successful ad requests/total of ad requests</li>
     </ul>
   </section>
   <section class="bcls-section">
@@ -890,7 +889,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 21 Jul 2021
+  Page last updated on 22 Jul 2021
 </div>
 
 
