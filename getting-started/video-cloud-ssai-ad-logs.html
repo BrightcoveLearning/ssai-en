@@ -31,7 +31,7 @@ layout: staging
   <section class="bcls-section">
     <h2 id="File_format">File format</h2>
     <p>The log files will be organized on your S3 bucket according to this schema:</p>
-    <pre><code translate="no">/yyyy/MM/dd/HH/&lt;random-string&gt;/&lt;delivery stream name&gt;-&lt;delivery stream version&gt;-&lt;year&gt;-&lt;month&gt;-&lt;day&gt;-&lt;hour&gt;-&lt;minute&gt;-&lt;second&gt;-&lt;uuid&gt;&lt;/uuid&gt;</code></pre>
+    <pre><code translate="no">/yyyy/MM/dd/HH/&lt;random-string&gt;/&lt;delivery stream name&gt;-&lt;delivery stream version&gt;-&lt;year&gt;-&lt;month&gt;-&lt;day&gt;-&lt;hour&gt;-&lt;minute&gt;-&lt;second&gt;-&lt;uuid&gt;</code></pre>
     <p><code translate="No">&lt;random-string&gt;</code> and <code translate="No">&lt;/uuid&gt;</code>, will be different for each batch, and the logs are batched in 5MB or 300 seconds of data. Logs for different sessions and jobs will be intermixed in the batches.</p>
     <h3>Sample path/file</h3>
     <pre><code translate="no">/2021/07/17/00/00HwB2cbPB2/prod-ssai-ad-tracking-4040098940001-1-2021-07-17-00-37-09-caeb9e2e-8b54-42f6-b4f7-cbddfc5090e6</code></pre>
