@@ -24,7 +24,7 @@
     - name: 'SSAI: Ad Block Detection and Auto-Failover'
       url: '/vod/guides/ssai-ad-block-detection-and-auto-failover.html'
     - name: 'Video Cloud SSAI Ad Config API'
-      url: '/vod/guides/video-cloud-ssai-ad-config-api.html'
+      url: 'https://apis.support.brightcove.com/ssai/getting-started/video-cloud-ssai-ad-config-api.html'
     - name: 'Video Cloud SSAI Ad Tag Validation'
       url: '/vod/guides/video-cloud-ssai-ad-tag-validation.html'
     - name: 'Ad Error Beacons with SSAI'
