@@ -31,12 +31,12 @@
       url: '/vod/guides/ad-error-beacons-ssai.html'
 - section: 
   name: 'Video-On-Demand References'
-  url: '/vod/references/index.html'
+  url: 'https://apis.support.brightcove.com/ssai/references/index.html'
   docs:
     - name: 'SSAI API Reference'
-      url: '/vod/references/reference.html'
+      url: 'https://apis.support.brightcove.com/ssai/references/reference.html'
     - name: 'SSAI API Error Reference'
-      url: '/vod/references/ssai-api-error-reference.html'
+      url: 'https://apis.support.brightcove.com/ssai/references/ssai-api-error-reference.html'
     - name: 'Server-Side Ads Plugin Changelog'
       url: 'https://player.support.brightcove.com/plugins/changelog/server-side-ads-plugin-changelog.html'
 - section: 
