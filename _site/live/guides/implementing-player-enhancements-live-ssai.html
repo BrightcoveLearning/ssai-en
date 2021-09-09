@@ -238,11 +238,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="https://live.support.brightcove.com/live-api/ssai/live-api-server-side-ad-insertion-ssai.html">Brightcove Live API: Server-Side Ad Insertion (SSAI)</a></li>
+                    <li><a href="https://apis.support.brightcove.com/live-api/ssai/live-api-server-side-ad-insertion-ssai.html">Brightcove Live API: Server-Side Ad Insertion (SSAI)</a></li>
                   
                 
                   
-                    <li><a href="https://live.support.brightcove.com/live-api/ssai/live-api-cue-points-and-ad-beacons-ssai.html">Live API: Cue Points and Ad Beacons with SSAI</a></li>
+                    <li><a href="https://apis.support.brightcove.com/live-api/ssai/live-api-cue-points-and-ad-beacons-ssai.html">Live API: Cue Points and Ad Beacons with SSAI</a></li>
                   
                 
                   
@@ -358,13 +358,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <ol class="bcls-tasklist">
 	<li>Ask your account manager to enable your account for Live streams, Server-Side Ad Insertion (SSAI) and the Player Enhancements for Live SSAI.</li>
 	<li><a href="#Create_an_ad_configuration">Create an ad configuration</a></li>
-	<li>Optional: <a href="https://live.support.brightcove.com/live-api/ssai/live-api-server-side-ad-insertion-ssai.html#Managing_slates">Create slate assets to fill unused ad time</a></li>
+	<li>Optional: <a href="https://apis.support.brightcove.com/live-api/ssai/live-api-server-side-ad-insertion-ssai.html#Managing_slates">Create slate assets to fill unused ad time</a></li>
 	<li><a href="#Create_a_live_job">Create a live job</a></li>
 	<!-- <li><a href="#Create_a_remote_video">Create a remote video</a></li> -->
 	<li><a href="#Create_the_playback_token">Create the playback token</a></li>
   <li><a href="#Configure_the_player">Configure the player</a></li>
 	<li><a href="#Begin_streaming">Begin streaming</a></li>
-	<li><a href="https://live.support.brightcove.com/live-api/ssai/live-api-cue-points-and-ad-beacons-ssai.html">Trigger ads using cue points</a> (this can be done before or during the live event)</li>
+	<li><a href="https://apis.support.brightcove.com/live-api/ssai/live-api-cue-points-and-ad-beacons-ssai.html">Trigger ads using cue points</a> (this can be done before or during the live event)</li>
 	<li><a href="#Cleanup">Cleanup</a></li>
 </ol>
 </section>
@@ -408,7 +408,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <p>All requests are authenticated using an API key that is provided to you when your account is set up. The key is passed in the <code translate="No">X-API-KEY</code> header.</p>
 
 <h3>Request body</h3>
-<p>For details about the request body fields, see the <a href="https://live.support.brightcove.com/live-api/references/reference.html#operation/CreateAdConfiguration">Live API Reference</a> document.</p>
+<p>For details about the request body fields, see the <a href="https://apis.support.brightcove.com/live-api/references/reference.html#operation/CreateAdConfiguration">Live API Reference</a> document.</p>
 
 <p>With Player Enhancements for Live SSAI, the highlighted fields can be set inside of the <code translate="No">application_ad_configuration</code> object.</p>
 
@@ -538,7 +538,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <p>After you successfully create an ad configuration, copy the <code translate="No">application_id</code> (ad configuration id) that was generated. You will need this later to find the SSAI playback URL.</p>
 
-<p>To list, update and delete ad configurations, see the <a href="https://live.support.brightcove.com/live-api/ssai/live-api-server-side-ad-insertion-ssai.html#Create_an_ad_configuration">Manage ad configurations</a> document</p>
+<p>To list, update and delete ad configurations, see the <a href="https://apis.support.brightcove.com/live-api/ssai/live-api-server-side-ad-insertion-ssai.html#Create_an_ad_configuration">Manage ad configurations</a> document</p>
 </section>
 
 <section class="bcls-section">
@@ -568,13 +568,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <h3>Request body</h3>
 
-<p>For details about the request body fields, see the <a href="https://live.support.brightcove.com/live-api/references/reference.html#operation/CreateALiveJob">Live API Reference</a> document.</p>
+<p>For details about the request body fields, see the <a href="https://apis.support.brightcove.com/live-api/references/reference.html#operation/CreateALiveJob">Live API Reference</a> document.</p>
 
 <p>For a live job with SSAI enabled, set <code translate="No">ad_insertion: true</code> in your HTTP request body.</p>
 
 <details>
   <summary>Sample request (Video Cloud video)</summary>
-  <p>To create a Video Cloud video to use for your live stream, and to create VOD clips from the live stream, include the <code translate="No">videocloud</code> object in the request body. For details, see the <a href="https://live.support.brightcove.com/live-api/guides/live-api-creating-vod-clips.html">Live API: Creating VOD Clips</a> document.</p>
+  <p>To create a Video Cloud video to use for your live stream, and to create VOD clips from the live stream, include the <code translate="No">videocloud</code> object in the request body. For details, see the <a href="https://apis.support.brightcove.com/live-api/guides/live-api-creating-vod-clips.html">Live API: Creating VOD Clips</a> document.</p>
   <p>The highlighted field below is needed for server-side ad insertion (SSAI).</p>
 
     <pre class="line-numbers">
@@ -693,8 +693,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <p>Other helpful resources:</p>
 
 <ul>
-	<li><a href="https://live.support.brightcove.com/live-api/getting-started/overview-brightcove-live-api.html">Overview: Brightcove Live API</a></li>
-	<li><a href="https://live.support.brightcove.com/live-api/getting-started/quick-start-create-live-stream-using-brightcove-live-api.html">Quick Start: Create a Live Stream Using the Brightcove Live API</a></li>
+	<li><a href="https://apis.support.brightcove.com/live-api/getting-started/overview-brightcove-live-api.html">Overview: Brightcove Live API</a></li>
+	<li><a href="https://apis.support.brightcove.com/live-api/getting-started/quick-start-create-live-stream-using-brightcove-live-api.html">Quick Start: Create a Live Stream Using the Brightcove Live API</a></li>
 </ul>
 
 <h3>Response</h3>
@@ -960,8 +960,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <p>There are many tools to create a live streaming event. Here are some encoders you can use to produce a live stream delivered by a CDN:</p>
 
 <ul>
-	<li><a href="https://support.brightcove.com/quick-start-create-live-stream-using-brightcove-live-api#wirecast">Telestream Wirecast encoder</a></li>
-	<li><a href="https://support.brightcove.com/step-step-using-live-module-open-broadcaster-software-obs#encoder">OBS Studio encoder</a></li>
+	<li><a href="https://live.support.brightcove.com/get-started/step-step-using-live-module-telestream-wirecast.html">Telestream Wirecast encoder</a></li>
+	<li><a href="https://live.support.brightcove.com/get-started/step-step-using-live-module-open-broadcaster-software-obs.html">OBS Studio encoder</a></li>
 </ul>
 </section>
 
@@ -1000,7 +1000,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 	</table>
   <br>
 
-	<p>For details, see the <a href="https://live.support.brightcove.com/live-api/references/reference.html#operation/CancelLiveJob">Live API Reference</a> document.</p>
+	<p>For details, see the <a href="https://apis.support.brightcove.com/live-api/references/reference.html#operation/CancelLiveJob">Live API Reference</a> document.</p>
 	</li>
 	<li>
 	<p>Delete your ad configuration</p>
@@ -1028,7 +1028,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 	</table>
   <br>
 
-	<p>For details, see the <a href="https://live.support.brightcove.com/live-api/references/reference.html#operation/DeleteAdConfiguration">Live API Reference</a> document.</p>
+	<p>For details, see the <a href="https://apis.support.brightcove.com/live-api/references/reference.html#operation/DeleteAdConfiguration">Live API Reference</a> document.</p>
 	</li>
 </ol>
 </section>
