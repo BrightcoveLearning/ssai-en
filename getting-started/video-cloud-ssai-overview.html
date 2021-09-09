@@ -128,7 +128,7 @@ API interactions or web player functionality questions will be addressed if issu
 			<td>Yes</td>
 			<td>Yes</td>
 			<td>Web<sup><a href="#n1"> [2]</a></sup></td>
-			<td>Integration provided through the <a href="https://player.support.brightcove.com/plugins/beta-chromecast-plugin-brightcove-player.html">Brightcove Player Chromecast Plugin</a></td>
+			<td>Integration provided through the <a href="https://player.support.brightcove.com/plugins/chromecast-plugin-brightcove-player.html">Brightcove Player Chromecast Plugin</a></td>
 		</tr>
 		<tr>
 			<td>Samsung Smart TV (Tizen)</td>
@@ -154,7 +154,7 @@ API interactions or web player functionality questions will be addressed if issu
 
 <p id="n2"><sup>[2]</sup> <a href="https://player.support.brightcove.com/plugins/implementing-server-side-ads-brightcove-player.html">Implementing Server-Side Ads with the Brightcove Player</a>: Server-side ads with the Brightcove Player for web</p>
 
-<p id="n3"><sup>[3]</sup> <a href="https://ssai.support.brightcove.com/vod/guides/video-cloud-ssai-ad-config-api.html">SSAI configuration</a> and <a href="https://apis.support.brightcove.com/playback/getting-started/overview-playback-api.html#Video_request_with_SSAI">Using the runtime API</a>: Server-side ads using a custom API integration (no Brightcove player)</p>
+<p id="n3"><sup>[3]</sup> <a href="https://apis.support.brightcove.com/ssai/getting-started/video-cloud-ssai-ad-config-api.html">SSAI configuration</a> and <a href="https://apis.support.brightcove.com/playback/getting-started/overview-playback-api.html#Video_request_with_SSAI">Using the runtime API</a>: Server-side ads using a custom API integration (no Brightcove player)</p>
 </aside>
 </section>
 
@@ -163,9 +163,9 @@ API interactions or web player functionality questions will be addressed if issu
 
 <p>Ads can be targeted to different platforms, sites, apps, or based on other criteria known at play-time - evaluated when the individual playback session occurs. You can either use separate ad tags to partition your different ad playback environments, or you can use a single ad tag with ad macros.</p>
 
-<p>Macros are evaluated at ad request time, so every time a video is played - and can refer to variables passed from the client or be inserted by the SSAI service based on video metadata or HTTP request header information. For more details on how macros work with Brightcove SSAI, see the <a href="https://ssai.support.brightcove.com/vod/guides/video-cloud-ssai-ad-config-api.html">SSAI Configuration guide</a>.</p>
+<p>Macros are evaluated at ad request time, so every time a video is played - and can refer to variables passed from the client or be inserted by the SSAI service based on video metadata or HTTP request header information. For more details on how macros work with Brightcove SSAI, see the <a href="https://apis.support.brightcove.com/ssai/getting-started/video-cloud-ssai-ad-config-api.html">SSAI Configuration guide</a>.</p>
 
-<aside class="bcls-aside bcls-aside--information">SSAI is a great way to avoid ad blockers on the web. If you want to use SSAI with the Brightcove Player but want to continue to use client-side technologies such as VPAID creatives when they aren’t blocked, try enabling our <a href="https://ssai.support.brightcove.com/vod/guides/ssai-ad-block-detection-and-auto-failover.html">automatic adblock detection and failover feature</a> .</aside>
+<aside class="bcls-aside bcls-aside--information">SSAI is a great way to avoid ad blockers on the web. If you want to use SSAI with the Brightcove Player but want to continue to use client-side technologies such as VPAID creatives when they aren’t blocked, try enabling our <a href="/vod/guides/ssai-ad-block-detection-and-auto-failover.html">automatic adblock detection and failover feature</a> .</aside>
 </section>
 
 <section class="bcls-section">
@@ -205,7 +205,7 @@ Before an ad becomes viewable, it first needs to be transcoded. Then, it can be 
 
 <p>You can also configure SSAI to emit events from the server at various points during streaming.</p>
 
-<p><a href="https://ssai.support.brightcove.com/vod/guides/video-cloud-ssai-ad-config-api.html#Configuration_field_details">See beacon templates in the configuration field details documentation.</a></p>
+<p><a href="https://apis.support.brightcove.com/ssai/getting-started/video-cloud-ssai-ad-config-api.html#Configuration_field_details">See beacon templates in the configuration field details documentation.</a></p>
 </section>
 
 <section class="bcls-section">
@@ -254,7 +254,7 @@ Before an ad becomes viewable, it first needs to be transcoded. Then, it can be 
 		<li>If the ad response points to a file that ends in <code translate="No">.js</code>, then it is a VPAID ad unit, and it will not work with Brightcove SSAI.</li>
 	</ul>
 	</li>
-	<li>Determine which parameters in your ad tag can be substituted by the SSAI server, and which ones need to be passed from the player or device. Compose your ad tag appropriately. For details about ad tag macros and the appropriate syntax, see the <a href="https://ssai.support.brightcove.com/vod/guides/video-cloud-ssai-ad-config-api.html#Ad_variables">SSAI Ad Configuration</a> document.</li>
+	<li>Determine which parameters in your ad tag can be substituted by the SSAI server, and which ones need to be passed from the player or device. Compose your ad tag appropriately. For details about ad tag macros and the appropriate syntax, see the <a href="https://apis.support.brightcove.com/ssai/getting-started/video-cloud-ssai-ad-config-api.html#Ad_variables">SSAI Ad Configuration</a> document.</li>
 	<li>
 	<p>Decide whether you want to emit impression and engagement beacons for your ads from the client player or from the server.</p>
 
