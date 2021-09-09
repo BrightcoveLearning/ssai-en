@@ -62,7 +62,7 @@
     - name: 'Live API Reference'
       url: '/live/references/reference.html'
     - name: 'Live API: Error Messages'
-      url: 'https://live.support.brightcove.com/live-api/references/live-api-error-messages.html'
+      url: 'https://apis.support.brightcove.com/live-api/references/live-api-error-messages.html'
     - name: 'Live API Release Notes'
       url: 'https://live.support.brightcove.com/release-notes/live-api-release-notes.html'
 - section: 
