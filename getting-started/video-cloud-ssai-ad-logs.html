@@ -2,7 +2,6 @@
 title: SSAI Ad tracking log
 description: 'SSAI Ad tracking log is a new feature that looks to provide details of how SSAI ads are working. This feature is for VOD and Live.'
 parent: Getting Started
-layout: staging
 ---
 
 <h1>{{ page.title }}</h1>
@@ -512,7 +511,19 @@ layout: staging
           <tr>
               <td><code translate="No">state</code></td>
               <td>string</td>
-              <td>State of the creative at time of request.</td>
+              <td>
+                State of the creative at time of request.
+                <p>Values for VOD:</p>
+                <ul>
+                  <li><code translate="no">active</code> - creative is active</li>
+                  <li><code translate="no">missing_fk</code> - foreign key was not present on ad</li>
+                  <li><code translate="no">missing_url</code> - URL was not present on ad</li>
+                  <li><code translate="no">internal_error</code> - internal error while processing creative</li>
+                  <li><code translate="no">no_title_id</code> - failed to get title for ad</li>
+                  <li><code translate="no">title_metadata_error</code> - error while processing title for ad</li>
+                  <li><code translate="no">rendition_mismatch</code> - there is a mismatch in bitrates or aspect ratios between the content and the ad</li>
+                </ul>
+              </td>
           </tr>
           <tr>
               <td><code translate="No">fk</code></td>
