@@ -10,7 +10,7 @@
     - name: 'Configuring Server-Side Ad Settings'
       url: 'https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html'
     - name: 'SSAI Ad tracking log'
-      url: 'getting-started/video-cloud-ssai-ad-logs.html'
+      url: '/getting-started/video-cloud-ssai-ad-logs.html'
 - section: 
   name: 'Video-On-Demand Guides'
   url: '/vod/guides/index.html'
