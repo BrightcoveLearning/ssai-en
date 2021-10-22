@@ -348,7 +348,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Add the security policy provided to you by Support to enable Brightcove to write to your bucket.</li>
       <li>Once the S3 bucket has been set up, to start logging an ad config set <code translate="no">ad_tracking_sample_percentage</code> to your <a href="https://apis.support.brightcove.com/live-api/references/reference.html#operation/CreateAdConfiguration">Live ad configuration</a> and/or your <a href="https://apis.support.brightcove.com/ssai/getting-started/video-cloud-ssai-ad-config-api.html#Create_an_ad_configuration">VOD ad configuration</a>.</li>
     </ol>
-    <aside class="bcls-aside bcls-aside--information language-editable">Note that having logs sent automatically to an S3 bucket is optional. If you do not wish to do this, you can still request logs from <a href="https://supportportal.brightcove.com">Brightcove Support</a>.</aside>
+    <!-- <aside class="bcls-aside bcls-aside--information language-editable">Note that having logs sent automatically to an S3 bucket is optional. If you do not wish to do this, you can still request logs from <a href="https://supportportal.brightcove.com">Brightcove Support</a>.</aside> -->
   </section>
   <section class="bcls-section">
     <h2 id="File_format">File format</h2>
@@ -363,7 +363,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>Below are a few sample log entries.</p>
     <details>
       <summary>Sample Log Entry: Creative</summary>
-<pre class="line-numbers"><code class="language-json" translate="No">{
+      <pre class="line-numbers"><code class="language-json" translate="No">{
   "session_id": "9b393cbf9a4d4528a850c79a283b8b25",
   "summary_id": "adBreak-992ab149ce3e40b6a5b9c6d9842a0979-0e96c29df5214a4195e7e94f9cf90c8b-9b393cbf9a4d4528a850c79a283b8b25",
   "adbreak_id": "adBreak-992ab149ce3e40b6a5b9c6d9842a0979-0e96c29df5214a4195e7e94f9cf90c8b",
@@ -381,7 +381,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </details>
     <details>
       <summary>Sample Log Entry: Ad Request</summary>
-<pre class="line-numbers"><code class="language-json" translate="No">{
+      <pre class="line-numbers"><code class="language-json" translate="No">{
   "session_id": "9b393cbf9a4d4528a850c79a283b8b25",
   "summary_id": "adBreak-992ab149ce3e40b6a5b9c6d9842a0979-0e96c29df5214a4195e7e94f9cf90c8b-9b393cbf9a4d4528a850c79a283b8b25",
   "adbreak_id": "adBreak-992ab149ce3e40b6a5b9c6d9842a0979-0e96c29df5214a4195e7e94f9cf90c8b",
@@ -452,7 +452,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </details>
     <details>
       <summary>Sample Log Entry: Session Summary</summary>
-<pre class="line-numbers"><code class="language-json" translate="No">{
+      <pre class="line-numbers"><code class="language-json" translate="No">{
   "account_id": "5100000201001",
   "session_id": "9b393cbf9a4d4528a850c79a283b8b25",
   "live_account_id": "e807026ec740429985d04b91cf936f81",
@@ -504,7 +504,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </details>
     <details>
       <summary>Sample Log Entry: Impression</summary>
-<pre class="line-numbers"><code class="language-json" translate="No">{
+      <pre class="line-numbers"><code class="language-json" translate="No">{
   "account_id": "5100000201001",
   "region": "us-west-2",
   "kind": "Impression",
@@ -531,7 +531,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>The samples above are separate entries. Brightcove will aggregate these, separated by new lines, and write the aggregated log to your S3 bucket. Below is an example of a full log file.</p>
     <details>
       <summary>Sample Full Log File</summary>
-<pre class="line-numbers"><code class="language-json" translate="No">{"session_id":"9b393cbf9a4d4528a850c79a283b8b25","summary_id":"adBreak-992ab149ce3e40b6a5b9c6d9842a0979-0e96c29df5214a4195e7e94f9cf90c8b-9b393cbf9a4d4528a850c79a283b8b25","adbreak_id":"adBreak-992ab149ce3e40b6a5b9c6d9842a0979-0e96c29df5214a4195e7e94f9cf90c8b","account_id":"5100000201001","live_account_id":"e807026ec740429985d04b91cf936f81","live_job_id":"992ab149ce3e40b6a5b9c6d9842a0979","kind":"Creative","timestamp":"2021-06-28T23:12:09.632710435Z","span_id":3223646445953404770,"parent_span_id":3004116763771491424,"state":"active","fk":"ad-id-1","source_url":"https://somesourceasset.com/adcreative.mp4"}
+      <pre class="line-numbers"><code class="language-json" translate="No">{"session_id":"9b393cbf9a4d4528a850c79a283b8b25","summary_id":"adBreak-992ab149ce3e40b6a5b9c6d9842a0979-0e96c29df5214a4195e7e94f9cf90c8b-9b393cbf9a4d4528a850c79a283b8b25","adbreak_id":"adBreak-992ab149ce3e40b6a5b9c6d9842a0979-0e96c29df5214a4195e7e94f9cf90c8b","account_id":"5100000201001","live_account_id":"e807026ec740429985d04b91cf936f81","live_job_id":"992ab149ce3e40b6a5b9c6d9842a0979","kind":"Creative","timestamp":"2021-06-28T23:12:09.632710435Z","span_id":3223646445953404770,"parent_span_id":3004116763771491424,"state":"active","fk":"ad-id-1","source_url":"https://somesourceasset.com/adcreative.mp4"}
   {"session_id":"9b393cbf9a4d4528a850c79a283b8b25","summary_id":"adBreak-992ab149ce3e40b6a5b9c6d9842a0979-0e96c29df5214a4195e7e94f9cf90c8b-9b393cbf9a4d4528a850c79a283b8b25","adbreak_id":"adBreak-992ab149ce3e40b6a5b9c6d9842a0979-0e96c29df5214a4195e7e94f9cf90c8b","account_id":"5100000201001","live_account_id":"e807026ec740429985d04b91cf936f81","live_job_id":"992ab149ce3e40b6a5b9c6d9842a0979","kind":"AdRequest","timestamp":"2021-06-28T23:12:09.585696184Z","span_id":5596747569705325007,"parent_span_id":5124250183191295144,"url":"https://ad-provider-host.com/path/to/ad-handler","request_headers":{"Referer":["https://referer-host.com"],"User-Agent":["Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Safari/605.1.15"],"X-Forwarded-For":["127.0.0.1"]},"response_headers":{"Accept-Ranges":["bytes"],"Age":["66004"],"Connection":["keep-alive"],"Content-Length":["1289"],"Content-Type":["application/xml"],"Date":["Mon, 28 Jun 2021 04:52:06 GMT"],"Etag":["\"0801eec0f0f1c1378b409f0b1eaa241e\""],"Last-Modified":["Wed, 28 Dec 2016 20:10:29 GMT"],"Server":["AmazonS3"],"Via":["1.1 56c69262ecfa7873b40572ba8a323243.cloudfront.net (CloudFront)"],"X-Amz-Cf-Id":["2SvJiWD30gamE4-w6KL3z9shrGpU2ZAvujfsBTJbC9KSoAy0UDzDBw=="],"X-Amz-Cf-Pop":["HIO50-C1"],"X-Cache":["Hit from cloudfront"]},"status_code":200,"duration":1910203645,"provider":"vast_3"}
   {"account_id":"5100000201001","session_id":"9b393cbf9a4d4528a850c79a283b8b25","live_account_id":"e807026ec740429985d04b91cf936f81","live_job_id":"992ab149ce3e40b6a5b9c6d9842a0979","live_app_id":"a51db89789e0413a87ee356bed6965b0","region":"us-west-2","kind":"SessionSummary","duration":1923000000,"status_code":200,"timestamp":"2021-06-28T23:12:11.499Z","adbreak_id":"adBreak-992ab149ce3e40b6a5b9c6d9842a0979-0e96c29df5214a4195e7e94f9cf90c8b","summary_id":"adBreak-992ab149ce3e40b6a5b9c6d9842a0979-0e96c29df5214a4195e7e94f9cf90c8b-9b393cbf9a4d4528a850c79a283b8b25","odur":32000000000,"rdur":32000000000,"sdur":34000000000,"ad_count":1,"client_only_tracking":false,"sls":false,"ads":[{"type":"midroll","fk":"ad-id-1","imps":[{"type":"AdStart","url":"https://ad-provider-host.com/api/tracking?event=impression"},{"type":"AdFirstQuartile","url":"https://ad-provider-host.com/api/tracking?event=firstQuartile"},{"type":"AdMidpoint","url":"https://ad-provider-host.com/api/tracking?event=midpoint"},{"type":"AdThirdQuartile","url":"https://ad-provider-host.com/api/tracking?event=thirdQuartile"},{"type":"AdComplete","url":"https://ad-provider-host.com/api/tracking?event=complete"}],"cdur":30322000000}]}
   {"account_id":"5100000201001","region":"us-west-2","kind":"Impression","impression_type":"AdStart","summary_id":"adBreak-992ab149ce3e40b6a5b9c6d9842a0979-0e96c29df5214a4195e7e94f9cf90c8b-9b393cbf9a4d4528a850c79a283b8b25","adbreak_id":"adBreak-992ab149ce3e40b6a5b9c6d9842a0979-0e96c29df5214a4195e7e94f9cf90c8b","live_account_id":"e807026ec740429985d04b91cf936f81","live_job_id":"992ab149ce3e40b6a5b9c6d9842a0979","session_id":"9b393cbf9a4d4528a850c79a283b8b25","live_app_id":"a51db89789e0413a87ee356bed6965b0","timestamp":"2021-06-28T23:12:11.499Z","url":"https://ad-provider-host.com/api/tracking?event=impression","request_headers":{"Connection":"keep-alive","X-Forwarded-For":"127.0.0.1","User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Safari/605.1.15","Referer":"https://referer-host.com"},"status_code":200,"duration":114524248.00000153}
@@ -568,85 +568,85 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <table class="bcls-table">
       <caption class="bcls-caption--table">Common fields</caption>
       <thead class="bcls-table__head">
-          <tr>
-              <th>Field</th>
-              <th>Type</th>
-              <th>Description</th>
-          </tr>
+        <tr>
+          <th>Field</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
       </thead>
       <tbody class="bcls-table__body">
-          <tr>
-              <td><code translate="No">All log kinds share these fields</code></td>
-              <td>string</td>
-              <td>Session ID. Unique per viewer.</td>
-          </tr>
-          <tr>
-              <td><code translate="No">summary_id</code></td>
-              <td>string</td>
-              <td>Session Summary ID. For VOD, same as SessionID. For Live, unique per Session per Ad Break.</td>
-          </tr>
-          <tr>
-              <td><code translate="No">adbreak_id</code></td>
-              <td>string</td>
-              <td>Ad Break ID. Unique per Ad Break</td>
-          </tr>
-          <tr>
-              <td><code translate="No">account_id</code></td>
-              <td>string</td>
-              <td>Video Cloud account ID.</td>
-          </tr>
-          <tr>
-              <td><code translate="No">live_account_id</code></td>
-              <td>string</td>
-              <td>live account ID.</td>
-          </tr>
-          <tr>
-              <td><code translate="No">video_id</code></td>
-              <td>string</td>
-              <td>Video Cloud video ID.</td>
-          </tr>
-          <tr>
-              <td><code translate="No">live_job_id</code></td>
-              <td>string</td>
-              <td>Live job ID.</td>
-          </tr>
-          <tr>
-              <td><code translate="No">live_app_id</code></td>
-              <td>string</td>
-              <td>Live SSAI application ID.</td>
-          </tr>
-          <tr>
-              <td><code translate="No">title_id</code></td>
-              <td>string</td>
-              <td>VOD title id.</td>
-          </tr>
-          <tr>
-              <td><code translate="No">kind</code></td>
-              <td>string</td>
-              <td>Log Kind for this log. <code translate="No">Creative</code>, <code translate="no">AdRequest</code>, <code translate="no">SessionSummary</code>, or <code translate="no">Impression</code>.</td>
-          </tr>
-          <tr>
-              <td><code translate="No">timestamp</code></td>
-              <td>string</td>
-              <td>Timestamp of log. Marshalled into RFC3339 format. e.g. "2021-06-03T11:39:22.787Z".</td>
-          </tr>
-          <tr>
-              <td><code translate="No">span_id</code></td>
-              <td>unit64</td>
-              <td>SpanID is a trace ID for this log.</td>
-          </tr>
-          <tr>
-              <td><code translate="No">parent_span_id</code></td>
-              <td>unit64</td>
-              <td>ParentSpanID references a SpanID of a parent log. This value can be useful for following the chain of VAST wrapper calls.</td>
-          </tr>
-          <tr>
-              <td><code translate="No">error</code></td>
-              <td>boolean</td>
-              <td>True if there was an error associated with this log. Its meaning depends on the log Kind.</td>
-          </tr>
+        <tr>
+          <td><code translate="No">All log kinds share these fields</code></td>
+          <td>string</td>
+          <td>Session ID. Unique per viewer.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">summary_id</code></td>
+          <td>string</td>
+          <td>Session Summary ID. For VOD, same as SessionID. For Live, unique per Session per Ad Break.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">adbreak_id</code></td>
+          <td>string</td>
+          <td>Ad Break ID. Unique per Ad Break</td>
+        </tr>
+        <tr>
+          <td><code translate="No">account_id</code></td>
+          <td>string</td>
+          <td>Video Cloud account ID.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">live_account_id</code></td>
+          <td>string</td>
+          <td>live account ID.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">video_id</code></td>
+          <td>string</td>
+          <td>Video Cloud video ID.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">live_job_id</code></td>
+          <td>string</td>
+          <td>Live job ID.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">live_app_id</code></td>
+          <td>string</td>
+          <td>Live SSAI application ID.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">title_id</code></td>
+          <td>string</td>
+          <td>VOD title id.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">kind</code></td>
+          <td>string</td>
+          <td>Log Kind for this log. <code translate="No">Creative</code>, <code translate="no">AdRequest</code>, <code translate="no">SessionSummary</code>, or <code translate="no">Impression</code>.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">timestamp</code></td>
+          <td>string</td>
+          <td>Timestamp of log. Marshalled into RFC3339 format. e.g. "2021-06-03T11:39:22.787Z".</td>
+        </tr>
+        <tr>
+          <td><code translate="No">span_id</code></td>
+          <td>unit64</td>
+          <td>SpanID is a trace ID for this log.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">parent_span_id</code></td>
+          <td>unit64</td>
+          <td>ParentSpanID references a SpanID of a parent log. This value can be useful for following the chain of VAST wrapper calls.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">error</code></td>
+          <td>boolean</td>
+          <td>True if there was an error associated with this log. Its meaning depends on the log Kind.</td>
+        </tr>
       </tbody>
-  </table>
+    </table>
     <h3>HTTP fields</h3>
     <p>These fields are shared among log Kinds that are for HTTP requests made to external services like an ad provider.</p>
     <p>Log Kinds that have HTTP fields are:</p>
@@ -657,233 +657,233 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <table class="bcls-table">
       <caption class="bcls-caption--table">HTTP Fields</caption>
       <thead class="bcls-table__head">
-          <tr>
-              <th>Field</th>
-              <th>Type</th>
-              <th>Description</th>
-          </tr>
+        <tr>
+          <th>Field</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
       </thead>
       <tbody class="bcls-table__body">
-          <tr>
-              <td><code translate="No">url</code></td>
-              <td>string</td>
-              <td>Request URL.</td>
-          </tr>
-          <tr>
-              <td><code translate="No">request_headers</code></td>
-              <td>map[string][]string</td>
-              <td>Headers sent in the request. Map with header names for keys and list of strings for header values.</td>
-          </tr>
-          <tr>
-              <td><code translate="No">response_headers</code></td>
-              <td>map[string][]string</td>
-              <td>Headers received in response. Map with header names for keys and list of strings for header values.</td>
-          </tr>
-          <tr>
-              <td><code translate="No">status_code</code></td>
-              <td>integer</td>
-              <td>Response status code.</td>
-          </tr>
-          <tr>
-              <td><code translate="No">duration</code></td>
-              <td>integer64</td>
-              <td>Duration of request in nanoseconds.</td>
-          </tr>
+        <tr>
+          <td><code translate="No">url</code></td>
+          <td>string</td>
+          <td>Request URL.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">request_headers</code></td>
+          <td>map[string][]string</td>
+          <td>Headers sent in the request. Map with header names for keys and list of strings for header values.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">response_headers</code></td>
+          <td>map[string][]string</td>
+          <td>Headers received in response. Map with header names for keys and list of strings for header values.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">status_code</code></td>
+          <td>integer</td>
+          <td>Response status code.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">duration</code></td>
+          <td>integer64</td>
+          <td>Duration of request in nanoseconds.</td>
+        </tr>
       </tbody>
-  </table>
+    </table>
     <h3 id="SessionSummary_fields">SessionSummary fields</h3>
     <p>Contains a summary of ad insertions for the session.</p>
     <p>Includes <a href="#Common_fields">Common fields</a>.</p>
     <table class="bcls-table">
       <caption class="bcls-caption--table">SessionSummary fields</caption>
       <thead class="bcls-table__head">
-          <tr>
-              <th>Field</th>
-              <th>Type</th>
-              <th>Description</th>
-          </tr>
+        <tr>
+          <th>Field</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
       </thead>
       <tbody class="bcls-table__body">
-          <tr>
-              <td><code translate="No">odur</code></td>
-              <td>integer64</td>
-              <td>OriginalDuration of ads intended to be inserted. Value is in nanoseconds.</td>
-          </tr>
-          <tr>
-              <td><code translate="No">rdur</code></td>
-              <td>integer64</td>
-              <td>RequestedDuration may differ from OriginalDuration in live streams depending on when the session connects during an ad break. e.g. session joins 10s into 30s adbreak, Live will request 20s of ads (odur=30,rdur=20). Value is in nanoseconds.</td>
-          </tr>
-          <tr>
-              <td><code translate="No">sdur</code></td>
-              <td>integer64</td>
-              <td>SubstitutedDuration is the duration of live chunks substituted with ads. This value could differ from OriginalDuration depending on the duration of ads returned from provider and if slate was inserted.</td>
-          </tr>
-          <tr>
-              <td><code translate="No">ad_count</code></td>
-              <td>integer</td>
-              <td>Number of ads inserted.</td>
-          </tr>
-          <tr>
-              <td><code translate="No">ads</code></td>
-              <td>[]<a href="#AdSummary_fields">AdSummary</a></td>
-              <td>List of summaries about each ad inserted.</td>
-          </tr>
-          <tr>
-              <td><code translate="No">sls</code></td>
-              <td>boolean</td>
-              <td>SLS is true if the ad break has live SLS enabled.</td>
-          </tr>
-          <tr>
-              <td><code translate="No">client_only_tracking</code></td>
-              <td>boolean</td>
-              <td>ClientOnlyTracking is true if the ad break has live client only tracking enabled.</td>
-          </tr>
+        <tr>
+          <td><code translate="No">odur</code></td>
+          <td>integer64</td>
+          <td>OriginalDuration of ads intended to be inserted. Value is in nanoseconds.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">rdur</code></td>
+          <td>integer64</td>
+          <td>RequestedDuration may differ from OriginalDuration in live streams depending on when the session connects during an ad break. e.g. session joins 10s into 30s adbreak, Live will request 20s of ads (odur=30,rdur=20). Value is in nanoseconds.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">sdur</code></td>
+          <td>integer64</td>
+          <td>SubstitutedDuration is the duration of live chunks substituted with ads. This value could differ from OriginalDuration depending on the duration of ads returned from provider and if slate was inserted.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">ad_count</code></td>
+          <td>integer</td>
+          <td>Number of ads inserted.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">ads</code></td>
+          <td>[]<a href="#AdSummary_fields">AdSummary</a></td>
+          <td>List of summaries about each ad inserted.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">sls</code></td>
+          <td>boolean</td>
+          <td>SLS is true if the ad break has live SLS enabled.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">client_only_tracking</code></td>
+          <td>boolean</td>
+          <td>ClientOnlyTracking is true if the ad break has live client only tracking enabled.</td>
+        </tr>
       </tbody>
-  </table>
+    </table>
     <h3 id="AdSummary_fields">AdSummary fields</h3>
     <table class="bcls-table">
       <caption class="bcls-caption--table">AdSummary fields</caption>
       <thead class="bcls-table__head">
-          <tr>
-              <th>Field</th>
-              <th>Type</th>
-              <th>Description</th>
-          </tr>
+        <tr>
+          <th>Field</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
       </thead>
       <tbody class="bcls-table__body">
-          <tr>
-              <td><code translate="No">imps</code></td>
-              <td>[]<a href="#ImpressionSummary_fields">ImpressionSummary</a></td>
-              <td></td>
-          </tr>
-          <tr>
-              <td><code translate="No">fk</code></td>
-              <td>string</td>
-              <td>Foreign Key of the creative for this ad.</td>
-          </tr>
-          <tr>
-              <td><code translate="No">type</code></td>
-              <td>string</td>
-              <td>Ad type. e.g. preroll, midroll, etc.</td>
-          </tr>
-          <tr>
-              <td><code translate="No">cdur</code></td>
-              <td>integer64</td>
-              <td>CreativeDuration is the duration of this ad. Value is in nanoseconds.</td>
-          </tr>
+        <tr>
+          <td><code translate="No">imps</code></td>
+          <td>[]<a href="#ImpressionSummary_fields">ImpressionSummary</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><code translate="No">fk</code></td>
+          <td>string</td>
+          <td>Foreign Key of the creative for this ad.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">type</code></td>
+          <td>string</td>
+          <td>Ad type. e.g. preroll, midroll, etc.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">cdur</code></td>
+          <td>integer64</td>
+          <td>CreativeDuration is the duration of this ad. Value is in nanoseconds.</td>
+        </tr>
       </tbody>
-  </table>
+    </table>
     <h3 id="ImpressionSummary_fields">ImpressionSummary fields</h3>
     <table class="bcls-table">
       <caption class="bcls-caption--table">ImpressionSummary fields</caption>
       <thead class="bcls-table__head">
-          <tr>
-              <th>Field</th>
-              <th>Type</th>
-              <th>Description</th>
-          </tr>
+        <tr>
+          <th>Field</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
       </thead>
       <tbody class="bcls-table__body">
-          <tr>
-              <td><code translate="No">type</code></td>
-              <td>string</td>
-              <td>Impression type. <code translate="no">AdStart</code>, <code translate="no">AdComplete</code>, <code translate="No">AdFirstQuartile</code>, <code translate="No">AdMidpoint</code>, or <code translate="No"><code translate="No">AdThirdQuartile</code></code>.</td>
-          </tr>
-          <tr>
-              <td><code translate="No">url</code></td>
-              <td>string</td>
-              <td>URL to send impression to.</td>
-          </tr>
+        <tr>
+          <td><code translate="No">type</code></td>
+          <td>string</td>
+          <td>Impression type. <code translate="no">AdStart</code>, <code translate="no">AdComplete</code>, <code translate="No">AdFirstQuartile</code>, <code translate="No">AdMidpoint</code>, or <code translate="No"><code translate="No">AdThirdQuartile</code></code>.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">url</code></td>
+          <td>string</td>
+          <td>URL to send impression to.</td>
+        </tr>
       </tbody>
-  </table>
+    </table>
     <h3 id="AdRequest_fields">AdRequest fields</h3>
     <p>Contains HTTP request and response data with Ad Provider.</p>
     <p>Includes <a href="#Common_fields">Common fields</a> and <a href="#HTTP_fields">HTTP Fields</a></p>
     <table class="bcls-table">
       <caption class="bcls-caption--table">AdRequest fields</caption>
       <thead class="bcls-table__head">
-          <tr>
-              <th>Field</th>
-              <th>Type</th>
-              <th>Description</th>
-          </tr>
+        <tr>
+          <th>Field</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
       </thead>
       <tbody class="bcls-table__body">
-          <tr>
-              <td><code translate="No">provider</code></td>
-              <td>string</td>
-              <td>Ad Provider type. e.g. vast3, vmap, etc.</td>
-          </tr>
+        <tr>
+          <td><code translate="No">provider</code></td>
+          <td>string</td>
+          <td>Ad Provider type. e.g. vast3, vmap, etc.</td>
+        </tr>
       </tbody>
-  </table>
+    </table>
     <h3 id="Creative_fields">Creative fields</h3>
     <p>Contains information about the ad creative from the ad provider.</p>
     <p>Includes <a href="#Common_fields">Common fields</a>.</p>
     <table class="bcls-table">
       <caption class="bcls-caption--table">Creative fields</caption>
       <thead class="bcls-table__head">
-          <tr>
-              <th>Field</th>
-              <th>Type</th>
-              <th>Description</th>
-          </tr>
+        <tr>
+          <th>Field</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
       </thead>
       <tbody class="bcls-table__body">
-          <tr>
-              <td><code translate="No">state</code></td>
-              <td>string</td>
-              <td>
-                State of the creative at time of request.
-                <p>Values for VOD:</p>
-                <ul>
-                  <li><code translate="no">active</code> - creative is active</li>
-                  <li><code translate="no">missing_fk</code> - foreign key was not present on ad</li>
-                  <li><code translate="no">missing_url</code> - URL was not present on ad</li>
-                  <li><code translate="no">internal_error</code> - internal error while processing creative</li>
-                  <li><code translate="no">no_title_id</code> - failed to get title for ad</li>
-                  <li><code translate="no">title_metadata_error</code> - error while processing title for ad</li>
-                  <li><code translate="no">rendition_mismatch</code> - there is a mismatch in bitrates or aspect ratios between the content and the ad</li>
-                </ul>
-              </td>
-          </tr>
-          <tr>
-              <td><code translate="No">fk</code></td>
-              <td>string</td>
-              <td>Foreign Key for creative.</td>
-          </tr>
-          <tr>
-              <td><code translate="No">record_id</code></td>
-              <td>string</td>
-              <td>Used by VOD.</td>
-          </tr>
-          <tr>
-              <td><code translate="No">source_url</code></td>
-              <td>string</td>
-              <td>Source URL of the creative.</td>
-          </tr>
+        <tr>
+          <td><code translate="No">state</code></td>
+          <td>string</td>
+          <td>
+            State of the creative at time of request.
+            <p>Values for VOD:</p>
+            <ul>
+              <li><code translate="no">active</code> - creative is active</li>
+              <li><code translate="no">missing_fk</code> - foreign key was not present on ad</li>
+              <li><code translate="no">missing_url</code> - URL was not present on ad</li>
+              <li><code translate="no">internal_error</code> - internal error while processing creative</li>
+              <li><code translate="no">no_title_id</code> - failed to get title for ad</li>
+              <li><code translate="no">title_metadata_error</code> - error while processing title for ad</li>
+              <li><code translate="no">rendition_mismatch</code> - there is a mismatch in bitrates or aspect ratios between the content and the ad</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><code translate="No">fk</code></td>
+          <td>string</td>
+          <td>Foreign Key for creative.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">record_id</code></td>
+          <td>string</td>
+          <td>Used by VOD.</td>
+        </tr>
+        <tr>
+          <td><code translate="No">source_url</code></td>
+          <td>string</td>
+          <td>Source URL of the creative.</td>
+        </tr>
       </tbody>
-  </table>
+    </table>
     <h3 id="Impression_fields">Impression fields</h3>
     <p>All log types share these fields.</p>
     <p>Includes <a href="#Common_fields">Common fields</a> and <a href="#HTTP_fields">HTTP fields</a>.</p>
     <table class="bcls-table">
       <caption class="bcls-caption--table">Impression fields</caption>
       <thead class="bcls-table__head">
-          <tr>
-              <th>Field</th>
-              <th>Type</th>
-              <th>Description</th>
-          </tr>
+        <tr>
+          <th>Field</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
       </thead>
       <tbody class="bcls-table__body">
-          <tr>
-              <td><code translate="No">impression_type</code></td>
-              <td>string</td>
-              <td>Impression type. e.g. AdStart, AdComplete, etc.</td>
-          </tr>
+        <tr>
+          <td><code translate="No">impression_type</code></td>
+          <td>string</td>
+          <td>Impression type. e.g. AdStart, AdComplete, etc.</td>
+        </tr>
       </tbody>
-  </table>
+    </table>
   </section>
 </article>
 <!-- complete bootstrap layout -->
