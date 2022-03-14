@@ -32,40 +32,28 @@ parent: Guides
         <figcaption class="bcls-caption--image">Print report</figcaption>
       </figure>
 
-      <!-- <aside class="bcls-aside bcls-aside--information">There may be some latency of 30-60 mins before you see data in the Studio UI.</aside> -->
-
     </section>
 
     <section class="bcls-section">
-      <h2 id="Setup">Setup</h2>
-      <p>This feature is available to any customer who has SSAI enabled for their account. Contact your account manager for the following:</p>
+      <h2 id="Customers">Customers</h2>
+      <p>Quickly view a summary of customer metrics for the selected week.</p>
+      <h3>Summary</h3>
+
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Customers summary" src="/temp/assets/customers.png" />
+        <figcaption class="bcls-caption--image">Customers summary</figcaption>
+      </figure>
+
+      <p>Review customer summary metrics:</p>
+       <aside class="bcls-aside bcls-aside--information">Systems without user-specific data reporting (i.e. Amazon Channels) are unmanaged. Data from these services are not presented in charts.</aside>
+
       <ul>
-        <li>Ensure your account is enable for Brightcove Server-Side Ad Insertion (SSAI).</li>
-        <li>Enable your account for SSAI Performance analytics.</li>
+        <li><strong>customers</strong> - Number of managed subscription users in relation to the number of unmanaged users</li>
+        <li><strong>trials</strong> - Number of managed/unmanaged users in a subscription trial period</li>
+        <li><strong>total users</strong> - Total number of customers with either a subscription package or a trial</li>
+        <li><strong>Trial Conversion</strong> - Number of customers who converted to a subscription after being on a trial</li>
+        <li><strong>Trial Churn</strong> - Number of customers who canceled their trial subscription</li>
+        <li><strong>Paid Churn</strong> - Number of customers who canceled their paid subscription</li>
       </ul>
-    </section>
-
-    <section class="bcls-section">
-      <h2 id="Work_flow">Work flow</h2>
-      <p>Follow this work flow to start seeing analytics data associated with SSAI:</p>
-      <ol class="bcls-tasklist">
-        <li>
-          <p>Create an ad configuration ( <code translate="No">AdConfig</code>) with tracking enabled. To do this, you will include the <code translate="No">ad_tracking_sample_percentage</code> parameter in the configuration.</p>
-          <ul>
-            <li>For VOD, see the <a href="https://apis.support.brightcove.com/ssai/getting-started/video-cloud-ssai-ad-config-api.html#Manage_ad_configurations">Video Cloud SSAI API</a> document.</li>
-            <li>For Live streams, see the <a href="https://apis.support.brightcove.com/live-api/references/reference.html#operation/CreateAdConfiguration">Create Ad Configuration</a> reference.</li>
-          </ul>
-          <aside class="bcls-aside bcls-aside--information"> if you create a new <code translate="No">AdConfig</code>, you will need to enable tracking.</aside>
-        </li>
-        <li>
-          <p>Associate the ad configuration with your player.</p>   
-          <ul>
-            <li>For Brightcove web player, see the <a href="https://player.support.brightcove.com/plugins/implementing-server-side-ads-brightcove-player.html#Implementing_SSAI_using_Studio">Implementing Server-Side Ads with Brightcove Player</a> document.</li>
-            <li>For the Native SDKs, see the <a href="https://sdks.support.brightcove.com/features/implementing-server-side-ads-native-player-sdks.html">Implementing Server-Side Ads with the Native SDKs</a> document.</li>
-            <li>For the Brightcove Beacon apps, see the <a href="https://beacon-help.support.brightcove.com/monetization/ssai/index.html">SSAI related topics</a>.</li>
-          </ul>
-        </li>
-      </ol>
     </section>
 
 
