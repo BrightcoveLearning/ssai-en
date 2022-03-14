@@ -3,18 +3,20 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="robots" content="noindex,nofollow"> 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="In this topic, you will learn how use Brightcove Player to play a client-side pre-roll ad with live streams enabled for server-side ad insertion (SSAI).">
+  <meta name="description" content="In this topic, you will learn about customer summary audience insight data. These metrics will improve customer visibility and help guide company decisions.">
   
-  <title>Client-Side Pre-roll Ads with Live SSAI</title>
+  <title>Customer Summary</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">  
+<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/learning-paths/learning-paths.css">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
   <link rel="stylesheet" href="/assets/css/local.css">
@@ -31,9 +33,8 @@
   gtag('config', 'UA-2728311-17');
 </script>
   <script src="/assets/js/sajari-head.js"></script>
-	<script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
-
 
 <body class="body">
 
@@ -61,15 +62,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <li class="breadcrumb-item first-item"><a href="/">Home</a></li>
     
       
-        <li class="breadcrumb-item"><a href="/live/">Live</a></li>
+        <li class="breadcrumb-item"><a href="/temp/">Temp</a></li>
       
     
       
-        <li class="breadcrumb-item"><a href="/live/guides/">Guides</a></li>
-      
-    
-      
-        <li class="breadcrumb-item active" aria-current="page">Client-Side Pre-roll Ads with Live SSAI</li>
+        <li class="breadcrumb-item active" aria-current="page">Customer Summary</li>
       
     
   </nav>
@@ -329,148 +326,72 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
-<!-- 
-  This content appears on:
-  https://player.support.brightcove.com/advertising/client-side-preroll-with-live-ssai.html
-  
-  https://live.support.brightcove.com/live-module/client-side-preroll-with-live-ssai.html
-
-  If you update in one place, you MUST update it in all!
-  Images are stored on the player-dev site.
-
-  I've temporarily removed from the SSAI site. Don't want this doc in more than 2 places.
- -->
-
-<h1>Client-Side Pre-roll Ads with Live SSAI</h1>
+<h1>Customer Summary</h1>
 <article class="bcls-article">
-  <summary>In this topic, you will learn how use Brightcove Player to play a client-side pre-roll ad with live streams enabled for server-side ad insertion (SSAI).</summary>
+    <summary>In this topic, you will learn about customer summary audience insight data. These metrics will improve customer visibility and help guide company decisions.</summary>
 
-<section class="bcls-section">
-<h2 id="overview">Overview</h2>
+    <section class="bcls-section">
+      <h2 id="Introduction">Introduction</h2>
+      <p>Audience insight data integrates your OTT (Over-the-Top) video data sources with subscription video insights to provide actionable insights based on key industry benchmarks. This includes:</p>
+      <ul>
+        <li><strong>Unique insights</strong> - Increase audience lifetime value with unique audience insights for video businesses </li>
+        <li><strong>Data-driven results</strong> - Improve audience aquisition, service engagement, and reduce churn</li>
+        <li><strong>Customer success</strong> - Brightcove provides ideas and recommendations based on industry best practices</li>
+        <li><strong>At-risk subscriber identification</strong> - Churn prediction uses machine learning to identify subscribers who are at-risk of leaving your video service</li>
+      </ul>
+      <p>From your audience insight scorecard, select the <strong>Summary</strong> tab to see a summary of customer metrics.</p>
 
-<p>When delivering live streams with server-side ad insertion (SSAI) using Brightcove Player, you can insert a client-side pre-roll ad. For client-side ads, this feature supports IMA ads.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Customer summary scorecard" src="/temp/assets/summary-scorecard.png" />
+        <figcaption class="bcls-caption--image">Customer summary scorecard</figcaption>
+      </figure>
 
-<aside class="bcls-aside bcls-aside--information">
-<p>This feature requires the following:</p>
+      <p>Expand the time span selector and choose a week for your reporting data.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Select week time span" src="/temp/assets/select-week.png" />
+        <figcaption class="bcls-caption--image">Select week time spand</figcaption>
+      </figure>
 
-<ul>
-	<li>IMA3 plugin v3.5.0+</li>
-	<li>SSAI plugin v1.11.0+</li>
-	<li>Brightcove Player version 6.44.0+</li>
-</ul>
-</aside>
+      <p>Click <strong>cmd</strong> + <strong>p</strong> to print a copy of this report. Landscape is recommended.</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Print report" src="/temp/assets/print-report.png" />
+        <figcaption class="bcls-caption--image">Print report</figcaption>
+      </figure>
 
-<h3>Caveats</h3>
+      <!-- <aside class="bcls-aside bcls-aside--information">There may be some latency of 30-60 mins before you see data in the Studio UI.</aside> -->
 
-<ul>
-	<li>Customers using this feature must be using Dynamic Delivery.</li>
-	<li>Only IMA and SSAI plugins are supported (no FreeWheel).</li>
-  <li>Currently, this feature only supports a single player on the page.</li>
-</ul>
-</section>
+    </section>
 
-<section class="bcls-section">
-<h2 id="Getting_started">Getting started</h2>
+    <section class="bcls-section">
+      <h2 id="Setup">Setup</h2>
+      <p>This feature is available to any customer who has SSAI enabled for their account. Contact your account manager for the following:</p>
+      <ul>
+        <li>Ensure your account is enable for Brightcove Server-Side Ad Insertion (SSAI).</li>
+        <li>Enable your account for SSAI Performance analytics.</li>
+      </ul>
+    </section>
 
-<p>To play a client-side IMA pre-roll ad with a live SSAI stream, follow these steps:</p>
+    <section class="bcls-section">
+      <h2 id="Work_flow">Work flow</h2>
+      <p>Follow this work flow to start seeing analytics data associated with SSAI:</p>
+      <ol class="bcls-tasklist">
+        <li>
+          <p>Create an ad configuration ( <code translate="No">AdConfig</code>) with tracking enabled. To do this, you will include the <code translate="No">ad_tracking_sample_percentage</code> parameter in the configuration.</p>
+          <ul>
+            <li>For VOD, see the <a href="https://apis.support.brightcove.com/ssai/getting-started/video-cloud-ssai-ad-config-api.html#Manage_ad_configurations">Video Cloud SSAI API</a> document.</li>
+            <li>For Live streams, see the <a href="https://apis.support.brightcove.com/live-api/references/reference.html#operation/CreateAdConfiguration">Create Ad Configuration</a> reference.</li>
+          </ul>
+          <aside class="bcls-aside bcls-aside--information"> if you create a new <code translate="No">AdConfig</code>, you will need to enable tracking.</aside>
+        </li>
+        <li>
+          <p>Associate the ad configuration with your player.</p>   
+          <ul>
+            <li>For Brightcove web player, see the <a href="https://player.support.brightcove.com/plugins/implementing-server-side-ads-brightcove-player.html#Implementing_SSAI_using_Studio">Implementing Server-Side Ads with Brightcove Player</a> document.</li>
+            <li>For the Native SDKs, see the <a href="https://sdks.support.brightcove.com/features/implementing-server-side-ads-native-player-sdks.html">Implementing Server-Side Ads with the Native SDKs</a> document.</li>
+            <li>For the Brightcove Beacon apps, see the <a href="https://beacon-help.support.brightcove.com/monetization/ssai/index.html">SSAI related topics</a>.</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
 
-<ol class="bcls-tasklist-restart">
-	<li><a href="#Create_an_SSAI_enabled_live_stream">Create an SSAI-enabled live stream</a></li>
-	<li><a href="#Create_a_Brightcove_player">Create a Brightcove player</a></li>
-	<li><a href="#Implementing_client_side_pre_roll_using_Studio">Implement client-side pre-roll using Studio </a></li>
-</ol>
 
-<h3 id="Create_an_SSAI_enabled_live_stream">Create an SSAI-enabled live stream</h3>
-
-<p>The Live module supports Server-Side Ad Insertion (SSAI) enabling server-side ads can be requested and displayed during a live stream. To create your live stream, see the following:</p>
-<ul>
-  <li>
-    <a href="https://live.support.brightcove.com/live-module/implementing-server-side-ads-live-module.html">Implementing Server-Side Ads in the Live Module</a>
-  </li>
-</ul>
-
-<h3 id="Create_a_Brightcove_player">Create a Brightcove player</h3>
-
-<p>Create a new Brightcove player using Video Cloud Studio. For details, see the <a href="https://studio.support.brightcove.com/basics/video-cloud-basics-creating-player.html">Quick Start: Creating and Styling a Player</a> document.</p>
-
-<aside class="bcls-aside bcls-aside--information">You must use a Brightcove Player version 6.44.0+.</aside>
-</section>
-
-<section class="bcls-section">
-<h2 id="Implementing_client_side_pre_roll_using_Studio">Implementing client-side pre-roll using Studio</h2>
-
-<p>The easiest way to configure your player for auto-failover ads is with Video Cloud Studio. Once you have created an ad configuration and player, then you are ready to configure the player for auto-failover as follows:</p>
-
-<ol class="bcls-tasklist-restart">
-	<li>Open the <strong>PLAYERS</strong> module and locate the player to which you want to add advertising functionality.</li>
-	<li>Select the link for the player to open the player's properties.</li>
-	<li>In the left navigation menu, select <strong>Advertising</strong>.</li>
-	<li>Check the <strong>Enable Client-Side (IMA)</strong> checkbox.</li>
-	<li>
-	<p>Include the URL for your IMA Ad Tag. For this example, we will use the sample Ad Tag URL.</p>
-
-	<figure class="bcls-figure"><img class="bcls-image--no-border" alt="Enable client-side ads" src="/assets/images/live/enable-client-side.png" />
-	<figcaption class="bcls-caption--image">Enable client-side ads</figcaption>
-	</figure>
-
-	<p>For details about the player advertising properties, see the <a href="https://studio.support.brightcove.com/players/configuring-player-advertising-using-players-module.html">Configuring Player Advertising using the Players Module</a> document.</p>
-	</li>
-	<li>
-	<p>Check the <strong>Enable Server-Side (SSAI)</strong> checkbox.</p>
-
-	<aside class="bcls-aside bcls-aside--information">The server-side option will not appear unless your account has been enabled for SSAI.</aside>
-	</li>
-	<li>From the <strong>Select Configuration</strong> dropdown menu, select the ad configuration that you would like to associate with this player.</li>
-	<li>
-    <p>
-      If you want overlays to display over your ads, check the <strong>Enable ad information overlays</strong> checkbox. This includes "Learn More" and ad count down overlays.
-    </p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Enable SSAI" src="https://ssai.support.brightcove.com/assets/images/client-side-preroll/enable-ssai.png" />
-      <figcaption class="bcls-caption--image">Enable SSAI</figcaption>
-    </figure>
-    <aside class="bcls-aside bcls-aside--information">Overlays will not display until you enable them here and configure them in your VAST ad tag.</aside>
-  </li>
-	<li>Select the <strong>Save</strong> button.</li>
-  <li>
-    <p>
-      In the left navigation menu, select <strong>JSON Editor</strong>.
-    </p>
-  </li>
-  <li>
-    <p>
-      In the JSON editor, scroll down until you see the <code translate="No">ad_failover: true</code> property.
-    </p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Ad failover property" src="https://ssai.support.brightcove.com/assets/images/client-side-preroll/ad_failover.png" />
-      <figcaption class="bcls-caption--image">Ad failover property</figcaption>
-    </figure>
-  </li>
-  <li>
-    <p>
-      Replace the <code translate="No">ad_failover: true</code> property with the following:
-    </p>
-    <pre class="line-numbers"><code class="language-json" translate="No">"ima_preroll_with_ssai": true
-</code></pre>
-  </li>
-  <li>
-    <p>
-      Your JSON editor should look similar to this:
-    </p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="IMA preroll property" src="https://ssai.support.brightcove.com/assets/images/client-side-preroll/ima-preroll.png" />
-      <figcaption class="bcls-caption--image">IMA preroll property</figcaption>
-    </figure>
-  </li>
-  <li>Select the <strong>Save</strong> button.</li>
-	<li>
-	<p>To publish the player, select <strong>Publish &amp; Embed &gt; Publish Changes</strong>.</p>
-	</li>
-  <li>
-    <p>
-      Now, you are ready to publish your live event. For details, see the <a href="https://live.support.brightcove.com/live-module/implementing-server-side-ads-live-module.html#Publishing_the_live_event">Implementing Server-Side Ads in the Live Module</a> document.
-    </p>
-  </li>
-</ol>
-
-</section>
 </article>
 
 <!-- complete bootstrap layout -->
@@ -488,7 +409,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <hr>
 <div class="last-updated">
-  Page last updated on 06 Mar 2022
+  Page last updated on 14 Mar 2022
 </div>
 
 
