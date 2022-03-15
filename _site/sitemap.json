@@ -25,11 +25,6 @@
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/temp/customer-summary.html",
-      "oldURL": "/customer-summary"
-  },
-
-  {
       "newURL": "https://ssai.support.brightcove.com/references/glossary.html",
       "oldURL": "/glossary"
   },
@@ -45,17 +40,17 @@
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/vod/references/",
-      "oldURL": "/index"
-  },
-
-  {
       "newURL": "https://ssai.support.brightcove.com/references/",
       "oldURL": "/index"
   },
 
   {
       "newURL": "https://ssai.support.brightcove.com/vod/guides/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://ssai.support.brightcove.com/",
       "oldURL": "/index"
   },
 
@@ -70,17 +65,17 @@
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/support/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://ssai.support.brightcove.com/live/references/",
-      "oldURL": "/index"
-  },
-
-  {
       "newURL": "https://ssai.support.brightcove.com/live/guides/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://ssai.support.brightcove.com/vod/references/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://ssai.support.brightcove.com/support/",
       "oldURL": "/index"
   },
 
@@ -90,7 +85,7 @@
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/",
+      "newURL": "https://ssai.support.brightcove.com/live/references/",
       "oldURL": "/index"
   },
 
@@ -125,12 +120,12 @@
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/vod/references/reference.html",
+      "newURL": "https://ssai.support.brightcove.com/live/references/reference.html",
       "oldURL": "/reference"
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/live/references/reference.html",
+      "newURL": "https://ssai.support.brightcove.com/vod/references/reference.html",
       "oldURL": "/reference"
   },
 
