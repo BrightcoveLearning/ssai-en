@@ -19,6 +19,13 @@ parent: Video-On-Demand Guides
 <ul>
 	<li>To use SSAI, your Video Cloud account needs to be configured for <a href="https://studio.support.brightcove.com/general/overview-dynamic-delivery.html">Dynamic Delivery</a> and enabled for SSAI. Contact your account manager to start using this feature.</li>
 	<li>SSAI works with Video-on-Demand (VOD) and supports Live playback.</li>
+  <li>
+    If you build custom implementations on top of the Brightcove Playback API (PAPI) responses, please note the following:
+      <ul>
+        <li>With Server-Side Ad Insertion (SSAI), the thumbnails manifest is located in the VMAP instead of the PAPI response.</li>
+        <li>With non-SSAI, the thumbnails manifest is included in the PAPI response.</li>
+      </ul>
+  </li>
 	<li>For a list of limitations, see the <a href="https://ssai.support.brightcove.com/getting-started/video-cloud-ssai-overview.html#Limitations">SSAI Overview</a> document.</li>
 </ul>
 </aside>
