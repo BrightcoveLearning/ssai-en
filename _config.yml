@@ -35,7 +35,7 @@ port: 6500
 product: SSAI
 color: rgb(51, 51, 51)
 product_color: rgb(186, 206, 19)
-product_icon: "logo-bc-ssai.svg"
+product_icon: "brightcove-black-on-white.svg"
 search_id: "017969773216783359937:3dokhftl9vz"
 feedbackify_id: "15077"
 bing_custom_config_id: "b602408f-fef7-4452-ac74-4e12852bdd46"

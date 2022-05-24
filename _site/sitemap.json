@@ -40,17 +40,12 @@
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/references/",
-      "oldURL": "/index"
-  },
-
-  {
       "newURL": "https://ssai.support.brightcove.com/vod/guides/",
       "oldURL": "/index"
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/",
+      "newURL": "https://ssai.support.brightcove.com/references/",
       "oldURL": "/index"
   },
 
@@ -65,22 +60,7 @@
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/live/guides/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://ssai.support.brightcove.com/vod/references/",
-      "oldURL": "/index"
-  },
-
-  {
       "newURL": "https://ssai.support.brightcove.com/support/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://ssai.support.brightcove.com/live/",
       "oldURL": "/index"
   },
 
@@ -90,8 +70,33 @@
   },
 
   {
+      "newURL": "https://ssai.support.brightcove.com/live/guides/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://ssai.support.brightcove.com/live/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://ssai.support.brightcove.com/vod/references/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://ssai.support.brightcove.com/",
+      "oldURL": "/index"
+  },
+
+  {
       "newURL": "https://ssai.support.brightcove.com/index_for_launch.html",
       "oldURL": "/index_for_launch"
+  },
+
+  {
+      "newURL": "https://ssai.support.brightcove.com/support/known-issues-studio-brightcove-player-and-apis.html",
+      "oldURL": "/known-issues-studio-brightcove-player-and-apis"
   },
 
   {
