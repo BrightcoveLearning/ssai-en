@@ -1,7 +1,6 @@
 bold=`tput bold`
 normal=`tput sgr0`
-echo "Enter your ${bold}COMMIT MESSAGE${normal}:"
-read COMMITMESSAGE 
+COMMITMESSAGE='Nightly Build'
 cd ..
 git pull
 bundle update
