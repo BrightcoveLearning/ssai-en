@@ -206,6 +206,7 @@
         
         td>code {
             white-space: nowrap;
+            font-size: inherit;
         }
         
         td>ul {
@@ -451,6 +452,10 @@
             padding: 1em 2em 1em 3.5em;
         }
         
+        .bcls-aside code {
+            font-size: inherit;
+        }
+        
         .bcls-aside--information {
             background-color: #f2f4f9;
             border: none;
@@ -625,6 +630,7 @@
             white-space: -o-pre-wrap;
             word-wrap: break-word;
             display: inline-flex;
+            align-items: center;
         }
         
         details>summary>* {
@@ -1110,9 +1116,9 @@
             font-size: 1rem;
         }
         
-        .landing-page-item li {
+        /* .landing-page-item li {
             font-size: .9rem;
-        }
+        } */
         
         span.product-logo {
             font-family: 'Public Sans';
