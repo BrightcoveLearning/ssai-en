@@ -40,22 +40,7 @@
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/getting-started/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://ssai.support.brightcove.com/references/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://ssai.support.brightcove.com/live/guides/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://ssai.support.brightcove.com/support/",
+      "newURL": "https://ssai.support.brightcove.com/live/",
       "oldURL": "/index"
   },
 
@@ -65,7 +50,27 @@
   },
 
   {
+      "newURL": "https://ssai.support.brightcove.com/vod/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://ssai.support.brightcove.com/getting-started/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://ssai.support.brightcove.com/live/guides/",
+      "oldURL": "/index"
+  },
+
+  {
       "newURL": "https://ssai.support.brightcove.com/live/references/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://ssai.support.brightcove.com/references/",
       "oldURL": "/index"
   },
 
@@ -80,12 +85,7 @@
   },
 
   {
-      "newURL": "https://ssai.support.brightcove.com/live/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://ssai.support.brightcove.com/vod/",
+      "newURL": "https://ssai.support.brightcove.com/support/",
       "oldURL": "/index"
   },
 
@@ -147,6 +147,16 @@
   {
       "newURL": "https://ssai.support.brightcove.com/search.html",
       "oldURL": "/search"
+  },
+
+  {
+      "newURL": "https://ssai.support.brightcove.com/s-doc-updates/site-doc-updates-help.html",
+      "oldURL": "/site-doc-updates-help"
+  },
+
+  {
+      "newURL": "https://ssai.support.brightcove.com/s-doc-updates/site-doc-updates.html",
+      "oldURL": "/site-doc-updates"
   },
 
   {
