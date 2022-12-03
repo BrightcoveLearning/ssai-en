@@ -903,7 +903,7 @@
         }
         
         [aria-current="page"], .bcls-active {
-            color: #F3951D !important;
+            color: #EFD900 !important;
             font-weight: bold;
         }
         /* docs header */
@@ -1567,7 +1567,7 @@
         
         .breadcrumb-item.active,
         .breadcrumb-item.first-item.active {
-            color: #ffffff;
+            color:#EFD900;
         }
         
         body>header>nav {
