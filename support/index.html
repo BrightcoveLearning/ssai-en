@@ -1,7 +1,31 @@
 ---
-title: Support
+title: Developer Support
 parent: Home
 description: Learn how to get help from Brightcove Support
 ---
 
-{% include s-support/index.html %}
+<!-- Template for section that has just pages -->
+{% for item in site.data.navigation %}
+  {% if item.name == page.title %}
+  <h1><i class="{{ item.icon }}"></i> {{ page.title }}</h1>
+  <article class="bcls-article">
+    <summary>{{ page.description }}</summary>
+
+    <div class="col-12 col-lg-4 py-3">
+      <div class="card shadow-sm" style="background: white" onclick="window.location.href = '{{ item.url }}'">
+        <div class="card-body">
+          <section class="flex-container">
+            <div>
+              <ul class="list-group list-group-flush">
+                {% for entry in item.docs %}
+                <li class="list-group-item"><a href="{{ entry.url }}" style="text-decoration: none;">{{ entry.name }}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endfor %}
+</article>

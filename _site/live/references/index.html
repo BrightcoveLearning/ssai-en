@@ -1,565 +1,617 @@
-<!doctype html>
-<html lang="en-US">
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <title>Live References</title>
+        
+        <!-- Meta -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="References related to Live streams with Server-Side Ad Insertion (SSAI).">
+        
+        <!-- Google Font -->
+        <!-- <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet"> -->
+        <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/fonts/articulat-site.css">
+        <link href="/assets/s-site-assets-stylesheets/fonts/source-code-pro.css" rel="stylesheet">
+        
+        <!-- FontAwesome JS-->
+        <script src="https://kit.fontawesome.com/d67c74a882.js" crossorigin="anonymous"></script>  
+        
+        <!-- Plugins CSS -->
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.2/styles/atom-one-dark.min.css">
+        <link rel="stylesheet" href="/assets/s-site-assets-template-stylesheets/plugins/simplelightbox/simple-lightbox.min.css">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="References related to Live streams with Server-Side Ad Insertion (SSAI).">
-  
-  <title>Live References</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/s-site-assets-favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/s-site-assets-favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/s-site-assets-favicons/favicon-16x16.png">
-  <link rel="manifest" href="/assets/s-site-assets-favicons/site.webmanifest">  
-  <link href="/assets/s-site-assets-stylesheets/fonts/public-sans.css" rel="stylesheet">
-  <link href="/assets/s-site-assets-stylesheets/fonts/poppins.css" rel="stylesheet">
-  <link href="/assets/s-site-assets-stylesheets/fonts/source-code-pro.css" rel="stylesheet">
-  <link href="/assets/s-site-assets-stylesheets/fonts/articulat-site.css" rel="stylesheet">
-  <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/prism.css">
-  <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/styles.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/learning-paths/learning-paths.css">
-  <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/tabs.css">
-  <link rel="stylesheet" href="/assets/css/local.css">
-  <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/fonts/articulat-site.css">
-  <!-- font awesome -->
-  <script src="https://kit.fontawesome.com/d67c74a882.js" crossorigin="anonymous"></script>  
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XBJC11HF8Z"></script>
-<script translate="no">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-XBJC11HF8Z');
-</script>
-  <script src="/assets/s-site-assets-scripts/sajari-head.js"></script>
-  <script src="/assets/s-site-assets-scripts/feather.min.js"></script>
-</head>
-
-<body class="body">
-
-<header>
-  <div class="div-header">
-    <span class="product-logo">
-      <a href="https://support.brightcove.com/"><img src="/assets/s-site-assets-images/blogo-svg/black.svg" alt="Documentation Home" style="max-width: 2rem;min-width: 1rem;margin-right: 1rem;"></a>
-      <a href="/"><img src="/assets/s-site-assets-images/brightcove-black-on-white.svg" alt="Brightcove" style="max-width: 200px;min-width: 100px;"></a>
-    </span>
-    <select id="site_select" class="bcls-select" style="margin-left: 1rem;max-width: 250px;">
-      <option value="">Other Brightcove Docs</option>
-      
-        
-          <option value="https://support.brightcove.com">Documentation Home</option>
-        
-      
-        
-          <option value="https://support.brightcove.com/">-- VIDEO CLOUD --</option>
-        
-      
-        
-          <option value="https://studio.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Studio</option>
-        
-      
-        
-          <option value="https://mstudio.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Marketing Studio</option>
-        
-      
-        
-          <option value="https://player.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Player Development</option>
-        
-      
-        
-          <option value="https://apis.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Platform APIs</option>
-        
-      
-        
-          <option value="https://sdks.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Device SDKs</option>
-        
-      
-        
-          <option value="https://integrations.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Integrations and CMS Connectors</option>
-        
-      
-        
-          <option value="https://general.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud General Information</option>
-        
-      
-        
-          <option value="https://support.brightcove.com/">-- VIDEO ESSENTIALS --</option>
-        
-      
-        
-          <option value="https://audience-insights.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Audience Insights</option>
-        
-      
-        
-          <option value="https://beacon-help.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Beacon Studio</option>
-        
-      
-        
-          <option value="https://beacon.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Beacon Classic</option>
-        
-      
-        
-          <option value="https://corptv.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;CorpTV</option>
-        
-      
-        
-          <option value="https://live.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Live</option>
-        
-      
-        
-          <option value="https://zencoder.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Zencoder</option>
-        
-      
-        
-          <option value="https://support.brightcove.com/">-- VIDEO CLOUD ADD-ONS --</option>
-        
-      
-        
-          <option value="https://gallery.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Gallery</option>
-        
-      
-        
-          <option value="https://studio.support.brightcove.com/social/index.html">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Social</option>
-        
-      
-        
-          <option value="https://interactivity.support.brightcove.com/index.html">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Interactivity</option>
-        
-      
-        
-          <option value="https://ssai.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove SSAI</option>
-        
-      
-        
-          <option value="https://campaign.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Campaign</option>
-        
-      
-        
-          <option value="https://engage.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Engage</option>
-        
-      
-    </select>
-
-<!-- GTranslate: https://gtranslate.io/ -->    
-<select class="bcls-select" onchange="doGTranslate(this);"><option value="">Language</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
-
-<script translate="no">
-/* <![CDATA[ */  
-function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
-/* ]]> */
-</script>
+        <!-- Theme CSS -->  
+        <link id="theme-style" rel="stylesheet" href="/assets/s-site-assets-template-stylesheets/css/theme.css">
+        <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/prism.css">
+        <link rel="stylesheet" href="/assets/s-site-assets-template-stylesheets/custom-css/styles.css">
 
 
-<!-- &nbsp;<span class="secondary-nav"><a href="https://support.brightcove.com/product-updates.html">Product Updates</a> <span style="vertical-align: middle;margin-left:1em;margin-right:1em;">|</span> <a href="https://supportportal.brightcove.com">Contact Support</a> <span style="vertical-align: middle;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/">System Status</a></span> -->
-    <br>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XBJC11HF8Z"></script>
+        <script translate="no">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-XBJC11HF8Z');
+        </script>
+        <script src="/assets/s-site-assets-scripts/sajari-head.js"></script>
+        <script src="https://unpkg.com/feather-icons"></script>
+
+    </head> 
+
+    <body class="docs-page">
+        
+
+<header class="header fixed-top">
+  <div class="branding docs-branding">
+    <div class="container-fluid position-relative py-2">
+      <div class="docs-logo-wrapper">
+        <button id="docs-sidebar-toggler" class="docs-sidebar-toggler"
+          type="button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="site-logo"><a class="navbar-brand"
+            href="https://support.brightcove.com/"
+            style="margin-left: 15px;">
+            <img class="logo-icon me-2"
+              src="/assets/s-site-assets-template-stylesheets/images/bc_logo_black_1@1x.png"
+              alt="logo" style="margin-bottom: 9px;">
+            <!-- <span class="logo-text">BRIGHTCOVE</span> -->
+          </a></div>
+      </div><!--//docs-logo-wrapper-->
+
+      <div class="docs-top-utilities d-flex justify-content-end
+        align-items-center">
+        <!-- Search bar -->
+        <div id="nav-search-box" class="top-search-box d-none d-lg-flex" style="margin-right: 10px ;"></div>
+
+        <select id="site_select" class="form-select select-focus" style="width:
+          20%; margin-right: 10px;">
+          <option value="">Other Brightcove Docs</option>
+          
+          
+          <option value="https://support.brightcove.com" translate="no">Documentation Home</option>
+          
+          
+          
+          <option value="https://support.brightcove.com/" translate="no">-- VIDEO CLOUD --</option>
+          
+          
+          
+          <option value="https://studio.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Studio</option>
+          
+          
+          
+          <option value="https://mstudio.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Marketing Studio</option>
+          
+          
+          
+          <option value="https://player.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Player Development</option>
+          
+          
+          
+          <option value="https://apis.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Platform APIs</option>
+          
+          
+          
+          <option value="https://sdks.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Device SDKs</option>
+          
+          
+          
+          <option value="https://integrations.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Integrations and CMS Connectors</option>
+          
+          
+          
+          <option value="https://general.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud General Information</option>
+          
+          
+          
+          <option value="https://support.brightcove.com/" translate="no">-- VIDEO ESSENTIALS --</option>
+          
+          
+          
+          <option value="https://audience-insights.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Audience Insights</option>
+          
+          
+          
+          <option value="https://beacon-help.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Beacon Studio</option>
+          
+          
+          
+          <option value="https://beacon.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Beacon Classic</option>
+          
+          
+          
+          <option value="https://corptv.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;CorpTV</option>
+          
+          
+          
+          <option value="https://live.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Live</option>
+          
+          
+          
+          <option value="https://zencoder.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Zencoder</option>
+          
+          
+          
+          <option value="https://support.brightcove.com/" translate="no">-- VIDEO CLOUD ADD-ONS --</option>
+          
+          
+          
+          <option value="https://gallery.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Gallery</option>
+          
+          
+          
+          <option value="https://studio.support.brightcove.com/social/index.html" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Social</option>
+          
+          
+          
+          <option value="https://interactivity.support.brightcove.com/index.html" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Interactivity</option>
+          
+          
+          
+          <option value="https://ssai.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove SSAI</option>
+          
+          
+          
+          <option value="https://campaign.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Campaign</option>
+          
+          
+          
+          <option value="https://engage.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Engage</option>
+          
+          
+        </select>
+
+        <select id="language_select" class="form-select select-focus" style="width: 10%;"
+          onchange="doGTranslate(this);">
+          <!-- <option value="">Select Language</option> -->
+          <option value="en|en" translate="No">English</option>
+          <option value="en|zh-TW" translate="No">繁體中文</option>
+          <option value="en|fr" translate="No">Français</option>
+          <option value="en|de" translate="No">Deutsche</option>
+          <option value="en|ja" translate="No">日本語</option>
+          <option value="en|ko" translate="No">한국어</option>
+          <option value="en|es" translate="No">Español</option>
+        </select>
+
+        <script translate="no">
+          /* <![CDATA[ */
+          function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+          /* ]]> */
+        </script>
+      </div>
+    </div>
   </div>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb arr-right">
-    
-    <li class="breadcrumb-item first-item"><a href="/">Home</a></li>
-    
-      
-        <li class="breadcrumb-item"><a href="/live/">Live</a></li>
-      
-    
-      
-        <li class="breadcrumb-item active" aria-current="page">Live References</li>
-      
-    
-  </nav>
-</header>
-<main>
-<div class="container">
-  <div id="bc_veggie_burger_wrapper" style="margin-top: .5rem;margin-bottom: 1rem;z-index: 9999"><img id="bc_veggie_burger" src="/assets/images/s-feather-img/x.svg" alt="Navigation Menu" aria-expanded="false" aria-label="Menu" aria-controls="mainnav" style="min-height: 30px;z-index:99999"></div>
+</header><!--//header-->
 
-  <!-- <div id="side_nav" class="col-sm-3 left-side-bar" style="margin-left: -500px; margin-right: 6em;">
-  <div id="side_nav" class="col-sm-3 left-side-bar"> -->
-
+<div class="docs-wrapper">
+  <div id="docs-sidebar" class="docs-sidebar" style="padding-right: 15px;">
+    <div id="nav-search-box" class="top-search-box d-lg-none p-3"></div>
     <div class="row">
       
-        <div id="side_nav" style="margin-left: 1em;display: inline-block;border-right: 1px solid #e5e5e6;padding-right: 1em;">
-      
-        <nav class="sidenav" aria-label="Main">
+        <div id="side_nav" style="margin-left: 1em; display: inline-block; border-right: 1px solid #e5e5e6; padding-right: 1em;">
           
+          <nav class="docs-nav sidenav" aria-label="Main">
+            <ul class="site-nav" style="list-style-type: none;">
             
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/index.html">Home</a></li>
+            
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/getting-started/index.html"><span class="theme-icon-holder me-2">
+              <i class="fa-solid fa-plus"></i></span>&nbsp;Getting Started</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
               
-              <h5><a href="/index.html">Home</a></h5>
               
-            
-          
-            
-              <h5 class="submenu-header"><a href="/getting-started/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Getting Started</a></h5>
-              <ul role="list" class="sidenav-submenu" style="display:none;">
-                
-                  
-                    
-                    <li><a href="/getting-started/video-cloud-ssai-overview.html">SSAI Overview</a></li>
-                    
-                  
-                
-                  
-                    
-                    <li><a href="https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html">Configuring Server-Side Ad Settings</a></li>
-                    
-                  
-                
-                  
-                    
-                    <li><a href="/getting-started/video-cloud-ssai-ad-logs.html">SSAI Ad tracking log</a></li>
-                    
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/vod/guides/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Video-On-Demand Guides</a></h5>
-              <ul role="list" class="sidenav-submenu" style="display:none;">
-                
-                  
-                    
-                    <li><a href="https://player.support.brightcove.com/plugins/implementing-server-side-ads-brightcove-player.html">Implementing SSAI with Brightcove Player</a></li>
-                    
-                  
-                
-                  
-                    
-                    <li><a href="https://sdks.support.brightcove.com/features/implementing-server-side-ads-native-player-sdks.html">Implementing SSAI with the Native SDKs</a></li>
-                    
-                  
-                
-                  
-                    
-                    <li><a href="/vod/guides/ssai-non-bc-players.html">Implementing SSAI with Non-Brightcove Players</a></li>
-                    
-                  
-                
-                  
-                    
-                    <li><a href="/vod/guides/ssai-ad-block-detection-and-auto-failover.html">SSAI: Ad Block Detection and Auto-Failover</a></li>
-                    
-                  
-                
-                  
-                    
-                    <li><a href="https://apis.support.brightcove.com/ssai/getting-started/video-cloud-ssai-ad-config-api.html">Video Cloud SSAI Ad Config API</a></li>
-                    
-                  
-                
-                  
-                    
-                    <li><a href="/vod/guides/video-cloud-ssai-ad-tag-validation.html">Video Cloud SSAI Ad Tag Validation</a></li>
-                    
-                  
-                
-                  
-                    
-                    <li><a href="/vod/guides/ad-error-beacons-ssai.html">Ad Error Beacons with SSAI</a></li>
-                    
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="https://apis.support.brightcove.com/ssai/references/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Video-On-Demand References</a></h5>
-              <ul role="list" class="sidenav-submenu" style="display:none;">
-                
-                  
-                    
-                    <li><a href="https://apis.support.brightcove.com/ssai/references/reference.html">SSAI API Reference</a></li>
-                    
-                  
-                
-                  
-                    
-                    <li><a href="https://apis.support.brightcove.com/ssai/references/ssai-api-error-reference.html">SSAI API Error Reference</a></li>
-                    
-                  
-                
-                  
-                    
-                    <li><a href="https://player.support.brightcove.com/plugins/changelog/server-side-ads-plugin-changelog.html">Server-Side Ads Plugin Changelog</a></li>
-                    
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/live/guides/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Live Guides</a></h5>
-              <ul role="list" class="sidenav-submenu" style="display:none;">
-                
-                  
-                    
-                    <li><a href="https://live.support.brightcove.com/live-module/implementing-server-side-ads-live-module.html">Implementing SSAI in the Live Module</a></li>
-                    
-                  
-                
-                  
-                    
-                    <li><a href="https://apis.support.brightcove.com/live-api/ssai/live-api-server-side-ad-insertion-ssai.html">Brightcove Live API: Server-Side Ad Insertion (SSAI)</a></li>
-                    
-                  
-                
-                  
-                    
-                    <li><a href="https://apis.support.brightcove.com/live-api/ssai/live-api-cue-points-and-ad-beacons-ssai.html">Live API: Cue Points and Ad Beacons with SSAI</a></li>
-                    
-                  
-                
-                  
-                    
-                    <li><a href="https://player.support.brightcove.com/advertising/client-side-preroll-with-live-ssai.html">Client-Side Preroll Ads with Live SSAI</a></li>
-                    
-                  
-                
-                  
-                    
-                    <li><a href="/live/guides/overview-player-enhancements-live-ssai.html">Overview: Player Enhancements for Live SSAI</a></li>
-                    
-                  
-                
-                  
-                    
-                    <li><a href="/live/guides/implementing-player-enhancements-live-ssai.html">Implementing Player Enhancements for Live SSAI</a></li>
-                    
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/live/references/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Live References</a></h5>
-              <ul role="list" class="sidenav-submenu" style="display:none;">
-                
-                  
-                    
-                    <li><a href="/live/references/reference.html">Live API Reference</a></li>
-                    
-                  
-                
-                  
-                    
-                    <li><a href="https://apis.support.brightcove.com/live-api/references/live-api-error-messages.html">Live API: Error Messages</a></li>
-                    
-                  
-                
-                  
-                    
-                    <li><a href="https://live.support.brightcove.com/release-notes/live-api-release-notes.html">Live API Release Notes</a></li>
-                    
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/support/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Developer Support</a></h5>
-              <ul role="list" class="sidenav-submenu" style="display:none;">
-                
-                  
-                    
-                    <li><a href="/support/viewing-brightcove-system-status-page.html">Viewing the Brightcove System Status Page</a></li>
-                    
-                  
-                
-                  
-                    
-                    <li><a href="/support/contact-sales.html">Contact Sales</a></li>
-                    
-                  
-                
-                  
-                    
-                    <li><a href="/support/opening-case-with-brightcove-support.html">Opening a Support Case</a></li>
-                    
-                  
-                
-                  
-                    
-                    <li><a href="/support/reset-support-portal-password.html">Reset Your Support Portal Password</a></li>
-                    
-                  
-                
-              </ul>
-            
-          
-      </nav>
-    </div>
-    <div class="col-lg-7" id="main_content">
-  <!-- bootstrap layout -->
-
-
-<!-- search bar -->
-<div id="nav-search-box" style="margin-top: 1rem;margin-left:3em;"></div>
-<!-- in-page navigation for narrow screens -->
-<details class="centered-inpage-nav" id="centered_inpage_nav">
-  <summary><h6 class="toc">Page Contents</h6></summary>
-  <nav id="centered_toc"></nav>
-  <ul id="centered_in_page_toc" class="list-none"></ul>
-</details>
-<!-- open in new tab/window -->
-<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/s-feather-img/external-link.svg" alt="open in new tab" style="margin-top:4em;width: 1.5em;"></a>
-
-
-
-  
-    
-
-
-<article class="bcls-article">
-  <h1>Live References</h1>
-  <summary>References related to Live streams with Server-Side Ad Insertion (SSAI).</summary>
-  <section class="card-wrapper">
-    <section class="bcls-card">
-      <div class="card-content">
-        <h2 id="Topics_in_this_section">Topics in this section</h2>
-        <ul>
-        
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
               
-                <li><a href="/live/references/reference.html">Live API Reference</a>
-                
-                </li>
+              <li class="nav-item"><a class="nav-link" href="/getting-started/video-cloud-ssai-overview.html">SSAI Overview</a></li>
               
-                <li><a href="https://apis.support.brightcove.com/live-api/references/live-api-error-messages.html">Live API: Error Messages</a>
-                
-                </li>
               
-                <li><a href="https://live.support.brightcove.com/release-notes/live-api-release-notes.html">Live API Release Notes</a>
-                
-                </li>
               
-        
-      
-        
-      
-  
+              
+              
+              <li class="nav-item"><a class="nav-link" href="https://studio.support.brightcove.com/admin/general/configuring-server-side-ad-settings.html">Configuring Server-Side Ad Settings</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/getting-started/video-cloud-ssai-ad-logs.html">SSAI Ad tracking log</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/vod/guides/index.html"><span class="theme-icon-holder me-2">
+              <i class="fa-solid fa-plus"></i></span>&nbsp;Video-On-Demand Guides</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="https://player.support.brightcove.com/plugins/implementing-server-side-ads-brightcove-player.html">Implementing SSAI with Brightcove Player</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="https://sdks.support.brightcove.com/features/implementing-server-side-ads-native-player-sdks.html">Implementing SSAI with the Native SDKs</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/vod/guides/ssai-non-bc-players.html">Implementing SSAI with Non-Brightcove Players</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/vod/guides/ssai-ad-block-detection-and-auto-failover.html">SSAI: Ad Block Detection and Auto-Failover</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="https://apis.support.brightcove.com/ssai/getting-started/video-cloud-ssai-ad-config-api.html">Video Cloud SSAI Ad Config API</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/vod/guides/video-cloud-ssai-ad-tag-validation.html">Video Cloud SSAI Ad Tag Validation</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/vod/guides/ad-error-beacons-ssai.html">Ad Error Beacons with SSAI</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="https://apis.support.brightcove.com/ssai/references/index.html"><span class="theme-icon-holder me-2">
+              <i class="fa-solid fa-plus"></i></span>&nbsp;Video-On-Demand References</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="https://apis.support.brightcove.com/ssai/references/reference.html">SSAI API Reference</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="https://apis.support.brightcove.com/ssai/references/ssai-api-error-reference.html">SSAI API Error Reference</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="https://player.support.brightcove.com/plugins/changelog/server-side-ads-plugin-changelog.html">Server-Side Ads Plugin Changelog</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/live/guides/index.html"><span class="theme-icon-holder me-2">
+              <i class="fa-solid fa-plus"></i></span>&nbsp;Live Guides</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="https://live.support.brightcove.com/live-module/implementing-server-side-ads-live-module.html">Implementing SSAI in the Live Module</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="https://apis.support.brightcove.com/live-api/ssai/live-api-server-side-ad-insertion-ssai.html">Brightcove Live API: Server-Side Ad Insertion (SSAI)</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="https://apis.support.brightcove.com/live-api/ssai/live-api-cue-points-and-ad-beacons-ssai.html">Live API: Cue Points and Ad Beacons with SSAI</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="https://player.support.brightcove.com/advertising/client-side-preroll-with-live-ssai.html">Client-Side Preroll Ads with Live SSAI</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/live/guides/overview-player-enhancements-live-ssai.html">Overview: Player Enhancements for Live SSAI</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/live/guides/implementing-player-enhancements-live-ssai.html">Implementing Player Enhancements for Live SSAI</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/live/references/index.html"><span class="theme-icon-holder me-2">
+              <i class="fa-solid fa-plus"></i></span>&nbsp;Live References</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/live/references/reference.html">Live API Reference</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="https://apis.support.brightcove.com/live-api/references/live-api-error-messages.html">Live API: Error Messages</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="https://live.support.brightcove.com/release-notes/live-api-release-notes.html">Live API Release Notes</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/support/index.html"><span class="theme-icon-holder me-2">
+              <i class="fa-solid fa-plus"></i></span>&nbsp;Developer Support</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/support/viewing-brightcove-system-status-page.html">Viewing the Brightcove System Status Page</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/support/contact-sales.html">Contact Sales</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/support/opening-case-with-brightcove-support.html">Opening a Support Case</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/support/reset-support-portal-password.html">Reset Your Support Portal Password</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+          </ul>
+          </nav>
+        </div>
       </div>
-    </section>
-  </section>
-</article>
-<!-- complete bootstrap layout -->
-    </div>
-    <div class="col-sm-2 right-side-bar">
-      
-    </div>
+    </div><!--//docs-sidebar-->
   </div>
 </div>
 
-<hr>
-<div class="last-updated">
-  Page last updated on 12 Mar 2021
-</div>
-
-
-
-</main>
-<div class="footer-container">
-  <footer class="bcls-footer" role="contentinfo">
-    <div class="row">
-      <div class="region region-footer-top-center col-md-12">
-        <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
-          <img src="https://support.brightcove.com/site-assets/images/site/SVG/COVE004_Brightcove_Logo_093020_RGB_KO.svg" class="bc-footer-logo" alt="Brightcove">
-  
-          <h2>Brightcove Support</h2>
-  
-          <ul class="menu">
-            <li>
-              <a href="https://status.brightcove.com">System Status</a>
-            </li>
-            <li>
-              <a href="https://supportportal.brightcove.com">Contact Support</a>
-            </li>
-            <li>
-              <a href="https://support.brightcove.com/search.html">Search all Documentation</a>
-            </li>
-          </ul>
-  
-        </nav>
-        <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
-  
-          <h2>Training</h2>
-  
-          <ul class="menu">
-            <li>
-              <a href="https://studio.support.brightcove.com/get-started/training/online-training-courses.html">Online Courses</a>
-            </li>
-            <li>
-              <a href="https://studio.support.brightcove.com/get-started/training/register-training.html">Register for a course</a>
-            </li>
-            <li>
-              <a href="https://university.brightcove.com/">Brightcove University</a>
-            </li>
-          </ul>
-  
-        </nav>
-        <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
-  
-          <h2>Brightcove</h2>
-  
-          <ul class="menu">
-            <li>
-              <a href="https://www.brightcove.com">Brightcove.com</a>
-            </li>
-            <li>
-              <a href="https://community.brightcove.com/s/">Bright Spot Community Forum</a>
-            </li>
-            <li>
-              <a href="https://support.brightcove.com/product-updates.html">Product Release Notes</a>
-            </li>
-            <li>
-              <a href="https://support.brightcove.com/doc-updates.html">Documentation Updates</a>
-            </li>
-          </ul>
+<div style="margin-top: 20px;">
+  <div class="docs-content" style="padding-bottom: 0px;">
+    <div class="container">
+      <div class="docs-overview">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            
+            <li class="breadcrumb-item"><a class="theme-link" href="/">Home</a></li>
+            
+            
+            <li class="breadcrumb-item"><a class="theme-link" href="/live/">Live</a></li>
+            
+            
+            
+            <li class="breadcrumb-item active" aria-current="page">Live References</li>
+            
+            
+          </ol>
         </nav>
       </div>
     </div>
-    <div class="row">
-      <div class="region region-footer-bottom-center col-md-12">
-        <div class="bcls-copyright footer-menu">
-          <table>
-            <tr>
-              <td>
-                <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
-              </td>
-              <td><a href="https://www.brightcove.com/en/legal/privacy">Privacy</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Terms &amp; Conditions</a></td>
-              <td>
-                <div class="gf-links-cols footer-menu">
-                  <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" target="_blank" class="gf-social-linkedin" style="margin-right: 1rem;"><i data-feather="linkedin" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" target="_blank" class="gf-social-twitter" style="margin-right: 1rem;"><i data-feather="twitter" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" target="_blank" class="gf-social-facebook"><i data-feather="facebook" style="color:#8E9093;height: 1.25rem;"></i></a>
-                  </div>
-                </div>
-              </td>
-            </tr>
-          </table>
+  </div>
+</div>
+<div class="docs-content">
+  <div class="container">
+    <div class="docs-overview py-5">
+      
+      
+<!-- Template for section that has just pages -->
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <h1><i class="fa-light fa-books"></i> Live References</h1>
+  <article class="bcls-article">
+    <summary>References related to Live streams with Server-Side Ad Insertion (SSAI).</summary>
+
+    <div class="col-12 col-lg-4 py-3">
+      <div class="card shadow-sm" style="background: white" onclick="window.location.href = '/live/references/index.html'">
+        <div class="card-body">
+          <section class="flex-container">
+            <div>
+              <ul class="list-group list-group-flush">
+                
+                <li class="list-group-item"><a href="/live/references/reference.html" style="text-decoration: none;">Live API Reference</a></li>
+                
+                <li class="list-group-item"><a href="https://apis.support.brightcove.com/live-api/references/live-api-error-messages.html" style="text-decoration: none;">Live API: Error Messages</a></li>
+                
+                <li class="list-group-item"><a href="https://live.support.brightcove.com/release-notes/live-api-release-notes.html" style="text-decoration: none;">Live API Release Notes</a></li>
+                
+              </ul>
+            </div>
+          </section>
         </div>
       </div>
     </div>
-  </footer>
+  
+
+  
+
+</article>
+<footer class="footer">
+    <div class="container text-center py-5">
+        <div>Looking for something? go to our <a class="theme-link" href="https://support.brightcove.com/search.html" target="_blank">search page</small>
+    </div>
+</footer>
+</div>
+</div>
+</div>
+<div class="page-content" style="background-color: rgb(1, 5, 14);">
+  <div class="container" style="width: 50%;">
+    <footer class="py-5">
+      <div class="row">
+        <div class="col-6 col-md">
+          <h5 class="h5-text">Brightcove Support</h5>
+          <ul class="list-unstyled text-small" style="color: white ;">
+            <li><a class="a-text" href="https://status.brightcove.com">System Status</a></li>
+            <li><a class="a-text" href="https://supportportal.brightcove.com">Contact Support</a></li>
+            <li><a class="a-text" href="https://support.brightcove.com/search.html">Search all documentation</a></li>
+          </ul>
+        </div>
+      
+        <div class="col-6 col-md">
+          <h5 class="h5-text">Training</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="a-text" href="https://studio.support.brightcove.com/get-started/training/online-training-courses.html">Online courses</a></li>
+            <li><a class="a-text" href="https://studio.support.brightcove.com/get-started/training/register-training.html">Register for a course</a></li>
+            <li><a class="a-text" href="https://university.brightcove.com/">Brightcove Academy</a></li>
+          </ul>
+        </div>
+      
+        <div class="col-6 col-md">
+          <h5 class="h5-text">Brightcove</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="a-text" href="https://www.brightcove.com">Brightcove.com</a></li>
+            <li><a class="a-text" href="https://community.brightcove.com/s/">Bright Spot Community Forum</a></li>
+            <li><a class="a-text" href="https://support.brightcove.com/product-updates.html">Product release notes</a></li>
+            <li><a class="a-text" href="https://support.brightcove.com/doc-updates.html">Documentation updates</a></li>
+          </ul>
+        </div>
+      </div>
+    
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+      <p>© Brightcove Inc. All rights reserved.</p>
+      <a class="a-text" href="https://www.brightcove.com/en/legal/privacy">Privacy</a> 
+      <a class="a-text" href="https://www.brightcove.com/en/terms-and-conditions">Terms &amp; Conditions</a>
+
+      <ul class="list-unstyled d-flex">
+        <li class="ms-3"><a href="https://www.linkedin.com/company/16439"
+        title="LinkedIn" target="_blank" class="gf-social-linkedin"
+        style="margin-right: 1rem;"><i data-feather="linkedin"
+          style="color:#8E9093;height: 1.25rem;"></i></a></li>
+
+        <li class="ms-3"><a
+        href="https://twitter.com/brightcove" title="Twitter" target="_blank"
+        class="gf-social-twitter" style="margin-right: 1rem;"><i
+          data-feather="twitter" style="color:#8E9093;height: 1.25rem;"></i></a></li>
+
+        <li class="ms-3"><a
+        href="https://www.facebook.com/Brightcove" title="Facebook"
+        target="_blank" class="gf-social-facebook"><i data-feather="facebook"
+          style="color:#8E9093;height: 1.25rem;"></i></a></li>
+      </ul>
+      </div>
+    </footer>
+  </div>
 </div>
 
-<script src="/assets/s-site-assets-scripts/sajari-search-box.js"></script>
+<script translate="no">
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documentation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search in the docs...", // Input element placeholder,
+    styling: {
+      components: {
+        
+        input: {
+          container: {
+          backgroundColor: 'white',
+          }
+        
+        }
+      }
+    },
+    maxSuggestions: 5, // Maximum number of suggestions to show
+      attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+
+  
+
+
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+    window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+  </script>
+  
+  <!-- Javascript -->          
+  <script src="/assets/s-site-assets-template-stylesheets/plugins/popper.min.js"></script>
+  <script src="/assets/s-site-assets-template-stylesheets/plugins/bootstrap/js/bootstrap.min.js"></script>  
+
+
+  <!-- Page Specific JS -->
+  <script src="/assets/s-site-assets-template-stylesheets/plugins/smoothscroll.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+  <script src="/assets/s-site-assets-template-stylesheets/js/highlight-custom.js"></script> 
+  <script src="/assets/s-site-assets-template-stylesheets/plugins/simplelightbox/simple-lightbox.min.js"></script>      
+  <script src="/assets/s-site-assets-template-stylesheets/plugins/gumshoe/gumshoe.polyfills.min.js"></script> 
+  <script src="/assets/s-site-assets-template-stylesheets/js/docs.js"></script> 
+
+  <!-- original footer components -->
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
   <script src="/assets/s-site-assets-scripts/https-fix.js"></script>
   <script src="/assets/s-site-assets-scripts/setDate.js"></script>
+  <script src="/assets/s-site-assets-scripts/selector.js"></script>
   
   <script src="/assets/s-site-assets-scripts/prism.js"></script>
   
@@ -567,7 +619,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <script src="https://support.brightcove.com/site-assets/js/learning-paths/learning-paths.js"></script>
   <!-- <script src="/assets/s-site-assets-scripts/site.js"></script> -->
   <script src="/assets/s-site-assets-scripts/tabs.js"></script>
-  <script src="/assets/s-site-assets-scripts/toc.js"></script>
   <script src="/assets/js/sites_nav.js"></script>
   <script src="/assets/s-site-assets-scripts/bcls-utils.js"></script>
   <script src="/assets/s-site-assets-scripts/local-link-fix.js"></script>
@@ -608,6 +659,5 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     }
     </style>
 
-</body>
-
-</html>
+  </body>
+</html> 

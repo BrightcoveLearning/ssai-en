@@ -4,16 +4,20 @@
 - section: 
   name: 'Getting Started'
   url: '/getting-started/index.html'
+  description: 'Topics to help you get started with SSAI.'
+  icon: fa-regular fa-map-pin
   docs:
     - name: 'SSAI Overview'
       url: '/getting-started/video-cloud-ssai-overview.html'
     - name: 'Configuring Server-Side Ad Settings'
-      url: 'https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html'
+      url: 'https://studio.support.brightcove.com/admin/general/configuring-server-side-ad-settings.html'
     - name: 'SSAI Ad tracking log'
       url: '/getting-started/video-cloud-ssai-ad-logs.html'
 - section: 
   name: 'Video-On-Demand Guides'
   url: '/vod/guides/index.html'
+  icon: fa-regular fa-film
+  description: Guides to using SSAI with video-on-demand
   docs:
     - name: 'Implementing SSAI with Brightcove Player'
       url: 'https://player.support.brightcove.com/plugins/implementing-server-side-ads-brightcove-player.html'
@@ -32,6 +36,8 @@
 - section: 
   name: 'Video-On-Demand References'
   url: 'https://apis.support.brightcove.com/ssai/references/index.html'
+  description: 'Reference docs for SSAI with VOD.'
+  icon: fa-light fa-books
   docs:
     - name: 'SSAI API Reference'
       url: 'https://apis.support.brightcove.com/ssai/references/reference.html'
@@ -42,6 +48,8 @@
 - section: 
   name: 'Live Guides'
   url: '/live/guides/index.html'
+  icon: fa-regular fa-satellite-dish
+  description: Guides to using SSAI with live steams.
   docs:
     - name: 'Implementing SSAI in the Live Module'
       url: 'https://live.support.brightcove.com/live-module/implementing-server-side-ads-live-module.html'
@@ -58,6 +66,8 @@
 - section: 
   name: 'Live References'
   url: '/live/references/index.html'
+  description: 'Reference docs for SSAI with Live streams.'
+  icon: fa-light fa-books
   docs:
     - name: 'Live API Reference'
       url: '/live/references/reference.html'
@@ -68,6 +78,8 @@
 - section: 
   name: 'Developer Support'
   url: '/support/index.html'
+  icon: fa-regular fa-rectangle-code
+  description: Learn how to get help from Brightcove Support
   docs:
     - name: 'Viewing the Brightcove System Status Page'
       url: '/support/viewing-brightcove-system-status-page.html'

@@ -1,6 +1,7 @@
 ---
 title: Brightcove SSAI Documentation
 parent: null
+layout: landing_page
 ---
 <style translate="no">
   h1 {
@@ -15,38 +16,49 @@ parent: null
   <section class="landing-page-header" id="landing_page_header">
     <h1>{{ site.title }}</h1>
     <table width="100%" border="0">
-	<tbody>
-		<tr>
-			<td width="30%">
-			<div data-experience="5be4439bb5cd1c00106dc3f5" data-video-ids="5995509672001">&nbsp;</div>
-			<script src="https://players.brightcove.net/20318290001/experience_5be4439bb5cd1c00106dc3f5/live.js"></script></td>
-			<!--<td width="35%"><img height="61" src="https://solutions.brightcove.com/bcls/prod/ssai-logo.png" /></td>-->
-			<td width="70%">
+  <tbody>
+    <tr>
+      <td width="30%">
+      <div data-experience="5be4439bb5cd1c00106dc3f5" data-video-ids="5995509672001">&nbsp;</div>
+      <script src="https://players.brightcove.net/20318290001/experience_5be4439bb5cd1c00106dc3f5/live.js"></script></td>
+      <!--<td width="35%"><img height="61" src="https://solutions.brightcove.com/bcls/prod/ssai-logo.png" /></td>-->
+      <td width="70%">
 
-			<p>Brightcove Server-Side Ad Insertion (SSAI), formerly known as Once, dynamically stitches targeted ads into your content on the server and delivers both as one continuous stream.</p>
+      <p>Brightcove Server-Side Ad Insertion (SSAI), formerly known as Once, dynamically stitches targeted ads into your content on the server and delivers both as one continuous stream.</p>
       <p>
         You’ll prevent ad blockers from detecting your ads, deliver a better viewing experience to your audience by eliminating buffering, and preserve your revenue.
       </p>
-			</td>
-		</tr>
-	</tbody>
+      </td>
+    </tr>
+  </tbody>
 </table>
   </section>
-  <section class="card-wrapper">
-    {% for section in site.data.navigation offset:1 %}
-    <section class="bcls-card-small" onclick="window.location.href='{{ section.url }}'">
+<!-- main content -->
+<div class="page-content">
+  <div class="container">
+    <div class="docs-overview py-5">
+      <div class="row justify-content-center">
 
 
-      <div class="card-content">
-        <h2>{{ section.name }}</h2>
-        <ul>
-          {% for doc in section.docs limit:4 %}
-          <li><a href="{{ doc.url }}">{{ doc.name }}</a></li>
-          {% endfor %}
-        </ul>
-        <!-- <p style="font-size:small;"><a href="{{ section.url }}">View all...</a></p> -->
-      </div>
-    </section>
-    {% endfor %}
-  </section>
-</article>
+        {% for section in site.data.navigation offset:1 %}
+        <div class="col-12 col-lg-4 py-3">
+          <div class="card-hover card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title mb-3">
+                <span class="span-icon card-icon-holder icon-theme me-2">
+                  <i class="{{ section.icon }}"></i>
+                </span><!--//card-icon-holder-->
+                <span class="card-title-text">{{ section.name }}</span>
+              </h5>
+              <div class="card-text">
+                {{ section.description }}
+              </div>
+              <a class="card-link-mask" href="{{ section.url }}"></a>
+            </div><!--//card-body-->
+          </div><!--//card-->
+        </div><!--//col-->
+        {% endfor %}
+      </div><!--//row-->
+    </div><!--//container-->
+  </div><!--//container-->
+</div><!--//page-content-->
