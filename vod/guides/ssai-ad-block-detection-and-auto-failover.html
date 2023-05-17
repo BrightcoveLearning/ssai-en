@@ -17,18 +17,18 @@ parent: Video-On-Demand
 <p>SSAI ad failover requires the following:</p>
 
 <ul>
-	<li>IMA3 plugin v3.2.0+</li>
-	<li>SSAI plugin v1.3.1+</li>
-	<li>Brightcove Player version 6.8.0+</li>
+  <li>IMA3 plugin v3.2.0+</li>
+  <li>SSAI plugin v1.3.1+</li>
+  <li>Brightcove Player version 6.8.0+</li>
 </ul>
 </aside>
 
 <h3>Caveats</h3>
 
 <ul>
-	<li>Ad blocker detection is very reliable, but not 100%.</li>
-	<li>Customers using this feature must be using Dynamic Delivery.</li>
-	<li>Only IMA and SSAI plugins are supported (no FreeWheel).</li>
+  <li>Ad blocker detection is very reliable, but not 100%.</li>
+  <li>Customers using this feature must be using Dynamic Delivery.</li>
+  <li>Only IMA and SSAI plugins are supported (no FreeWheel).</li>
 </ul>
 </section>
 
@@ -38,20 +38,20 @@ parent: Video-On-Demand
 <p>Here is a sample player configured with IMA3 ads which will auto-failover to server-side ads when an ad blocker is detected in the browser.</p>
 
 <ul>
-	<li>
-	<p><strong>Without ad blocker</strong></p>
+  <li>
+  <p><strong>Without ad blocker</strong></p>
 
-	<p>If you run the Codepen sample below in a browser without an ad blocker, you should see a DFP inline skippable ad by Google. This is the IMA3, client-side pre-roll ad:</p>
+  <p>If you run the Codepen sample below in a browser without an ad blocker, you should see a DFP inline skippable ad by Google. This is the IMA3, client-side pre-roll ad:</p>
 
-	<p><img alt="Client-side ad" src="/assets/images/ssai/dfp-ad.png" /></p>
-	</li>
-	<li>
-	<p><strong>With ad blocker</strong></p>
+  <p><img alt="Client-side ad" src="/assets/images/ssai/dfp-ad.png" /></p>
+  </li>
+  <li>
+  <p><strong>With ad blocker</strong></p>
 
-	<p>If you run the Codepen sample below in a browser with an ad blocker, you should see a Brightcove guide to digital marketing ad. This is the Server-side ad (SSAI) as defined in our ad configuration:</p>
+  <p>If you run the Codepen sample below in a browser with an ad blocker, you should see a Brightcove guide to digital marketing ad. This is the Server-side ad (SSAI) as defined in our ad configuration:</p>
 
-	<p><img alt="Server-side ad" src="/assets/images/ssai/bc-ad.png" /></p>
-	</li>
+  <p><img alt="Server-side ad" src="/assets/images/ssai/bc-ad.png" /></p>
+  </li>
 </ul>
 
 <p>Try running the Codepen sample below with and without an ad blocker.</p>
@@ -65,9 +65,9 @@ parent: Video-On-Demand
 <p>To play server-side ads from Video Cloud, you must follow these steps:</p>
 
 <ol class="bcls-tasklist-restart">
-	<li><a href="#Create_an_ad_configuration">Create an ad configuration</a></li>
-	<li><a href="#Create_a_Brightcove_player">Create a Brightcove player</a></li>
-	<li><a href="#Implementing_autofailover_using_Studio">Implement auto-failover using Studio </a></li>
+  <li><a href="#Create_an_ad_configuration">Create an ad configuration</a></li>
+  <li><a href="#Create_a_Brightcove_player">Create a Brightcove player</a></li>
+  <li><a href="#Implementing_autofailover_using_Studio">Implement auto-failover using Studio </a></li>
 </ol>
 
 <h3 id="Create_an_ad_configuration">Create an ad configuration</h3>
@@ -75,20 +75,20 @@ parent: Video-On-Demand
 <p>The ad configuration defines various aspects of SSAI playback, including ad calls, beacons, and other configuration options. Your ad response can be VAST, VMAP or DFP Ad Rules. To create an ad configuration, follow these steps:</p>
 
 <ol class="bcls-tasklist-restart">
-	<li>
-	<p>In Video Cloud Studio, expand the <strong>ADMIN</strong> menu and select <strong>Server-Side Ad Settings</strong>.</p>
+  <li>
+  <p>In Video Cloud Studio, expand the <strong>ADMIN</strong> menu and select <strong>Server-Side Ad Settings</strong>.</p>
 
-	<figure class="bcls-figure"><img class="bcls-image--no-border" alt="Ad configuration admin" src="/assets/images/ssai/ad-config-admin.png" />
-	<figcaption class="bcls-caption--image">Ad configuration admin</figcaption>
-	</figure>
-	</li>
-	<li>
-	<p>Add information for your ad configuration and select <strong>Save</strong>.</p>
+  <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Ad configuration admin" src="/assets/images/ssai/ad-config-admin.png" />
+  <figcaption class="bcls-caption--image">Ad configuration admin</figcaption>
+  </figure>
+  </li>
+  <li>
+  <p>Add information for your ad configuration and select <strong>Save</strong>.</p>
 
-	<figure class="bcls-figure"><img class="bcls-image--no-border" alt="Ad settings" src="/assets/images/ssai/ad-settings.png" />
-	<figcaption class="bcls-caption--image">Ad settings</figcaption>
-	</figure>
-	</li>
+  <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Ad settings" src="/assets/images/ssai/ad-settings.png" />
+  <figcaption class="bcls-caption--image">Ad settings</figcaption>
+  </figure>
+  </li>
 </ol>
 
 <p>For details, see the <a href="https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html">Configuring Server-Side Ad Settings</a> document.</p>
@@ -108,40 +108,54 @@ parent: Video-On-Demand
 <p>The easiest way to configure your player for auto-failover ads is with Video Cloud Studio. Once you have created an ad configuration and player, then you are ready to configure the player for auto-failover as follows:</p>
 
 <ol class="bcls-tasklist-restart">
-	<li>Open the <strong>PLAYERS</strong> module and locate the player to which you want to add advertising functionality.</li>
-	<li>Select the link for the player to open the player's properties.</li>
-	<li>Select <strong>Advertising</strong> in the left navigation menu.</li>
-	<li>Check the <strong>Enable Client-Side (IMA)</strong> checkbox.</li>
-	<li>
-	<p>Include the URL for your IMA Ad Tag. For this example, we will use the sample Ad Tag URL.</p>
+  <li>Open the <strong>PLAYERS</strong> module and locate the player to which you want to add advertising functionality.</li>
+  <li>Select the link for the player to open the player's properties.</li>
+  <li>Select <strong>Advertising</strong> in the left navigation menu.</li>
+  <li>Check the <strong>Enable Client-Side (IMA)</strong> checkbox.</li>
+  <li>
+  <p>Include the URL for your IMA Ad Tag. For this example, we will use the sample Ad Tag URL.</p>
 
-	<figure class="bcls-figure"><img class="bcls-image--no-border" alt="Enable client-side ads" src="/assets/images/ssai/enable-client-side.png" />
-	<figcaption class="bcls-caption--image">Enable client-side ads</figcaption>
-	</figure>
+  <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Enable client-side ads" src="/assets/images/ssai/enable-client-side.png" />
+  <figcaption class="bcls-caption--image">Enable client-side ads</figcaption>
+  </figure>
 
-	<p>For details about the player advertising properties, see the <a href="https://studio.support.brightcove.com/players/configuring-player-advertising-using-players-module.html">Configuring Player Advertising using the Players Module</a> document.</p>
-	</li>
-	<li>
-	<p>Check the <strong>Enable Server-Side (SSAI)</strong> checkbox.</p>
+  <p>For details about the player advertising properties, see the <a href="https://studio.support.brightcove.com/players/configuring-player-advertising-using-players-module.html">Configuring Player Advertising using the Players Module</a> document.</p>
+  </li>
+  <li>
+  <p>Check the <strong>Enable Server-Side (SSAI)</strong> checkbox.</p>
 
-	<aside class="bcls-aside bcls-aside--information">The server-side option will not appear unless your account has been enabled for SSAI.</aside>
-	</li>
-	<li>From the <strong>Select Configuration</strong> dropdown menu, select the ad configuration that you would like to associate with this player.</li>
-	<li>If you want overlays to display over your ads, check the <strong>Enable ad information overlays</strong> checkbox. This includes "Learn More" and ad count down overlays.</li>
-	<li>
-	<p>Ad block detection with server-side ad failover is enabled automatically when you enable both client-side and server-side ads.</p>
+  <aside class="bcls-aside bcls-aside--information">The server-side option will not appear unless your account has been enabled for SSAI.</aside>
+  </li>
+  <li>From the <strong>Select Configuration</strong> dropdown menu, select the ad configuration that you would like to associate with this player.</li>
+  <li>If you want overlays to display over your ads, check the <strong>Enable ad information overlays</strong> checkbox. This includes "Learn More" and ad count down overlays.</li>
+  <li>
+  <p>Ad block detection with server-side ad failover is enabled automatically when you enable both client-side and server-side ads.</p>
 
-	<figure class="bcls-figure"><img class="bcls-image--no-border" alt="SSAI advertising in Players module" src="/assets/images/ssai/enable-ssai.png" />
-	<figcaption class="bcls-caption--image">SSAI advertising in Players module</figcaption>
-	</figure>
-	</li>
-	<li>Select <strong>Save</strong>.</li>
-	<li>
-	<p>To publish the player, select <strong>Publish &amp; Embed &gt; Publish Changes</strong>.</p>
+  <figure class="bcls-figure"><img class="bcls-image--no-border" alt="SSAI advertising in Players module" src="/assets/images/ssai/enable-ssai.png" />
+  <figcaption class="bcls-caption--image">SSAI advertising in Players module</figcaption>
+  </figure>
+  </li>
+  <li>Select <strong>Save</strong>.</li>
+  <li>
+  <p>To publish the player, select <strong>Publish &amp; Embed &gt; Publish Changes</strong>.</p>
 
-	<p>That's all you need to do to enable auto-failover for your player.</p>
-	</li>
+  <p>That's all you need to do to enable auto-failover for your player.</p>
+  </li>
 </ol>
+
+<h3>If you are writing custom code</h3>
+<p>If you want to write integration code against a player using the ad failover feature, there is an additional consideration. Generally the Brightcove player operates under what we call "the synchronous contract", but when using ad failover, we have to break that contract because ad block detection cannot reliably happen in a synchronous manner. Because of this, custom scripts that you are writing that interact with the player may execute before player has actually been created.</p>
+
+<p>We recommend getting around this problem by using <a href="https://videojs.com/guides/hooks/">Videojs hooks</a>. Hooks allow an integrator to hook into the creation lifecycle of a player. In this case, the <code translate="No">setup</code> hook is the one that is needed.</p>
+
+<p>For example, see the code fragment below:</p>
+<pre><code class="language-html" translate="No">&lt;video-js id=&quot;example&quot;&gt;&lt;/video-js&gt;
+  &lt;script src=&quot;//players.brightcove.net/.../index.min.js&quot;&gt;&lt;/script&gt;
+  <span class="bcls-highlight">&lt;script&gt;
+    videojs.hookOnce(&#39;setup&#39;, (player) =&gt; {
+      player.on(&#39;play&#39;, () =&gt; player.log(&#39;play requested&#39;));
+    });
+  &lt;/script&gt;</span></code></pre>
 
 <h3 id="Play_a_video_with_ads">Play a video with ads</h3>
 
