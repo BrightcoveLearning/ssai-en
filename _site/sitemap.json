@@ -30,6 +30,11 @@
   },
 
   {
+      "newURL": "https://ssai.support.brightcove.com/getting-started/how-ssai-works.html",
+      "oldURL": "/how-ssai-works"
+  },
+
+  {
       "newURL": "https://ssai.support.brightcove.com/icons.html",
       "oldURL": "/icons"
   },
@@ -37,11 +42,6 @@
   {
       "newURL": "https://ssai.support.brightcove.com/live/guides/implementing-player-enhancements-live-ssai.html",
       "oldURL": "/implementing-player-enhancements-live-ssai"
-  },
-
-  {
-      "newURL": "https://ssai.support.brightcove.com/live/",
-      "oldURL": "/index"
   },
 
   {
@@ -86,6 +86,11 @@
 
   {
       "newURL": "https://ssai.support.brightcove.com/support/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://ssai.support.brightcove.com/live/",
       "oldURL": "/index"
   },
 

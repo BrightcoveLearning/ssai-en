@@ -1,0 +1,47 @@
+---
+title: How does SSAI work?
+description: 'In this topic, you will learn how does SSAI operate.'
+parent: Getting Started
+layout: staging
+---
+
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="glosary">Glosary</h2>
+    <ul>
+        <li><strong> AD INSERTION (CSAI) </strong><br>
+            Client-side Ad Insertion (CSAI) works at the client's request with the client in this case being the player. The player requests the ad from the ad server when the player reaches either a cue point in the stream or a marker noted in the accompanying manifest. The server would then select the ad that best fits based on data collected to the player which will then pause the video content to play the ad and resume afterward. CSAI allows for the delivery of rich media experiences using VPAID which is not supported by SSAI.
+        </li>
+        <li><strong> CUE POINTS </strong><br>
+            Cue points are timecodes that indicate at what point in time an ad should be inserted. Cue points can be inserted using the "Media" module in Studio as ad cue points that are displayed as markers on a timeline.
+        </li>
+        <li><strong> SERVER-SIDE AD INSERTION </strong><br>
+            Server-side Ad Insertion (SSAI) delivers ads directly from the ad server itself eliminating the need for client requests for ads resulting in reduced instances of blocked advertisements. SSAI delivers a more broadcast-like experience since the ads are inserted into the video stream, however rich media advertisements cannot be delivered.        
+        </li>
+        <li><strong> VIDEO AD SERVING TEMPLATE (VAST) </strong><br>
+            Video Ad Serving Template (VAST) is a script that allows video players to run ads and coordinate with ad servers. Using VAST lets ads run exactly how the publisher wants on various devices such as desktops, laptops, tablets, and mobile. Using VAST allows the server and player to communicate without compatibility issues, so the device or connection do not matter, enabling the server to track impressions and viewability, or if the ad has been seen by the user.        
+        </li>
+        <li><strong> VIDEO MULTIPLE AD PLAYLIST (VMAP) </strong><br>
+            Video Multiple Ad Playlist (VMAP) is defined by the IAB as an XML template that video content owners can use to describe the structure for ad inventory insertion when they don't control the video player or the content distribution outlet. VMAP scripts describe any prerolls, midrolls, postrolls, and non-linear ads for a video and when they should be shown. Utilizing VMAP is a best practice since it's less manual than cue points.       
+        </li>
+        <li><strong> VIDEO PLAYER-AD INTERFACE (VPAID) </strong><br>
+            Video Player-Ad Interface Definition (VPAID); where VAST is a script, VPAID is code that runs in the player. VPAID supports user interaction with the ad, collects ad interaction details and enables data-rich, interactive video experience including read more overlays. VPAID also sets what time and where the ad appears within the video content.
+        </li>
+        <li><strong> VIEWABILITY </strong><br>
+            Viewability is an online advertising metric that aims to track only impressions that can actually be seen by users. For example, if an ad is loaded and plays at the bottom of a webpage but a user doesn't scroll down far enough to see it, that impression would not be deemed viewable.
+        </li>
+    </ul>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="function">How does it work?</h2>
+    <h3></h3>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="FAQ">FAQ / additional notes</h2>
+  </section>
+
+</article>
