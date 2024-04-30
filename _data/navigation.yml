@@ -5,7 +5,7 @@
   name: 'Getting Started'
   url: '/getting-started/index.html'
   description: 'Topics to help you get started with SSAI.'
-  icon: fa-regular fa-map-pin
+  icon: fa-solid fa-map-pin
   docs:
     - name: 'SSAI Overview'
       url: '/getting-started/video-cloud-ssai-overview.html'
@@ -16,7 +16,7 @@
 - section: 
   name: 'Video-On-Demand Guides'
   url: '/vod/guides/index.html'
-  icon: fa-regular fa-film
+  icon: fa-solid fa-film
   description: Guides to using SSAI with video-on-demand
   docs:
     - name: 'Implementing SSAI with Brightcove Player'
@@ -37,7 +37,7 @@
   name: 'Video-On-Demand References'
   url: 'https://apis.support.brightcove.com/ssai/references/index.html'
   description: 'Reference docs for SSAI with VOD.'
-  icon: fa-light fa-books
+  icon: fa-regular fa-bookmark
   docs:
     - name: 'SSAI API Reference'
       url: 'https://apis.support.brightcove.com/ssai/references/reference.html'
@@ -48,7 +48,7 @@
 - section: 
   name: 'Live Guides'
   url: '/live/guides/index.html'
-  icon: fa-regular fa-satellite-dish
+  icon: fa-solid fa-satellite-dish
   description: Guides to using SSAI with live steams.
   docs:
     - name: 'Implementing SSAI in the Live Module'
@@ -67,7 +67,7 @@
   name: 'Live References'
   url: '/live/references/index.html'
   description: 'Reference docs for SSAI with Live streams.'
-  icon: fa-light fa-books
+  icon: fa-solid fa-bookmark
   docs:
     - name: 'Live API Reference'
       url: '/live/references/reference.html'
@@ -78,7 +78,7 @@
 - section: 
   name: 'Developer Support'
   url: '/support/index.html'
-  icon: fa-regular fa-rectangle-code
+  icon: fa-solid fa-code
   description: Learn how to get help from Brightcove Support
   docs:
     - name: 'Viewing the Brightcove System Status Page'
