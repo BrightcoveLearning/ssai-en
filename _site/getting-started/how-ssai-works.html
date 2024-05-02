@@ -476,12 +476,36 @@
         <li><strong> VIEWABILITY </strong><br>
             Viewability is an online advertising metric that aims to track only impressions that can actually be seen by users. For example, if an ad is loaded and plays at the bottom of a webpage but a user doesn't scroll down far enough to see it, that impression would not be deemed viewable.
         </li>
+        <li><strong> BEACONING </strong><br>
+           ...
+        </li>
+        <li><strong> CREATIVE HANDLING </strong><br>
+            ...
+        </li>
     </ul>
   </section>
 
   <section class="bcls-section">
-    <h2 id="function">How does it work?</h2>
-    <h3></h3>
+    <h2 id="function">How does SSAI work?</h2>
+    <p>After receiving a response from the ad provider, Server side insersion parses the response according to the type received to identify what ad must play and when. This generates a VMAP that gets sent to the player.</p>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/ssai/provDiagram.webp" /></figure>
+  
+    <h2>How to identify unique ID (creative handling)</h2>
+    <h3>Vast</h3>
+    <p>Here is how we identify it...</p>
+    <h3>Vmap</h3>
+    <h3>SmartXML</h3>
+
+    <h2>Rendition selection</h2>
+    <p>...</p>
+
+
+    <h2>Beaconing</h2>
+    <p>...</p>
+    <aside class="bcls-aside bcls-aside--information language-editable">If you disable server side beaconing, the player will provide beaconing automatically.</aside>
+    <aside class="bcls-aside bcls-aside--warning language-editable">Client side beaconing is more accourate, it is recomended to use this option when striving for more reliable add consumption informaiton.</aside>
+
+    <p>falta mas info de creative handling y de rendition selection</p>
   </section>
 
   <section class="bcls-section">
