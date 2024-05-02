@@ -1,6 +1,6 @@
 ---
 title: How does SSAI work?
-description: 'In this topic, you will learn how does SSAI operate.'
+description: 'In this topic, you will learn how SSAI operates.'
 parent: Getting Started
 layout: staging
 ---
@@ -9,7 +9,7 @@ layout: staging
 <article class="bcls-article">
   <summary>{{ page.description }}</summary>
   <section class="bcls-section">
-    <h2 id="glosary">Glosary</h2>
+    <h2 id="glossary">Glossary</h2>
     <ul>
         <li><strong> AD INSERTION (CSAI) </strong><br>
             Client-side Ad Insertion (CSAI) works at the client's request with the client in this case being the player. The player requests the ad from the ad server when the player reaches either a cue point in the stream or a marker noted in the accompanying manifest. The server would then select the ad that best fits based on data collected to the player which will then pause the video content to play the ad and resume afterward. CSAI allows for the delivery of rich media experiences using VPAID which is not supported by SSAI.
@@ -46,22 +46,28 @@ layout: staging
     <p>After receiving a response from the ad provider, Server side insersion parses the response according to the type received to identify what ad must play and when. This generates a VMAP that gets sent to the player.</p>
     <figure class="bcls-figure"><img alt="" src="/assets/images/ssai/provDiagram.webp" /></figure>
   
-    <h2>How to identify unique ID (creative handling)</h2>
-    <h3>Vast</h3>
-    <p>Here is how we identify it...</p>
-    <h3>Vmap</h3>
-    <h3>SmartXML</h3>
+    <h3>How SSAI identifies the unique ID (creative handling)</h3>
+    <ul>
+        <li><strong>Vast</strong><br> 
+            Here is how we identify it...
+        </li>
+        <li><strong>Vmap</strong><br> 
+            Here is how we identify it...
+        </li>
+        <li><strong>SmartXML</strong><br> 
+            Here is how we identify it...
+        </li>
+    </ul>
 
-    <h2>Rendition selection</h2>
+    <h3>Rendition selection</h3>
     <p>...</p>
 
 
-    <h2>Beaconing</h2>
+    <h3>Beaconing</h3>
     <p>...</p>
     <aside class="bcls-aside bcls-aside--information language-editable">If you disable server side beaconing, the player will provide beaconing automatically.</aside>
     <aside class="bcls-aside bcls-aside--warning language-editable">Client side beaconing is more accourate, it is recomended to use this option when striving for more reliable add consumption informaiton.</aside>
 
-    <p>falta mas info de creative handling y de rendition selection</p>
   </section>
 
   <section class="bcls-section">
