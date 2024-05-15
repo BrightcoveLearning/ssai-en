@@ -452,6 +452,52 @@
 <h1>How does SSAI work?</h1>
 <article class="bcls-article">
   <summary>In this topic, you will learn how SSAI operates.</summary>
+  
+
+  <section class="bcls-section">
+    <h2 id="function">How does SSAI work?</h2>
+    <p>After receiving a response from the ad provider, Server side insersion parses the response according to the type received to identify what ad must play and when. This generates a VMAP that gets sent to the player.</p>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/ssai/provDiagram.webp" /></figure>
+  
+    <h3>Creative Handling</h3>
+    <p>The creative rendition URL is hashed to uniquely identify the right ad.</p>
+    <ul>
+        <li><strong>Vast/Vmap</strong> use a different field depending on the ad system: <br>
+            <ul>
+                <li>&lt;AdSystem&gt; tag from ad response define the FK</li>
+                <li>SSAI uses &lt;CreativeId&gt; as FK with these ad providers: "gdfp", "dcm", "dbm", "mediamind", "innovid ads", "playtime", "playtime rtb", "turn", "transmitlive", "springserve"</li>
+                <li>SSAI uses &lt;creative AdId&gt; as FK with these ad providers: "freewheel", "soads", "ft", "the trade desk", "yahoo ad manager plus"</li>
+                <li>SSAI uses &lt;TitleId&gt; as FK with these ad providers: "videohub", "tidaltv", "mydas"</li>
+                <li>For spotxChange it uses &lt;AdId&gt; but splitted into 3 parts, and takes only the first two parts as FK.</li>
+                <li>The default one is &lt;AdId&gt; for any ad providers that are not listed</li>
+            </ul>
+        </li>
+       
+        <li><strong>SmartXML</strong><br> 
+            Smartxml: uses as foreignkey hashed Ad.SourceURL.
+            In the case in which the SSAICreativeID parameter exists within the ad’s ad reference.
+
+        </li>
+    </ul>
+
+    <h3>Rendition selection</h3>
+    <h4><strong>VAST/Vmap: </strong></h4>
+    <p>We sort based on different fields in the following order: <br>Bitrate: If bitrate is equal, we use the type with a whitelist. If the type is the same, we use the width. If the with is the same, we use the height.</p>
+    <h4><strong>SmartXML: </strong></h4>
+    <p>We sort and get the asset with the highest byte count; SSAI generates a manifest with the combination of the video segments and ad segments of the same rendition type. Therefore all assets in a rendition will have the same quality.</p>
+    <aside class="bcls-aside bcls-aside--information language-editable">SSAI disregards all renditions found in the VAST/SmartXML and only takes the highest-quality rendition obtained after sorting. It takes the creative URL and sends it to a regular ingest process using the same ingestion profile as the source video.</aside>
+
+    <h3>Beaconing</h3>
+    <p>...</p>
+    <aside class="bcls-aside bcls-aside--information language-editable">If you disable server side beaconing, the player will provide beaconing automatically.</aside>
+    <aside class="bcls-aside bcls-aside--warning language-editable">Client side beaconing is more accourate, it is recomended to use this option when striving for more reliable add consumption informaiton.</aside>
+
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="FAQ">FAQ / additional notes</h2>
+  </section>
+
   <section class="bcls-section">
     <h2 id="glossary">Glossary</h2>
     <ul>
@@ -477,48 +523,16 @@
             Viewability is an online advertising metric that aims to track only impressions that can actually be seen by users. For example, if an ad is loaded and plays at the bottom of a webpage but a user doesn't scroll down far enough to see it, that impression would not be deemed viewable.
         </li>
         <li><strong> BEACONING </strong><br>
-           ...
+           The process of making a request to the the ad server stating that an ad has been requested.
         </li>
         <li><strong> CREATIVE HANDLING </strong><br>
-            ...
+            The process in which SSAI identifies the unique ID needed to identify each ad.
         </li>
     </ul>
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="function">How does SSAI work?</h2>
-    <p>After receiving a response from the ad provider, Server side insersion parses the response according to the type received to identify what ad must play and when. This generates a VMAP that gets sent to the player.</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/ssai/provDiagram.webp" /></figure>
-  
-    <h3>How SSAI identifies the unique ID (creative handling)</h3>
-    <ul>
-        <li><strong>Vast</strong><br> 
-            Here is how we identify it...
-        </li>
-        <li><strong>Vmap</strong><br> 
-            Here is how we identify it...
-        </li>
-        <li><strong>SmartXML</strong><br> 
-            Here is how we identify it...
-        </li>
-    </ul>
-
-    <h3>Rendition selection</h3>
-    <p>...</p>
-
-
-    <h3>Beaconing</h3>
-    <p>...</p>
-    <aside class="bcls-aside bcls-aside--information language-editable">If you disable server side beaconing, the player will provide beaconing automatically.</aside>
-    <aside class="bcls-aside bcls-aside--warning language-editable">Client side beaconing is more accourate, it is recomended to use this option when striving for more reliable add consumption informaiton.</aside>
-
-  </section>
-
-  <section class="bcls-section">
-    <h2 id="FAQ">FAQ / additional notes</h2>
   </section>
 
 </article>
+
 <!-- <div class="col-sm-2 right-side-bar" style="display: inline-block;max-width: 20%;"> -->
   
   <nav class="right-side-nav" id="right_side_nav">
