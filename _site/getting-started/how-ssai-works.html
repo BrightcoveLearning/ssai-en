@@ -456,16 +456,10 @@
 
   <section class="bcls-section">
     <h2 id="function">How does SSAI work?</h2>
-    <p>After receiving a response from the ad provider, <sup>1</sup> Server side insersion<sup>2</sup> parses the response according to the type received to identify what ad must play and when. This generates a new VMAP<sup>3</sup> with the requested ads inserted that gets sent to the player<sup>4</sup> for playback.</p>
+    <p>After receiving a response from the ad provider, <sup>1</sup> Server side insersion<sup>2</sup> parses the response and Manifest according to the type received to identify what ad must play and when. This generates a new VMAP<sup>3</sup> with the requested ads inserted that gets sent to the player<sup>4</sup> for playback.</p>
     <figure class="bcls-figure"><img alt="" src="/assets/images/ssai/diagram2.webp" /></figure>
   
-    <h3>Rendition selection</h3>
-    <p>SSAI obtaines the the highest-quality rendition after sorting throught the options provided. We sort based on different fields in the following order: </p>
-    <strong>VAST/Vmap: </strong>
-    <p>Bitrate: If bitrate is equal, we use the type with a whitelist. If the type is the same, we use the width. If the with is the same, we use the height.</p>
-    <strong>SmartXML: </strong>
-    <p>We sort and get the asset with the highest byte count; SSAI generates a manifest with the combination of the video segments and ad segments of the same rendition type. Therefore all assets in a rendition will have the same quality.</p>
-    <aside class="bcls-aside bcls-aside--information language-editable">SSAI disregards all renditions found in the VAST/SmartXML and only takes the highest-quality rendition obtained after sorting. It takes the creative URL and sends it to a regular ingest process using the same ingestion profile as the source video.</aside>
+   
 
     <h3>Creative Handling</h3>
     <p>This is the process in which SSAI identifies the unique ID needed to identify each ad. <br>The creative rendition URL is hashed to uniquely identify the right ad according to the next parameters:</p>
@@ -480,13 +474,22 @@
                 <li>The default one is &lt;AdId&gt; for any ad providers that are not listed</li>
             </ul>
         </li>
-       
         <li><strong>SmartXML</strong><br> 
             Smartxml: uses as foreignkey hashed Ad.SourceURL.
             In the case in which the SSAICreativeID parameter exists within the ad's ad reference.
 
         </li>
     </ul>
+
+    <h3>Rendition selection</h3>
+    <p>SSAI obtaines the the highest-quality rendition after sorting throught the options provided. We sort based on different fields in the following order: </p>
+    <strong>VAST 3/Vmap: </strong>
+    <p>Bitrate: If bitrate is equal, we use the type with a whitelist. If the type is the same, we use the width. If the with is the same, we use the height.</p>
+    <strong>SmartXML: </strong>
+    <p>We sort and get the asset with the highest byte count; SSAI generates a manifest with the combination of the video segments and ad segments of the same rendition type. Therefore all assets in a rendition will have the same quality.</p>
+    <aside class="bcls-aside bcls-aside--information language-editable">SSAI disregards all renditions found in the VAST/SmartXML and only takes the highest-quality rendition obtained after sorting. It takes the creative URL and sends it to a regular ingest process using the same ingestion profile as the source video.</aside>
+       
+    
 
     <h3>Beaconing</h3>
     <p>...</p>
@@ -497,6 +500,9 @@
 
   <section class="bcls-section">
     <h2 id="FAQ">FAQ / additional notes</h2>
+    <ul>
+        <li>Only Vast 3 is supported for this use.</li>
+    </ul>
   </section>
 
   <section class="bcls-section">
