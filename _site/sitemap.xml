@@ -6,7 +6,7 @@
     
       <url>
         <loc>https://ssai.support.brightcove.com/index.html</loc>
-        <lastmod>2024-10-15</lastmod>
+        <lastmod>2024-12-12</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
       </url>
@@ -14,7 +14,7 @@
     
       <url>
         <loc>https://ssai.support.brightcove.com/getting-started/index.html</loc>
-        <lastmod>2024-10-15</lastmod>
+        <lastmod>2024-12-12</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
       </url>
@@ -23,7 +23,7 @@
           
             <loc>https://ssai.support.brightcove.com/getting-started/video-cloud-ssai-overview.html</loc>
           
-            <lastmod>2024-10-15</lastmod>
+            <lastmod>2024-12-12</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -33,7 +33,7 @@
           
             <loc>https://studio.support.brightcove.com/admin/general/configuring-server-side-ad-settings.html</loc>
           
-            <lastmod>2024-10-15</lastmod>
+            <lastmod>2024-12-12</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -43,7 +43,7 @@
           
             <loc>https://ssai.support.brightcove.com/getting-started/video-cloud-ssai-ad-logs.html</loc>
           
-            <lastmod>2024-10-15</lastmod>
+            <lastmod>2024-12-12</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -52,7 +52,7 @@
     
       <url>
         <loc>https://ssai.support.brightcove.com/vod/guides/index.html</loc>
-        <lastmod>2024-10-15</lastmod>
+        <lastmod>2024-12-12</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
       </url>
@@ -61,7 +61,7 @@
           
             <loc>https://player.support.brightcove.com/plugins/implementing-server-side-ads-brightcove-player.html</loc>
           
-            <lastmod>2024-10-15</lastmod>
+            <lastmod>2024-12-12</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -71,7 +71,7 @@
           
             <loc>https://sdks.support.brightcove.com/features/implementing-server-side-ads-native-player-sdks.html</loc>
           
-            <lastmod>2024-10-15</lastmod>
+            <lastmod>2024-12-12</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -81,7 +81,7 @@
           
             <loc>https://ssai.support.brightcove.com/vod/guides/ssai-non-bc-players.html</loc>
           
-            <lastmod>2024-10-15</lastmod>
+            <lastmod>2024-12-12</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -91,7 +91,7 @@
           
             <loc>https://ssai.support.brightcove.com/vod/guides/ssai-ad-block-detection-and-auto-failover.html</loc>
           
-            <lastmod>2024-10-15</lastmod>
+            <lastmod>2024-12-12</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -101,7 +101,7 @@
           
             <loc>https://apis.support.brightcove.com/ssai/getting-started/video-cloud-ssai-ad-config-api.html</loc>
           
-            <lastmod>2024-10-15</lastmod>
+            <lastmod>2024-12-12</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -111,7 +111,7 @@
           
             <loc>https://ssai.support.brightcove.com/vod/guides/video-cloud-ssai-ad-tag-validation.html</loc>
           
-            <lastmod>2024-10-15</lastmod>
+            <lastmod>2024-12-12</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -121,7 +121,7 @@
           
             <loc>https://ssai.support.brightcove.com/vod/guides/ad-error-beacons-ssai.html</loc>
           
-            <lastmod>2024-10-15</lastmod>
+            <lastmod>2024-12-12</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -130,7 +130,7 @@
     
       <url>
         <loc>https://ssai.support.brightcove.comhttps://apis.support.brightcove.com/ssai/references/index.html</loc>
-        <lastmod>2024-10-15</lastmod>
+        <lastmod>2024-12-12</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
       </url>
@@ -139,7 +139,7 @@
           
             <loc>https://apis.support.brightcove.com/ssai/references/reference.html</loc>
           
-            <lastmod>2024-10-15</lastmod>
+            <lastmod>2024-12-12</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -149,7 +149,7 @@
           
             <loc>https://apis.support.brightcove.com/ssai/references/ssai-api-error-reference.html</loc>
           
-            <lastmod>2024-10-15</lastmod>
+            <lastmod>2024-12-12</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -159,7 +159,7 @@
           
             <loc>https://player.support.brightcove.com/plugins/changelog/server-side-ads-plugin-changelog.html</loc>
           
-            <lastmod>2024-10-15</lastmod>
+            <lastmod>2024-12-12</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -168,7 +168,7 @@
     
       <url>
         <loc>https://ssai.support.brightcove.com/live/guides/index.html</loc>
-        <lastmod>2024-10-15</lastmod>
+        <lastmod>2024-12-12</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
       </url>
@@ -177,7 +177,7 @@
           
             <loc>https://live.support.brightcove.com/live-module/implementing-server-side-ads-live-module.html</loc>
           
-            <lastmod>2024-10-15</lastmod>
+            <lastmod>2024-12-12</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -187,7 +187,7 @@
           
             <loc>https://apis.support.brightcove.com/live-api/ssai/live-api-server-side-ad-insertion-ssai.html</loc>
           
-            <lastmod>2024-10-15</lastmod>
+            <lastmod>2024-12-12</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -197,7 +197,7 @@
           
             <loc>https://apis.support.brightcove.com/live-api/ssai/live-api-cue-points-and-ad-beacons-ssai.html</loc>
           
-            <lastmod>2024-10-15</lastmod>
+            <lastmod>2024-12-12</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -207,7 +207,7 @@
           
             <loc>https://player.support.brightcove.com/advertising/client-side-preroll-with-live-ssai.html</loc>
           
-            <lastmod>2024-10-15</lastmod>
+            <lastmod>2024-12-12</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -217,7 +217,7 @@
           
             <loc>https://ssai.support.brightcove.com/live/guides/overview-player-enhancements-live-ssai.html</loc>
           
-            <lastmod>2024-10-15</lastmod>
+            <lastmod>2024-12-12</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -227,7 +227,7 @@
           
             <loc>https://ssai.support.brightcove.com/live/guides/implementing-player-enhancements-live-ssai.html</loc>
           
-            <lastmod>2024-10-15</lastmod>
+            <lastmod>2024-12-12</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -236,7 +236,7 @@
     
       <url>
         <loc>https://ssai.support.brightcove.com/live/references/index.html</loc>
-        <lastmod>2024-10-15</lastmod>
+        <lastmod>2024-12-12</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
       </url>
@@ -245,7 +245,7 @@
           
             <loc>https://ssai.support.brightcove.com/live/references/reference.html</loc>
           
-            <lastmod>2024-10-15</lastmod>
+            <lastmod>2024-12-12</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -255,7 +255,7 @@
           
             <loc>https://apis.support.brightcove.com/live-api/references/live-api-error-messages.html</loc>
           
-            <lastmod>2024-10-15</lastmod>
+            <lastmod>2024-12-12</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -265,7 +265,7 @@
           
             <loc>https://live.support.brightcove.com/release-notes/live-api-release-notes.html</loc>
           
-            <lastmod>2024-10-15</lastmod>
+            <lastmod>2024-12-12</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -274,7 +274,7 @@
     
       <url>
         <loc>https://ssai.support.brightcove.com/support/index.html</loc>
-        <lastmod>2024-10-15</lastmod>
+        <lastmod>2024-12-12</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
       </url>
@@ -283,7 +283,7 @@
           
             <loc>https://ssai.support.brightcove.com/support/viewing-brightcove-system-status-page.html</loc>
           
-            <lastmod>2024-10-15</lastmod>
+            <lastmod>2024-12-12</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -293,7 +293,7 @@
           
             <loc>https://ssai.support.brightcove.com/support/contact-sales.html</loc>
           
-            <lastmod>2024-10-15</lastmod>
+            <lastmod>2024-12-12</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -303,7 +303,7 @@
           
             <loc>https://ssai.support.brightcove.com/support/opening-case-with-brightcove-support.html</loc>
           
-            <lastmod>2024-10-15</lastmod>
+            <lastmod>2024-12-12</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
@@ -313,7 +313,7 @@
           
             <loc>https://ssai.support.brightcove.com/support/reset-support-portal-password.html</loc>
           
-            <lastmod>2024-10-15</lastmod>
+            <lastmod>2024-12-12</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.5</priority>
         </url>
